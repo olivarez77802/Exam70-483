@@ -33,12 +33,6 @@ namespace JesseTesting.App
                 Console.WriteLine(" 1.  Create and Use Types (Value/Reference) \n");
                 Console.WriteLine(" 2.  Debug And Implement Security \n");               
                 Console.WriteLine(" 3.  Implement Data Access \n ");
-                
-                Console.WriteLine(" 5.   \n");
-                Console.WriteLine(" 6.   \n");
-                Console.WriteLine(" 2.  \n ");
-                Console.WriteLine(" 7.  Grammar \n ");
-                Console.WriteLine(" 8.  Namespaces, Classes \n ");
                 Console.WriteLine(" 9.  Quit            \n\n ");
                 
                 int selection;
@@ -57,12 +51,7 @@ namespace JesseTesting.App
                     case 3: ImplementDataAccess.Menu();
                         break;
 
-                    case 7: Grammar.Menu();
-                        break;
-
-                    case 8: ClassesAndInterfaces.Menu();
-                        break;
-                    case 9 : x = 9;
+                   case 9 : x = 9;
                         break;
                     default: Console.WriteLine(" Invalid Number");
                         break;
