@@ -43,6 +43,8 @@ namespace JesseTesting.App
                 {
                     case 1: CryptographyExamples.Menu();
                         break;
+                    case 3: EventsandCallBacksMenu.Menu();
+                        break; 
                     case 4: ExceptionClassExamples.Menu();
                         break;
                     case 9: x = 9;
