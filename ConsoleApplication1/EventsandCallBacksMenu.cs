@@ -27,9 +27,10 @@ namespace JesseTesting.App
                 selection = JesseTesting.App.Common.readInt("Enter Number to Execute Routine : ", 0, 9);
                 switch (selection)
                 {
-                    case 1:
-                        //EventHandlers.Main();
-                        break;
+                    case 0:
+                        EventHandlers.EH_Main();
+                        Console.ReadKey();
+                            break;
                     case 2: Delegate.Menu();
                         break;
                     case 3:
