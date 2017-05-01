@@ -5,7 +5,7 @@ using System.Text;
 
 namespace JesseTesting.App
 {
-    // Instantiated in Methods.cs
+    // Instantiated in the Methods.cs 
     
     class Box
     {
