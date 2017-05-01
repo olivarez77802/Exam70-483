@@ -19,6 +19,16 @@ namespace JesseTesting.App
             _show += new EventHandler(Mouse);
             _show += new EventHandler(Mouse);
 
+            //Delegate inference
+            _show += Dog;
+
+
+            //Anonymous Method
+            //Anonymous Methods are defined use the delegate keyword
+            _show += delegate
+            {
+                Console.WriteLine("Giraffe");
+            };
             //Invoke the event.
             _show.Invoke();
         }
