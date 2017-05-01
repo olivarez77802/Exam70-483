@@ -64,6 +64,8 @@
     <Compile Include="EnumerableImmmediateMethods.cs" />
     <Compile Include="EnumerableMethods.cs" />
     <Compile Include="EventExamples.cs" />
+    <Compile Include="EventHandlers.cs" />
+    <Compile Include="EventsandCallBacksMenu.cs" />
     <Compile Include="ExceptionClassExamples.cs" />
     <Compile Include="FTPCalls.cs" />
     <Compile Include="GenericExamples.cs" />

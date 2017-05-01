@@ -81,7 +81,7 @@ namespace JesseTesting.App
         static void Attributes()
         {
             Process.Start("http://msdn.microsoft.com/en-us/library/aa288454(v=vs.71).aspx");
-            Attribute_Program.APMain();
+            //Attribute_Program.APMain();
 
         }
 
@@ -245,78 +245,78 @@ namespace JesseTesting.App
             }
         }
         #region AttributeProgram
-        public static class Attribute_Program
-        {
-            [System.Obsolete("use class B")]
-            class A
-            {
-                public void Method() { }
-            }
-            class B
-            {
-                [System.Obsolete("use New Method", true)]
-                public void OldMethod() { }
-                public void NewMethod() { }
-            }
-            class Check : Attribute
-            {
-                public int MaxLength { get; set; }
-            }
-            class Customer
-            {
-                private string _CustomerCode;
+        //public static class Attribute_Program
+        //{
+        //    [System.Obsolete("use class B")]
+        //    class A
+        //    {
+        //        public void Method() { }
+        //    }
+        //    class B
+        //    {
+        //        [System.Obsolete("use New Method", true)]
+        //        public void OldMethod() { }
+        //        public void NewMethod() { }
+        //    }
+        //    class Check : Attribute
+        //    {
+        //        public int MaxLength { get; set; }
+        //    }
+        //    class Customer
+        //    {
+        //        private string _CustomerCode;
 
-                [Check(MaxLength = 10)]
-                public string CustomerCode
-                {
-                    get { return _CustomerCode; }
-                    set { _CustomerCode = value; }
-                }
-            }
-            public static void APMain()
-            {
-                Process.Start("https://msdn.microsoft.com/en-us/library/22kk2b44(v=vs.90).aspx");
-                Process.Start("http://www.codeproject.com/Articles/827091/Csharp-Attributes-in-minutes#Whatareattributesandwhydoweneedit");
-
-
-                // Generate 2 warnings
-                A a = new A();
-                // Generate no errors or warnings
-                B b = new B();
-                b.NewMethod();
-                // Generates an error, terminating compilation
-                // b.OldMethod();
-                Console.ReadKey();
-
-                Customer obj = new Customer();
-                obj.CustomerCode = "12345678901";
-
-                //Get the type of the object
-                Type objtype = obj.GetType();
-
-                //Use the 'Type' object and loop through all properties and attributes
-                foreach (PropertyInfo p in objtype.GetProperties())
-                {
-                    // for every property loop through all attributes
-                    foreach (Attribute t in p.GetCustomAttributes(false))
-                    {
-                        Check c = (Check)t;
-                        if (p.Name == "CustomerCode")
-                        {
-                            if (obj.CustomerCode.Length > c.MaxLength)
-                            {
-                                throw new Exception(" Max length issues ");
-                            }
-                        }
-                    }
-                } //end foreach
-
-                Console.ReadKey();
-
-            }  //endAPMain
+        //        [Check(MaxLength = 10)]
+        //        public string CustomerCode
+        //        {
+        //            get { return _CustomerCode; }
+        //            set { _CustomerCode = value; }
+        //        }
+        //    }
+        //    public static void APMain()
+        //    {
+        //        Process.Start("https://msdn.microsoft.com/en-us/library/22kk2b44(v=vs.90).aspx");
+        //        Process.Start("http://www.codeproject.com/Articles/827091/Csharp-Attributes-in-minutes#Whatareattributesandwhydoweneedit");
 
 
-        } //end class AttributeProgram
+        //        // Generate 2 warnings
+        //        A a = new A();
+        //        // Generate no errors or warnings
+        //        B b = new B();
+        //        b.NewMethod();
+        //        // Generates an error, terminating compilation
+        //        // b.OldMethod();
+        //        Console.ReadKey();
+
+        //        Customer obj = new Customer();
+        //        obj.CustomerCode = "12345678901";
+
+        //        //Get the type of the object
+        //        Type objtype = obj.GetType();
+
+        //        //Use the 'Type' object and loop through all properties and attributes
+        //        foreach (PropertyInfo p in objtype.GetProperties())
+        //        {
+        //            // for every property loop through all attributes
+        //            foreach (Attribute t in p.GetCustomAttributes(false))
+        //            {
+        //                Check c = (Check)t;
+        //                if (p.Name == "CustomerCode")
+        //                {
+        //                    if (obj.CustomerCode.Length > c.MaxLength)
+        //                    {
+        //                        throw new Exception(" Max length issues ");
+        //                    }
+        //                }
+        //            }
+        //        } //end foreach
+
+        //        Console.ReadKey();
+
+        //    }  //endAPMain
+
+
+        //} //end class AttributeProgram
         #endregion
 
         class First<T> where T : Second

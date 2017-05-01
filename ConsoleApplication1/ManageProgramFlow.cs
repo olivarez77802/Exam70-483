@@ -28,7 +28,13 @@ namespace JesseTesting.App
                 Console.WriteLine("     by using switch statements, if/then, and operators; \r ");
                 Console.WriteLine("     evaluate expressions \r ");
                 Console.WriteLine(" 3.  Create and Implement Events and CallBacks \r ");
+                Console.WriteLine("     Create event handlers; subscribe to and unsubscribe from events; \r");
+                Console.WriteLine("     use built in delegate types to create events; creat delegates; \r");
+                Console.WriteLine("      lambda expressions; anonymous methods");
                 Console.WriteLine(" 4.  Implement Exception Handling \r ");
+                Console.WriteLine("     Handle exception types: catch types versus base exceptions. try-");
+                Console.WriteLine("     catch finally blocks.   throw exceptions; determine when to rethrow");
+                Console.WriteLine("     vs. throw; create custom exceptions");
                 Console.WriteLine(" 9.  Quit            \n\n ");
 
                 int selection;
@@ -37,6 +43,8 @@ namespace JesseTesting.App
                 {
                     case 1: CryptographyExamples.Menu();
                         break;
+                    case 3: EventsandCallBacksMenu.Menu();
+                        break; 
                     case 4: ExceptionClassExamples.Menu();
                         break;
                     case 9: x = 9;
