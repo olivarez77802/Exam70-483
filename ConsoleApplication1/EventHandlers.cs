@@ -22,15 +22,23 @@ namespace JesseTesting.App
             //Delegate inference
             _show += Dog;
 
-
+            
+            
             //Anonymous Method
             //Anonymous Methods are defined use the delegate keyword
             _show += delegate
             {
                 Console.WriteLine("Giraffe");
             };
+
+            //Lambda
+            EventHandler _show2 = () => Console.WriteLine("Pig");
+
+
+
             //Invoke the event.
             _show.Invoke();
+            _show2.Invoke();
         }
 
         static void Cat()
