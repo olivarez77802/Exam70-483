@@ -47,7 +47,7 @@ namespace JesseTesting.App
             do
             {
                 Console.Clear();
-                Console.WriteLine(" Type System Menu \n ");
+                Console.WriteLine(" Create Types Menu \n ");
                 Console.WriteLine(" 0.  Value Types \n ");
                 Console.WriteLine(" 1.  Reference Types \n ");
                 Console.WriteLine(" 2.  Boxing and Unboxing \n");

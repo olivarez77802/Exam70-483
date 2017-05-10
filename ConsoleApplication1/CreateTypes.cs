@@ -14,7 +14,11 @@ namespace JesseTesting.App
             do
             {
                 Console.Clear();
-                Console.WriteLine(" Create Types \n ");
+                Console.WriteLine(" Create Types \r ");
+                Console.WriteLine(" Create value types (structs, enum), refererence types, generic types, \r");
+                Console.WriteLine(" constructors, static variables, methods, classes, extension methods, \r");
+                Console.WriteLine(" optional and named parameters, and indexed properties; create \r");
+                Console.WriteLine(" overloaded and overridden methods \n");
                 Console.WriteLine(" 0.  Value and Reference Types \n ");
                 Console.WriteLine(" 1.  Generic Types \n ");
                 Console.WriteLine(" 2.  Constructors \n ");
