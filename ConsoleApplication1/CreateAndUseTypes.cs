@@ -34,6 +34,13 @@ namespace JesseTesting.App
                         break;
                     case 1: DynamicExamples.DMain();
                         break;
+                    case 6: StringBuilderExamples.PrimaryMain();
+                        Console.WriteLine("Equality");
+                        Console.ReadKey();
+                        StringEquality.SE_Main();
+                        Console.ReadKey();
+                        
+                        break;
                     case 9: x = 9;
                         break;
                     default: Console.WriteLine(" Invalid Number");
