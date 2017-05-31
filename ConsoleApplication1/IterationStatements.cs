@@ -169,6 +169,18 @@ namespace JesseTesting.App
         }
         static void Dictionary_Key_Value_Pair()
         {
+            //Dictionary uses a hash table.   It is a large collection
+            //that will divide a collection into smaller collections.
+            //Each smaller collection is defined as a bucket.
+            //If you know what bucket the item your searching for is in,
+            //you only need to search that bucket.
+            //
+            //The modulo % method along with the .gethashcode method is used to determine the bucket when 
+            //storing or retrieving a value.
+            //
+            //If two values x and y evaluate to equal then they must evaluate to the same hash code.
+            //
+
             Dictionary<int, int> _h = new Dictionary<int, int>();
             _h.Add(5, 4);
             _h.Add(4, 3);

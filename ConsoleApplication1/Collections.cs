@@ -27,6 +27,7 @@ namespace JesseTesting.App
                 Console.WriteLine(" 5.  Website \n");
                 Console.WriteLine(" 6.  Take Verb\n");
                 Console.WriteLine(" 7.  Sort Ascendingz-Descending\n");
+                Console.WriteLine(" 8.  Dictionary and other Iterations");
                 Console.WriteLine(" 9.  Quit            \n\n ");
                 Console.Write(" Enter Number to execute Routine ");
 
@@ -75,6 +76,8 @@ namespace JesseTesting.App
                     case 7:
                         SortingExamples.Sort_Ascending_Descending();
                         SortingExamples.Sort_A_Class();
+                        break;
+                    case 8: IterationStatements.Menu();
                         break;
                     case 9: x = 9;
                         break;
