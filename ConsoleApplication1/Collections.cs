@@ -17,6 +17,18 @@ namespace JesseTesting.App
             int x = 0;
             do
             {
+                // A foreach is readonly
+                // If you want to make modifications you have to use a for loop instead of a foreach
+                // 
+                // But that does'n't mean individual elements are readonly, if the element contains
+                // reference types you can still modify their values, can't demonstrate that with strings
+                // because strings are immutable.   But can be done with an an array of a reference type    
+                // that is mutable.
+                //
+                // for each loop
+                // - can't replace elements
+                // - can modify values of elements
+                //
                 Console.Clear();
                 Console.WriteLine(" Collections Menu \n ");
                 Console.WriteLine(" 0.  Print Obect Array \n ");
