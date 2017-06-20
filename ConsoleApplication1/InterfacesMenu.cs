@@ -43,8 +43,25 @@ namespace JesseTesting.App
                 switch (selection)
                 {
                     case 0:
+                        // IComparable will tell you if
+                        //  x < y
+                        //  x > y
+                        //  x == y
+                        //  returning an integer
+                        //  - 1 means less than
+                        //    1 means greater
+                        //    0 means equal to
+                        //
+
                         SortingExamples.Sort_A_Class();
                         break;
+
+                        // ==, != operators  - Work out of the box only for primitive types and reference types
+                        //                     Operators do not work in generic code
+                        //                     Object.Equals  - ok in generic code
+                        //
+                        // >, <, >=, <=  operators - Work out of the box only for primitive types
+                        //
                     case 2:
                         // IEnumerable - A List, Array, Query implements IEnumerable.
                         // An IEnumerable Interface specifies that the underlying type implements IEnumerable

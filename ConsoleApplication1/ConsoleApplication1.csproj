@@ -95,6 +95,7 @@
     <Compile Include="StatementKeywords.cs" />
     <Compile Include="StreamExamples.cs" />
     <Compile Include="StringBuilderExamples.cs" />
+    <Compile Include="StringEquality.cs" />
     <Compile Include="StringMethodExamples.cs" />
     <Compile Include="StringReaderExamples.cs" />
     <Compile Include="TaskLibExamples.cs" />

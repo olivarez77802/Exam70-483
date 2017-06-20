@@ -10,7 +10,7 @@ namespace JesseTesting.App
     public class Metronome
     {
         public event TickHandler Tick;
-        public EventArgs e = null;
+        public  EventArgs e = null;
         public delegate void TickHandler(Metronome m, EventArgs e);
         public void Start()
         {
@@ -23,7 +23,6 @@ namespace JesseTesting.App
                 {
                     ++i;
                    Tick(this, e);
-                  
                 }
             }
         }

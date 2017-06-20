@@ -14,7 +14,9 @@ namespace JesseTesting.App
     //        -  Examples of Sealed Classes are String Builder
     // making this class abstract means that I do not ever want this class 
     // to be instantiated.    However, the abstract class can be inherited and
-    // the class that inherited the abstract class can be instantiated.   
+    // the class that inherited the abstract class can be instantiated.  
+    // struct - means you cannot derivefrom it.
+    // 
 
     static class BaseExamples   
     {

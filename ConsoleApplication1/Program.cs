@@ -42,7 +42,7 @@ namespace JesseTesting.App
                     
                     case 0: ManageProgramFlow.Menu();
                         break;
-                    case 1: CreateAndUseTypes.Menu();
+                    case 1: CreateAndUseTypes.CT_Menu();
                         break;
                     case 2:
                         CryptographyExamples.Menu();

@@ -7,7 +7,7 @@ namespace JesseTesting.App
 {
     class CreateAndUseTypes
     {
-        public static void Menu()
+        public static void CT_Menu()
         {
 
             int x = 0;
@@ -28,9 +28,18 @@ namespace JesseTesting.App
                 selection = Common.readInt("Enter Number to Execute Routine : ", 0, 9);
                 switch (selection)
                 {
-                    case 0: TypeSystem.Menu();
+                    case 0:
+                        CreateTypes.Menu();
+                        //TypeSystem.Menu();
                         break;
                     case 1: DynamicExamples.DMain();
+                        break;
+                    case 6: StringBuilderExamples.PrimaryMain();
+                        Console.WriteLine("Equality");
+                        Console.ReadKey();
+                        StringEquality.SE_Main();
+                        Console.ReadKey();
+                        
                         break;
                     case 9: x = 9;
                         break;
