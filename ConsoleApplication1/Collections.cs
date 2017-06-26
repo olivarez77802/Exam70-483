@@ -22,8 +22,8 @@ namespace JesseTesting.App
                 // 
                 // But that does'n't mean individual elements are readonly, if the element contains
                 // reference types you can still modify their values, can't demonstrate that with strings
-                // because strings are immutable.   But can be done with an an array of a reference type    
-                // that is mutable.
+                // because strings are immutable(unable to be changed).   But can be done with an an array     
+                // of a reference type that is mutable (able to be changed).
                 //
                 // for each loop
                 // - can't replace elements

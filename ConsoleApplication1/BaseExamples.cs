@@ -17,6 +17,14 @@ namespace JesseTesting.App
     // the class that inherited the abstract class can be instantiated.  
     // struct - means you cannot derivefrom it.
     // 
+    // Arrays are reference types
+    // Array CoVariance - You can implicitly cast a Derive[] to a Base[] type
+    // Example - Base Type is object and Dervied Type is String
+    // Array CoVariance is broken because you cannot determine type, so you should
+    // not use.
+    // IEnumerable<T> and IEnumerator<T> use CoVariance and are good to use unlike 
+    // Array CoVariance.
+    // 
 
     static class BaseExamples   
     {
