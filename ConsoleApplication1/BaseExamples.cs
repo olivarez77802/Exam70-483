@@ -17,7 +17,37 @@ namespace JesseTesting.App
     // the class that inherited the abstract class can be instantiated.  
     // struct - means you cannot derivefrom it.
     // 
-
+    // Arrays are reference types
+    // Array CoVariance - You can implicitly cast a Derive[] to a Base[] type
+    // Example - Base Type is object and Dervied Type is String
+    // Array CoVariance is broken because you cannot determine type, so you should
+    // not use.
+    // IEnumerable<T> and IEnumerator<T> use CoVariance and are good to use unlike 
+    // Array CoVariance.
+    // 
+    // You can always cast a derived type to a base type
+    // string is derived from object
+    // string str = "Hello world"
+    // object obj = str;
+    //
+    // However.  You cannot normally case a collection of a derived type to a collection of a base type
+    // One exception is arrays, this will work for arrays.  This is called Array CoVariance.
+    // Below not allowed    
+    // var strList = new List<string> {"Monday","Tuesday"};
+    // List<object> objList = strList;
+    //
+    // CoVariance is safe for enumerators because an enumerator can't modify the collection
+    // The below will work.  Micorosft allows for the IEnumerable<T> and IEnumerator<T> interfaces.
+    // var strList = new List<string> {"Monday", "Tuesday" };
+    // IEnumerable<object> objEnum = strList;
+    //
+    // If you go to the definition of IEnumable
+    // The 'out' keyword is what tells the compiler that the Interface can be treated as Covariant
+    //
+    // ...public interface IEnumerable<out T> : IEnumerable
+    //    {
+    //        ...IEnumerator<T> GetEnumerator();
+    //    }
     static class BaseExamples   
     {
         #region TMain

@@ -13,7 +13,8 @@ namespace JesseTesting.App
             do
             {
                 Console.Clear();
-                Console.WriteLine(" Reference Types Menu \n ");
+                Console.WriteLine(" Reference Types Menu \r ");
+                Console.WriteLine(" object.Equals() evaluates to Reference Equality (unless overridden\n ");
                 Console.WriteLine(" 0.  String \n ");
                 Console.WriteLine(" 1.  Object \n ");
                 Console.WriteLine(" 2.  Class  \n ");
