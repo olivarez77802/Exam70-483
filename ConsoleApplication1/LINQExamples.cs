@@ -19,6 +19,7 @@ namespace JesseTesting.App
     // not when constructed, but when enumerated (in other words, when MoveNext is called on 
     // its enumerator). 
     //
+    // testing
 
     abstract class LINQExamples
     {

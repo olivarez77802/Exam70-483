@@ -18,6 +18,16 @@ namespace JesseTesting.App
                 //  Use classes and subclasses for types that naturally share an implementation
                 //  Use interfaces for types that have independent implementations.
                 //
+                //  Natural - Can Compare with other Instances of the same type
+                //
+                //                 EQUALITY                   COMPARISONS
+                //  Natural        IEquatable<T>              IComparable<T>
+                //                                            IComparable
+                //  Plugged_in     IEqualityComparer          IComparer
+                //                 IEqualityComparer<T>       IComparer<T>
+                //  Structural     IStructuralEquatable       IStructuralEquatable
+                //
+                //
                 //Console.WriteLine("\n Interface contains only the signatures of methods, properties, ");
                 //Console.WriteLine(" events, or indexers.  A class or struct that implements the    ");
                 //Console.WriteLine("Interface must implement the members of the interface that ");
