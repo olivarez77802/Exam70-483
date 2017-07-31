@@ -5,6 +5,27 @@ using System.Text;
 
 namespace JesseTesting.App
 {
+    // Access Modifiers  - Accessiblity
+    // private - Only within the containing class 
+    // Public  - Anywhere - No restrictions
+    // Protected - Within the containing types and the types derived from the containing type
+    //
+    //  public class Customer
+    //   {
+    //      protected int ID;
+    //   }
+    //  public class Corporate Customer : Customer
+    //   {
+    //    public void PrintID()
+    //      {
+    //             Corporate Customer CC = new CorporateCustomer()
+    //             CC.ID = 101;
+    //     **      base.ID = 101;       ** is Equivalent
+    //     **      this.ID = 101;       ** is Equivalent
+    //      }
+    //   }
+    //  Corporate Customer is derived from Customer.  So you can use the protected variable ID in Corporate Customer
+    //
     // static - cannot ever be instantiated
     // abstract - Incomplete class; must be completed in a derived class.  Also
     //            cannot be instantiated.
