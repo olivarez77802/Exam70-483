@@ -45,7 +45,15 @@ namespace JesseTesting.App
                         break;
                     case 3: EventsandCallBacksMenu.Menu();
                         break; 
-                    case 4: ExceptionClassExamples.Menu();
+                    case 4:
+                        /*
+                         * A "finally" statement will execute even there is an exception that goes through "catch" block
+                         * The "finally" statement will also execute when there is no exception
+                         * Finally block will always execute so it is a good place to close file or shut down resources.
+                         * A try/Finally block can also be used by the "using" statement
+                         */
+
+                        ExceptionClassExamples.Menu();
                         break;
                     case 9: x = 9;
                         break;

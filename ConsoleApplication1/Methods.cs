@@ -31,6 +31,10 @@ namespace JesseTesting.App
             int x = 0;
             do
             {
+                /*
+                 *  Every method has zero or more parameters
+                 *  * Use params keyword to accept a variable number of parameters 
+                 */
                 Console.Clear();
                 Console.WriteLine(" Methods Menu \n ");
                 Console.WriteLine(" 0.  Constructors and Finalizers \n ");

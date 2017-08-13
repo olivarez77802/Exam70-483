@@ -25,6 +25,8 @@ namespace JesseTesting.App
     /// in Visual Studio to help you write a program, since it knows for a given variable what type it is, and hence what methods 
     /// you can call on that variable.
     ///
+    /// A static method can only call other methods that are defined as static.
+    /// 
     /// </summary>
 
     class DynamicExamples

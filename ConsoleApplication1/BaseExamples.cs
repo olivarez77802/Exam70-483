@@ -51,7 +51,7 @@ namespace JesseTesting.App
     // string str = "Hello world"
     // object obj = str;
     //
-    // However.  You cannot normally case a collection of a derived type to a collection of a base type
+    // However.  You cannot normally cast a collection of a derived type to a collection of a base type
     // One exception is arrays, this will work for arrays.  This is called Array CoVariance.
     // Below not allowed    
     // var strList = new List<string> {"Monday","Tuesday"};
