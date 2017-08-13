@@ -10,6 +10,14 @@ namespace JesseTesting.App
 {
     public class ClassesAndInterfaces
     {
+        /*
+         * Interface 
+         * - Inside an interface you cannot use an access modifier (.ie public, protected, private)
+         * - Access modifiers are not used since everything defined in an interface has to be available, so there is no sense in hiding anything using an access modifier.
+         * - The methods in an interface are implicitly virtual
+         * - You can inherit from multiple interfaces.  You can only inherit from one class whether it is abstract or concrete.  
+         * - When you inherit from both a class and interface(s), the class must come first. 
+         */
         // As a guideline:
         //  * Use classes and subclasses for types that naturally share an implementation.
         //  * Use interfaces for types that have independent implementations.
@@ -112,6 +120,8 @@ namespace JesseTesting.App
             // What is the difference between constructors and other methods ?
             // 1.  Constructors must have the same name as the class and can not return a value.
             // 2.  Constructors are only called once while regular methods could be called many times.
+            // 3.  The only method you can write where you do not have to specify the return type.
+            // 
             //
             Process.Start("http://msdn.microsoft.com/en-us/library/ace5hbzh.aspx");
             MainClass.MC_Main();

@@ -5,11 +5,32 @@ using System.Text;
 
 namespace JesseTesting.App
 {
-    // static - cannot ever be instantiated
+    // static - cannot ever be instantiated or use static if you do not want to create an instance
+    // concrete - Types that can be instantiated.  Concrete types can inherit (or derive) from an abstract type
+    //            and provide implementation for the abstract or virtual methods.
     // abstract - Incomplete class; must be completed in a derived class.  Also
-    //            cannot be instantiated.
-    // virtual - first implementation
-    // override - further implementation
+    //            cannot be instantiated.   Will usually hold methods that are defined as either virtual
+    //            or abstract.  Abstract classes are useful because of Polymorphism.  Abstract class can
+    //            provide some implementation details.  This is a difference between them and Interfaces.
+    //            Interfaces cannot provide implementation details.
+    // inherit  - You can inherit from many interfaces.  You are restricted from inheriting from only one class whether it is abstract or concrete.
+    // virtual - first implementation.   When you use the virtual keyword you enable Polymorphism
+    //
+    // public abstract class Window
+    // {
+    //   public virtual string Title { get; set; }
+    //  
+    //   public virtual void Draw()
+    //   {
+    //     ** Drawing Code
+    //   }
+    //
+    //   public abstract void Open()    <-- Nested abstract means the class deriving from class Window must provide 
+    //                                      an implmentation for the Open method.   
+    // }
+    // 
+    // override - further implementation.  Keyword used in concrete classes to provide further implementations for methods
+    //                                     that were defined as either virtual or abstract.
     // sealed - Final implementation - cannot be derived (or inherited).
     //        -  Examples of Sealed Classes are String Builder
     // making this class abstract means that I do not ever want this class 
