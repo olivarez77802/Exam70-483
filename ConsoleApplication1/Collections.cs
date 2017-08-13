@@ -7,7 +7,7 @@ using System.Linq.Expressions;
 using System.Collections;
 
 
-namespace Exam70483.App.App
+namespace Exam70483
 {
 
     public class Collections

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Collections;
 
-namespace Exam70483.App.App
+namespace Exam70483
 {
     abstract class InterfacesMenu
     {

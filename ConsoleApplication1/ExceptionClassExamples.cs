@@ -5,7 +5,7 @@ using System.Text;
 using System.IO;
 using System.Diagnostics;
 
-namespace Exam70483.App.App
+namespace Exam70483
 {
     class ExceptionClassExamples
     {

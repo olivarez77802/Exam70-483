@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Exam70483.App.App
+namespace Exam70483
 {
 
     public class Metronome

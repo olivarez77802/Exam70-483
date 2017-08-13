@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Linq.Expressions;
 
-namespace Exam70483.App.App
+namespace Exam70483
 {
     class SortingExamples  // Called by Collections
     {

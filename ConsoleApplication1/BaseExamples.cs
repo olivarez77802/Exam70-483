@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace JesseTesting.App
+namespace Exam70483
 {
     // static - cannot ever be instantiated
     // abstract - Incomplete class; must be completed in a derived class.  Also

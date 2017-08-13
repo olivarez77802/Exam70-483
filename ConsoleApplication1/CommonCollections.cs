@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Exam70483.App
+namespace Exam70483
 {
-    class CommonCollections
+    public class CommonCollections
     {
-        test
         public class Cat
         {
             public int Age { get; set; }

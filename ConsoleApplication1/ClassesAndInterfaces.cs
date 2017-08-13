@@ -6,7 +6,7 @@ using System.Diagnostics;
 using System.Reflection;
 using System.IO;
 
-namespace Exam70483.App.App
+namespace Exam70483
 {
     public class ClassesAndInterfaces
     {

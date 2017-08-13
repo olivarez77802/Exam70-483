@@ -8,7 +8,7 @@ using System.Configuration;
 
 
 
-namespace Exam70483.App.App
+namespace Exam70483
 {
     class CryptographyExamples
     {

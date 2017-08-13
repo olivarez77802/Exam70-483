@@ -6,9 +6,9 @@ using System.IO;
 using System.Net;
 using System.Runtime.InteropServices;
 using System.Diagnostics;
-//using Exam70483.App.App.MathService1;
+//using Exam70483.MathService1;
 
-namespace Exam70483.App.App
+namespace Exam70483
 {
     class InputOutput
     {

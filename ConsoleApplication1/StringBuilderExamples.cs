@@ -4,7 +4,7 @@
 using System.Text;
 using System.Diagnostics;
 
-namespace Exam70483.App.App
+namespace Exam70483
 {
     abstract class StringBuilderExamples   // and String Examples
     {

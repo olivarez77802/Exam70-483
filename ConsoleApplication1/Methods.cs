@@ -5,7 +5,7 @@ using System.Text;
 using System.Diagnostics;
 using System.Reflection;
 
-namespace Exam70483.App.App
+namespace Exam70483
 {
     
 

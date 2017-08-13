@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
 
-namespace Exam70483.App.App
+namespace Exam70483
 {
     // Async and Await are not supported until C# 5.0
     // Class called by Delegate.cs
