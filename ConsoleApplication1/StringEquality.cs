@@ -9,7 +9,8 @@ namespace Exam70483.App.App
     abstract class StringEquality
     {
         // https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/equality-comparison-operator
-
+        //
+        //
         // For reference types other than string, == returns true if its two operands refer to the same object.
         // For the string type, == compares the values of the strings.   So String is the only refernce type
         // that you can use == with.

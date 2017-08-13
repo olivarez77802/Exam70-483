@@ -12,6 +12,25 @@ namespace Exam70483.App.App
             int x = 0;
             do
             {
+                /* 
+                 * Method Parameters
+                 * Parameters pass by value
+                 *    Reference Types pass a copy of the reference
+                 *       So both the calling code and the method being called both will have pointers to the exact same object.
+                 *    Value types pass a copy of the value
+                 *    Value types are immutable  - methods used on a value type may create a new instance and may not change the underlying value
+                 *    and that rule also applies to strings which behaves like a value type.
+                 *    
+                 *    Even though string is a reference type it behave very much like a value type
+                 *    Example:
+                 *    string name = "scott"
+                 *    name.ToUpper();
+                 *    Assert.AreEqual("SCOTT", name);     <-- Assert will fail this is because .ToUpper() creates a new string
+                 *    
+                 *    name = name.ToUpper();
+                 *    Assser.AreEqual("SCOTT", name);     <-- Assert will now pass
+                 *    
+                 */
                 Console.Clear();
                 Console.WriteLine(" Reference Types Menu \r ");
                 Console.WriteLine(" object.Equals() evaluates to Reference Equality (unless overridden\n ");
