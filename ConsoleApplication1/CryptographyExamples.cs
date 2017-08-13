@@ -8,7 +8,7 @@ using System.Configuration;
 
 
 
-namespace JesseTesting.App
+namespace Exam70483.App.App
 {
     class CryptographyExamples
     {

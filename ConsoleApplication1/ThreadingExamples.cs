@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading;
 using System.Diagnostics;
 
-namespace JesseTesting.App
+namespace Exam70483.App.App
 {
     abstract class ThreadingExamples
     {

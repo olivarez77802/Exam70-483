@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Diagnostics;
 
-namespace JesseTesting.App
+namespace Exam70483.App.App
 {
     class Grammar
     {

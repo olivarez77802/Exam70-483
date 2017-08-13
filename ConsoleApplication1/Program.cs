@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 using System.Diagnostics;
 
 
-namespace JesseTesting.App
+namespace Exam70483.App.App
 {
     class Program
     {

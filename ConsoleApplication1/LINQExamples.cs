@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace JesseTesting.App
+namespace Exam70483.App.App
 {
     // LINQ Operators categories based on execution behavior, divided into 2 groups.
     //

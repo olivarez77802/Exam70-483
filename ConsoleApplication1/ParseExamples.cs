@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Globalization;
 
-namespace JesseTesting.App
+namespace Exam70483.App.App
 {
     class ParseExamples
     {

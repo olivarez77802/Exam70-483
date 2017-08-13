@@ -6,7 +6,7 @@ using System.Diagnostics;
 using System.Threading.Tasks;
 using System.Threading;
 
-namespace JesseTesting.App
+namespace Exam70483.App.App
 {
     delegate void CustomDel(string s);
     delegate int Countit(int x);

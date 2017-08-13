@@ -7,7 +7,7 @@ using System.Text;
 using System.Reflection;
 using System.Diagnostics;
 
-namespace JesseTesting.App
+namespace Exam70483.App
 {
     //
     // Called by Namespaces Menu - System.Reflection

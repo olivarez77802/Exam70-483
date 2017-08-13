@@ -6,7 +6,7 @@ using System.Diagnostics;
 using System.Reflection;
 using System.IO;
 
-namespace JesseTesting.App
+namespace Exam70483.App.App
 {
     public class ClassesAndInterfaces
     {

@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace JesseTesting.App
+namespace Exam70483.App.App
 {
     // Threading does Time Slicing (versus parallel execution) on each core.
     // So multithreading is actually time slicing.

@@ -8,7 +8,7 @@ using System.Runtime.Serialization;
 //using System.IO;
 //using System.Runtime.Serialization.Json;
 
-namespace JesseTesting.App
+namespace Exam70483.App.App
 {
     public class SerializationExamples
     {
