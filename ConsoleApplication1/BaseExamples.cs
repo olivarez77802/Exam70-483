@@ -5,9 +5,7 @@ using System.Text;
 
 namespace JesseTesting.App
 {
-    // static - cannot ever be instantiated or use static if you do not want to create an instance
-    // concrete - Types that can be instantiated.  Concrete types can inherit (or derive) from an abstract type
-    //            and provide implementation for the abstract or virtual methods.
+    // static - cannot ever be instantiated
     // abstract - Incomplete class; must be completed in a derived class.  Also
     //            cannot be instantiated.   Will usually hold methods that are defined as either virtual
     //            or abstract.  Abstract classes are useful because of Polymorphism.  Abstract class can
