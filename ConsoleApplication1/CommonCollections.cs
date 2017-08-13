@@ -7,6 +7,7 @@ namespace Exam70483.App
 {
     class CommonCollections
     {
+        test
         public class Cat
         {
             public int Age { get; set; }
