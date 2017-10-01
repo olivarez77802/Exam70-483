@@ -23,7 +23,7 @@ namespace Exam70483
                 Console.WriteLine(" 1.  Generic Types \n ");
                 Console.WriteLine(" 2.  Constructors \n ");
                 Console.WriteLine(" 3.  Static Variables \n ");
-                Console.WriteLine(" 4.  \n ");
+                Console.WriteLine(" 4.  Extension Methods\n ");
                 Console.WriteLine(" 5.  Optional/Named/Out Parameters \n ");
                 Console.WriteLine(" 6.  Methods n");
                 Console.WriteLine(" 9.  Quit            \n\n ");
@@ -35,6 +35,13 @@ namespace Exam70483
                     case 0: TypeSystem.Menu();
                         break;
                     case 1: DynamicExamples.DMain();
+                        break;
+                    case 4:
+                        /* Extension Methods
+                         * Both the class and the method have to be static
+                         * The type that your extending goes into the signature as the first argument with the 'this' keywordaa
+                         */
+                        EnumerableMethods.Menu();
                         break;
                     case 5: RunwithOutput();
                         break;

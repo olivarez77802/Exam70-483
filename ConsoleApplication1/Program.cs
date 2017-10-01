@@ -30,7 +30,7 @@ namespace Exam70483
                 Console.Clear();
                 Console.WriteLine(" C# Exam 70-483 \n ");
                 Console.WriteLine(" 0.  Manage Program Flow \n ");
-                Console.WriteLine(" 1.  Create and Use Types (Value/Reference) \n");
+                Console.WriteLine(" 1.  Create and Use Types \n");
                 Console.WriteLine(" 2.  Debug And Implement Security \n");               
                 Console.WriteLine(" 3.  Implement Data Access \n ");
                 Console.WriteLine(" 9.  Quit            \n\n ");

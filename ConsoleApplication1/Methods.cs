@@ -42,7 +42,7 @@ namespace Exam70483
                 Console.WriteLine(" 2.  Parameters and Extension Methods\n");
                 Console.WriteLine(" 3.  Pinvoke \n");
                 Console.WriteLine(" 4.  User Defined Conversions \n");
-                Console.WriteLine(" 5.  Enumerable Methods (System.Linq Namespace\n");
+                Console.WriteLine(" 5.  ...... ");
                 Console.WriteLine(" 6.  GetProperty Method \n");
                 Console.WriteLine(" 7.  String Methods (System.Namespace String Class \n");
                 Console.WriteLine(" 9.  Quit            \n\n ");
@@ -67,11 +67,11 @@ namespace Exam70483
                         PreProcessing();
                         break;
 
-                    case eMenu.EnumerableMethods:
-                        EnumerableMethods.Menu();
-                        Console.ReadKey();
+                    //case eMenu.EnumerableMethods:
+                    //    EnumerableMethods.Menu();
+                    //    Console.ReadKey();
                                      
-                        break;
+                    //    break;
 
                     case eMenu.GetPropertyMethods:
                         MyTypeClass.MainMTC();

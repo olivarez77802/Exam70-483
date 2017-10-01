@@ -13,7 +13,8 @@ namespace Exam70483
         /*
          * Interface 
          * - Inside an interface you cannot use an access modifier (.ie public, protected, private)
-         * - Access modifiers are not used since everything defined in an interface has to be available, so there is no sense in hiding anything using an access modifier.
+         * - Access modifiers are not used since everything defined in an interface has to be available, 
+         *   so there is no sense in hiding anything using an access modifier.
          * - The methods in an interface are implicitly virtual
          * - You can inherit from multiple interfaces.  You can only inherit from one class whether it is abstract or concrete.  
          * - When you inherit from both a class and interface(s), the class must come first. 

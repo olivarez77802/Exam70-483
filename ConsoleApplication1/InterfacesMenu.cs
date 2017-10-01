@@ -14,6 +14,53 @@ namespace Exam70483
             int x = 0;
             do
             {
+                //  Interfaces should be programmed at the right level.   Interfaces should be granular
+                //  IList<T> - ICollection  -> IENumberable 
+                //
+                //
+                //  IEnumerable Implementations (IEnumerable<T> limited to collectsions that are strongly typed: 
+                //  List<T>
+                //  Array 
+                //  ArrayList 
+                //  SortedList<TKey, TValue>
+                //  HashTable
+                //  Queue / Queue<T>
+                //  Stack / Stack<T>
+                //  Dictionary<TKey, TValue>
+                //  ObservableCollection<T>
+                //
+                //  ICollection<T> Implementations
+                //  List<T> 
+                //  SortedList<TKey, TValue>
+                //  Dictionary<TKey, TValue>
+                //  
+                //  IList<T> Implementations
+                //  List<T>
+                // 
+                //  Program at the Right Level
+                //  IEnumerable <T>  -  If we need to Iterate over a Collection / Sequence or Data Bind
+                //                      to a List Control
+                //  ICollection<T>  - If we need to Add/Remove Items in a Collection, 
+                //                    Count Items in a Collection,
+                //                    Clear a Collection.
+                //  IList<T> -        If we need to Control the Order Items in a Collection,
+                //                    Get an Item by the Index.
+                //
+                //
+                //  Abstract Classes        versus Interfaces
+                //  -------------------------  |  ---------------------
+                //  May Contain implementation |  May not contain implementation code - Biggest weakness
+                //  Code
+                //  A class may inherit from a |  A class may implement any number of interfaces - Biggest 
+                //  single base class          |  strength.
+                //  Members have access        |  Members are automatically public  
+                //  modifiers
+                //  May contain fields,        |  May only contain properties, methods, events, and indexers 
+                //  properties, constructors,  |
+                //  destructors, methods,      |
+                //  events, and indexers       |
+                //
+
                 //  As a guideline:
                 //  Use classes and subclasses for types that naturally share an implementation
                 //  Use interfaces for types that have independent implementations.
