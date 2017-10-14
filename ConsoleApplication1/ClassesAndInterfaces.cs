@@ -10,7 +10,13 @@ namespace Exam70483
 {
     public class ClassesAndInterfaces
     {
-        /*
+        /* Access Modifiers
+         * 1. Public
+         * 2. Private
+         * 3. Protected  - Only available to containing type and to type that derive from the containing type.
+         * 4. Internal
+         * 5. Protected Internal
+         * 
          * Interface 
          * - Inside an interface you cannot use an access modifier (.ie public, protected, private)
          * - Access modifiers are not used since everything defined in an interface has to be available, 

@@ -34,6 +34,8 @@ namespace Exam70483
                         break;
                     case 1: DynamicExamples.DMain();
                         break;
+                    case 2: ClassesAndInterfaces.Menu();
+                        break;
                     case 6: StringBuilderExamples.PrimaryMain();
                         Console.WriteLine("Equality");
                         Console.ReadKey();
