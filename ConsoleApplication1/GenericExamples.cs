@@ -8,6 +8,28 @@ namespace Exam70483
 {
     abstract public class GenericExamples
     {
+
+        /*
+         * Genric Constraints
+         * Where T : struct                -- Value Type
+         * Where T : class                 -- Refernce Type
+         * Where T : new()                 -- Type with parameterless constructor
+         * Where T : vendor                -- Be or derive from a vendor class
+         * where T : IVendor               -- Be or implement the IVendor interface
+         * 
+         * public class OperationResult<T> where T : struct
+         * 
+         * public <T> Populate<T>(string sql) where T: class, new()
+         * {
+         *   T instance = new T();
+         *   // Code to populate an object
+         *   return instance;
+         * } 
+         * 
+         * 
+         * public T RetrieveValue<T, V>(string sql, V parameter) where T : struct
+         *                                                       where V : struct
+         */
         #region GA_Main()
         public static void GA_Main()
         {

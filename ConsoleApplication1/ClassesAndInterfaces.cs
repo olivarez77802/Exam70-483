@@ -10,7 +10,10 @@ namespace Exam70483
 {
     public class ClassesAndInterfaces
     {
-        /* Access Modifiers
+        /*
+         * See TypeSystem.cs for Classes versus Structs.
+         * 
+         * Access Modifiers
          * 1. Public
          * 2. Private
          * 3. Protected  - Only available to containing type and to type that derive from the containing type.

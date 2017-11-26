@@ -35,8 +35,9 @@ namespace Exam70483
     // making this class abstract means that I do not ever want this class 
     // to be instantiated.    However, the abstract class can be inherited and
     // the class that inherited the abstract class can be instantiated.  
-    // struct - means you cannot derivefrom it.
+    // Struct versus Classes - Same as saying Value versus Reference Types.  See TypeSystem.cs for info on Classes versus Structs.
     // 
+    // See InterfacesMenu.cs   -  has more information on Arrays versus Lists
     // Arrays are reference types
     // Array CoVariance - You can implicitly cast a Derive[] to a Base[] type
     // Example - Base Type is object and Dervied Type is String

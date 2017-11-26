@@ -27,7 +27,9 @@ namespace Exam70483
                 //
                 // for each loop
                 // - can't replace elements
-                // - can modify values of elements
+                // - can modify values of elements - Array/Lists elements are read only.  But the element
+                //   properies can be modified e.g. You can change a word from lowercase to uppercase
+                // - cannot modify the index
                 //
                 Console.Clear();
                 Console.WriteLine(" Collections Menu \n ");

@@ -14,6 +14,8 @@ namespace Exam70483
             int x = 0;
             do
             {
+                //  See Generic Examples also
+                //
                 //  Interfaces should be programmed at the right level.   Interfaces should be granular
                 //  IList<T> - ICollection  -> IENumberable 
                 //
@@ -167,11 +169,15 @@ namespace Exam70483
                         IEnumeratorInterface.Menu();
                         break;
                     case 3:
+                        // See BaseExamples.cs on more info on Array versus Lists
+                        // 
                         // IList<T>  
                         // Arrays are a fixed size.  System.Array does not contain a definition for 'Add'   
                         // new string[]  is a fixed size.
                         // This problem with arrays is what List<T> was designed to overcome.
                         // new List<string> allows you to add to an array.
+                        // Arrays can be multi-dimensional.  List are restricted to being one dimensional.
+                        //
                         // List<T> acts as an array in every aspect and in addition you can add and
                         // remove elements.
                         //
