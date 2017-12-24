@@ -33,7 +33,8 @@ namespace Exam70483
             {
                 /*
                  *  Every method has zero or more parameters
-                 *  * Use params keyword to accept a variable number of parameters 
+                 *  Use params keyword to accept a variable number of parameters 
+                 *  The params parameter must be the last parameter in a parameter list
                  */
                 Console.Clear();
                 Console.WriteLine(" Methods Menu \n ");
