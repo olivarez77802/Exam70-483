@@ -22,7 +22,7 @@ namespace Exam70483
              * memory.
              * 
              * Value types are destroyed immediately after the scope is lost, where as for reference types only the reference 
-             * variable is destroyed after the scope is lost.   The object is later destroyed by garabage collectore.
+             * variable is destroyed after the scope is lost.   The object is later destroyed by garabage collectors.
              * 
              * When you copy a struct into another struct, a new copy of that struct gets created and modifications on one
              * struct will not affect the values contained by another struct.

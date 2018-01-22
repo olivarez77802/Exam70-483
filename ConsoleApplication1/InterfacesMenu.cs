@@ -135,7 +135,7 @@ namespace Exam70483
                         // >, <, >=, <=  operators - Work out of the box only for primitive types
                         //
                     case 2:
-                        // IEnumerable - A List, Array, Query implements IEnumerable.
+                        /* IEnumerable - A List, Array, Query implements IEnumerable.
                         // An IEnumerable Interface specifies that the underlying type implements IEnumerable
                         //
                         // public Interface IEnumerator
@@ -161,6 +161,10 @@ namespace Exam70483
                         //**  The C# compiler determines this is a case where you want the compiler to write an enumerator for
                         //**  you.  The yield return statements simply tell the compiler what the sequence of enumeration values
                         //**  to return is.  
+                        //**
+                        //**  Use 'yield return' when you want to return elements from a collection one at a time. 
+                        */
+
                         //    
                         //   IEnumerator GetEnumerator();
                         //  }

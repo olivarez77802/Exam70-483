@@ -28,7 +28,8 @@ namespace Exam70483
                 switch (selection)
                 {
                     case 0:
-                        EventHandlers.EH_Main();
+                        EventHandlers.EH_Main_1();
+                        EventHandlers.EH_Main_2();
                         Console.ReadKey();
                             break;
                     case 2: Delegate.Menu();

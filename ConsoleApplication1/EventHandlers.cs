@@ -9,9 +9,15 @@ namespace Exam70483
 
     public class Metronome
     {
-        public event TickHandler Tick;
+        /* 
+         * Event Handler
+         */
+        public event TickHandler Tick;       /* TicketHandler is a delegate */
         public  EventArgs e = null;
         public delegate void TickHandler(Metronome m, EventArgs e);
+        /*
+         * Listener
+         */
         public void Start()
         {
             int i = 1;
@@ -22,6 +28,7 @@ namespace Exam70483
                 if (Tick != null)
                 {
                     ++i;
+                    /* Fire event */
                    Tick(this, e);
                 }
             }
@@ -41,12 +48,12 @@ namespace Exam70483
 
     }
 
-    abstract class EventHandlers
+    public class EventHandlers
     {
         public delegate void EventHandler();
         public static event EventHandler _show;
 
-        static void EH_Main_1()
+        public static void EH_Main_1()
         {
             //Add event handlers to Show event.
             _show += new EventHandler(Dog);
@@ -75,7 +82,7 @@ namespace Exam70483
             _show.Invoke();
             _show2.Invoke();
         }
-        static void EH_Main_2()
+        public static void EH_Main_2()
         {
 
             https://www.codeproject.com/Articles/11541/The-Simplest-C-Events-Example-Imaginable
@@ -102,15 +109,7 @@ namespace Exam70483
             Console.WriteLine("Mouse");
         }
 
-        public static void EH_Main()
-        {
-            EH_Main_1();
-            Console.ReadKey();
-            EH_Main_2();
-            Console.ReadKey();
-
-
-        }
+       
     }
 
 }

@@ -43,6 +43,7 @@ namespace Exam70483
     // Example - Base Type is object and Dervied Type is String
     // Array CoVariance is broken because you cannot determine type, so you should
     // not use.
+    // See IEnumeratorInterfaces.cs for more information about IEnumerable
     // IEnumerable<T> and IEnumerator<T> use CoVariance and are good to use unlike 
     // Array CoVariance.
     // 

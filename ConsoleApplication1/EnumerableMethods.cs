@@ -62,6 +62,7 @@ namespace Exam70483
     //            Example also shows how to perform an action on those properties or concatenation
     //            Example also shows how to morph the sequence into another type so we morphed Customer into a string item
     //
+    // See IEnumeratorInterfaces.cs for more information on IEnumerable
     // public IEnumrable<string> GetNames(List<Customer> customerList)
     // {
     //    var query = customerList.Select(c => c.LastName + ", " + c.FirstName);
