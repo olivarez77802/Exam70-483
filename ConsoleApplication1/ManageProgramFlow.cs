@@ -41,6 +41,8 @@ namespace Exam70483
                 selection = Common.readInt("Enter Number to Execute Routine : ", 0, 9);
                 switch (selection)
                 {
+                    case 0: Delegate.Menu();
+                        break;
                     case 1: CryptographyExamples.Menu();
                         break;
                     case 3: EventsandCallBacksMenu.Menu();

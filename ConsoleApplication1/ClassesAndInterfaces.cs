@@ -57,7 +57,7 @@ namespace Exam70483
                 Console.WriteLine(" 3.  Namespaces \n");
                 Console.WriteLine(" 4.  Object Creation and Lifetime \n");
                 Console.WriteLine(" 5.  \n");
-                Console.WriteLine(" 6.  Reflection  \n");
+                Console.WriteLine(" 6.  Reflection    \n");
                 Console.WriteLine(" 7.  Classes and Constructors \n");
                 Console.WriteLine(" 8.  Generics \n");
                 Console.WriteLine(" 9.  Quit            \n\n ");
@@ -105,6 +105,17 @@ namespace Exam70483
 
         static void InheritanceAndPolymorphism()
         {
+            /*
+             * Collaboration - 'Uses a'
+             * Composition - 'Has a'
+             * Inheritance - 'Is a'
+             * 
+             * Four pillars of OOP
+             * 1. Abstraction
+             * 2. Encapsulation
+             * 3. Inheritance
+             * 4. Polymorphism - Many shapes
+             */
             Process.Start("http://msdn.microsoft.com/en-us/library/ms173152.aspx");
             Process.Start("http://www.csharp-station.com/Tutorial/CSharp/Lesson09");
             Console.WriteLine(" Example of Polymorphism ");

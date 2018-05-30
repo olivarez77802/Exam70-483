@@ -35,6 +35,20 @@ namespace Exam70483
                  *  Every method has zero or more parameters
                  *  Use params keyword to accept a variable number of parameters 
                  *  The params parameter must be the last parameter in a parameter list
+                 *  The params keyworkd must be applied to an array modifiers.
+                 *  The params parameter must always be the last modifier.
+                 *  
+                 *  Example
+                 *  private void WriteDebug(string message, params object[] objects)
+                 *  {
+                 *     Debug.WriteLine(message);
+                 *     foreach (var o in objects)
+                 *     {
+                 *       Debug.WriteLine(o);
+                 *     }
+                 *     
+                 *  }
+                 *  
                  */
                 Console.Clear();
                 Console.WriteLine(" Methods Menu \n ");

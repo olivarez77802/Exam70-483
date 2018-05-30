@@ -61,7 +61,15 @@ namespace Exam70483
         static void RunwithOutput()
         {
 
-            /* http://msdn.microsoft.com/en-us/library/t3c3bfhx.aspx  */
+            /* http://msdn.microsoft.com/en-us/library/t3c3bfhx.aspx 
+             * 
+             * Default parameters
+             * public Car(string colors, int number_of_wheels = 4)
+             * 
+             * var c = new Car("Blue");     <-- Will substitue, the value = 4 at compile time
+             * 
+             * 
+             *  */
 
             Console.Clear();
             Console.WriteLine("\nRunwithOutput");

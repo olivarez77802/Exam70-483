@@ -57,6 +57,7 @@
     <Compile Include="Collections.cs" />
     <Compile Include="Common.cs" />
     <Compile Include="CommonCollections.cs" />
+    <Compile Include="ConcurrentCollections.cs" />
     <Compile Include="ConversionKeyWordExamples.cs" />
     <Compile Include="CreateAndUseTypes.cs" />
     <Compile Include="CreateTypes.cs" />
@@ -94,6 +95,7 @@
     <Compile Include="ReferenceTypes.cs" />
     <Compile Include="ReflectionExamples.cs" />
     <Compile Include="RegularExpressionExamples.cs" />
+    <Compile Include="RunTimeTypes.cs" />
     <Compile Include="SerializationExamples.cs" />
     <Compile Include="SortingExamples.cs" />
     <Compile Include="StatementKeywords.cs" />

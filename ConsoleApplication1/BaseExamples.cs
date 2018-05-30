@@ -7,6 +7,7 @@ using System.Text;
 namespace Exam70483
 {
     // static - cannot ever be instantiated
+    // base class types to override - abstract and virtual
     // abstract - Incomplete class; must be completed in a derived class.  Also
     //            cannot be instantiated.   Will usually hold methods that are defined as either virtual
     //            or abstract.  Abstract classes are useful because of Polymorphism.  Abstract class can
@@ -30,8 +31,10 @@ namespace Exam70483
     // 
     // override - further implementation.  Keyword used in concrete classes to provide further implementations for methods
     //                                     that were defined as either virtual or abstract.
+    // Difference between virtual and abstract.  Abstract methods must be overriden. Overriding virtual methods is optional.
     // sealed - Final implementation - cannot be derived (or inherited).
     //        -  Examples of Sealed Classes are String Builder
+    //        - If you want to make sure no one overrides or extends the functionality of a class then mark it as sealed.
     // making this class abstract means that I do not ever want this class 
     // to be instantiated.    However, the abstract class can be inherited and
     // the class that inherited the abstract class can be instantiated.  
