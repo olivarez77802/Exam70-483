@@ -3,17 +3,45 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace JesseTesting.App
+namespace Exam70483
 {
+    /*
+     * See GenericExamples.cs for definitions of Func, Action, Predicate delegates and meanings
+     * 
+     * Event - Something that happened.  i.e. A mouse Click, keyboard click
+     * 
+     * Event Listener - Detect an event and call the event handler.
+     * 
+     * Event Handler - A callback which is usually called when there is an event.  EventHandler
+     * is the contract the event must have with anyone who communicates with it. It's like "string MyString" - 
+     * the string is declaring the type. event MyEventHandler TheEvent is declaring that anyone who interacts 
+     * with this event must conform to the MyEventHandler contract. 
+     * 
+     * Using EventHandler<T>
+     * .Net includes a generic EventHandler<T> Class that can be used instead of a custom delegate
+     * 
+     * -->>   public delegate void WorkedPerformedHandler(object sender, WorkPerformedEventArgs e);   
+     *  
+     *  above can be replaced with 
+     * 
+     *  -->> public event EventHandler<WorkPerformedEventArgs> WorkPerformed;   /* compiler will create the delegate
+     *  
+     */
     class EventExamples
     {
         #region CarMain
 
         class Car
         {
+            /* 
+             * Event Handler
+             */
             public event Action OnChange;
             public event Action OffChange;
             private double speed;
+            /* 
+             * Event Listener
+             */
             public double Speed
             {
                 get
@@ -33,6 +61,7 @@ namespace JesseTesting.App
                     }
                     else
                     {
+                        /* Fire an Event */
                         OffChange();
                     }
                 }
@@ -63,9 +92,15 @@ namespace JesseTesting.App
         #region PersonMain
         class Person
         {
+            /* 
+             * Event Handler
+             */ 
             public delegate void MyEventHandler();
             public event MyEventHandler cashEvent;
 
+            /*
+             * Listener
+             */
             private int cash;
             public int Cash
             {
@@ -80,6 +115,7 @@ namespace JesseTesting.App
                     {
                         if (cashEvent != null)
                         {
+                            /* Fire an Event */
                             cashEvent();
                         }
                     }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace JesseTesting.App
+namespace Exam70483
 {
     class CreateTypes
     {
@@ -23,7 +23,7 @@ namespace JesseTesting.App
                 Console.WriteLine(" 1.  Generic Types \n ");
                 Console.WriteLine(" 2.  Constructors \n ");
                 Console.WriteLine(" 3.  Static Variables \n ");
-                Console.WriteLine(" 4.  \n ");
+                Console.WriteLine(" 4.  Extension Methods\n ");
                 Console.WriteLine(" 5.  Optional/Named/Out Parameters \n ");
                 Console.WriteLine(" 6.  Methods n");
                 Console.WriteLine(" 9.  Quit            \n\n ");
@@ -35,6 +35,13 @@ namespace JesseTesting.App
                     case 0: TypeSystem.Menu();
                         break;
                     case 1: DynamicExamples.DMain();
+                        break;
+                    case 4:
+                        /* Extension Methods
+                         * Both the class and the method have to be static
+                         * The type that your extending goes into the signature as the first argument with the 'this' keywordaa
+                         */
+                        EnumerableMethods.Menu();
                         break;
                     case 5: RunwithOutput();
                         break;
@@ -54,7 +61,15 @@ namespace JesseTesting.App
         static void RunwithOutput()
         {
 
-            /* http://msdn.microsoft.com/en-us/library/t3c3bfhx.aspx  */
+            /* http://msdn.microsoft.com/en-us/library/t3c3bfhx.aspx 
+             * 
+             * Default parameters
+             * public Car(string colors, int number_of_wheels = 4)
+             * 
+             * var c = new Car("Blue");     <-- Will substitue, the value = 4 at compile time
+             * 
+             * 
+             *  */
 
             Console.Clear();
             Console.WriteLine("\nRunwithOutput");

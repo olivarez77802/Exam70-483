@@ -6,9 +6,9 @@ using System.IO;
 using System.Net;
 using System.Runtime.InteropServices;
 using System.Diagnostics;
-//using JesseTesting.App.MathService1;
+//using Exam70483.MathService1;
 
-namespace JesseTesting.App
+namespace Exam70483
 {
     class InputOutput
     {

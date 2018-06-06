@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace JesseTesting.App
+namespace Exam70483
 {
     public class EventsandCallBacksMenu
     {
@@ -24,11 +24,12 @@ namespace JesseTesting.App
                 Console.WriteLine(" 9.  Quit            \n\n ");
 
                 int selection;
-                selection = JesseTesting.App.Common.readInt("Enter Number to Execute Routine : ", 0, 9);
+                selection = Exam70483.Common.readInt("Enter Number to Execute Routine : ", 0, 9);
                 switch (selection)
                 {
                     case 0:
-                        EventHandlers.EH_Main();
+                        EventHandlers.EH_Main_1();
+                        EventHandlers.EH_Main_2();
                         Console.ReadKey();
                             break;
                     case 2: Delegate.Menu();

@@ -5,7 +5,7 @@ using System.Text;
 using System.Security.Cryptography;
 using System.Diagnostics;
 
-namespace JesseTesting.App
+namespace Exam70483
 {
     abstract class NameSpacesMenu
     {

@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace JesseTesting.App
+namespace Exam70483
 {
     class CreateAndUseTypes
     {
-        public static void CT_Menu()
+       public static void CT_Menu()
         {
 
             int x = 0;
@@ -33,6 +33,10 @@ namespace JesseTesting.App
                         //TypeSystem.Menu();
                         break;
                     case 1: DynamicExamples.DMain();
+                        break;
+                    case 2: ClassesAndInterfaces.Menu();
+                        break;
+                    case 4: RunTimeTypes.Menu();
                         break;
                     case 6: StringBuilderExamples.PrimaryMain();
                         Console.WriteLine("Equality");

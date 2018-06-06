@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace JesseTesting.App
+namespace Exam70483
 {
-    class CommonCollections
+    public class CommonCollections
     {
         public class Cat
         {

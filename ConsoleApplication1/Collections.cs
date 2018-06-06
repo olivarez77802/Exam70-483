@@ -7,7 +7,7 @@ using System.Linq.Expressions;
 using System.Collections;
 
 
-namespace JesseTesting.App
+namespace Exam70483
 {
 
     public class Collections
@@ -17,18 +17,59 @@ namespace JesseTesting.App
             int x = 0;
             do
             {
-                // A foreach is readonly
-                // If you want to make modifications you have to use a for loop instead of a foreach
-                // 
-                // But that does'n't mean individual elements are readonly, if the element contains
-                // reference types you can still modify their values, can't demonstrate that with strings
-                // because strings are immutable(unable to be changed).   But can be done with an an array     
-                // of a reference type that is mutable (able to be changed).
-                //
-                // for each loop
-                // - can't replace elements
-                // - can modify values of elements
-                //
+                /*
+                 * 
+                 * For Each versus using 'For' loop
+                 * 
+                 A foreach is readonly
+                 If you want to make modifications you have to use a for loop instead of a foreach
+                 
+                 But that does'n't mean individual elements are readonly, if the element contains
+                 reference types you can still modify their values, can't demonstrate that with strings
+                 because strings are immutable(unable to be changed).   But can be done with an an array     
+                 of a reference type that is mutable (able to be changed).
+                
+                 for each loop
+                  - can't replace elements
+                  - can modify values of elements - Array/Lists elements are read only.  But the element
+                     properies can be modified e.g. You can change a word from lowercase to uppercase
+                  - cannot modify the index
+                  - only need one loop
+
+                 for loop
+                   - can replace elements
+                   - Needed for nested loops
+                
+                 
+                
+                Arrays versus Lists
+                
+                Arrays.
+                    1.  Are Definined, so you cannot add to array on the fly.  If you want to add on the fly you have to use a List.
+                    2.  Single Dimension array can be used with a foreach
+                Lists.
+                    1. A List cannot have more than one index.  Have to use a Multi-Dimensional Array if you want more than one index.
+                    2. A list can be used with a foreach.
+                
+                Multi-Diminesional Arrays.
+                    1.  Can have more than one index.
+                    2.  Follow the x,y coordinates for a 2 dimensional array.  Great for grid based data
+                    3.  Must use a 'for' loop for nested loops
+                    4.  float [ , ] array1  -  defines a 2 dimensional array
+                    5.  float [ , , ] array1 - defines a 3 dimesion array
+                    6.  Multi-Dimensional Arrays are Simpler when compared to Jagged Arrays.
+                    7.  The second, third dimension can only be arrays.  Can be any collection with Jagged Arrays
+                
+                Jagged Arrays.
+                    1. Concept - You can put an Array into an Array
+                    2. float [ ][ ] array1  - defines this as an array of arrays of floats.
+                    3. float [ ][ ][ ] array1 - defines this as an array of arrays or arrays
+                    4. float[ ][ ] array1 = new array1[4][]   -  you always have to set the first elment - says we will store 4 sets of arrays
+                    5. Inner arrays (which is defined by the second element) do not have to be the same length, which is why they are called jagged.
+                    6. The inner array can be any collections (.i.e. can be a List<int>)
+                 
+                
+                */
                 Console.Clear();
                 Console.WriteLine(" Collections Menu \n ");
                 Console.WriteLine(" 0.  Print Obect Array \n ");

@@ -6,10 +6,28 @@ using System.Diagnostics;
 using System.Reflection;
 using System.IO;
 
-namespace JesseTesting.App
+namespace Exam70483
 {
     public class ClassesAndInterfaces
     {
+        /*
+         * See TypeSystem.cs for Classes versus Structs.
+         * 
+         * Access Modifiers
+         * 1. Public
+         * 2. Private
+         * 3. Protected  - Only available to containing type and to type that derive from the containing type.
+         * 4. Internal
+         * 5. Protected Internal
+         * 
+         * Interface 
+         * - Inside an interface you cannot use an access modifier (.ie public, protected, private)
+         * - Access modifiers are not used since everything defined in an interface has to be available, 
+         *   so there is no sense in hiding anything using an access modifier.
+         * - The methods in an interface are implicitly virtual
+         * - You can inherit from multiple interfaces.  You can only inherit from one class whether it is abstract or concrete.  
+         * - When you inherit from both a class and interface(s), the class must come first. 
+         */
         // As a guideline:
         //  * Use classes and subclasses for types that naturally share an implementation.
         //  * Use interfaces for types that have independent implementations.
@@ -39,7 +57,7 @@ namespace JesseTesting.App
                 Console.WriteLine(" 3.  Namespaces \n");
                 Console.WriteLine(" 4.  Object Creation and Lifetime \n");
                 Console.WriteLine(" 5.  \n");
-                Console.WriteLine(" 6.  Reflection  \n");
+                Console.WriteLine(" 6.  Reflection    \n");
                 Console.WriteLine(" 7.  Classes and Constructors \n");
                 Console.WriteLine(" 8.  Generics \n");
                 Console.WriteLine(" 9.  Quit            \n\n ");
@@ -87,6 +105,17 @@ namespace JesseTesting.App
 
         static void InheritanceAndPolymorphism()
         {
+            /*
+             * Collaboration - 'Uses a'
+             * Composition - 'Has a'
+             * Inheritance - 'Is a'
+             * 
+             * Four pillars of OOP
+             * 1. Abstraction
+             * 2. Encapsulation
+             * 3. Inheritance
+             * 4. Polymorphism - Many shapes
+             */
             Process.Start("http://msdn.microsoft.com/en-us/library/ms173152.aspx");
             Process.Start("http://www.csharp-station.com/Tutorial/CSharp/Lesson09");
             Console.WriteLine(" Example of Polymorphism ");
@@ -112,6 +141,8 @@ namespace JesseTesting.App
             // What is the difference between constructors and other methods ?
             // 1.  Constructors must have the same name as the class and can not return a value.
             // 2.  Constructors are only called once while regular methods could be called many times.
+            // 3.  The only method you can write where you do not have to specify the return type.
+            // 
             //
             Process.Start("http://msdn.microsoft.com/en-us/library/ace5hbzh.aspx");
             MainClass.MC_Main();

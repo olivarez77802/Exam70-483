@@ -1,48 +1,52 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace JesseTesting.App
+namespace Exam70483
 {
-    // Access Modifiers  - Accessiblity
-    // private - Only within the containing class 
-    // Public  - Anywhere - No restrictions
-    // Protected - Within the containing types and the types derived from the containing type
-    //
-    //  public class Customer
-    //   {
-    //      protected int ID;
-    //   }
-    //  public class Corporate Customer : Customer
-    //   {
-    //    public void PrintID()
-    //      {
-    //             Corporate Customer CC = new CorporateCustomer()
-    //             CC.ID = 101;
-    //     **      base.ID = 101;       ** is Equivalent
-    //     **      this.ID = 101;       ** is Equivalent
-    //      }
-    //   }
-    //  Corporate Customer is derived from Customer.  So you can use the protected variable ID in Corporate Customer
-    //
     // static - cannot ever be instantiated
+    // base class types to override - abstract and virtual
     // abstract - Incomplete class; must be completed in a derived class.  Also
-    //            cannot be instantiated.
-    // virtual - first implementation
-    // override - further implementation
+    //            cannot be instantiated.   Will usually hold methods that are defined as either virtual
+    //            or abstract.  Abstract classes are useful because of Polymorphism.  Abstract class can
+    //            provide some implementation details.  This is a difference between them and Interfaces.
+    //            Interfaces cannot provide implementation details.
+    // inherit  - You can inherit from many interfaces.  You are restricted from inheriting from only one class whether it is abstract or concrete.
+    // virtual - first implementation.   When you use the virtual keyword you enable Polymorphism
+    //
+    // public abstract class Window
+    // {
+    //   public virtual string Title { get; set; }
+    //  
+    //   public virtual void Draw()
+    //   {
+    //     ** Drawing Code
+    //   }
+    //
+    //   public abstract void Open()    <-- Nested abstract means the class deriving from class Window must provide 
+    //                                      an implmentation for the Open method.   
+    // }
+    // 
+    // override - further implementation.  Keyword used in concrete classes to provide further implementations for methods
+    //                                     that were defined as either virtual or abstract.
+    // Difference between virtual and abstract.  Abstract methods must be overriden. Overriding virtual methods is optional.
     // sealed - Final implementation - cannot be derived (or inherited).
     //        -  Examples of Sealed Classes are String Builder
+    //        - If you want to make sure no one overrides or extends the functionality of a class then mark it as sealed.
     // making this class abstract means that I do not ever want this class 
     // to be instantiated.    However, the abstract class can be inherited and
     // the class that inherited the abstract class can be instantiated.  
-    // struct - means you cannot derivefrom it.
+    // Struct versus Classes - Same as saying Value versus Reference Types.  See TypeSystem.cs for info on Classes versus Structs.
     // 
+    // See InterfacesMenu.cs   -  has more information on Arrays versus Lists
     // Arrays are reference types
     // Array CoVariance - You can implicitly cast a Derive[] to a Base[] type
     // Example - Base Type is object and Dervied Type is String
     // Array CoVariance is broken because you cannot determine type, so you should
     // not use.
+    // See IEnumeratorInterfaces.cs for more information about IEnumerable
     // IEnumerable<T> and IEnumerator<T> use CoVariance and are good to use unlike 
     // Array CoVariance.
     // 

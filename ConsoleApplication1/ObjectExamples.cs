@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace JesseTesting.App
+namespace Exam70483
 {
     class ObjectExamples
     {
@@ -27,6 +27,15 @@ namespace JesseTesting.App
             objArray2[3] = "Name3";
             objArray2[4] = "Name4";
             objArray2[5] = "Name5";
+
+            /* Using 'as' versus 'casting'
+             * 'as' - you need to check for Null
+             *      - Use the 'as' operator when you are uncertain of the compatibility of the source and target.
+             *      - You should use the 'as' operator in conjuction with the null check.
+             * 'cast' - requires you to know the type, if the type is not correct an exception will be thrown
+             *        - Use the cast type whenever you know the source and target types are compatible.  Also use
+             *        - 'cast' when you want an exception to occur to let you know about incompatible types.
+             */
 
             Console.WriteLine("Example of using as instead of casting");
             Console.WriteLine("As does not raise an exception for different typess");

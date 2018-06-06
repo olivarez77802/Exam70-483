@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Collections;
 
-namespace JesseTesting.App
+namespace Exam70483
 {
     abstract class InterfacesMenu
     {
@@ -14,6 +14,55 @@ namespace JesseTesting.App
             int x = 0;
             do
             {
+                //  See Generic Examples also
+                //
+                //  Interfaces should be programmed at the right level.   Interfaces should be granular
+                //  IList<T> - ICollection  -> IENumberable 
+                //
+                //
+                //  IEnumerable Implementations (IEnumerable<T> limited to collectsions that are strongly typed: 
+                //  List<T>
+                //  Array 
+                //  ArrayList 
+                //  SortedList<TKey, TValue>
+                //  HashTable
+                //  Queue / Queue<T>
+                //  Stack / Stack<T>
+                //  Dictionary<TKey, TValue>
+                //  ObservableCollection<T>
+                //
+                //  ICollection<T> Implementations
+                //  List<T> 
+                //  SortedList<TKey, TValue>
+                //  Dictionary<TKey, TValue>
+                //  
+                //  IList<T> Implementations
+                //  List<T>
+                // 
+                //  Program at the Right Level
+                //  IEnumerable <T>  -  If we need to Iterate over a Collection / Sequence or Data Bind
+                //                      to a List Control
+                //  ICollection<T>  - If we need to Add/Remove Items in a Collection, 
+                //                    Count Items in a Collection,
+                //                    Clear a Collection.
+                //  IList<T> -        If we need to Control the Order Items in a Collection,
+                //                    Get an Item by the Index.
+                //
+                //
+                //  Abstract Classes        versus Interfaces
+                //  -------------------------  |  ---------------------
+                //  May Contain implementation |  May not contain implementation code - Biggest weakness
+                //  Code
+                //  A class may inherit from a |  A class may implement any number of interfaces - Biggest 
+                //  single base class          |  strength.
+                //  Members have access        |  Members are automatically public  
+                //  modifiers
+                //  May contain fields,        |  May only contain properties, methods, events, and indexers 
+                //  properties, constructors,  |
+                //  destructors, methods,      |
+                //  events, and indexers       |
+                //
+
                 //  As a guideline:
                 //  Use classes and subclasses for types that naturally share an implementation
                 //  Use interfaces for types that have independent implementations.
@@ -86,7 +135,7 @@ namespace JesseTesting.App
                         // >, <, >=, <=  operators - Work out of the box only for primitive types
                         //
                     case 2:
-                        // IEnumerable - A List, Array, Query implements IEnumerable.
+                        /* IEnumerable - A List, Array, Query implements IEnumerable.
                         // An IEnumerable Interface specifies that the underlying type implements IEnumerable
                         //
                         // public Interface IEnumerator
@@ -112,6 +161,10 @@ namespace JesseTesting.App
                         //**  The C# compiler determines this is a case where you want the compiler to write an enumerator for
                         //**  you.  The yield return statements simply tell the compiler what the sequence of enumeration values
                         //**  to return is.  
+                        //**
+                        //**  Use 'yield return' when you want to return elements from a collection one at a time. 
+                        */
+
                         //    
                         //   IEnumerator GetEnumerator();
                         //  }
@@ -120,11 +173,15 @@ namespace JesseTesting.App
                         IEnumeratorInterface.Menu();
                         break;
                     case 3:
+                        // See BaseExamples.cs on more info on Array versus Lists
+                        // 
                         // IList<T>  
                         // Arrays are a fixed size.  System.Array does not contain a definition for 'Add'   
                         // new string[]  is a fixed size.
                         // This problem with arrays is what List<T> was designed to overcome.
                         // new List<string> allows you to add to an array.
+                        // Arrays can be multi-dimensional.  List are restricted to being one dimensional.
+                        //
                         // List<T> acts as an array in every aspect and in addition you can add and
                         // remove elements.
                         //

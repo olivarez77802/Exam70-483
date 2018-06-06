@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.IO;
 
-namespace JesseTesting.App
+namespace Exam70483
 {
    // http://www.dotnetperls.com/stringreader
 

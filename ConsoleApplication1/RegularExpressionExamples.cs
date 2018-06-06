@@ -5,7 +5,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Diagnostics;
 
-namespace JesseTesting.App
+namespace Exam70483
 {
    abstract class RegularExpressionExamples
     {

@@ -5,7 +5,7 @@ using System.Text;
 using System.IO;
 using System.Diagnostics;
 
-namespace JesseTesting.App
+namespace Exam70483
 {
     class ExceptionClassExamples
     {
@@ -134,7 +134,11 @@ namespace JesseTesting.App
             catch (ArgumentNullException)
             {
                 //throw does not  modify the callstack
+                //or preserves the stack trace information
                 //throws to the next level.
+                //
+                // If you were to throw ex - you would lose stack trace information
+                //
                 throw;
             }
         }

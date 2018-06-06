@@ -5,8 +5,9 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace JesseTesting.App
+namespace Exam70483
 {
+    /*
     // Threading does Time Slicing (versus parallel execution) on each core.
     // So multithreading is actually time slicing.
     //
@@ -18,7 +19,17 @@ namespace JesseTesting.App
     //
     //  Video uses Performance Monitor
     //  https://www.youtube.com/watch?v=No7QqSc5cl8
+    
+        Advanced C# - Task Parallel Library
+        https://www.youtube.com/watch?v=gfkuD_eWM5Y&index=5&list=PLrzrNeNx3kNHUOzNmvX5gZy0scGLKpY7m
 
+        System.Threading namespace is the old method.  The replacment is using the Task Parallel Library.
+        The Task Parallel Library takes away the headache of asking yourself should I spawn a new thread or should I not.
+        Should I reuse other threads that are idle and waiting, all of these issues are now taken care of with the Task
+        Parallel Library.  It has been optimized for execution on machines that have either multi-core, single core, or dual
+        processors.
+
+    */
     // Called by Delegate.cs
     class TaskLibExamples
     {
@@ -103,7 +114,9 @@ namespace JesseTesting.App
         }
         private static void TaskExample_2()
         {
-            // Do not  need tx.Start
+            /*
+            // Task Factory already has Start built in.  Do not  need tx.Start
+            */
             var t1 = Task.Factory.StartNew(() => DoSomeVeryImportantWork(1, 1500));
             var t2 = Task.Factory.StartNew(() => DoSomeVeryImportantWork(2, 3000));
             var t3 = Task.Factory.StartNew(() => DoSomeVeryImportantWork(3, 1000));
@@ -113,7 +126,10 @@ namespace JesseTesting.App
         }
         private static void TaskExample_3()
         {
+            /*
             // Do not  need tx.Start
+               ContinueWith does an implicit Wait so that it does not execute until Previous Task has completed
+            */
             var t1 = Task.Factory.StartNew(() => DoSomeVeryImportantWork(1, 1500)).ContinueWith((PrevTask) => DoSomeOtherVeryImportantWork(1, 2000));
             var t2 = Task.Factory.StartNew(() => DoSomeVeryImportantWork(2, 3000));
             var t3 = Task.Factory.StartNew(() => DoSomeVeryImportantWork(3, 1000));
@@ -183,8 +199,10 @@ namespace JesseTesting.App
         }
         private static void TaskExample_8()
         {
+            /*
             // Parallel.For takes in a Range.   Will not display in order, but will execute in Parallel.   Blocks Threads
-            // Simulates WaitAll.
+            // Simulates WaitAll.  Waits until all threads are finished.
+            */
             Parallel.For(0, 100, (i) => Console.WriteLine(i));
             Console.WriteLine("Press any key to quit Example 9");
             Console.ReadKey();

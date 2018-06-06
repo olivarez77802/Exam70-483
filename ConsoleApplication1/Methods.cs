@@ -5,7 +5,7 @@ using System.Text;
 using System.Diagnostics;
 using System.Reflection;
 
-namespace JesseTesting.App
+namespace Exam70483
 {
     
 
@@ -33,7 +33,22 @@ namespace JesseTesting.App
             {
                 /*
                  *  Every method has zero or more parameters
-                 *  * Use params keyword to accept a variable number of parameters 
+                 *  Use params keyword to accept a variable number of parameters 
+                 *  The params parameter must be the last parameter in a parameter list
+                 *  The params keyworkd must be applied to an array modifiers.
+                 *  The params parameter must always be the last modifier.
+                 *  
+                 *  Example
+                 *  private void WriteDebug(string message, params object[] objects)
+                 *  {
+                 *     Debug.WriteLine(message);
+                 *     foreach (var o in objects)
+                 *     {
+                 *       Debug.WriteLine(o);
+                 *     }
+                 *     
+                 *  }
+                 *  
                  */
                 Console.Clear();
                 Console.WriteLine(" Methods Menu \n ");
@@ -42,7 +57,7 @@ namespace JesseTesting.App
                 Console.WriteLine(" 2.  Parameters and Extension Methods\n");
                 Console.WriteLine(" 3.  Pinvoke \n");
                 Console.WriteLine(" 4.  User Defined Conversions \n");
-                Console.WriteLine(" 5.  Enumerable Methods (System.Linq Namespace\n");
+                Console.WriteLine(" 5.  ...... ");
                 Console.WriteLine(" 6.  GetProperty Method \n");
                 Console.WriteLine(" 7.  String Methods (System.Namespace String Class \n");
                 Console.WriteLine(" 9.  Quit            \n\n ");
@@ -67,11 +82,11 @@ namespace JesseTesting.App
                         PreProcessing();
                         break;
 
-                    case eMenu.EnumerableMethods:
-                        EnumerableMethods.Menu();
-                        Console.ReadKey();
+                    //case eMenu.EnumerableMethods:
+                    //    EnumerableMethods.Menu();
+                    //    Console.ReadKey();
                                      
-                        break;
+                    //    break;
 
                     case eMenu.GetPropertyMethods:
                         MyTypeClass.MainMTC();

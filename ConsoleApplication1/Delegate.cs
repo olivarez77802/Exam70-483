@@ -6,7 +6,12 @@ using System.Diagnostics;
 using System.Threading.Tasks;
 using System.Threading;
 
-namespace JesseTesting.App
+namespace Exam70483
+
+/*
+ * See GenericExamples.cs for definitions of Func, Action, Predicate delegates and meanings
+*/
+
 {
     delegate void CustomDel(string s);
     delegate int Countit(int x);

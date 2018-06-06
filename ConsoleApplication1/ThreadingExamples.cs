@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading;
 using System.Diagnostics;
 
-namespace JesseTesting.App
+namespace Exam70483
 {
     abstract class ThreadingExamples
     {
@@ -38,6 +38,7 @@ namespace JesseTesting.App
 
         public static void ThreadPrimaryMain()
         {
+            /*
             // Process.Start("");
             Process.Start("http://msdn.microsoft.com/en-us/library/c5kehkcz.aspx");
             // The lock keyword ensures that one thread does not enter a critical section of code while another thread is in the critical section. 
@@ -63,7 +64,12 @@ namespace JesseTesting.App
 
             //Best practice is to define a private object to lock on, or a private static object variable to protect data common to all instances
 
-
+            * Locking only works if you lock EVERYWHERE that shared state is vulnerable.
+            * It is easy to forget locking somewhere
+            * The logic to avoid deadlocks is hard
+            * Locking is good on a small scale, but becomes unmanageable on a larger scale
+            * Concurrent collections avoid the locking deadlock problems.
+    /*
             int x = 0;
             do
             {
