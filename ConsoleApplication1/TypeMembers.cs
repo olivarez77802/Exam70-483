@@ -29,6 +29,7 @@ namespace Exam70483
                 {
                     case 0:
                         break;
+                    case 2: 
                     case 9: x = 9;
                         break;
                     default: Console.WriteLine(" Invalid Number");

@@ -33,6 +33,17 @@ namespace Exam70483
     // Extension methods use the Enumerable Class.  The Enumerable class is in the 
     // System.Linq namespace
     //
+    // Extension methods require 3 things:
+    // * Must reside in a static class
+    // * Method in the class must be static
+    // * Need a 'this' in front of the first parameter of the static method
+    //   By placing a 'this' keyword the parameter no longer represents a parameter passed to the method
+    //   but rather it represents the type being extended.
+    //
+    //   Can be called like a static method e.g return StringHandler.InsertSpaces(_Productname); or
+    //   Can be called as a method on the extended class e.g. return _Productname.InsertSpaces();
+    //
+    //
     // Chaining - you can append, link extension methods as needed.
     // Fluent programming - The output of one method is the input to the next
     //                      creating a string of operations that together form a single task.
