@@ -35,6 +35,18 @@ namespace Exam70483
                     case 2: Delegate.Menu();
                         break;
                     case 3:
+                        /*
+                         * c - Input parameter
+                         * No type was specified for 'c'.  Lambda expressions have implicit typing
+                         * .Net knows that you are iterating through a list of Customers, so 'c' must be a Customer
+                         * =>  Called the lambda operator
+                         * C.CustomerID == customerid    Called the body of the function
+                         * 
+                         * Could be read as 'Iterating over the Customer List for each customer return true if the 
+                         * CustomerId matches customerid
+                         * 
+                         * c => C.CustomerId == customerid
+                         */
                         break;
                     case 4:
                        
