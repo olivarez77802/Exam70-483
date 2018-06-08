@@ -27,7 +27,7 @@ namespace Exam70483
          * - The methods in an interface are implicitly virtual
          * - You can inherit from multiple interfaces.  You can only inherit from one class whether it is abstract or concrete.  
          * - When you inherit from both a class and interface(s), the class must come first. 
-         */
+         
         // As a guideline:
         //  * Use classes and subclasses for types that naturally share an implementation.
         //  * Use interfaces for types that have independent implementations.
@@ -44,6 +44,14 @@ namespace Exam70483
         //  class Ostrich : Bird {}
         //  
         //
+
+            Entity / Class / Object
+            * Entity is the name of the Class
+            * An Object is an instance of a class
+            * Each Ojbect can perform the defined actions
+            * Class is like the cookie cutter that creates objects.  It will contain the properties and actions
+            *          to perform.
+        */
         public static void Menu()
         {
             int x = 0;
