@@ -69,7 +69,7 @@ namespace Exam70483
             * The logic to avoid deadlocks is hard
             * Locking is good on a small scale, but becomes unmanageable on a larger scale
             * Concurrent collections avoid the locking deadlock problems.
-    /*
+    */
             int x = 0;
             do
             {

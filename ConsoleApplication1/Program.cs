@@ -45,7 +45,8 @@ namespace Exam70483
                     case 1: CreateAndUseTypes.CT_Menu();
                         break;
                     case 2:
-                        CryptographyExamples.Menu();
+                        DebugAppImplementSecurity.Menu();
+                        /* CryptographyExamples.Menu(); */
                         break;
                    
                     case 3: ImplementDataAccess.Menu();

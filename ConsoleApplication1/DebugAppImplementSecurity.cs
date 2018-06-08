@@ -28,6 +28,10 @@ namespace Exam70483
                 {
                     case 1: CryptographyExamples.Menu();
                         break;
+                    case 2: ManageAssemblies.Menu();
+                        break;
+                    case 4: ImplementDiagnostics.Menu();
+                        break;
                     case 9: x = 9;
                         break;
                     default: Console.WriteLine(" Invalid Number");

@@ -77,13 +77,15 @@
     <Compile Include="Grammar.cs" />
     <Compile Include="IEnumeratorInterface.cs" />
     <Compile Include="ImplementDataAccess.cs" />
-    <Compile Include="Indexers.cs" />
+    <Compile Include="ImplementDiagnostics.cs" />
+    <Compile Include="Indexer.cs" />
     <Compile Include="InputOutput.cs" />
     <Compile Include="Interface1.cs" />
     <Compile Include="InterfacesMenu.cs" />
     <Compile Include="IterationStatements.cs" />
     <Compile Include="LawnMower.cs" />
     <Compile Include="LINQExamples.cs" />
+    <Compile Include="ManageAssemblies.cs" />
     <Compile Include="ManageProgramFlow.cs" />
     <Compile Include="MathOps.cs" />
     <Compile Include="Methods.cs" />

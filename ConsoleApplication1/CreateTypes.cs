@@ -25,7 +25,8 @@ namespace Exam70483
                 Console.WriteLine(" 3.  Static Variables \n ");
                 Console.WriteLine(" 4.  Extension Methods\n ");
                 Console.WriteLine(" 5.  Optional/Named/Out Parameters \n ");
-                Console.WriteLine(" 6.  Methods n");
+                Console.WriteLine(" 6.  Methods \n");
+                Console.WriteLine(" 7.  Indexers \n");
                 Console.WriteLine(" 9.  Quit            \n\n ");
 
                 int selection;
@@ -46,6 +47,9 @@ namespace Exam70483
                     case 5: RunwithOutput();
                         break;
                     case 6: Methods.Menu();
+                        break;
+                    case 7: Indexer.Indexer_Main();
+                        Console.ReadKey();
                         break;
                     case 9: x = 9;
                         break;
