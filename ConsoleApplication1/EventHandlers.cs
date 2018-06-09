@@ -85,7 +85,7 @@ namespace Exam70483
         public static void EH_Main_2()
         {
 
-            https://www.codeproject.com/Articles/11541/The-Simplest-C-Events-Example-Imaginable
+           /*  https://www.codeproject.com/Articles/11541/The-Simplest-C-Events-Example-Imaginable */
             Metronome m = new Metronome();
             Listener l = new Listener();
             l.Subscribe(m);

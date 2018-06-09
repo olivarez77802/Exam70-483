@@ -42,6 +42,8 @@ namespace Exam70483
                 switch (selection)
                 {
                     case 0: Delegate.Menu();
+                        ThreadPoolExample.TPEMain();
+                        Console.ReadKey();
                         break;
                     case 1: CryptographyExamples.Menu();
                         break;

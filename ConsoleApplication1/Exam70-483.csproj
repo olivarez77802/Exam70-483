@@ -109,6 +109,7 @@
     <Compile Include="StringReaderExamples.cs" />
     <Compile Include="TaskLibExamples.cs" />
     <Compile Include="ThreadingExamples.cs" />
+    <Compile Include="ThreadPoolExample.cs" />
     <Compile Include="TypeMembers.cs" />
     <Compile Include="TypeSystem.cs" />
     <Compile Include="ValueTypes.cs" />
