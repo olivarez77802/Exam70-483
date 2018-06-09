@@ -14,6 +14,11 @@ namespace Exam70483
             int x = 0;
             do
             {
+                /*
+                 * Interfaces Implement Polymorphism.   Each class that Inherits an Interfaces will implement
+                 * the method defined in the interface in a different way, making it Polymorphic.
+                 * 
+                 * 
                 //  See Generic Examples also
                 //
                 //  Interfaces should be programmed at the right level.   Interfaces should be granular
@@ -96,6 +101,8 @@ namespace Exam70483
                 //    An example of this is ObservableCollection<T> which provide change notificatons for a list.
                 //
                 // 
+
+                */
                 Console.Clear();
                 Console.WriteLine(" Types of Interfaces \n ");
                 Console.WriteLine(" 0.  IComparable \n ");
