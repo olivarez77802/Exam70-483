@@ -29,6 +29,16 @@ namespace Exam70483
         Parallel Library.  It has been optimized for execution on machines that have either multi-core, single core, or dual
         processors.
 
+        Threading versus Tasks
+           Task - It doesn't create it's own Operate System thread (we avoid OS threads).  Task is executed by a Task Scheduler
+           and allows us to return a result.  We can say task represent some asynchonous operaton through lightweight object for
+           managing a parallelizable unit of work.  Task available in .Net 4.0 and above.
+
+           Thread - is used for creating and maniupulating a thread in OS and allows us to fully control by using Resume, Abort, or Suspend methods.
+                    Big disadvantage is the expense of creating threads.
+
+       
+
     */
     // Called by Delegate.cs
     class TaskLibExamples
