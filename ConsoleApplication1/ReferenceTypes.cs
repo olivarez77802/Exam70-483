@@ -28,7 +28,7 @@ namespace Exam70483
                  *    Assert.AreEqual("SCOTT", name);     <-- Assert will fail this is because .ToUpper() creates a new string
                  *    
                  *    name = name.ToUpper();
-                 *    Assser.AreEqual("SCOTT", name);     <-- Assert will now pass
+                 *    Asssert.AreEqual("SCOTT", name);     <-- Assert will now pass
                  *    
                  */
                 Console.Clear();

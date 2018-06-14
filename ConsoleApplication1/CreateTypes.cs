@@ -44,7 +44,89 @@ namespace Exam70483
                          */
                         EnumerableMethods.Menu();
                         break;
-                    case 5: RunwithOutput();
+                    case 5:
+                        /* Optional/Named/Out Parameters
+                         * 
+                         * ***************************************************************************************
+                         * Optional Parameters
+                         * There are 4 ways that can be used to make method parameters optional
+                         * 1. Use parameter arrays - Can have 0 or 1,2,3,... parameters.
+                         * 2. Method overloading
+                         * 3. Specify parameter defaults
+                         * 4. Use OptionalAttribute that is present in System.Runtime.InteropServices namespace
+                         * 
+                         * Please note - A parameter array must be the last parameter in a formal parameter list.
+                         * 
+                         * 1. Parameter arrays
+                         * 
+                         * AddNumbers(10,20)  <-- 3 or more paramters optional 
+                         * AddNumbers(10,20 new object[] {30,40,50});
+                         * public static void AddNumbers( int firstNumber, int secondNumber, params object[] resetofNumbers)
+                         * 
+                         * params must be last parameter - below will get comile error
+                         * public static void AddNumbers( int firstNumber,  params object[] resetofNumbers, int secondNumber)
+                         * https://www.youtube.com/watch?v=jbtjGii300k&index=67&list=PLAC325451207E3105
+                         * 
+                         * 2. Method OverLoading
+                         * 
+                         * AddNumber(10,20)  <-- Will give error, since you must provide 3 or more paramters.
+                         * AddNumber(10,20,null)  <-- will work without error
+                         * publiic static void AddNumbers(int firstNumber, int secondNumber, int[] restofNumbers)
+                         * 
+                         * AddNumber(10,20)  <-- Will work with the below method overload
+                         * public static void AddNumbers(int firstNumber, int secondNumber)
+                         * {
+                         *   AddNumbers(fistNumber, secondNumber, null);
+                         * }
+                         * public static void AddNumbers(int firstNumber, int secondNumber, int[] restOfNumbers)
+                         * {
+                         * }
+                         * 
+                         * https://www.youtube.com/watch?v=khcOI3-Kh84&index=68&list=PLAC325451207E3105
+                         * 
+                         * 3. Specifying parameter defaults - If we don't supply the third parameter then it
+                         *    will take the default assigned).
+                         * 
+                         * AddNumbers(10,20);  <-- 3rd parameter will take default of null.
+                         * AddNumbers(10, 20, new int[] {30, 40});  <-- will use 30, 40 as 3rd and 4th parameters.
+                         * public static void AddNumbers(int firstNumber, int secondNumber, int[] restofNumbers = null)
+                         * 
+                         * 
+                         * https://www.youtube.com/watch?v=Dmycz0ro1Yc&index=69&list=PLAC325451207E3105
+                         * 
+                         * 4. Optional Attribute - Present in System.Runtime.InteropServices namespace
+                         * 
+                         * using System.Runtime.InteropServices
+                         * AddNumbers(10,20);
+                         * public static void AddNumbers(int firstNumber, int secondNumber, [Optional] restofNumbers)
+                         *
+                         *                          * 
+                         * https://www.youtube.com/watch?v=p_9f5SSXxLw&list=PLAC325451207E3105&index=70
+                         * 
+                         * 
+                         * ***************************************************************************************
+                         * Named Parameters
+                         *   You don't have to specify the type.  The name and type is attained from the 
+                         *   calling method.  You don't have to worry about the order, since the parameters
+                         *   are named it is smart enough to figure them out regardless of the order.
+                         *   
+                         *   Sample
+                         *   var customer = new Customer();
+                         *   var order = new Order();
+                         *   var payment = new Payment();
+                         *   orderController.PlaceOrder
+                         *   (customer, order, payment, allowSplitOrders:true, emailReceipt:false)
+                         *
+                         * **************************************************************************************
+                         * Out Parameters
+                         *   The 'out' keyword causes arguments to be passed by reference.  This is like 
+                         *   the 'ref' keyword, except that the ref requires that the variable be 
+                         *   initialized before it is passed.  To use an out parameter, both the 
+                         *   method definition and the calling method must explicitly use the 
+                         *   out keyword
+                         * 
+                         */
+                        RunwithOutput();
                         break;
                     case 6: Methods.Menu();
                         break;
