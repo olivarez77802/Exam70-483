@@ -14,7 +14,13 @@ namespace Exam70483
     {
         static void Main(string[] args)
         {
-
+            /*
+             * C# Version History
+             * C# 4.0 --- Visual Studio 2010
+             * C# 5.0 --- Visual Studio 2012, 2013
+             * C# 6.0 --- Visual Studio 2015
+             * https://docs.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-version-history
+             * 
             // Microsoft C# Exam 70-483
             //
             // Manage Program Flow
@@ -24,6 +30,7 @@ namespace Exam70483
             //
             // https://www.microsoft.com/en-us/learning/exam-70-483.aspx
             //
+            */
             int x = 0;
             do
             {

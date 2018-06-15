@@ -5,6 +5,9 @@ using System.Text;
 
 namespace Exam70483
 {
+    /*
+     * Called by CreateAndUseTypes.cs
+    */
     class CreateTypes
     {
         public static void Menu()

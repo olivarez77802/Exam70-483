@@ -43,7 +43,7 @@ namespace Exam70483
     // See InterfacesMenu.cs   -  has more information on Arrays versus Lists
     // Arrays are reference types
     // Array CoVariance - You can implicitly cast a Derive[] to a Base[] type
-    // Example - Base Type is object and Dervied Type is String
+    // Example - Base Type is object and Derived Type is String
     // Array CoVariance is broken because you cannot determine type, so you should
     // not use.
     // See IEnumeratorInterfaces.cs for more information about IEnumerable
