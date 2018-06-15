@@ -7,7 +7,10 @@ using System.Diagnostics;
 
 namespace Exam70483
 {
-   abstract class StreamExamples
+    /* 
+     * See also ExceptionClassExamples.cs
+     */
+   public static class StreamExamples
     {
         static void FileStreamExamples()
         {

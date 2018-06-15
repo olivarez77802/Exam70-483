@@ -4,9 +4,72 @@ using System.Linq;
 using System.Text;
 using System.IO;
 using System.Diagnostics;
+using System.Runtime.Serialization;
 
 namespace Exam70483
 {
+    /*
+     * Called by ManageProgramFlog.cs
+     * 
+     * Exception Handling
+     * An exception is a class that derives from the System.Exception class.   The System.Exception class 
+     * has several useful properties, that provide valuable information about the exception.
+     * Message: Gets a message that describes the exception
+     * Stack Trace: Provides the call stack to the line number in the method where the exception occured.
+     * 
+     * Classes
+     * - Exception - Parent class for all Exception classes
+     * - FileNotFoundException  - Inherits from IOException; IOException inherits from SystemException; 
+     *                            SystemException inherits from Exception class.
+     *                            
+     *  Press Control-Alt-E to list all .Net excpetions
+     *  
+     *  There are a variety of different exceptions, it is not possible to guard against all excpetions.
+     *  It is good to include the most commmon exceptions but at the end it is good to include the base
+     *  Exception to serve as a 'catch all' for any unguarded exceptions.
+     *  
+     *  *****************************************************************************
+     *  Releasing System Resources
+     *  We use try, catch and finally blocks for exception handling
+     *  try - The code that can possibly cause an exception will be in the try block.
+     *  catch - Handles the exception.
+     *  finally - Clean and free resources that the class was holding onto during the program execution.
+     *            Finally Block is optional.
+     *            
+     *  Note: It is good practice to always release resources in the finally block, because finally
+     *        block is guaranteed to execute, irrespective of whether there is an exception or not.
+     *        
+     *  https://www.youtube.com/watch?v=WxdSb3ZCWYc&index=40&list=PLAC325451207E3105
+     *  
+     *  Use GetType() Method to determine the type of exception
+     *  Use StackTrace  to find line number
+     *  
+     *  Also - Use Debug to determine type of exception and see Stack Trace
+     *  
+     *  Inner Exceptions
+     *  https://www.youtube.com/watch?v=MO3sOTWfZPc&list=PLAC325451207E3105&index=41
+     *  
+     *  *******************************************************************************************
+     *  Custom Exceptions
+     *  
+     *  https://www.youtube.com/watch?v=9qHb-2Edg7o&index=42&list=PLAC325451207E3105
+     *  - Are necessary whenever we don't have an exception, that adequately describes the problem.  Within the
+     *    .Net Framework we don't have an exception that defines the situation.  An Exception is nothing more than
+     *    a class.
+     *   1.The first step in creating a Custom Exception is to create a class that inherits from 
+     *     the base Exception class (or the parent class to inherit all of it's functionality). 
+     *   
+     *   2.Provide a public constructor, that takes in a string parameter.  This constructor simply passes the
+     *     string parameter, to the base exception class constructor.
+     *     
+     *   3.Using InnerExceptions, you can also track back the original exception.  If you want to provide this
+     *     capablity for your custom exception class, then overload the constructor accordingly.
+     *     
+     *   4.If you want your Exception class object to work across appication domains, then the object must be
+     *     serializable.  To make your exception class serializable mark it with the Serializable attribute and
+     *     provide a constructor that invokes the base Exception class constructor that takes in SerializtionInfo
+     *     and StreamingContext objects as parameters.
+     */
     class ExceptionClassExamples
     {
         public static void Menu()
@@ -21,6 +84,8 @@ namespace Exam70483
                 Console.WriteLine(" 2.  Exception Message \n ");
                 Console.WriteLine(" 3.  throw \n");
                 Console.WriteLine(" 4.  throw2 \n");
+                Console.WriteLine(" 5.  catch all Exception \n");
+                Console.WriteLine(" 6.  Custom Exceptions \n");
                 Console.WriteLine(" 9.  Quit            \n\n ");
                 Console.Write(" Enter Number to execute Routine ");
 
@@ -30,6 +95,7 @@ namespace Exam70483
                 switch (selection)
                 {
                     case 0: IEMain();
+                        Console.ReadKey();
                         break;
                     case 1:
                         Process.Start("http://msdn.microsoft.com/en-us/library/ms173162.aspx");
@@ -44,10 +110,16 @@ namespace Exam70483
                         Console.ReadKey();
                         break;
                     case 4:
-
                         ThrowExample2();
                         Console.ReadKey();
-
+                        break;
+                    case 5:
+                         CatchAll();
+                         Console.ReadKey();
+                         break;
+                    case 6:
+                        CustomExceptionDemo();
+                        Console.ReadKey();
                         break;
                     case 9: x = 9;
                         break;
@@ -88,6 +160,11 @@ namespace Exam70483
                         Console.WriteLine("There is a problem, problem logged in c:users.olivarez.log.txt");
                     }
                     else
+                    /*
+                     * Passing the exception as a parameter  (..,ex)
+                     * Definition will look like below
+                     * public FileNotFoundException(string message, Exception innerException);
+                    */
                     {
                         throw new FileNotFoundException(filePath + "is not present", ex);
                     }
@@ -162,6 +239,89 @@ namespace Exam70483
                 throw new ArgumentNullException("filename", "Filename is required");
             }
             return File.ReadAllText(filename);
+        }
+
+        static void CatchAll()
+        {
+            StreamReader streamreader = null;
+            try
+            {
+                streamreader = new StreamReader(@"c:\Users\Olivarez\My Documents\Numbers.txt");
+                //
+                //  The below lines will not get executed if there is an exception, which is why it is 
+                //  important to code a 'finally' block
+                // 
+                Debug.WriteLine("Char by Char");
+                while (!streamreader.EndOfStream)
+                {
+                    Debug.WriteLine((char)streamreader.Read());
+                }
+                // streamreader.Close();  <-- Moved to Finally Block
+                // The @ - tells the processor to not process escape sequences
+                Debug.WriteLine("Char by Char written to output window");
+                FileStream fileStream = new FileStream(@"c:\Users\Olivarez\My Documents\Numbers.txt",
+                          FileMode.Create, FileAccess.Write, FileShare.None);
+            }
+            catch (FileNotFoundException ex)
+            {
+                //Log the details to the DB
+                Console.WriteLine("Please check if the file {0} exists - type{1}", ex.FileName, ex.GetType().Name);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("\n Message: {0} \n  Type: {1} \n\n ",ex.Message, ex.GetType().Name);
+                Console.WriteLine("Stack Trace (gives you line number) : {0}", ex.StackTrace);
+                
+                   
+            }
+            /*
+             * Finally Block always executed regardless if there was an exception
+             * A 'Finally' Block is needed since if you have an exception embedded in an Exception block
+             * e.g. Coudn't write to a log file then code will not get executed afterwards unless there
+             * was a finally block.
+            */
+            finally
+            {
+                if (streamreader != null)
+                {
+                    streamreader.Close();
+                    Console.WriteLine("Finally Block Executed ");
+                }
+                else
+                    Console.WriteLine("\n Finally Block Executed -- Streamread is null");
+            }
+        }
+        static void CustomExceptionDemo()
+        {
+            try
+            {
+                throw new UserAlreadyLoggedInException("User is logged in - no duplicate session allowed");
+            }
+            catch (UserAlreadyLoggedInException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+        [Serializable]
+        public class UserAlreadyLoggedInException : Exception
+        {
+            public UserAlreadyLoggedInException() : base()
+            {
+
+            }
+            public UserAlreadyLoggedInException(string message) : base(message)
+            {
+            }
+
+            public UserAlreadyLoggedInException(string message, Exception InnnerException)
+                : base(message, InnnerException)
+            { }
+
+            public UserAlreadyLoggedInException(SerializationInfo info, StreamingContext context)
+                : base(info, context)
+            {
+
+            }
         }
     }
 }
