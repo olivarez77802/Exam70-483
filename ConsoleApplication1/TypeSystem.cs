@@ -6,6 +6,9 @@ using System.Diagnostics;
 
 namespace Exam70483
 {
+    /*
+     * Called by CreateTypes.cs
+     */
     class TypeSystem
     {
         public static void Menu()

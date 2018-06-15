@@ -5,6 +5,9 @@ using System.Text;
 
 namespace Exam70483
 {
+    /*
+     * Called by TypeSystem.cs
+     */
     class ReferenceTypes
     {
         public static void Menu()
@@ -34,7 +37,7 @@ namespace Exam70483
                 Console.Clear();
                 Console.WriteLine(" Reference Types Menu \r ");
                 Console.WriteLine(" object.Equals() evaluates to Reference Equality (unless overridden\n ");
-                Console.WriteLine(" 0.  String \n ");
+                Console.WriteLine(" 0.  String and Collections \n ");
                 Console.WriteLine(" 1.  Object \n ");
                 Console.WriteLine(" 2.  Class  \n ");
                 Console.WriteLine(" 3.  Array  \n ");

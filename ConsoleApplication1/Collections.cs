@@ -12,6 +12,8 @@ namespace Exam70483
 
     public class Collections
     {
+        /* Called by ReferenceTypes.cs
+        */
         public static void CollectionsMenu()
         {
             int x = 0;
@@ -376,10 +378,16 @@ namespace Exam70483
 
         public static void TopThree()
         {
+            /*
+             * Lambda expression - (gradeornamemeanything => gradeornamemeanything).Take(3);
+             * gradeornamemeanything gets its type from grades
+             * could have written (x = x).Take(3); 
+            */
             int[] grades = { 59, 82, 70, 56, 92, 98, 85 };
             IEnumerable<int> topThreeGrades =
-            grades.OrderByDescending(grade => grade).Take(3);
-
+            // grades.OrderByDescending(gradeornamemeanything => gradeornamemeanything).Take(3);
+            grades.OrderByDescending(x => x).Take(3);
+            
             Console.WriteLine("All Grades are:");
             foreach (int grade in grades)
             {
