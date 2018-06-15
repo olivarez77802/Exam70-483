@@ -15,6 +15,7 @@ namespace Exam70483
         static void Main(string[] args)
         {
 
+            /*
             // Microsoft C# Exam 70-483
             //
             // Manage Program Flow
@@ -24,6 +25,17 @@ namespace Exam70483
             //
             // https://www.microsoft.com/en-us/learning/exam-70-483.aspx
             //
+
+              C# Versions
+              2002 - .Net 1.0   - C# 1.0
+              2003 - .Net 1.1   - C# 1.1
+              2005 - .Net 2.0   - C# 2.0  - Generics, Partial Classes, Anonymous, nullable
+              2006 - .Net 3.0   - C# 3.0
+              2007 - .Net 3.5   - C# 3.5  - Var, Linq, Lambda, Initializers, Auto Props, Extensions, Partial Methods
+              2010 - .Net 4.0   - C# 4.0  - Dynamics, Optional Args, CoVariance
+              2012 - .Net 4.5   - C# 5.0  - Async, Caller Attr
+            */
+
             int x = 0;
             do
             {

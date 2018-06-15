@@ -16,7 +16,7 @@ namespace Exam70483
              * {
              * A struct is a value type where a class is a reference type
              * 
-             * All the differences that are applicable to a value type and reference types are also applicable to clases and structs.
+             * All the differences that are applicable to a value type and reference types are also applicable to classes and structs.
              * 
              * Value types hold their value in memory where they are declared, but reference types hold a reference to an object in 
              * memory.

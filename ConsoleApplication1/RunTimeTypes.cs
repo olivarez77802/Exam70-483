@@ -23,9 +23,14 @@ namespace Exam70483
            Serializable - Indicates that a class can be serializable
 
            An attribute is a class that inherits from the System.Attributes namespace
-           https://www.youtube.com/watch?v=TWZXj27-6Cw&list=PLAC325451207E3105&index=52      
-             
-             
+           https://www.youtube.com/watch?v=TWZXj27-6Cw&list=PLAC325451207E3105&index=52   
+           
+           See also DynamicExamples.cs
+           
+           Windows RunTime
+           https://www.youtube.com/watch?v=24Uaf3Y4qW8
+               
+                         
         */
 
 
