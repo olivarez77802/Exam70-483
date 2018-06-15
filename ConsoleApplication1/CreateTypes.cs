@@ -40,6 +40,9 @@ namespace Exam70483
                         break;
                     case 1: DynamicExamples.DMain();
                         break;
+                    case 3: StaticExamples.Menu();
+                        Console.ReadKey();
+                        break;
                     case 4:
                         /* Extension Methods
                          * - Extend types without altering them.  Escpecially useful for extending types that are not yours or are sealed.

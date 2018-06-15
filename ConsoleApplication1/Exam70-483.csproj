@@ -102,6 +102,7 @@
     <Compile Include="SerializationExamples.cs" />
     <Compile Include="SortingExamples.cs" />
     <Compile Include="StatementKeywords.cs" />
+    <Compile Include="StaticExamples.cs" />
     <Compile Include="StreamExamples.cs" />
     <Compile Include="StringBuilderExamples.cs" />
     <Compile Include="StringEquality.cs" />
