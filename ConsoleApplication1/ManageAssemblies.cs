@@ -10,14 +10,61 @@ namespace Exam70483
     {
         public static void Menu()
         {
-            /* Version assemblies; sign assemblies using strong names; 
-             * implement side-by-side hosting;
-             * put an assembly in the global assembly cache;
-             * create a WinMD assembly
+            /* 
+             * Manage Assemblies
+             *    Version assemblies; sign assemblies using strong names; 
+             *    implement side-by-side hosting;
+             *    put an assembly in the global assembly cache;
+             *    create a WinMD assembly
+             *   
+             *******************************************************************************************************************************   
+             * Version assemblies; sign assemblies using strong names   
+             *   
+             * .Net Framework consists of the .NET Framework Class Library and the Run Time Enviroment (or CLR)
+             * .Net Framework Class Library consist of several assemblies.   The assemblies get installed into the
+             * GAC (Global Assembly Cache).  GAC resides in C:\Windows\assembly.  All of these assemblies are strongly named.
+             * 
+             * An Assembly consists of 4 parts
+             * 1. Simple textual name
+             * 2. Version Number
+             * 3. Culture information (otherwise the assembly is language neutral)
+             * 4. Public key token
+             * 
+             * Assembly version consists of 4 parts
+             * 1.  Major version
+             * 2.  Minor version
+             * 3.  Build Number
+             * 4.  Revision Number
+             * 
+             * Strong name assembly should have:
+             * 1.  The textual assembly name
+             * 2.  The assembly version number
+             * 3.  The assembly should have been signed with private/public key pair.
+             * 
+             * In order to sign with a public/private key pair - I need to get keys.  How do you get keys:
+             * 1.  Go to Visual Studio Command Prompt. C:\windows\system32>sn.exe -k c:\MyStrongKeys.snk
+             *     Will write Public / Private key pair to MyStrongKeys.snk
+             * 2.  Open Visual Studio go to Properties..should find AsssemblyInfo.cs
+             * 3.  
+             *     [assembly: AssemblyVersion("1.0.0.0")]
+             *     [assembly: AssemblyFileVersion("1.0.0.0")]
+             *     [assembly: AssemblyKeyFile("C:\\MyStrongKeys.snk")   <--- Add this line
+             * 4.  When you rebuild solution the assembly is now signed with a public/private key pair
+             * 5.  Only Strong Name Assemblies can be deployed into GAC
+             * 6.  Strong Named Assemblies are guarenteed to be unique - Solving DLL Hell
+             *
+             * 
+             * https://www.youtube.com/watch?v=p6u7n_BPcVw&list=PL8598C97BA1D871C1&index=3
+             * 
+             * 
+             ********************************************************************************************************************************
+             * Create a WinMD Assembly
              * 
              * WinMd - is a Windows Run Time Component allows you to share code across languages in Windows 8
              * Class Libraries - Are how you share code across assemblies or different projects
              * Portable Class Libraries - How you share code across the .Net ecosystem
+             * 
+             * 
              */
         }
     }
