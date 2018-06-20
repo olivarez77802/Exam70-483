@@ -8,17 +8,19 @@ using System.Threading.Tasks;
 namespace Exam70483
 {
     /*
-    // Threading does Time Slicing (versus parallel execution) on each core.
-    // So multithreading is actually time slicing.
-    //
-    // Task Parallel Library(TPL) uses System.Threading.Tasks
-    //
-    // Parallel.For is from the Task Parallel Library
-    // TPL encapsulates multicore execution.  Parallellism across
-    // cores is taken care of by TPL.
-    //
-    //  Video uses Performance Monitor
-    //  https://www.youtube.com/watch?v=No7QqSc5cl8
+     * See ThreadPoolExamples.cs; ConcurrentCollections.cs
+     * 
+     Threading does Time Slicing (versus parallel execution) on each core.
+     So multithreading is actually time slicing.
+    
+     Task Parallel Library(TPL) uses System.Threading.Tasks
+    
+     Parallel.For is from the Task Parallel Library
+     TPL encapsulates multicore execution.  Parallellism across
+     cores is taken care of by TPL.
+    
+      Video uses Performance Monitor
+      https://www.youtube.com/watch?v=No7QqSc5cl8
     
         Advanced C# - Task Parallel Library
         https://www.youtube.com/watch?v=gfkuD_eWM5Y&index=5&list=PLrzrNeNx3kNHUOzNmvX5gZy0scGLKpY7m

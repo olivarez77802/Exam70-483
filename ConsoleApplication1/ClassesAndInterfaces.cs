@@ -11,6 +11,20 @@ namespace Exam70483
     public class ClassesAndInterfaces
     {
         /*
+         * C# Modifiers
+         * 1. Access Modifers
+         * 2. Abstract
+         * 3. Const
+         * 4. extern
+         * 5. override
+         * 6. partial
+         * 7. readonly
+         * 8. sealed
+         * 9. unsafe
+         * 10. virtual
+         * 11. volatile
+         * http://www.diranieh.com/NETCSharp/Modifiers.htm
+         * 
          * See TypeSystem.cs for Classes versus Structs.
          * 
          * Access Modifiers

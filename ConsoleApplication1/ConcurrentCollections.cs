@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace ConsoleApplication1
 {
     /*
-     * See also ThreadingExamples.cs
+     * See also ThreadingExamples.cs; ThreadPoolExamples.cs
      * 
      * Race condition - Results are sensitive to precise timing of threads
      * 
@@ -24,7 +24,12 @@ namespace ConsoleApplication1
      *    ConcurrentBag<T>
      *    
      *  Concurrent Dictionary is really the only choice, Concurrent Queue,Stack, Bag are very specially and will rarely be used.
-     *  You can use a Dictionary to replace almost all Collections.  
+     *  You can use a Dictionary to replace almost all Collections. 
+     *  
+     *  On one thread: Concurrent Dictionary is massively slower than Dictionary.
+     *  Don't use concurrent collections unless you really need the thread safety.
+     *  A lot of resources are tied up when using the Concurrent Dictionary, sometimes
+     *  it makes more sese to use the regular Dictionary. 
      *       
      *    
      */

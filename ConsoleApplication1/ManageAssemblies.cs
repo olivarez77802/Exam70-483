@@ -56,6 +56,16 @@ namespace Exam70483
              * 
              * https://www.youtube.com/watch?v=p6u7n_BPcVw&list=PL8598C97BA1D871C1&index=3
              * 
+             * GAC - Global Assembly Cache
+             * With the introduction of .Net 4.0 we have 2 GAC's
+             * 1. C:\Windows\Assembly - For .Net 2.0 - 3.5 assemblies
+             * 2. C:\Windows\Microsoft.NET\assembly - For .NET 4.0 Assemblies
+             * 
+             * There are 2 ways to install an assembly into GAC
+             * 1. Simply drag and Drop
+             * 2. Use GacUtil.exe (GAC Utility Tool)
+             * 
+             * https://www.youtube.com/watch?v=FYmRrEYyhCM&index=4&list=PL8598C97BA1D871C1
              * 
              ********************************************************************************************************************************
              * Create a WinMD Assembly
