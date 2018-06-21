@@ -26,7 +26,7 @@ namespace Exam70483
             num = "    (37)   ";
             val = int.Parse(num, NumberStyles.AllowParentheses | NumberStyles.AllowLeadingSign | NumberStyles.AllowLeadingWhite | NumberStyles.AllowTrailingWhite);
             Console.WriteLine("'{0}' parsed to an int is '{1}'.", num, val);
-            Console.ReadKey();
+           
 
             string rawNumber = "$(14)";
             int parsedNumber = int.Parse(rawNumber, NumberStyles.AllowParentheses | NumberStyles.AllowCurrencySymbol);
@@ -43,7 +43,7 @@ namespace Exam70483
             Console.WriteLine("Size of byte in bytes: {0}", sizeof(byte));
             Console.WriteLine("Size of float in bytes: {0}", sizeof(float));
             Console.WriteLine("Size of double in bytes: {0}", sizeof(double));
-            Console.ReadKey();
+           
 
         }
 

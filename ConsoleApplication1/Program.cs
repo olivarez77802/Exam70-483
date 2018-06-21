@@ -27,6 +27,10 @@ namespace Exam70483
              * Location of Assembies and API's
              * C:\Program Files\Reference Assemblies\Microsoft
              * 
+             * C# Developer command Prompt
+             * Search for 'Developer Command Prompt'
+             * Type 'Where csc.exe' to determine location of csc.exe and Framework
+             * 
              * 
             // Microsoft C# Exam 70-483
             //

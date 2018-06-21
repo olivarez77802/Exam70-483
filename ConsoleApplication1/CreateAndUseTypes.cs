@@ -35,7 +35,9 @@ namespace Exam70483
                         CreateTypes.Menu();
                         //TypeSystem.Menu();
                         break;
-                    case 1: DynamicExamples.DMain();
+                    case 1:
+                        ConsumeTypes.Menu();
+                       
                         break;
                     case 2: ClassesAndInterfaces.Menu();
                         break;

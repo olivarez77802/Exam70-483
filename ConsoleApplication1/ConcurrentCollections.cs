@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApplication1
+namespace Exam70483
 {
     /*
      * See also ThreadingExamples.cs; ThreadPoolExamples.cs
