@@ -56,44 +56,33 @@ namespace Exam70483
              * Heap - The place in memory where Object Reference Variables will point to.
              * }
              */
-            // The 'var' key word indicates implicit typing 
-            // string[] colorOptions = new string[4];   Is the same as
-            // var colorOptions = new string[4]; 
-            // 
-            //
+             /*
+             The 'var' key word indicates implicit typing 
+             string[] colorOptions = new string[4];   Is the same as
+             var colorOptions = new string[4]; 
+              
+                
+               Reference Types can represent a non-existent value with a null reference.
+               Value Types cannot represent null values.
             
-            // Reference Types can represent a non-existent value with a null reference.
-            // Value Types cannot represent null values.
-            //
-            //  string s = null;    - ok, Nullable type
-            //  int i = null;       - Compile error, value type cannot be null
-            //
-            //  Boxing is the act of converting a VALUE type instance to a REFERENCE type
-            //  instance.   
-            //
-            //       int x = 9;
-            //       object = x;   -  box the int
-            //
-            //  Unboxing casts the object back to the VALUE type
-            //
-            //       int y = (int)obj;    // unbox the int
-            //
-            //  Nullable types - int?, double?, bool?, char?, int?
-            //  https://msdn.microsoft.com/en-us/library/2cf62fcy.aspx
-            //  For an example of when you might use a nullable type, consider how an ordinary Boolean variable 
-            //  can have two values: true and false.There is no value that signifies "undefined".In many programming
-            //  applications, most notably database interactions, variables can occur in an undefined state.
-            //  For example, a field in a database may contain the values true or false, but it may also contain
-            //  no value at all. Similarly, reference types can be set to null to indicate that they are not initialized.
-            //
-            //   int? n = null;
-            //
-            //   int m1 = n;        // Will not compile.
-            //   int m2 = (int)n;   // Compiles, but will create an exception if n is null.
-            //   int m3 = n.Value;  // Compiles, but will create an exception if n is null.
-            //
-            //
+               string s = null;    - ok, Nullable type
+               int i = null;       - Compile error, value type cannot be null
+            
+               Boxing is the act of converting a VALUE type instance to a REFERENCE type
+               instance.   
+             
+                   int x = 9;
+                   object = x;   -  box the int
+            
+                Unboxing casts the object back to the VALUE type
+            
+                 int y = (int)obj;    // unbox the int
 
+            
+              
+                
+            
+            */
 
             int x = 0;
             do
