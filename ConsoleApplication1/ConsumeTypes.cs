@@ -41,6 +41,7 @@ namespace Exam70483
                         break;
                                     
                     case 1:
+                        CastExamples();
                         break;
                     case 2:
                         ConvertTypes();
@@ -84,6 +85,27 @@ namespace Exam70483
                int y = (int)obj; 
                unbox the int
            */
+        }
+        static void CastExamples()
+        {
+            /*
+             * Casting is when you want to provide an Explicit Conversion (versus Impllicit) conversion
+             * from one type to another.  Explicit casting will throw an execption if it can't be of the
+             * type being cast.
+             * 
+             * Blind casting - Casts without first confirming that the cast will be valid.
+             * Using 'AS' keyword is defined as a safe cast.  If the cast fails it will not throw
+             * an exception rather it will assign a null value.  You must then check for that null value.
+             * 
+             * AS Operator - Way of checking value.
+             * 
+             * Example
+             * Button button = sender as Button;
+             * if (button!= null)
+             * {
+             *    button.text = "Processing..";
+             * }
+             */
         }
         static void ConvertTypes()
         {

@@ -61,6 +61,10 @@ namespace Exam70483
              string[] colorOptions = new string[4];   Is the same as
              var colorOptions = new string[4]; 
               
+             The 'var' key word is also useful for complex return types such as Linq since you do not have to figure out
+             what is being returned.  Especially when you don't really care about what is being returned you just want to 
+             iterate through the result.  So use the 'var' keyword wherever it makes sense and does not detract from 
+             readablity.
                 
                Reference Types can represent a non-existent value with a null reference.
                Value Types cannot represent null values.
