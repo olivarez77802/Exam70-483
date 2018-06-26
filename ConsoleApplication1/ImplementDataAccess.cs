@@ -28,6 +28,9 @@ namespace Exam70483
                 {
                     case 0: InputOutput.Menu();
                         break;
+                    case 3: SerializeAndDeSerialize.Menu();
+                        Console.ReadKey();
+                        break;
                     case 4: Collections.CollectionsMenu();
                         break;
                     case 9: x = 9;

@@ -46,14 +46,7 @@ namespace Exam70483
         public static void XMLMainDeserialize()
         {
             class1 c = LoadFromFile("TestFile.xml");
-            Console.WriteLine
-                
-                
-                
-                
-                
-                
-                (" Age = {0}, Name = {1}", c.Age, c.Name); 
+            Console.WriteLine(" Age = {0}, Name = {1}", c.Age, c.Name); 
 
         }
 

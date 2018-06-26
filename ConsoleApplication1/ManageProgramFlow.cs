@@ -47,6 +47,8 @@ namespace Exam70483
                         break;
                     case 1: CryptographyExamples.Menu();
                         break;
+                    case 2: ImplementProgramFlow.Menu();
+                        break;
                     case 3: EventsandCallBacksMenu.Menu();
                         break; 
                     case 4:

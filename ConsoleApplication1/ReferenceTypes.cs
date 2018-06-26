@@ -23,6 +23,8 @@ namespace Exam70483
                  *  string s = null;    - ok, Nullable type
                  *  int i = null;       - Compile error, value type cannot be null
                  *  
+                 *  
+                 *  Nullablity for value types introduced in C# 2.0
                  *    Nullable types - int?, double?, bool?, char?, int?
                       https://msdn.microsoft.com/en-us/library/2cf62fcy.aspx
                       Nullable<decimal> result = null     <--- Long form

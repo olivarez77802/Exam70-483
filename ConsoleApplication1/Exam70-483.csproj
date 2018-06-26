@@ -37,6 +37,10 @@
     </StartupObject>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -79,11 +83,13 @@
     <Compile Include="IEnumeratorInterface.cs" />
     <Compile Include="ImplementDataAccess.cs" />
     <Compile Include="ImplementDiagnostics.cs" />
+    <Compile Include="ImplementProgramFlow.cs" />
     <Compile Include="Indexer.cs" />
     <Compile Include="InputOutput.cs" />
     <Compile Include="Interface1.cs" />
     <Compile Include="InterfacesMenu.cs" />
     <Compile Include="IterationStatements.cs" />
+    <Compile Include="JSONExamples.cs" />
     <Compile Include="LawnMower.cs" />
     <Compile Include="LINQExamples.cs" />
     <Compile Include="ManageAssemblies.cs" />
@@ -101,6 +107,7 @@
     <Compile Include="RegularExpressionExamples.cs" />
     <Compile Include="RunTimeTypes.cs" />
     <Compile Include="SerializationExamples.cs" />
+    <Compile Include="SerializeAndDeSerialize.cs" />
     <Compile Include="SortingExamples.cs" />
     <Compile Include="StatementKeywords.cs" />
     <Compile Include="StaticExamples.cs" />
@@ -114,10 +121,12 @@
     <Compile Include="ThreadPoolExample.cs" />
     <Compile Include="TypeMembers.cs" />
     <Compile Include="TypeSystem.cs" />
+    <Compile Include="ValidateAppInput.cs" />
     <Compile Include="ValueTypes.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
