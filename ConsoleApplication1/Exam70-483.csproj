@@ -43,6 +43,8 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -85,7 +87,7 @@
     <Compile Include="ImplementDiagnostics.cs" />
     <Compile Include="ImplementProgramFlow.cs" />
     <Compile Include="Indexer.cs" />
-    <Compile Include="InputOutput.cs" />
+    <Compile Include="PerformIOoperations.cs" />
     <Compile Include="Interface1.cs" />
     <Compile Include="InterfacesMenu.cs" />
     <Compile Include="IterationStatements.cs" />
@@ -106,7 +108,12 @@
     <Compile Include="ReflectionExamples.cs" />
     <Compile Include="RegularExpressionExamples.cs" />
     <Compile Include="RunTimeTypes.cs" />
-    <Compile Include="SerializationExamples.cs" />
+    <Compile Include="Service References\MathService1\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="XMLExamples.cs" />
     <Compile Include="SerializeAndDeSerialize.cs" />
     <Compile Include="SortingExamples.cs" />
     <Compile Include="StatementKeywords.cs" />
@@ -127,6 +134,34 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+    <None Include="Service References\MathService1\MathService.wsdl" />
+    <None Include="Service References\MathService1\MathService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MathService1\MathService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\MathService1\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\MathService1\MathService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\MathService1\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\MathService1\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\MathService1\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

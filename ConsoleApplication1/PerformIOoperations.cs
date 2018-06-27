@@ -6,11 +6,14 @@ using System.IO;
 using System.Net;
 using System.Runtime.InteropServices;
 using System.Diagnostics;
-//using Exam70483.MathService1;
+using ConsoleApplication1.MathService1;
 
 namespace Exam70483
 {
-    class InputOutput
+    /*
+     * Called by ImplementDataAccess.cs
+    */
+    class PerformIOoperations
     {
         public static void Menu()
         {
@@ -18,12 +21,15 @@ namespace Exam70483
             do
             {
                 Console.Clear();
-                Console.WriteLine(" Input/Output Menu \n ");
+                Console.WriteLine(" Perform I/O Operations \n ");
+                Console.WriteLine("    Read and write files and streams; read and write from the network \n ");
+                Console.WriteLine("    by using classes in the System.Net namespace; implement asynchronous \n ");
+                Console.WriteLine("    operations \n\n");
                 Console.WriteLine(" 0.  List Files in a Directory \n ");
                 Console.WriteLine(" 1.  List Directories  \n ");
                 Console.WriteLine(" 2.  List Contents of a File \n");
                 Console.WriteLine(" 3.  Open URL \n");
-                Console.WriteLine(" 4.  Serialization \n");
+                Console.WriteLine(" 4.  .... \n");
                 Console.WriteLine(" 5.  Parse Examples \n");
                 Console.WriteLine(" 6.  StreamReader \n");
                 Console.WriteLine(" 7.  StringReader \n");
@@ -44,12 +50,6 @@ namespace Exam70483
                     case 3: openUrl();
                         break;
                     case 4:
-                        Console.WriteLine(" XML File will be written to Testfile.xml ");
-                        SerializationExamples.XMLMain();
-                        Console.ReadKey();
-
-                        SerializationExamples.XMLMainDeserialize();
-                        Console.ReadKey();
                         break;
                     case 5:
                         ParseExamples.Main_Mod();
@@ -63,7 +63,7 @@ namespace Exam70483
                         Console.ReadKey();
                         break;
                     case 8:
-                        //WCFWebService();
+                        WCFWebService();
                         Console.ReadKey();
                         break;
                     case 9: x = 9;
@@ -146,20 +146,21 @@ namespace Exam70483
         {
             Process.Start("http://www.google.com");
         }
-        //static void WCFWebService()
-        //{
-           
-        //  MathServiceClient client = new MathServiceClient();
-        //  int result = client.Add(5, 6);
-        //  Console.WriteLine(" Result from WCF WebService Add 5 + 6 is {0}", result);
-        //  int result2 = client.Multiply(5, 6);
-        //  Console.WriteLine(" Result from WCF WebService Multiply 5 * 6 is {0}", result2);
-        //  int result3 = client.Subtract(10, 5);
-        //  Console.WriteLine(" Result from WCF WebService Subtract 10 - 5 is {0}", result3);
-        //  int result4 = client.Divide(10, 5);
-        //  Console.WriteLine(" Result from WCF WebService Multiply 10 / 5 is {0}", result4);
-        //  Process.Start("https://www.youtube.com/watch?v=GzN1vHWlJjA");
-        //}
+        static void WCFWebService()
+        {
+
+            MathServiceClient client = new MathServiceClient();
+            
+            int result = client.Add(5, 6);
+            Console.WriteLine(" Result from WCF WebService Add 5 + 6 is {0}", result);
+            int result2 = client.Multiply(5, 6);
+            Console.WriteLine(" Result from WCF WebService Multiply 5 * 6 is {0}", result2);
+            int result3 = client.Subtract(10, 5);
+            Console.WriteLine(" Result from WCF WebService Subtract 10 - 5 is {0}", result3);
+            int result4 = client.Divide(10, 5);
+            Console.WriteLine(" Result from WCF WebService Multiply 10 / 5 is {0}", result4);
+            //Process.Start("https://www.youtube.com/watch?v=GzN1vHWlJjA");
+        }
 
     }
 }

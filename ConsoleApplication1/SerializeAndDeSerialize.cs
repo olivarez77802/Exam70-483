@@ -34,8 +34,7 @@ namespace Exam70483
                         Console.ReadKey();
                         break;
                     case 1:
-                        SerializationExamples.XMLMain();
-                        SerializationExamples.XMLMainDeserialize();
+                        XMLExamples.Menu();
                         Console.ReadKey();
                         break;
                     case 3:

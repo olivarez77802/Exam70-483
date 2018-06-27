@@ -26,7 +26,13 @@ namespace Exam70483
                 selection = Common.readInt("Enter Number to Execute Routine : ", 0, 9);
                 switch (selection)
                 {
-                    case 0: InputOutput.Menu();
+                    case 0: PerformIOoperations.Menu();
+                           break;
+                    case 1:
+                        /* Consume Data */
+                        break;
+                    case 2:
+                        /* Query and Manipulate data and Objects using LINQ */
                         break;
                     case 3: SerializeAndDeSerialize.Menu();
                         Console.ReadKey();

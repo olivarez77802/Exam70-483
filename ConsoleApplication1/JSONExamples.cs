@@ -82,13 +82,13 @@ namespace Exam70483
         }
         static void DeSerializeObject()
         {
-            Console.WriteLine("\n Step 2.  Takes JSON Text and loads to Author Class ");
+            Console.WriteLine("\n Step 2.  DeSerialize - Takes JSON Raw Text and loads to Author Class ");
             Author exJson = JsonConvert.DeserializeObject<Author>(ExJson);
             Console.WriteLine(exJson.name);
         }
         static void SerializeObject()
         {
-            Console.WriteLine("\n Step 3. Serialize Author class");
+            Console.WriteLine("\n Step 3. Serialize - Take Author class and create Raw Jason");
             string ExJsonSerialized = JsonConvert.SerializeObject(ExJson);
             Console.WriteLine(ExJsonSerialized);
         }
