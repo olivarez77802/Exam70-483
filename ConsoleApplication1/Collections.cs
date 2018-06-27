@@ -14,7 +14,7 @@ namespace Exam70483
     {
         /* Called by ReferenceTypes.cs
         */
-        public static void CollectionsMenu()
+        public static void Menu()
         {
             int x = 0;
             do
@@ -74,17 +74,21 @@ namespace Exam70483
                 
                 */
                 Console.Clear();
-                Console.WriteLine(" Collections Menu \n ");
-                Console.WriteLine(" 0.  Print Obect Array \n ");
-                Console.WriteLine(" 1.  Print Generic List  \n ");
-                Console.WriteLine(" 2.  Print Generic List Two  \n ");
-                Console.WriteLine(" 3.  Print Generic List Three \n");
-                Console.WriteLine(" 4.  Class return List in Descending Order\n");
-                Console.WriteLine(" 5.  Website \n");
-                Console.WriteLine(" 6.  Take Verb\n");
-                Console.WriteLine(" 7.  Sort Ascendingz-Descending\n");
+                Console.WriteLine(" Store data in and retrieve data from Collections  ");
+                Console.WriteLine("     Store and retrieve data by using dictionaries, arrays, lists, sets,  ");
+                Console.WriteLine("     and queues; hoose a collection type; initialize a collection; add    ");
+                Console.WriteLine("     and remove items from a collection; use typed versus non-typed  ");
+                Console.WriteLine("     collections; implement custom collections; implement collection interfaces. \n ");
+                Console.WriteLine(" 0.  Print Obect Array  ");
+                Console.WriteLine(" 1.  Print Generic List   ");
+                Console.WriteLine(" 2.  Print Generic List Two   ");
+                Console.WriteLine(" 3.  Print Generic List Three ");
+                Console.WriteLine(" 4.  Class return List in Descending Order");
+                Console.WriteLine(" 5.  Website ");
+                Console.WriteLine(" 6.  Take Verb");
+                Console.WriteLine(" 7.  Sort Ascendingz-Descending ");
                 Console.WriteLine(" 8.  Dictionary and other Iterations");
-                Console.WriteLine(" 9.  Quit            \n\n ");
+                Console.WriteLine(" 9.  Quit            \n ");
                 Console.Write(" Enter Number to execute Routine ");
 
 

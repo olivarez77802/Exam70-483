@@ -29,15 +29,15 @@ namespace Exam70483
                     case 0: PerformIOoperations.Menu();
                            break;
                     case 1:
-                        /* Consume Data */
+                        ConsumeData.Menu();
                         break;
                     case 2:
-                        /* Query and Manipulate data and Objects using LINQ */
+                        QueryLINQ.Menu();
                         break;
                     case 3: SerializeAndDeSerialize.Menu();
                         Console.ReadKey();
                         break;
-                    case 4: Collections.CollectionsMenu();
+                    case 4: Collections.Menu();
                         break;
                     case 9: x = 9;
                         break;
