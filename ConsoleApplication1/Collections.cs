@@ -386,7 +386,7 @@ namespace Exam70483
             /*
              * Lambda expression - (gradeornamemeanything => gradeornamemeanything).Take(3);
              * gradeornamemeanything gets its type from grades
-             * could have written (x = x).Take(3); 
+             * could have written (x => x).Take(3); 
             */
             int[] grades = { 59, 82, 70, 56, 92, 98, 85 };
             IEnumerable<int> topThreeGrades =

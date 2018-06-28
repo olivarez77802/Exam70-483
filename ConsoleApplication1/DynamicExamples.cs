@@ -6,29 +6,39 @@ using System.Dynamic;
 
 namespace Exam70483
 {
+    /*
+    The 'dynamic' type was introduced in C# 4.0
+    Any object in the .Net framework can be assigned to type 'dynamic'
 
-    //Visual C# 2010 introduces a new type, dynamic. The type is a static type, but an object of type dynamic bypasses static type checking.
-    //In most cases, it functions like it has type object. At compile time, an element that is typed as dynamic is assumed to support any 
-    //operation. Therefore, you do not have to be concerned about whether the object gets its value from a COM API, from a dynamic language 
-    //such as IronPython, from the HTML Document Object Model (DOM), from reflection, or from somewhere else in the program. However, if the 
-    //code is not valid, errors are caught at run time.
+    When would you want to use dynamic typing ?
+       * When you Interface with dynamic languages such as IronPython, and JavaScript
+       * When you acces weakly typed data such as XML, JSON
+       * When you don't want to Reflection
+        
+    Visual C# 2010 introduces a new type, dynamic. The type is a static type, but an object of type dynamic bypasses static type checking.
+    In most cases, it functions like it has type object. At compile time, an element that is typed as dynamic is assumed to support any
+    operation.Therefore, you do not have to be concerned about whether the object gets its value from a COM API, from a dynamic language
+    such as IronPython, from the HTML Document Object Model(DOM), from reflection, or from somewhere else in the program.However, if the
+    code is not valid, errors are caught at run time.
 
-    // Static types get resolved at compile time.
 
-    /// <summary>
-    /// var says, “Let the compiler figure out the type.” 
-    /// dynamic says, “Let the runtime figure out the type.” 
-    /// 
-    /// Static typing eliminates a large class of errors before a program is even run. It shifts the burden away from runtime 
-    /// unit tests onto the compiler to verify that all the types in a program fit together correctly. This makes large programs 
-    /// much easier to manage, more predictable, and more robust. Furthermore, static typing allows tools such as IntelliSense 
-    /// in Visual Studio to help you write a program, since it knows for a given variable what type it is, and hence what methods 
-    /// you can call on that variable.
-    ///
-    /// A static method can only call other methods that are defined as static.
-    /// 
-    /// </summary>
+    Static types get resolved at compile time.
 
+     <summary>
+     var says, “Let the compiler figure out the type.” 
+     dynamic says, “Let the runtime figure out the type.” 
+     
+     Static typing eliminates a large class of errors before a program is even run.It shifts the burden away from runtime 
+     unit tests onto the compiler to verify that all the types in a program fit together correctly.This makes large programs 
+     much easier to manage, more predictable, and more robust.Furthermore, static typing allows tools such as IntelliSense 
+     in Visual Studio to help you write a program, since it knows for a given variable what type it is, and hence what methods
+     you can call on that variable.
+    
+     A static method can only call other methods that are defined as static.
+     
+    
+    */
+    
     class DynamicExamples
     {
         public static void DMain()

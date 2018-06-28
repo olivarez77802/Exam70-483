@@ -82,7 +82,7 @@ namespace Exam70483
                          * 
                          * AddNumber(10,20)  <-- Will give error, since you must provide 3 or more paramters.
                          * AddNumber(10,20,null)  <-- will work without error
-                         * publiic static void AddNumbers(int firstNumber, int secondNumber, int[] restofNumbers)
+                         * public static void AddNumbers(int firstNumber, int secondNumber, int[] restofNumbers)
                          * 
                          * AddNumber(10,20)  <-- Will work with the below method overload
                          * public static void AddNumbers(int firstNumber, int secondNumber)
