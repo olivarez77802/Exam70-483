@@ -21,6 +21,17 @@ namespace Exam70483
              * C# 6.0 --- Visual Studio 2015
              * https://docs.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-version-history
              * 
+             * C# Version/ .Net Framework / Visual Studio - XREF
+             * http://www.tutorialsteacher.com/csharp/csharp-version-history
+             * 
+             * Location of Assembies and API's
+             * C:\Program Files\Reference Assemblies\Microsoft
+             * 
+             * C# Developer command Prompt
+             * Search for 'Developer Command Prompt'
+             * Type 'Where csc.exe' to determine location of csc.exe and Framework
+             * 
+             * 
             // Microsoft C# Exam 70-483
             //
             // Manage Program Flow

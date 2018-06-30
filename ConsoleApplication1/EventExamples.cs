@@ -26,6 +26,23 @@ namespace Exam70483
      * 
      *  -->> public event EventHandler<WorkPerformedEventArgs> WorkPerformed;   /* compiler will create the delegate
      *  
+     * ***************************************************************************************************************
+     *  -- Beware of multithreading implications
+     * 
+     *  class Button
+     *  {
+     *    public event Action Clicked;
+     *    
+     *    protected virtual void OnClicked()   <-- Allow overriding
+     *    {
+     *     var clicked = Clicked;
+     *     if (clicked != null)   <--- Thread safety.  Could end up with a race condition if you used Clicked instead of clicked
+     *     {                        -- If two threads are doing this at the same time, one will end up winning the race and will
+     *       clicked;               -- overwrite the result of the other.
+     *     }
+     *    }
+     *  }
+     *  
      */
     class EventExamples
     {

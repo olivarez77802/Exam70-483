@@ -35,11 +35,33 @@ namespace Exam70483
                         CreateTypes.Menu();
                         //TypeSystem.Menu();
                         break;
-                    case 1: DynamicExamples.DMain();
+                    case 1:
+                        ConsumeTypes.Menu();
+                       
                         break;
                     case 2: ClassesAndInterfaces.Menu();
                         break;
                     case 4: RunTimeTypes.Menu();
+                        break;
+                    case 5:
+                        /*
+                         * See also Static Types defined in DynamicExamples.cs
+                         * Static Typing eliminates a large class of errors before a program
+                         * is run.
+                         * 
+                         * Managed Language - CLR is the managed language for C#
+                         * - Managed Languages depeend on services provided by runtime environmnet.
+                         * - C# is one of many languages that compile into managed code
+                         * - Managed code is executed by the Common Language Runtime (CLR).
+                         * - The CLR provides features such as:
+                         *    * Automatic memorary management
+                         *    * Exception Handling
+                         *    * Standard Types
+                         *    * Security
+                         *  
+                         *    https://www.youtube.com/watch?v=JfNTD7bTscw
+                         *    
+                        */
                         break;
                     case 6: StringBuilderExamples.PrimaryMain();
                         Console.WriteLine("Equality");

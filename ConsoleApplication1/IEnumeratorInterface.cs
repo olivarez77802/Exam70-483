@@ -89,9 +89,16 @@ namespace Exam70483
         private static void IEnumaratorString02()
         {
             string s = "Hello";
-            // Because string implements IEnumerable, we can 
-            // get GetEnumerator()
-            //
+            /*
+             * 'foreach statements' leverage 'enumeration pattern'
+             *  - GetEnumerator
+             *  - MoveNext
+             *  - Current
+             *  - Dispose
+              Because string implements IEnumerable, we can 
+              get GetEnumerator()
+            
+            */
             IEnumerator rator = s.GetEnumerator();
             while (rator.MoveNext())
             {

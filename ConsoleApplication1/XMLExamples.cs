@@ -10,7 +10,7 @@ using System.Runtime.Serialization;
 
 namespace Exam70483
 {
-    public class SerializationExamples
+    public class XMLExamples
     {
         public class class1
         {
@@ -27,15 +27,20 @@ namespace Exam70483
                 }
             }
         } // end class1
-        public static void XMLMain()
+        public static void Menu()
         {
             class1 c = new class1();
             c.Age = 10;
             c.Male = true;
             c.Name = "Jesse";
+            Console.WriteLine("Serailize - Convert class and values into XML\n");
+            Console.WriteLine(@"Raw XML stored in C:\Users\jesse-olivarez\Documents\Repositories\Exam70-483\ConsoleApplication1\bin\Debug");
             c.Save("TestFile.xml");
+           
+            Console.WriteLine("DeSerialize - Load Raw XML File into class");
+            XMLDeserialize();
         }
-        public static class1 LoadFromFile(string fileName) 
+        static class1 LoadFromFile(string fileName) 
         {
             using (var stream = new FileStream(fileName, FileMode.Open))
             {
@@ -43,17 +48,10 @@ namespace Exam70483
                 return (class1)XML.Deserialize(stream);
             }
         }
-        public static void XMLMainDeserialize()
+        static void XMLDeserialize()
         {
             class1 c = LoadFromFile("TestFile.xml");
-            Console.WriteLine
-                
-                
-                
-                
-                
-                
-                (" Age = {0}, Name = {1}", c.Age, c.Name); 
+            Console.WriteLine(" Age = {0}, Name = {1}", c.Age, c.Name); 
 
         }
 

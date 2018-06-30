@@ -15,7 +15,45 @@ namespace Exam70483
             int x = 0;
             do
             {
-                /* 
+                /* See also TypeSystem.cs for info on Reference Types
+                 * 
+                 * Reference Types can represent a non-existent value with a null reference.
+                 * Value Types cannot represent null values.
+                 * 
+                 *  string s = null;    - ok, Nullable type
+                 *  int i = null;       - Compile error, value type cannot be null
+                 *  
+                 *  
+                 *  Nullablity for value types introduced in C# 2.0
+                 *    Nullable types - int?, double?, bool?, char?, int?
+                      https://msdn.microsoft.com/en-us/library/2cf62fcy.aspx
+                      Nullable<decimal> result = null     <--- Long form
+                      decimal? result = null;             <--- Shorthand form
+
+                      For an example of when you might use a nullable type, consider how an ordinary Boolean variable 
+                      can have two values: true and false.There is no value that signifies "undefined".In many programming
+                      applications, most notably database interactions, variables can occur in an undefined state.
+                      For example, a field in a database may contain the values true or false, but it may also contain
+                      no value at all. Similarly, reference types can be set to null to indicate that they are not initialized.
+             
+                      int? n = null;
+            
+                      int m1 = n;        // Will not compile.
+                      int m2 = (int)n;   // Compiles, but will create an exception if n is null.
+                      int m3 = n.Value;  // Compiles, but will create an exception if n is null.
+
+                      Customer customer = null;  <--- An instance of a class can return null, since class is a reference type
+
+                      List<Customer> customerList = null;  <-- List of classes can return null.
+
+                      2 rules of thought on returning NULLS from methods.  
+                         1.  Don't do it.  Retuning nulls alwasys requires the calling method to check the return value
+                             for Nulls.  If there are any missed it increases the risk there will be a null exception thrown.
+                         2.  Always return null anytime the return value is nothing.  So if you are asking for Customers and
+                             none are found then you want to return a null.
+
+                 * 
+                 * 
                  * Method Parameters
                  * Parameters pass by value
                  *    Reference Types pass a copy of the reference
@@ -51,12 +89,12 @@ namespace Exam70483
                 selection = Common.readInt("Enter Number to Execute Routine : ", 0, 9);
                 switch (selection)
                 {
-                    case 0: Collections.CollectionsMenu();
+                    case 0: Collections.Menu();
                         break;
                     case 1:
                         EnumTest.EnumMain();
                         break;
-                    case 3: Collections.CollectionsMenu();
+                    case 3: Collections.Menu();
                         break;
                     case 4: Delegate.Menu();
                         break;

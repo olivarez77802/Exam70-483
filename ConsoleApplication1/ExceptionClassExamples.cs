@@ -69,6 +69,27 @@ namespace Exam70483
      *     serializable.  To make your exception class serializable mark it with the Serializable attribute and
      *     provide a constructor that invokes the base Exception class constructor that takes in SerializtionInfo
      *     and StreamingContext objects as parameters.
+     *     
+     ****************************************************************************************************************
+     * 
+     *  throw does not  modify(or preserves)  the callstack
+        or preserves the stack trace information
+        throws to the next level.   So the throw simulates logging the exception.  The runtime then will handle
+        until it finds some code that will handle the exception.  The program then lands there for the progrmam to 
+        deal with.
+        
+        If you were to throw ex - you would lose stack trace information.  'Throw ex' throws a new exception instead
+        of throwing the original exception.
+        
+     *****************************************************************************************************************
+     * Global Exception Handler
+     * 
+     * Do not try to catch all errors.  Only try to catch those errors you are anticipating and then let the Global
+     * Exception Handler handle the rest.
+     *  
+     * Global exception handler is your applications safety net allowing your exceptions to fall through.  The syntax
+     * for a global exception handler is different depending on the application.  A console and Web application will have
+     * a different syntax for the global exception handler.
      */
     class ExceptionClassExamples
     {

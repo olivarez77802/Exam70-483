@@ -40,8 +40,16 @@ namespace Exam70483
                         break;
                     case 1: DynamicExamples.DMain();
                         break;
+                    case 3: StaticExamples.Menu();
+                        Console.ReadKey();
+                        break;
                     case 4:
                         /* Extension Methods
+                         * - Extend types without altering them.  Escpecially useful for extending types that are not yours or are sealed.
+                         * - They are declared as static in a static class
+                         * - The first paramter has the 'this' modifier
+                         * - The first parameter's type is the type being extended
+                         * 
                          * Both the class and the method have to be static
                          * The type that your extending goes into the signature as the first argument with the 'this' keywordaa
                          */
@@ -74,7 +82,7 @@ namespace Exam70483
                          * 
                          * AddNumber(10,20)  <-- Will give error, since you must provide 3 or more paramters.
                          * AddNumber(10,20,null)  <-- will work without error
-                         * publiic static void AddNumbers(int firstNumber, int secondNumber, int[] restofNumbers)
+                         * public static void AddNumbers(int firstNumber, int secondNumber, int[] restofNumbers)
                          * 
                          * AddNumber(10,20)  <-- Will work with the below method overload
                          * public static void AddNumbers(int firstNumber, int secondNumber)
@@ -124,9 +132,30 @@ namespace Exam70483
                          * Out Parameters
                          *   The 'out' keyword causes arguments to be passed by reference.  This is like 
                          *   the 'ref' keyword, except that the ref requires that the variable be 
-                         *   initialized before it is passed.  To use an out parameter, both the 
+                         *   initialized before it is passed. 
+                         *   
+                         *   To use both the ref and out parameter, both the 
                          *   method definition and the calling method must explicitly use the 
-                         *   out keyword
+                         *   ref or out keyword
+                         *   
+                         *   In general ref parameters are not recommended.  Ref parameters are not intuitive, why did you have
+                         *   to pass an empty string (assuming you initialized with empty string).  Ref parameters make the code
+                         *   harder to understand.
+                         *   
+                         *   Out Parmaters are also not recommeneded.  Even though you don't have to initialize, they too are 
+                         *   not intutive.  They also make the method harder to understand.
+                         *   
+                         *   Tuples is a data structure that allows for the use of multiple
+                         *   elelements.  The .Net framework class does not represent a tuple but rather provides methods for
+                         *   creating tuples.   
+                         *   
+                         *   Tuple is a nice way to group a set of data and pass it out.  However it is very clumbsy to work with
+                         *   and it not intuitive at all in what is being returned.
+                         *   
+                         *   So since Ref, out, and Tuples are not intuitive.  Is there a better way to return parameters.  Yes
+                         *   and it will through objects.  An 'object' can readily be returned from a method.  You can often
+                         *   define a class just for return values.   The term 'object' refers to the instance of a standardized
+                         *   class.   The class is usually defined with a 'get' and 'set' properties.
                          * 
                          */
                         RunwithOutput();
