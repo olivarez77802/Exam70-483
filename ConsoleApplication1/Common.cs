@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Exam70483
 {
-    class Common
+   public class Common
     {
         public static string readString(string prompt)
         {
