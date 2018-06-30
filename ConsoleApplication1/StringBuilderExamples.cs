@@ -6,10 +6,10 @@ using System.Diagnostics;
 
 namespace Exam70483
 {
-    abstract class StringBuilderExamples   // and String Examples
+    class StringBuilderExamples   // and String Examples
     {
         #region SBMain1 - Example of using Append
-        private static void SBMain1()
+        static void SBMain1()
         {
             StringBuilder builder = new StringBuilder();
             // Append to StringBuilder.
@@ -23,7 +23,7 @@ namespace Exam70483
         #endregion
 
         #region SBMain2 - Example of Appending a sentence
-        private static void SBMain2()
+        static void SBMain2()
         {
             // Declare a new StringBuilder.
             StringBuilder builder = new StringBuilder();
@@ -40,7 +40,7 @@ namespace Exam70483
         }
         #endregion
 
-        private static void SBMain3 ()
+        static void SBMain3 ()
         {
             StringBuilder builder = new StringBuilder(
                 "This is an example string that is an example.");
@@ -49,7 +49,7 @@ namespace Exam70483
             Console.ReadLine();
         }
 
-        private static void SBMain4()
+        static void SBMain4()
         {
             string[] items = { "Cat", "Dog", "Celebrity" };
 
@@ -64,7 +64,7 @@ namespace Exam70483
             
         }
         
-        public static void PrimaryMain()
+        public static void Menu()
         {
 
             Process.Start("http://msdn.microsoft.com/en-us/library/z2kcy19k.aspx");

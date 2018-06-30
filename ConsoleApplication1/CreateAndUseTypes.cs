@@ -63,7 +63,7 @@ namespace Exam70483
                          *    
                         */
                         break;
-                    case 6: StringBuilderExamples.PrimaryMain();
+                    case 6: StringBuilderExamples.Menu();
                         Console.WriteLine("Equality");
                         Console.ReadKey();
                         StringEquality.SE_Main();

@@ -32,7 +32,7 @@ namespace Exam70483
                     //case 0: DataProtectionSample.DPSMain();
                     //    break;
                     case 1:
-                        StringBuilderExamples.PrimaryMain();
+                        StringBuilderExamples.Menu();
                         break;
                     case 2:
                         ReflectionExamples.PrimaryMain();
