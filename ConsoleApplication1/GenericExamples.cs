@@ -12,7 +12,7 @@ namespace Exam70483
         /*
          * Genric Constraints
          * Where T : struct                -- Value Type
-         * Where T : class                 -- Refernce Type
+         * Where T : class                 -- Reference Type
          * Where T : new()                 -- Type with parameterless constructor
          * Where T : vendor                -- Be or derive from a vendor class
          * where T : IVendor               -- Be or implement the IVendor interface

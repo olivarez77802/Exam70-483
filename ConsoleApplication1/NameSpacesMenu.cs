@@ -7,7 +7,7 @@ using System.Diagnostics;
 
 namespace Exam70483
 {
-    abstract class NameSpacesMenu
+    class NameSpacesMenu
     {
 
         public static void Menu()
@@ -19,8 +19,8 @@ namespace Exam70483
                 Console.WriteLine(" NameSpaces Menu \n ");
                 Console.WriteLine(" 0.  Cryptography \n ");
                 Console.WriteLine(" 1.  System.Text.StringBuilder \n");
-                Console.WriteLine(" 2.  System.Reflection NameSpace \n");
-                Console.WriteLine(" 3.  System.Reflection NameSpace - Assembly Class \n");
+                Console.WriteLine(" 2.  ... \n");
+                Console.WriteLine(" 3.  ... \n");
                 Console.WriteLine(" 9.  Quit            \n\n ");
                 Console.Write(" Enter Number to execute Routine ");
 
@@ -35,14 +35,8 @@ namespace Exam70483
                         StringBuilderExamples.Menu();
                         break;
                     case 2:
-                        ReflectionExamples.PrimaryMain();
                         break;
                     case 3:
-                        AssemblyClassExamples.GetTypes();
-                        Console.ReadKey();
-                        AssemblyClassExamples.GetExecutingAssembly();
-                        Console.ReadKey();
-                        AssemblyClassExamples.Determine_type();
                         break;
                     case 9: x = 9;
                         break;

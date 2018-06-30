@@ -79,7 +79,7 @@ namespace Exam70483
                 Console.WriteLine(" 3.  Namespaces \n");
                 Console.WriteLine(" 4.  Object Creation and Lifetime \n");
                 Console.WriteLine(" 5.  \n");
-                Console.WriteLine(" 6.  Reflection    \n");
+                Console.WriteLine(" 6.  ...\n");
                 Console.WriteLine(" 7.  Classes and Constructors \n");
                 Console.WriteLine(" 8.  Generics \n");
                 Console.WriteLine(" 9.  Quit            \n\n ");
@@ -100,7 +100,7 @@ namespace Exam70483
                         break;
                     case 4: ObjectCreation();
                         break;
-                    case 6: Reflection();
+                    case 6:
                         break;
                     case 7: Constructors();
                         ClassesAndStructs();
@@ -153,11 +153,7 @@ namespace Exam70483
         {
             Process.Start("https://www.youtube.com/watch?v=SZotrU_5Tf4");
         }
-        static void Reflection()
-        {
-            ReflectionExamples.PrimaryMain();
-            Console.ReadKey();
-        }
+       
         static void Constructors()
         {
             // What is the difference between constructors and other methods ?

@@ -22,7 +22,7 @@ namespace Exam70483
      * - FileNotFoundException  - Inherits from IOException; IOException inherits from SystemException; 
      *                            SystemException inherits from Exception class.
      *                            
-     *  Press Control-Alt-E to list all .Net excpetions
+     *  Press Control-Alt-E to list all .Net exceptions
      *  
      *  There are a variety of different exceptions, it is not possible to guard against all excpetions.
      *  It is good to include the most commmon exceptions but at the end it is good to include the base
@@ -312,6 +312,28 @@ namespace Exam70483
                     Console.WriteLine("\n Finally Block Executed -- Streamread is null");
             }
         }
+        /*
+
+         *  Custom Exceptions
+         *  
+         *  https://www.youtube.com/watch?v=9qHb-2Edg7o&index=42&list=PLAC325451207E3105
+         *  - Are necessary whenever we don't have an exception, that adequately describes the problem.  Within the
+         *    .Net Framework we don't have an exception that defines the situation.  An Exception is nothing more than
+         *    a class.
+         *   1.The first step in creating a Custom Exception is to create a class that inherits from 
+         *     the base Exception class (or the parent class to inherit all of it's functionality). 
+         *   
+         *   2.Provide a public constructor, that takes in a string parameter.This constructor simply passes the
+         *     string parameter, to the base exception class constructor.
+         *     
+         *   3.Using InnerExceptions, you can also track back the original exception.If you want to provide this
+         *     capablity for your custom exception class, then overload the constructor accordingly.
+         *
+         *   4.If you want your Exception class object to work across appication domains, then the object must be
+         *     serializable.To make your exception class serializable mark it with the Serializable attribute and
+         *     provide a constructor that invokes the base Exception class constructor that takes in SerializtionInfo
+         * and StreamingContext objects as parameters.
+         */
         static void CustomExceptionDemo()
         {
             try

@@ -83,7 +83,7 @@
     <Compile Include="FTPCalls.cs" />
     <Compile Include="GenericExamples.cs" />
     <Compile Include="Grammar.cs" />
-    <Compile Include="IEnumeratorInterface.cs" />
+    <Compile Include="IEnumerableIEnumeratorInterface.cs" />
     <Compile Include="ImplementDataAccess.cs" />
     <Compile Include="ImplementDiagnostics.cs" />
     <Compile Include="ImplementProgramFlow.cs" />

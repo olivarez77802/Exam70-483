@@ -21,21 +21,23 @@ namespace Exam70483
             eight,
              Quit
         }
-        // IEnumerable - A List, Array, Query implements IEnumerable.
-        // An IEnumerable Interface specifies that the underlying type implements IEnumerable
-        //
-        // public Interface IEnumerator
-        // {
-        //   bool MoveNext();
-        //   object Current {get;}
-        //   void Reset();
-        //  }
-        //
-        //  public interface IEnumerable
-        //  {
-        //   IEnumerator GetEnumerator();
-        //  }
-        //
+        /*
+         IEnumerable - A List, Array, Query implements IEnumerable.
+         An IEnumerable Interface specifies that the underlying type implements IEnumerable
+        
+         public Interface IEnumerator
+         {
+           bool MoveNext();
+           object Current {get;}
+           void Reset();
+          }
+        
+          public interface IEnumerable
+          {
+           IEnumerator GetEnumerator();
+          }
+        
+        */
         public static void Menu()
         {
             int x = 0;
@@ -99,7 +101,7 @@ namespace Exam70483
               get GetEnumerator()
             
             */
-            IEnumerator rator = s.GetEnumerator();
+        IEnumerator rator = s.GetEnumerator();
             while (rator.MoveNext())
             {
                 char c = (char)rator.Current;

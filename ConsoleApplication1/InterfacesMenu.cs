@@ -62,7 +62,8 @@ namespace Exam70483
                 //  single base class          |  strength.
                 //  Members have access        |  Members are automatically public  
                 //  modifiers
-                //  May contain fields,        |  May only contain properties, methods, events, and indexers 
+                //  May contain fields,        |  May only contain properties, methods, events, and indexers .
+                //                             |  No implementation usually just contain signatures.
                 //  properties, constructors,  |
                 //  destructors, methods,      |
                 //  events, and indexers       |
@@ -122,15 +123,21 @@ namespace Exam70483
                 switch (selection)
                 {
                     case 0:
-                        // IComparable will tell you if
-                        //  x < y
-                        //  x > y
-                        //  x == y
-                        //  returning an integer
-                        //  - 1 means less than
-                        //    1 means greater
-                        //    0 means equal to
-                        //
+                        /*
+                         * IComparable will allow you to compare one class( one instance) to another
+                         * class (or instance).  You have to implement 'compare' in class that is
+                         * inheriting IComparable.
+                         * 
+                         IComparable will tell you if
+                          x < y
+                          x > y
+                          x == y
+                          returning an integer
+                          - 1 means less than
+                            1 means greater
+                            0 means equal to
+                        
+                        */
 
                         SortingExamples.Sort_A_Class();
                         break;
