@@ -18,7 +18,7 @@ namespace Exam70483
                 Console.Clear();
                 Console.WriteLine(" NameSpaces Menu \n ");
                 Console.WriteLine(" 0.  Cryptography \n ");
-                Console.WriteLine(" 1.  System.Text.StringBuilder \n");
+                Console.WriteLine(" 1.  ... \n");
                 Console.WriteLine(" 2.  ... \n");
                 Console.WriteLine(" 3.  ... \n");
                 Console.WriteLine(" 9.  Quit            \n\n ");
@@ -32,8 +32,7 @@ namespace Exam70483
                     //case 0: DataProtectionSample.DPSMain();
                     //    break;
                     case 1:
-                        StringBuilderExamples.Menu();
-                        break;
+                       break;
                     case 2:
                         break;
                     case 3:

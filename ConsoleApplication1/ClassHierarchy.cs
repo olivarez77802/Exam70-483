@@ -8,7 +8,7 @@ using System.IO;
 
 namespace Exam70483
 {
-    public class ClassesAndInterfaces
+    public class ClassHierarchy
     {
         /*
          * C# Modifiers
@@ -72,7 +72,7 @@ namespace Exam70483
             do
             {
                 Console.Clear();
-                Console.WriteLine(" Namespaces, Classes and Interfaces Menu \n ");
+                Console.WriteLine(" Create and Implement a Class Hierarchy \n ");
                 Console.WriteLine(" 0.  Attributes \n ");
                 Console.WriteLine(" 1.  \n ");
                 Console.WriteLine(" 2.  Inheritance and Polymorphism \n ");

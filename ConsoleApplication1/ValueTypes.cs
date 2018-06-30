@@ -26,7 +26,7 @@ namespace Exam70483
                 selection = Common.readInt("Enter Number to Execute Routine : ", 0, 9);
                 switch (selection)
                 {
-                    case 0: ClassesAndInterfaces.Menu();
+                    case 0: 
                         break;
                     case 1: 
                         EnumTest.EnumMain();
