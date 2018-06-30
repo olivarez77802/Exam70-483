@@ -60,7 +60,7 @@ namespace Exam70483
                     
                     case 0: ManageProgramFlow.Menu();
                         break;
-                    case 1: CreateAndUseTypes.CT_Menu();
+                    case 1: CreateAndUseTypes.Menu();
                         break;
                     case 2:
                         DebugAppImplementSecurity.Menu();

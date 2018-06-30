@@ -25,7 +25,7 @@ namespace Exam70483
                 Console.WriteLine("     the input format; use built-in functions to validate data type \n");
                 Console.WriteLine("     and content \n");
                 Console.WriteLine(" 0.  JSON \n ");
-                Console.WriteLine(" 1.  ..  \n ");
+                Console.WriteLine(" 1.  Regular Expressions \n ");
                 Console.WriteLine(" 2.  .. \n ");
                 Console.WriteLine(" 3.  .. \n ");
                 Console.WriteLine(" 4.  .. \n ");
@@ -40,7 +40,8 @@ namespace Exam70483
                         Console.ReadKey();
                         break;
                     case 1:
-                        
+                        RegularExpressionExamples.Menu();
+                        Console.ReadKey();
                         break;
                     case 2:
                         

@@ -6,7 +6,7 @@ using System.Diagnostics;
 
 namespace Exam70483
 {
-    abstract class StringBuilderExamples   // and String Examples
+    class StringBuilderExamples   // and String Examples
     {
         #region SBMain1 - Example of using Append
         private static void SBMain1()

@@ -10,7 +10,7 @@ namespace Exam70483
      */
     class CreateAndUseTypes
     {
-       public static void CT_Menu()
+       public static void Menu()
         {
 
             int x = 0;

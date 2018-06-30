@@ -94,11 +94,11 @@ namespace Exam70483
         #endregion
        
 
-        public static void PrimaryMain()
+        public static void Menu()
         {
             
 
-            Process.Start("http://csharp.net-tutorials.com/reflection/introduction/");
+            //Process.Start("http://csharp.net-tutorials.com/reflection/introduction/");
             ReflectionExamples.ReflectionExample1.EnterNumber();
             Console.ReadKey();
             Console.WriteLine("Example of Reflection using GetMethods() ");

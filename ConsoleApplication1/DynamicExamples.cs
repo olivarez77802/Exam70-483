@@ -35,10 +35,25 @@ namespace Exam70483
      you can call on that variable.
     
      A static method can only call other methods that are defined as static.
-     
+
+    Example of Anonymous type  - new keyword defines Anonmyous type
+      Anonymous type are great for defining types on the fly that can be used for processing or binding scenarios but these types
+                are only useful in the method they are declared - don't try to pass anonymous types from a function. 
+       dynamic - allows you bypass compile time type checking allowing you to return an anonymous type.
+    However if we called this method and got back the dynamic there would be no way to convert back to our query so it is not recommended technique
+    The recommened use of dynamic types is to add this code where you need it, for example you can put this code to the UI Layer and bind directly to the    
+    results of the query.
     
+    public dynamic GetNamesandEmail(List<Customer> customerList)
+    {
+      var query = customerList.Select( c => new
+           {
+            Name = c.LastName + ", " + c.FirstName, c.EmailAddress
+           });
+      return query;
+    }    
     */
-    
+
     class DynamicExamples
     {
         public static void DMain()

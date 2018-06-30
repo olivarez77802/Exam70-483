@@ -162,7 +162,7 @@ namespace Exam70483
                         break;
                     case 6: Methods.Menu();
                         break;
-                    case 7: Indexer.Indexer_Main();
+                    case 7: Indexer.Menu();
                         Console.ReadKey();
                         break;
                     case 9: x = 9;

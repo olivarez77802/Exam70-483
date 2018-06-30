@@ -19,8 +19,7 @@ namespace Exam70483
      TPL encapsulates multicore execution.  Parallellism across
      cores is taken care of by TPL.
     
-      Video uses Performance Monitor
-      https://www.youtube.com/watch?v=No7QqSc5cl8
+     
     
         Advanced C# - Task Parallel Library
         https://www.youtube.com/watch?v=gfkuD_eWM5Y&index=5&list=PLrzrNeNx3kNHUOzNmvX5gZy0scGLKpY7m
