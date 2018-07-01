@@ -15,7 +15,7 @@ namespace Exam70483
 is a website
 you are reading";
 
-            public static void SREMain()
+            public static void Menu()
             {
                 // Creates new StringReader instance from System.IO
                 using (StringReader reader = new StringReader(_input))

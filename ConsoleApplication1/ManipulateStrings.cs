@@ -111,10 +111,10 @@ namespace Exam70483
                 Console.WriteLine("  StringReader classes; search strings; enumerate string");
                 Console.WriteLine("  methods; format strings; use string interpolation ");
 
-                Console.WriteLine(" 0.  StringBuilder \n ");
-                Console.WriteLine(" 1.  StringWriter   \n ");
-                Console.WriteLine(" 2.  StringReader  \n ");
-                Console.WriteLine(" 3.  ...");
+                Console.WriteLine(" 0.  StringBuilder");
+                Console.WriteLine(" 1.  StringWriter");
+                Console.WriteLine(" 2.  StringReader");
+                Console.WriteLine(" 3.  StringWriter");
                 Console.WriteLine(" 4.  ...");
                 Console.WriteLine(" 5.  ...");
                 Console.WriteLine(" 6.  ...");
@@ -129,7 +129,11 @@ namespace Exam70483
                         break;
                     case 1:
                         break;
+                    case 2:
+                        StringReaderExamples.Menu();
+                        break;
                     case 3:
+                        StringWriter_Ex();
                         break;
                     case 4:
                         break;
@@ -167,6 +171,13 @@ namespace Exam70483
             Console.WriteLine(" SBMain4 - Uses AppendLine");
             ManipulateStrings.SBMain4();
             Console.ReadKey();
+        }
+        static void StringWriter_Ex()
+        {
+            /*
+             * https://www.youtube.com/watch?v=uEcwwjB7Fg4
+            */
+                        
         }
 
     }

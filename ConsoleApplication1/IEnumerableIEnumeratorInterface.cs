@@ -36,6 +36,10 @@ namespace Exam70483
           {
            IEnumerator GetEnumerator();
           }
+
+         Note! - Notice the interfaces inherited by String, it uses IEnumerable<char> and not IEnumerable<string>
+         public sealed class String : IComparable, ICloneable, IConvertible, IComparable<String>, IEnumerable<char>, 
+                                      IEnumerable, IEquatable<String>
         
         */
         public static void Menu()

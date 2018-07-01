@@ -58,7 +58,7 @@ namespace Exam70483
                         StreamExamples.StreamMain();
                         break;
                     case 7:
-                        StringReaderExamples.SREMain();
+                        StringReaderExamples.Menu();
                         Console.ReadKey();
                         break;
                     case 8:
