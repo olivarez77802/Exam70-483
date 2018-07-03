@@ -21,7 +21,7 @@ namespace Exam70483
                 Console.WriteLine(" 0.  Create Types (Value-Reference) \n ");
                 Console.WriteLine(" 1.  Consume Types  \n ");
                 Console.WriteLine(" 2.  Enforce Encapsulation \n ");
-                Console.WriteLine(" 3.  Create and Implement a Class Heirarchy \n ");
+                Console.WriteLine(" 3.  Create and Implement a Class Hierarchy \n ");
                 Console.WriteLine(" 4.  Find,execute, and create types at run time using Reflection \n ");
                 Console.WriteLine(" 5.  Manage the object lifecycle \n ");
                 Console.WriteLine(" 6.  Manipulate Strings \n");
@@ -39,7 +39,7 @@ namespace Exam70483
                         ConsumeTypes.Menu();
                        
                         break;
-                    case 2: ClassesAndInterfaces.Menu();
+                    case 3: ClassHierarchy.Menu();
                         break;
                     case 4: RunTimeTypes.Menu();
                         break;
@@ -63,7 +63,7 @@ namespace Exam70483
                          *    
                         */
                         break;
-                    case 6: StringBuilderExamples.PrimaryMain();
+                    case 6: ManipulateStrings.Menu();
                         Console.WriteLine("Equality");
                         Console.ReadKey();
                         StringEquality.SE_Main();
