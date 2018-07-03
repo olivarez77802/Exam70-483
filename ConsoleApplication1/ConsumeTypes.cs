@@ -112,6 +112,29 @@ namespace Exam70483
                 Example - Base Type is object and Derived Type is String
                 Array CoVariance is broken because you cannot determine type, so you should
                 not use.
+
+                Broken array covariance - Writing Array Example
+                Apple[] apples = new Apple[]
+                {
+                  new Jonagold(),
+                  new Gala(),
+                  new Fuji()
+                }
+                Fruits[] fuits = apples;
+                fruit[1] - new Pineapple();
+                apples[1].Peel();     <---- Points to a pineapple, therefore array covariance is broken, not a type safe operation
+
+                Good Array Covariance - Reading Array Example
+                IEnumerable<Apple> apples = ...;
+                IEnumerable<Fruit> fruits;
+                fruits = apples;      <---- Safe to read
+                
+               For arrays
+                  * CoVariance is safe for reading
+                  * ArrayTypeMismatch Exception upon writing
+                  * This is why the 'out' keyword is used in IEnumerable
+                   
+                  
                See IEnumeratorInterfaces.cs for more information about IEnumerable
                IEnumerable<T> and IEnumerator<T> use CoVariance and are good to use unlike 
                Array CoVariance.
@@ -136,9 +159,15 @@ namespace Exam70483
                The 'out' keyword is what tells the compiler that the Interface can be treated as Covariant.
                The 'out' keyword lets you know it can't be modified
     
+               Covariant because T is used with 'out' keyword.  Making it readable (not writeable)
                 ...public interface IEnumerable<out T> : IEnumerable
                {
                  ...IEnumerator<T> GetEnumerator();
+               }
+               interface IEnumerator<out T>
+               {
+                  bool MoveNext();
+                  T Current { get; }
                }
              * 
              */

@@ -10,6 +10,10 @@ namespace Exam70483
     {
 
         /*
+         * Beneifts of using Generics
+         *    Compile-time checking
+         *    Reduces boxing of values
+         * 
          * Genric Constraints
          * Where T : struct                -- Value Type
          * Where T : class                 -- Reference Type
