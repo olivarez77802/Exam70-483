@@ -56,6 +56,7 @@
     <Compile Include="AccessKeywords.cs" />
     <Compile Include="AssemblyClassExamples.cs" />
     <Compile Include="AsyncAwaitExamples.cs" />
+    <Compile Include="AttributeExamples.cs" />
     <Compile Include="BaseExamples.cs" />
     <Compile Include="Box.cs" />
     <Compile Include="Car.cs" />
