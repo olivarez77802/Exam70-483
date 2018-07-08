@@ -24,6 +24,8 @@ namespace Exam70483
              * C# Version/ .Net Framework / Visual Studio - XREF
              * http://www.tutorialsteacher.com/csharp/csharp-version-history
              * 
+             * C# 3.0 WCF(Windows Communication Foundation) was introduced
+             * 
              * Location of Assembies and API's
              * C:\Program Files\Reference Assemblies\Microsoft
              * 
