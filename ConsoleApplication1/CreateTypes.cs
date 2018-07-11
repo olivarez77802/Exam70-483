@@ -71,7 +71,7 @@ namespace Exam70483
                          * 1. Parameter arrays
                          * 
                          * AddNumbers(10,20)  <-- 3 or more paramters optional 
-                         * AddNumbers(10,20 new object[] {30,40,50});
+                         * AddNumbers(10,20, new object[] {30,40,50});
                          * public static void AddNumbers( int firstNumber, int secondNumber, params object[] resetofNumbers)
                          * 
                          * params must be last parameter - below will get comile error
@@ -146,7 +146,7 @@ namespace Exam70483
                          *   not intutive.  They also make the method harder to understand.
                          *   
                          *   Tuples is a data structure that allows for the use of multiple
-                         *   elelements.  The .Net framework class does not represent a tuple but rather provides methods for
+                         *   elements.  The .Net framework class does not represent a tuple but rather provides methods for
                          *   creating tuples.   
                          *   
                          *   Tuple is a nice way to group a set of data and pass it out.  However it is very clumbsy to work with
