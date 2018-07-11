@@ -116,6 +116,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="WCFWebServiceExamples.cs" />
     <Compile Include="XMLExamples.cs" />
     <Compile Include="SerializeAndDeSerialize.cs" />
     <Compile Include="SortingExamples.cs" />
