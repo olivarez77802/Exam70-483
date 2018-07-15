@@ -7,7 +7,7 @@ using System.Diagnostics;
 namespace Exam70483
 {
     /*
-     * StingBuilder versus String
+     * StringBuilder versus String
      * https://www.youtube.com/watch?v=hF-6eudOD0M
      * 
      * String was designed to be immutable (not able to be changed).  It was designed this way primarily
@@ -115,7 +115,7 @@ namespace Exam70483
                 Console.WriteLine(" 1.  StringWriter");
                 Console.WriteLine(" 2.  StringReader");
                 Console.WriteLine(" 3.  StringWriter");
-                Console.WriteLine(" 4.  ...");
+                Console.WriteLine(" 4.  String Methods");
                 Console.WriteLine(" 5.  ...");
                 Console.WriteLine(" 6.  ...");
                 Console.WriteLine(" 9.  Quit            \n\n ");
@@ -136,6 +136,9 @@ namespace Exam70483
                         StringWriter_Ex();
                         break;
                     case 4:
+                        Process.Start("https://msdn.microsoft.com/en-us/library/system.string_methods(v=vs.110).aspx");
+                        StringMethodExamples.SMEMain();
+                        Console.ReadKey();
                         break;
                     case 5:
                         break;

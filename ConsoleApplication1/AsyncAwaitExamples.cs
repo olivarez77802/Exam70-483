@@ -17,36 +17,52 @@ namespace Exam70483
        
         public static void AsyncEx1Main()
         {
-            // Notice "New Thread is displayed first
+            /* Display Order:
+             * New Thread
+             * Main Thread
+             * End Async Main 1
+             * End Long Task
+            */ 
             Method();
             Console.WriteLine("Main thread");
+            Console.WriteLine("End Async Main 1");
             Console.ReadLine();
         }
 
         public static void Method()
         {
-            Task.Factory.StartNew(new Action(LongTask));   // Invoking this Task in a Parallel Way
-            Console.WriteLine("New Thread");
+            Task.Factory.StartNew(new Action(LongTask));   // Invoking this Task in a Parallel Way -Starts a new thread
+            Console.WriteLine("New Thread");               // back to Main Thread - Does NOT wait! Returns to Primary 
+                                                           // Thread.
         }
 
         public static void LongTask()
         {
-            Thread.Sleep(20000);
+            Thread.Sleep(1000);
+            Console.WriteLine("End Long Task");
         }
 
-        //public static void AsyncEx2Main()
-        //{
-        //    // Notice "New Thread is displayed first
-        //    Method2();
-        //    Console.WriteLine("Main thread");
-        //    Console.ReadLine();
-        //}
+        public static void AsyncEx2Main()
+        {
+            /*
+             * Display Order:
+             * Main Thread
+             * End Async Main 2
+             * End Long Task
+             * New Thread
+            */
+              Method2();
+              Console.WriteLine("Main thread");
+              Console.WriteLine("End Async Main 2");
+              Console.ReadLine();
+        }
 
-        //public static async void Method2()
-        //{
-        //    await Task.Factory.StartNew(new Action(LongTask));   // Invoking this Task in a Parallel Way
-        //    Console.WriteLine("New Thread");
-        //}
+        public static async void Method2()
+        {
+            await Task.Factory.StartNew(new Action(LongTask));   // Invoking this Task in a Parallel Way - starts a new thread
+            Console.WriteLine("New Thread");                     // await forces you to wait until task is finished.  Returns 
+                                                                 // to execution outside Method2.
+        }
 
         
     }

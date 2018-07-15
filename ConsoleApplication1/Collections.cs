@@ -98,7 +98,6 @@ namespace Exam70483
                 switch (selection)
                 {
                     case 0:
-
                         PrintObjectArray(new { i = J[2] });
                         break;
                     case 1: PrintGenericList();

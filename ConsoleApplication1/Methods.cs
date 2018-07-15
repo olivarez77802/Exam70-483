@@ -20,7 +20,7 @@ namespace Exam70483
             UserDefinedConversions,
             EnumerableMethods,
             GetPropertyMethods,
-            StringMethods,
+            xxx,
             Eight,
             Quit
         }
@@ -59,7 +59,7 @@ namespace Exam70483
                 Console.WriteLine(" 4.  User Defined Conversions \n");
                 Console.WriteLine(" 5.  ...... ");
                 Console.WriteLine(" 6.  GetProperty Method \n");
-                Console.WriteLine(" 7.  String Methods (System.Namespace String Class \n");
+                Console.WriteLine(" 7.  ..... \n");
                 Console.WriteLine(" 9.  Quit            \n\n ");
                 Console.Write(" Enter Number to execute Routine ");
 
@@ -92,10 +92,7 @@ namespace Exam70483
                         MyTypeClass.MainMTC();
                         Console.ReadKey();
                         break;
-                    case eMenu.StringMethods:
-                        Process.Start("https://msdn.microsoft.com/en-us/library/system.string_methods(v=vs.110).aspx");
-                        StringMethodExamples.SMEMain();
-                        Console.ReadKey();
+                    case eMenu.xxx:
                         break;
                     case eMenu.Quit:
                         x = 9;

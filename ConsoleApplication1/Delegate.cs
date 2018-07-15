@@ -57,6 +57,9 @@ namespace Exam70483
                     case 5: TaskLibExamples.Menu();
                         break;
                     case 6: AsyncAwaitExamples.AsyncEx1Main();
+                      
+                        AsyncAwaitExamples.AsyncEx2Main();
+                        
                         break;
                     case 9: x = 9;
                         break;
