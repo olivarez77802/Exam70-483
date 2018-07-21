@@ -33,10 +33,34 @@ namespace Exam70483
                     case 0: Hashing();
                         Console.ReadKey();
                         break;
-                   // case 1: Symmetric_Default();
-                   //     Console.ReadKey();
-                   //     break;
+                    case 1:
+                        /*
+                         * Symmetric Encryption
+                         * - One key is used for both encryption and decryption
+                         * - Faster than asymmetric encryption
+                         * - Cryptography namespace includes five symmetric algorithms
+                         *    # Aes (recommended)
+                         *    # DES
+                         *    # RC2
+                         *    # Rijndael (Same algorithm as Aes. Aes more secure)
+                         *    # TripleDES
+                         *    
+                         *    https://www.youtube.com/watch?v=Tjeb8yCeWE8
+                        */
+                        //Symmetric_Default();
+                        Console.ReadKey();
+                        break;
                     case 2:
+                        /*
+                         * Asymmetric (or Public Key) Encryption
+                         * - One key is used for encryption and another key for decryption
+                         * - Commonly used for digital signatures
+                         * - Cryptography namespace includes four aymmetric algorithms:
+                         *   # DSA
+                         *   # ECDffieHellman
+                         *   # ECDsa
+                         *   # RSA (Most popular)
+                        */
                         break;
                     case 3:
                         break;

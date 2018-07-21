@@ -7,6 +7,9 @@ namespace Exam70483
 {
     class DelegateExamples
     {
+        delegate void CustomDel(string s);
+        delegate int Countit(int x);
+
         //Define two methods that have the same signature as CustomDel.
         static void Hello(string s)
         {

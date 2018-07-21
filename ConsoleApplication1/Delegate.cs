@@ -17,8 +17,6 @@ namespace Exam70483
 */
 
 {
-    delegate void CustomDel(string s);
-    delegate int Countit(int x);
    
     class Delegate
     {

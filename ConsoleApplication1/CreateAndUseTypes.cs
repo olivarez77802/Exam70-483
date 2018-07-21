@@ -46,8 +46,7 @@ namespace Exam70483
                     case 5:
                         ManageObjectCycle.Menu();
                         break;
-                       
-                        break;
+                                            
                     case 6: ManipulateStrings.Menu();
                         Console.WriteLine("Equality");
                         Console.ReadKey();

@@ -96,7 +96,8 @@ namespace Exam70483
                          * https://www.youtube.com/watch?v=khcOI3-Kh84&index=68&list=PLAC325451207E3105
                          * 
                          * 3. Specifying parameter defaults - If we don't supply the third parameter then it
-                         *    will take the default assigned).
+                         *    will take the default assigned).  Optional parameters should always be placed as 
+                         *    the last parameter(s).
                          * 
                          * AddNumbers(10,20);  <-- 3rd parameter will take default of null.
                          * AddNumbers(10, 20, new int[] {30, 40});  <-- will use 30, 40 as 3rd and 4th parameters.
