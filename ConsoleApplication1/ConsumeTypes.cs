@@ -126,6 +126,9 @@ namespace Exam70483
              * an exception rather it will assign a null value.  You must then check for that null value.
              * 
              * AS Operator - Way of checking value.
+             * You can use the 'AS' operator to
+             * perform certain types of conversions between compatible reference types or nullable types
+             * https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/as
              * 
              * Example
              * Button button = sender as Button;

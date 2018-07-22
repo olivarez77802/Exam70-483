@@ -76,9 +76,10 @@ namespace Exam70483
             /* 
              * Event Handler
              */
+            public delegate void TickHandler(Metronome m, EventArgs e);
             public event TickHandler Tick;       /* TicketHandler is a delegate */
             public EventArgs e = null;
-            public delegate void TickHandler(Metronome m, EventArgs e);
+           
             /*
              * Listener
              */
@@ -125,16 +126,20 @@ namespace Exam70483
         #endregion
         #region EventHandler
 
-        public delegate void EventHandler();
-        public static event EventHandler _show;
+        public delegate void EventHandler_1();
+        public static event EventHandler_1 _show;
 
         public static void EH_Main_1()
         {
+            /*
+             * 
+             * https://www.dotnetperls.com/event
+            */
             //Add event handlers to Show event.
-            _show += new EventHandler(Dog);
-            _show += new EventHandler(Cat);
-            _show += new EventHandler(Mouse);
-            _show += new EventHandler(Mouse);
+            _show += new EventHandler_1(Dog);
+            _show += new EventHandler_1(Cat);
+            _show += new EventHandler_1(Mouse);
+            _show += new EventHandler_1(Mouse);
 
             //Delegate inference
             _show += Dog;
@@ -149,7 +154,7 @@ namespace Exam70483
             };
 
             //Lambda
-            EventHandler _show2 = () => Console.WriteLine("Pig");
+            EventHandler_1 _show2 = () => Console.WriteLine("Pig");
 
 
 
