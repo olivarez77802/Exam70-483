@@ -19,6 +19,36 @@ namespace Exam70483
            
            Windows RunTime
            https://www.youtube.com/watch?v=24Uaf3Y4qW8
+
+
+           Refelection
+           * Reflection inspects type metadata at runtime
+           * The type metadata contains information such as:
+            - The 'type' Name
+            - The containing Assembly
+            - Constructors
+            - Properties
+            - Methods
+            - Attributes
+
+            * This data can be used to create instances, access values and executes methods
+              dynamically at run time.
+
+            Example:
+            void Property()
+            {
+               var horse = new Animal() {Name = "Ed" };
+               var type = horse.GetType();
+               var property = type.GetProperty("Name");
+               var value = property.GetValue(horse, null);
+            }
+
+            public class Animal
+            {
+               public string Name { get; set}
+            }
+
+            https://www.youtube.com/watch?v=1G2IhEdb6lA
                
                          
         */

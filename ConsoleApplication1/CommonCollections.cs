@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Exam70483
 {
-    public class CommonCollections
+    class CommonCollections
     {
         public class Cat
         {

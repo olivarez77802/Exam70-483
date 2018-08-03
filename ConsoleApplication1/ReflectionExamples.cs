@@ -7,10 +7,10 @@ using System.Diagnostics;
 
 namespace Exam70483
 {
-    abstract class ReflectionExamples
+    class ReflectionExamples
     {
         #region Reflection Example 1
-        abstract class ReflectionExample1
+        class ReflectionExample1
         {
             private static int a = 5, b = 10, c = 20;
 
@@ -50,7 +50,7 @@ namespace Exam70483
                 return result - third;
             }
         }
-        abstract class ReflectionExample2
+        class ReflectionExample2
         {
             public static void GetMethods()
             {
@@ -66,7 +66,7 @@ namespace Exam70483
         }
         #endregion
         #region Reflection Example 3
-        abstract class ReflectionExample3
+        class ReflectionExample3
         {
             public static void InvokeSpecificMethod()
             {
@@ -79,7 +79,7 @@ namespace Exam70483
         }
         #endregion
         #region Reflection Example 4
-        abstract class ReflectionExample4
+        class ReflectionExample4
         {
             public static void InvokeSpecificMethod()
             {

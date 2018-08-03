@@ -16,13 +16,15 @@ namespace Exam70483
             {
                 Console.Clear();
                 Console.WriteLine(" Iteration Statements Menu \n ");
-                Console.WriteLine(" 0.  Web Page \n ");
-                Console.WriteLine(" 1.  Run foreach Example 1  \n ");
-                Console.WriteLine(" 2.  Run Example 2 \n");
-                Console.WriteLine(" 3.  Run Example 3 \n");
-                Console.WriteLine(" 4.  Run Example 4 \n");
-                Console.WriteLine(" 5.  Run Example 5 \n");
-                Console.WriteLine(" 9.  Quit            \n\n ");
+                Console.WriteLine(" 0.  Web Page ");
+                Console.WriteLine(" 1.  Run foreach Example 1  ");
+                Console.WriteLine(" 2.  Run Example 2 ");
+                Console.WriteLine(" 3.  Run Example 3 ");
+                Console.WriteLine(" 4.  Run Example 4 ");
+                Console.WriteLine(" 5.  Statement Keywords ");
+                Console.WriteLine(" 6.  While, do-while ");
+                Console.WriteLine(" 7.  .. ");
+                Console.WriteLine(" 9.  Quit  ");
                 Console.Write(" Enter Number to execute Routine ");
 
 
@@ -42,6 +44,7 @@ namespace Exam70483
                         break;
                     case 5: StatementKeywords();
                         break;
+                    case 6: WhiledoWhile();
                     case 9: x = 9;
                         break;
                     default: Console.WriteLine(" Invalid Number");
@@ -241,7 +244,32 @@ namespace Exam70483
         {
             Process.Start("http://msdn.microsoft.com/en-us/library/xt4z8b0f.aspx");
         }
-
+        static void WhiledoWhile()
+        {
+           /*
+            * while and do-while statements execute a body of code if the expression evaluates
+            * to true.
+            * - while evaluates the expression before
+            *   executing the body, so the body may execute
+            *   0 or more times.
+            *   
+            * - do-while evaluates the expression after the
+            *   first execution of the body, so the body executes
+            *   at least once.
+            *   
+            *   var loopcounter = 0;
+            *   while (loopcounter > 0)
+            *   {
+            *     Console.WriteLine("This will not execute");
+            *   }
+            *   
+            *   do
+            *   {
+            *     Console.WriteLine("This will execute");
+            *   } while (loopcounter > 0);
+            *   
+           */
+        }
         public class Program
         {
 

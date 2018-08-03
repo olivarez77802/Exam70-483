@@ -74,22 +74,50 @@ namespace Exam70483
         } // end Menu
         static void Boxing()
         {
-           /* Boxing is the act of converting a VALUE type instance to a REFERENCE type
-              instance.   
-            
-               int x = 9;
-               object = x;   -  box the int
-           
-               Unboxing casts the object back to the VALUE type
-            
-               int y = (int)obj; 
-               unbox the int
-           */
+            /* 
+             * Object - Keyword that allow you to store any kind of data type.
+             * 
+             * 
+             * Boxing is the act of converting a VALUE type instance to a REFERENCE type
+               instance.   
+
+                int x = 9;
+                object y = x;   -  box the int
+
+                Unboxing casts the object back to the VALUE type
+
+                x = (int)y; 
+                unbox the int
+                https://www.youtube.com/watch?v=A8q88vDDSsY
+
+            */
+            int x = 9;    /* Values Type */
+            object y = x; /* Reference Type */
+            x = 10;       /* Value Type */
+            /* Displays
+             * 9
+             * Int32;
+             * 9
+             */
+            Console.WriteLine(y);
+            Console.WriteLine(y.GetType());
+            Console.WriteLine(y.ToString());
+            x = (int)y;
+            /* Displays
+             * 9
+             * Int32;
+             * 9
+             */
+            Console.WriteLine(x);
+            Console.WriteLine(x.GetType());
+            Console.WriteLine(x.ToString());
+
+
         }
         static void CastExamples()
         {
             /*
-             * Casting is when you want to provide an Explicit Conversion (versus Impllicit) conversion
+             * Casting is when you want to provide an Explicit Conversion (versus Implicit) conversion
              * from one type to another.  Explicit casting will throw an execption if it can't be of the
              * type being cast.
              * 
@@ -98,6 +126,9 @@ namespace Exam70483
              * an exception rather it will assign a null value.  You must then check for that null value.
              * 
              * AS Operator - Way of checking value.
+             * You can use the 'AS' operator to
+             * perform certain types of conversions between compatible reference types or nullable types
+             * https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/as
              * 
              * Example
              * Button button = sender as Button;

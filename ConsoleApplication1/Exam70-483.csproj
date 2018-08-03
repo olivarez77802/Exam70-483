@@ -89,6 +89,7 @@
     <Compile Include="ImplementDiagnostics.cs" />
     <Compile Include="ImplementProgramFlow.cs" />
     <Compile Include="Indexer.cs" />
+    <Compile Include="ManageObjectCycle.cs" />
     <Compile Include="PerformIOoperations.cs" />
     <Compile Include="Interface1.cs" />
     <Compile Include="InterfacesMenu.cs" />

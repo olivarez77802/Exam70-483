@@ -13,7 +13,8 @@ namespace Exam70483
      Threading does Time Slicing (versus parallel execution) on each core.
      So multithreading is actually time slicing.
     
-     Task Parallel Library(TPL) uses System.Threading.Tasks
+     Task Parallel Library(TPL) uses System.Threading.Tasks.  TPL utlizes mulitiple cores so that
+     processing can be done in parallel.
     
      Parallel.For is from the Task Parallel Library
      TPL encapsulates multicore execution.  Parallellism across

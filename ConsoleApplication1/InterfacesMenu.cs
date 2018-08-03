@@ -65,7 +65,7 @@ namespace Exam70483
                 //  May contain fields,        |  May only contain properties, methods, events, and indexers .
                 //                             |  No implementation usually just contain signatures.
                 //  properties, constructors,  |
-                //  destructors, methods,      |
+                //  destructors, methods,      |  Interfaces may not contain fields 
                 //  events, and indexers       |
                 //
 

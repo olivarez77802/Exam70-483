@@ -13,16 +13,32 @@ namespace Exam70483
          * Beneifts of using Generics
          *    Compile-time checking
          *    Reduces boxing of values
+         *    
+         * T - Type   
+         * Use T as the type parameter for classes with one parameter.
          * 
-         * Genric Constraints
+         * Prefix descriptive type parameter names with T
+         * Ex.  public class OpResult<TResult, TMessage>   
+         * 
+         * Genric Constraints - limits the types on parameters.
          * Where T : struct                -- Value Type
          * Where T : class                 -- Reference Type
          * Where T : new()                 -- Type with parameterless constructor
          * Where T : vendor                -- Be or derive from a vendor class
          * where T : IVendor               -- Be or implement the IVendor interface
          * 
+         * ------------------------------------------------------
+         * Generic Contraint Syntax - Class signature
+         * struct - limits the arguments to value types
+         * where T - defines the parameter name
          * public class OperationResult<T> where T : struct
          * 
+         * Example - Calling generic
+         * var operationResult = new OperationResult<decimal>();
+         * var operationResult = new OperationResult<bool>();
+         * 
+         *  
+         * ------------------------------------------------------
          * public <T> Populate<T>(string sql) where T: class, new()
          * {
          *   T instance = new T();
@@ -30,7 +46,7 @@ namespace Exam70483
          *   return instance;
          * } 
          * 
-         * 
+         * Generic Constraint syntax - Method Signature
          * public T RetrieveValue<T, V>(string sql, V parameter) where T : struct
          *                                                       where V : struct
          */

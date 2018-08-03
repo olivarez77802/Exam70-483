@@ -80,18 +80,22 @@ namespace Exam70483
 
         private static void IsNullOrWhiteSpaceMethod()
         {
-            //White space is defined as any character with Unicode class Zs (which includes the space character) as well as the horizontal tab character, the vertical tab character, and the form feed character.
-            //whitespace:
-            //Any character with Unicode class Zs
-            //Horizontal tab character (U+0009)
-            //Vertical tab character (U+000B)
-            //Form feed character (U+000C)
+            /*
+            White space is defined as any character with Unicode class Zs (which includes the space character)
+              as well as the horizontal tab character, the vertical tab character, and the form feed character.
+            whitespace:
+            Any character with Unicode class Zs
+            Horizontal tab character (U+0009)
+            Vertical tab character (U+000B)
+            Form feed character (U+000C)
 
-            //IsNullOrWhiteSpace is a convenience method that is similar to the following code, except that it offers superior performance:
-            //return String.IsNullOrEmpty(value) || value.Trim().Length == 0;
-            //White-space characters are defined by the Unicode standard. The IsNullOrWhiteSpace method interprets any character that returns a value of true
-            //when it is passed to the Char.IsWhiteSpace method as a white-space character.
-
+            IsNullOrWhiteSpace is a convenience method that is similar to the following code, 
+            except that it offers superior performance:
+            return String.IsNullOrEmpty(value) || value.Trim().Length == 0;
+            White-space characters are defined by the Unicode standard. The IsNullOrWhiteSpace method interprets
+            any character that returns a value of true
+            When it is passed to the Char.IsWhiteSpace method as a white-space character.
+            */
             string[] values = { null, String.Empty, "ABCDE", 
                           new String(' ', 20), "  \t   ", 
                           new String('\u2000', 10), " ABCDE" };
@@ -104,14 +108,7 @@ namespace Exam70483
 
         }
 
-        // The example displays the following output:
-        //       True
-        //       True
-        //       False
-        //       True
-        //       True
-        //       True
-        //       False
+       
 
 
         private static void IndexOfMethod()
@@ -154,7 +151,9 @@ namespace Exam70483
 
             SubstringMethod();
             TrimMethod();
+            Console.WriteLine("Is Null or Whitespace method");
             IsNullOrWhiteSpaceMethod();
+            Console.ReadKey();
             IndexOfMethod();
             DisplayCharSet();
 

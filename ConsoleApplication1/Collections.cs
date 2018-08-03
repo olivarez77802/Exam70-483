@@ -38,6 +38,7 @@ namespace Exam70483
                      properties can be modified e.g. You can change a word from lowercase to uppercase
                   - cannot modify the index
                   - only need one loop
+                  - Must iterate through all elements of a list
 
                  for loop
                    - can replace elements
@@ -48,11 +49,16 @@ namespace Exam70483
                 Arrays versus Lists
                 
                 Arrays.
-                    1.  Are Definined, so you cannot add to array on the fly.  If you want to add on the fly you have to use a List.
+                    1.  Fixed Length.  Are Definined, so you cannot add to array on the fly.
+                        If you want to add on the fly you have to use a List.
                     2.  Single Dimension array can be used with a foreach
+                    3.  Strongly typed
                 Lists.
-                    1. A List cannot have more than one index.  Have to use a Multi-Dimensional Array if you want more than one index.
-                    2. A list can be used with a foreach.
+                    1. Expandable - can add, insert, or remove elements 
+                    2. Multi-Dimensional.  A List cannot have more than one index. 
+                       Have to use a Multi-Dimensional Array if you want more than one index.
+                    3. A list can be used with a foreach.
+                    4. Strongly typed
                 
                 Multi-Diminesional Arrays.
                     1.  Can have more than one index.
@@ -98,7 +104,6 @@ namespace Exam70483
                 switch (selection)
                 {
                     case 0:
-
                         PrintObjectArray(new { i = J[2] });
                         break;
                     case 1: PrintGenericList();
