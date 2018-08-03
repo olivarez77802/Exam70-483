@@ -17,7 +17,7 @@ namespace Exam70483
             /*
              * Classes versus Structs
              * {
-             * A struct is a value type where a class is a reference type
+             * A struct is a value type where a class is a reference type.  Structs cannot have a default constructor.
              * 
              * All the differences that are applicable to a value type and reference types are also applicable to classes and structs.
              * 

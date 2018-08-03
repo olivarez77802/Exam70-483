@@ -142,7 +142,7 @@ namespace Exam70483
                          *   to pass an empty string (assuming you initialized with empty string).  Ref parameters make the code
                          *   harder to understand.
                          *   
-                         *   Out Parmaters are also not recommeneded.  Even though you don't have to initialize, they too are 
+                         *   Out Parameters are also not recommeneded.  Even though you don't have to initialize, they too are 
                          *   not intutive.  They also make the method harder to understand.
                          *   
                          *   Tuples is a data structure that allows for the use of multiple
