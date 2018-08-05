@@ -9,6 +9,11 @@ namespace Exam70483
     public class RunTimeTypes
     {
         /*
+         * 
+         * Dynamic types are similar to object types except that type checking for object type variables take place at compile
+         * time, whereas that for dynamic type variables take place at run time.
+         * 
+         * 
            
            See also DynamicExamples.cs
            

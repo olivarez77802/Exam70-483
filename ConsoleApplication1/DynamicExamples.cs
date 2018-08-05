@@ -12,7 +12,7 @@ namespace Exam70483
 
     When would you want to use dynamic typing ?
        * When you Interface with dynamic languages such as IronPython, and JavaScript
-       * When you acces weakly typed data such as XML, JSON
+       * When you access weakly typed data such as XML, JSON
        * When you don't want to Reflection
         
     Visual C# 2010 introduces a new type, dynamic. The type is a static type, but an object of type dynamic bypasses static type checking.
