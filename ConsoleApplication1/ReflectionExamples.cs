@@ -7,6 +7,16 @@ using System.Diagnostics;
 
 namespace Exam70483
 {
+    /* 
+     * typeof versus GetType
+     * - GetType  - Type is known at run time
+     * - typeof -  Compile time operator
+     * 
+     * Example
+     * var sample = new Sample {Name = "John", Age = 25};
+     * var sampleType = typeof(Sample);     <-- known at Compile time
+     * var sampleType = sample.GetType;     <-- know at run time
+     */
     class ReflectionExamples
     {
         #region Reflection Example 1
@@ -96,9 +106,11 @@ namespace Exam70483
 
         public static void Menu()
         {
-            
 
-            //Process.Start("http://csharp.net-tutorials.com/reflection/introduction/");
+            /*
+            Process.Start("http://csharp.net-tutorials.com/reflection/introduction/");
+            https://www.youtube.com/watch?v=3FvT6uNMT7M&list=PLrzrNeNx3kNHUOzNmvX5gZy0scGLKpY7m&index=6
+            */
             ReflectionExamples.ReflectionExample1.EnterNumber();
             Console.ReadKey();
             Console.WriteLine("Example of Reflection using GetMethods() ");
