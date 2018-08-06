@@ -10,7 +10,7 @@ namespace Exam70483
     {
 
         /*
-         * Beneifts of using Generics
+         * Benefits of using Generics
          *    Compile-time checking
          *    Reduces boxing of values
          *    
