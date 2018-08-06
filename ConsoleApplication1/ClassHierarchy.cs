@@ -20,7 +20,9 @@ namespace Exam70483
          * 6. partial
          * 7. readonly
          * 8. sealed
-         * 9. unsafe
+         * 9. unsafe  - trust that you know what you are doing.  Used when efficency is important or your interfacing with 
+         *              an unmanaged language.
+         *              https://www.youtube.com/watch?v=GLxW7oDLloY
          * 10. virtual
          * 11. volatile
          * http://www.diranieh.com/NETCSharp/Modifiers.htm

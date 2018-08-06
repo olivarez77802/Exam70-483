@@ -125,7 +125,7 @@ namespace Exam70483
             public new void print()
             {
                 base.print();
-                Console.WriteLine("I'm in a Derived Pring class");
+                Console.WriteLine("I'm in a Derived Print class");
             }
            
         }
