@@ -45,7 +45,8 @@ namespace Exam70483
                         break;
                     case 4:
                         /* Extension Methods
-                         * - Extend types without altering them.  Escpecially useful for extending types that are not yours or are sealed.
+                         * - Extend types without altering them.  Escpecially useful for extending types that are not 
+                         *   yours or are sealed.
                          * - They are declared as static in a static class
                          * - The first paramter has the 'this' modifier
                          * - The first parameter's type is the type being extended

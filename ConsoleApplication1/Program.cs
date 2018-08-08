@@ -53,6 +53,7 @@ namespace Exam70483
                 Console.WriteLine(" 1.  Create and Use Types \n");
                 Console.WriteLine(" 2.  Debug And Implement Security \n");               
                 Console.WriteLine(" 3.  Implement Data Access \n ");
+                Console.WriteLine(" 4.  Micosoft Exam 70-483 Website \n");              
                 Console.WriteLine(" 9.  Quit            \n\n ");
                 
                 int selection;
@@ -70,6 +71,9 @@ namespace Exam70483
                         break;
                    
                     case 3: ImplementDataAccess.Menu();
+                        break;
+                    case 4:
+                        Process.Start("https://www.microsoft.com/en-us/learning/exam-70-483.aspx");
                         break;
 
                    case 9 : x = 9;

@@ -6,6 +6,7 @@ using System.Text;
 
 namespace Exam70483
 {
+    /*
     // static - cannot ever be instantiated
     // base class types to override - abstract and virtual
     // abstract - Incomplete class; must be completed in a derived class.  Also
@@ -13,7 +14,8 @@ namespace Exam70483
     //            or abstract.  Abstract classes are useful because of Polymorphism.  Abstract class can
     //            provide some implementation details.  This is a difference between them and Interfaces.
     //            Interfaces cannot provide implementation details.
-    // inherit  - You can inherit from many interfaces.  You are restricted from inheriting from only one class whether it is abstract or concrete.
+    // inherit  - You can inherit from many interfaces.  You are restricted from inheriting from only one class
+    //            whether it is abstract or concrete.
     // virtual - first implementation.   When you use the virtual keyword you enable Polymorphism
     //
     // public abstract class Window
@@ -43,6 +45,7 @@ namespace Exam70483
     // See InterfacesMenu.cs   -  has more information on Arrays versus Lists
     // See ConsumeTypes.cs - Information on casting
     
+    */
     static class BaseExamples   
     {
         #region TMain
