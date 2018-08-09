@@ -101,7 +101,7 @@ namespace Exam70483
                 //                        the behavior of your Lists.
                 //    An example of this is ObservableCollection<T> which provide change notificatons for a list.
                 //
-                // 
+                 
 
                 */
                 Console.Clear();
