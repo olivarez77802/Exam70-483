@@ -45,6 +45,7 @@ namespace Exam70483
                     case 5: StatementKeywords();
                         break;
                     case 6: WhiledoWhile();
+                        break;
                     case 9: x = 9;
                         break;
                     default: Console.WriteLine(" Invalid Number");

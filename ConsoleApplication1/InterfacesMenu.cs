@@ -53,6 +53,8 @@ namespace Exam70483
                 //  IList<T> -        If we need to Control the Order Items in a Collection,
                 //                    Get an Item by the Index.
                 //
+                    Differences between IEnumerable, ICollection, and IList Interfaces
+                    https://www.c-sharpcorner.com/UploadFile/78607b/difference-between-ienumerable-icollection-and-ilist-interf/
                 //
                 //  Abstract Classes        versus Interfaces
                 //  -------------------------  |  ---------------------

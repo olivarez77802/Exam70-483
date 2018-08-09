@@ -16,7 +16,7 @@ namespace Exam70483
         public double GetVolume()
         {
             return length * breadth * height;
-                 }
+        }
         public void setLength(double len)
         {
             length = len;

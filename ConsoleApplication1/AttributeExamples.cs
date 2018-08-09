@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Reflection;
 
 namespace Exam70483
 {
@@ -35,7 +36,7 @@ namespace Exam70483
                
                 Console.WriteLine(" 0.  Obsolete Attribute ");
                 Console.WriteLine(" 1.  WCF Web Service Examples");
-                Console.WriteLine(" 2.  ..");
+                Console.WriteLine(" 2.  APMain..");
                 Console.WriteLine(" 3.  ..");
                 Console.WriteLine(" 4.  ..");
                 Console.WriteLine(" 5.  ..");
@@ -53,6 +54,7 @@ namespace Exam70483
                         WCFWebServiceExamples.Menu();
                         break;
                     case 2:
+                        APMain();
                         break;
                     case 4:
                         break;
@@ -95,5 +97,83 @@ namespace Exam70483
                 return Sum;
             }
         }
+        #region AttributeProgram
+      
+            [System.Obsolete("use class B")]
+            class A
+            {
+                public void Method() { }
+            }
+            class B
+            {
+                [System.Obsolete("use New Method", true)]
+                public void OldMethod() { }
+                public void NewMethod() { }
+            }
+            class Check : Attribute
+            {
+                public int MaxLength { get; set; }
+            }
+            class Customer
+            {
+                private string _CustomerCode;
+
+                [Check(MaxLength = 12)]
+                public string CustomerCode
+                {
+                    get { return _CustomerCode; }
+                    set { _CustomerCode = value; }
+                }
+            }
+          
+         
+        static void APMain()
+        {
+            /*
+            Process.Start("https://msdn.microsoft.com/en-us/library/22kk2b44(v=vs.90).aspx");
+            Process.Start("http://www.codeproject.com/Articles/827091/Csharp-Attributes-in-minutes#Whatareattributesandwhydoweneedit");
+            */
+
+            // Generate 2 warnings
+            A a = new A();
+            // Generate no errors or warnings
+            B b = new B();
+            b.NewMethod();
+            // Generates an error, terminating compilation
+            // b.OldMethod();
+           // Console.ReadKey();
+
+            Customer obj = new Customer();
+            obj.CustomerCode = "12345678901";
+
+            //Get the type of the object
+            Type objtype = obj.GetType();
+            Console.WriteLine(" Object type is {0}", objtype);
+
+            //Use the 'Type' object and loop through all properties and attributes
+            foreach (PropertyInfo p in objtype.GetProperties())
+            {
+                // for every property loop through all attributes
+                foreach (Attribute t in p.GetCustomAttributes(false))
+                {
+                    Check c = (Check)t;
+                    Console.WriteLine(" t is {0}", t);
+                    Console.WriteLine(" p is {0}", p.Name);
+                    if (p.Name == "CustomerCode")
+                    {
+                        Console.WriteLine("Attribute Max Lenth is {0}", c.MaxLength);
+                        if (obj.CustomerCode.Length > c.MaxLength)
+                        {
+                            throw new Exception(" Max length issues ");
+                        }
+                    }
+                }
+            } //end foreach
+
+            Console.ReadKey();
+
+        }  //endAPMain
+
+        #endregion
     }
 }

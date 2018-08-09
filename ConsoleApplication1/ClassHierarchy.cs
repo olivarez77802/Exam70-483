@@ -20,7 +20,9 @@ namespace Exam70483
          * 6. partial
          * 7. readonly
          * 8. sealed
-         * 9. unsafe
+         * 9. unsafe  - trust that you know what you are doing.  Used when efficency is important or your interfacing with 
+         *              an unmanaged language.
+         *              https://www.youtube.com/watch?v=GLxW7oDLloY
          * 10. virtual
          * 11. volatile
          * http://www.diranieh.com/NETCSharp/Modifiers.htm
@@ -41,6 +43,7 @@ namespace Exam70483
          * - The methods in an interface are implicitly virtual
          * - You can inherit from multiple interfaces.  You can only inherit from one class whether it is abstract or concrete.  
          * - When you inherit from both a class and interface(s), the class must come first. 
+         * See also IntefacesMenu.cs
          
         // As a guideline:
         //  * Use classes and subclasses for types that naturally share an implementation.
@@ -293,80 +296,7 @@ namespace Exam70483
 
             }
         }
-        #region AttributeProgram
-        //public static class Attribute_Program
-        //{
-        //    [System.Obsolete("use class B")]
-        //    class A
-        //    {
-        //        public void Method() { }
-        //    }
-        //    class B
-        //    {
-        //        [System.Obsolete("use New Method", true)]
-        //        public void OldMethod() { }
-        //        public void NewMethod() { }
-        //    }
-        //    class Check : Attribute
-        //    {
-        //        public int MaxLength { get; set; }
-        //    }
-        //    class Customer
-        //    {
-        //        private string _CustomerCode;
-
-        //        [Check(MaxLength = 10)]
-        //        public string CustomerCode
-        //        {
-        //            get { return _CustomerCode; }
-        //            set { _CustomerCode = value; }
-        //        }
-        //    }
-        //    public static void APMain()
-        //    {
-        //        Process.Start("https://msdn.microsoft.com/en-us/library/22kk2b44(v=vs.90).aspx");
-        //        Process.Start("http://www.codeproject.com/Articles/827091/Csharp-Attributes-in-minutes#Whatareattributesandwhydoweneedit");
-
-
-        //        // Generate 2 warnings
-        //        A a = new A();
-        //        // Generate no errors or warnings
-        //        B b = new B();
-        //        b.NewMethod();
-        //        // Generates an error, terminating compilation
-        //        // b.OldMethod();
-        //        Console.ReadKey();
-
-        //        Customer obj = new Customer();
-        //        obj.CustomerCode = "12345678901";
-
-        //        //Get the type of the object
-        //        Type objtype = obj.GetType();
-
-        //        //Use the 'Type' object and loop through all properties and attributes
-        //        foreach (PropertyInfo p in objtype.GetProperties())
-        //        {
-        //            // for every property loop through all attributes
-        //            foreach (Attribute t in p.GetCustomAttributes(false))
-        //            {
-        //                Check c = (Check)t;
-        //                if (p.Name == "CustomerCode")
-        //                {
-        //                    if (obj.CustomerCode.Length > c.MaxLength)
-        //                    {
-        //                        throw new Exception(" Max length issues ");
-        //                    }
-        //                }
-        //            }
-        //        } //end foreach
-
-        //        Console.ReadKey();
-
-        //    }  //endAPMain
-
-
-        //} //end class AttributeProgram
-        #endregion
+       
 
         class First<T> where T : Second
         {
