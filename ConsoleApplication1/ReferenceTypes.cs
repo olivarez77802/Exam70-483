@@ -47,7 +47,7 @@ namespace Exam70483
                       List<Customer> customerList = null;  <-- List of classes can return null.
 
                       2 rules of thought on returning NULLS from methods.  
-                         1.  Don't do it.  Retuning nulls alwasys requires the calling method to check the return value
+                         1.  Don't do it.  Retuning nulls always requires the calling method to check the return value
                              for Nulls.  If there are any missed it increases the risk there will be a null exception thrown.
                          2.  Always return null anytime the return value is nothing.  So if you are asking for Customers and
                              none are found then you want to return a null.

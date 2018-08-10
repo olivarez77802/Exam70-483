@@ -9,7 +9,10 @@ namespace Exam70483
 {
    class RegularExpressionExamples
     {
+        /*
        // ^ - Anchors the regular expression to the beginning of string
+          $ - Marks end of regular expression
+
        // ? - Means Optional.   Zero or one match.  Anchors regular expression to end of string.
        // * - Match Zero or more times
        // + - Match one or more times
@@ -34,10 +37,10 @@ namespace Exam70483
        //                                 (?:[ -]?)
        //                                 ((?![0]{4})\d{4})$
        //
-
         // http://regexr.com
        //
        //
+       */
 
         public static void Menu()
         {
