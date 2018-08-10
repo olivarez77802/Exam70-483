@@ -43,6 +43,34 @@ namespace Exam70483
             //
             // https://www.microsoft.com/en-us/learning/exam-70-483.aspx
             //
+               Took Exam on 08/08/2018
+               Exam performance was weakest in the following areas:
+               * Serialize and deserialize data. Serialize and deserialize data by using binary serializaation, custom
+                 serialization, XML Serializer, JSON Serializer, Data Contract serializer.
+               * Implement diagnostics in an application.  Objective may include but not limited to:  Implement logging 
+                 and tracing; profiling applications; create and monitor performance counters; write to event logs
+               * Implement multithreading and asynchronous processing.  Use Task Parallel Library (ParrallelFor, PLinq, Tasks);
+                 create continuation tasks; spawn threads using ThreadPool; unblock the UI; use async and await keyworkds;
+                 manage data by using concurrent collections.
+
+              Things I remember struggling with:
+               * --e  versus ++e
+               * Delay signing the assembly
+               * Read a raw XML File what are the different elements, nodes called
+               * Different file permissions when reading a file
+               * Reading a file using different permissions when you don't want an exception called
+               * How would you handle an exception in a concurret collection
+               * #elif  - PreProcessor directive
+               * Different type of attributes when reading WCF Web Services
+               * Memory Leaks
+               * Using an Alternate DB when testing
+               * Setting up to run with a data field that is extremely large.  Do we modify a parameter in the 
+                 config file ?
+               * Using 'Is' operator to determine if an element in a  Generic List belongs to a class
+               * WCF Namespaces
+           
+
+
             */
             int x = 0;
             do
