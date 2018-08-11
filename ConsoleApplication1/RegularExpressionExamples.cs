@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Diagnostics;
+using System.Globalization;
 
 namespace Exam70483
 {
-   class RegularExpressionExamples
+    class RegularExpressionExamples
     {
         /*
        // ^ - Anchors the regular expression to the beginning of string
@@ -17,7 +18,9 @@ namespace Exam70483
        // * - Match Zero or more times
        // + - Match one or more times
        // \d - Matches decimal digit
-       // {6} - Match exactly 6 characters
+          [] - Define allowable characters, numbers
+       // {6} -The number of allowable characters, numbers
+          {1,3} - Specifies the minumum number charcters, numbers is 1 and the max is 3
        //  |  - Indicates 'OR'
        //  \  - Backslash means escaping- Remove special meaning from metacharacter or 
        //                                 Give special meaning to ordinary characters
@@ -39,25 +42,72 @@ namespace Exam70483
        //
            https://www.youtube.com/watch?v=C2zm0roE-Uc
         // http://regexr.com
+           
+           https://msdn.microsoft.com/en-us/library/system.text.regularexpressions.regex(v=vs.110).aspx
+             
        //
        //
        */
 
         public static void Menu()
         {
-            string txt = "979797171";
-            Print_phone(txt);
-            string txt2 = "7754132";
-            Print_phone(txt2);
-            string txt3 = "775-4132";
-            Print_phone(txt3);
-            Console.ReadKey();
-            string tempssn =  "123456789";
-            Matchssn(tempssn);
-            string tempssn2 = "811111111";
-            Matchssn(tempssn2);
-            Console.ReadKey();
-        }
+
+
+
+            int x = 0;
+            do
+            {
+                Console.Clear();
+                Console.WriteLine(" Regular Expression Examples \n ");
+                Console.WriteLine(" 0.  Regex.Match .IsMatch .Split \n ");
+                Console.WriteLine(" 1.  Regex.IsMatch \n");
+                Console.WriteLine(" 2.  RegexOptions (.Compiled.IgnoreCase) Regex.Matches \n");
+                Console.WriteLine(" 3.  Dynamic Regular Expression \n");
+                Console.WriteLine(" 9.  Quit            \n\n ");
+                Console.Write(" Enter Number to execute Routine ");
+
+
+                int selection;
+                selection = Common.readInt("Enter Number to Execute Routine : ", 0, 9);
+                switch (selection)
+                {
+                    case 0:
+                        string txt = "979797171";
+                        Print_phone(txt);
+                        string txt2 = "7754132";
+                        Print_phone(txt2);
+                        string txt3 = "775-4132";
+                        Print_phone(txt3);
+                        Console.ReadKey();
+                        break;
+                    case 1:
+                        string tempssn = "123456789";
+                        Matchssn(tempssn);
+                        string tempssn2 = "811111111";
+                        Matchssn(tempssn2);
+                        Console.ReadKey();
+                        break;
+                    case 2:
+                        CompiledIgnoreCase();
+                        Console.ReadKey();
+                        break;
+                    case 3:
+                        DynamicRegularExpression();
+                        Console.ReadKey();
+                        break;
+                    case 9:
+                        x = 9;
+                        break;
+                    default:
+                        Console.WriteLine(" Invalid Number");
+                        break;
+                }
+
+
+            } while (x < 9);  // end do
+
+        }  // end Menu()
+
         public static void Print_phone(string phone)
         {
             const string pattern = @"^\d{3}-\d{4}$";
@@ -68,7 +118,7 @@ namespace Exam70483
                 Console.WriteLine(" Pattern matches");
             else
                 Console.WriteLine(" Pattern does not match ");
-            
+
             bool valid = false;
             if (phone.Length == 0) valid = true;
             if (Regex.IsMatch(phone, pattern)) valid = true;
@@ -84,14 +134,81 @@ namespace Exam70483
         }
         public static void Matchssn(string ssn)
         {
-            const string pattern = @"^(?!(?:(\d)\1{8}))"; 
+            const string pattern = @"^(?!(?:(\d)\1{8}))";
             bool valid = false;
             if (Regex.IsMatch(ssn, pattern)) valid = true;
             if (valid)
                 Debug.WriteLine("ssn matches pattern {0}", ssn);
             else
                 Debug.WriteLine("ssn does not match pattern {0}", ssn);
-           
+
+        }
+        public static void CompiledIgnoreCase()
+        {
+            // Define a regular expression for repeated words.
+            Regex rx = new Regex(@"\b(?<word>\w+)\s+(\k<word>)\b",
+              RegexOptions.Compiled | RegexOptions.IgnoreCase);
+
+            // Define a test string.        
+            string text = "The the quick brown fox  fox jumped over the lazy dog dog.";
+
+            // Find matches.
+            MatchCollection matches = rx.Matches(text);
+
+            // Report the number of matches found.
+            Console.WriteLine("{0} matches found in:\n   {1}",
+                              matches.Count,
+                              text);
+
+            // Report on each match.
+            foreach (Match match in matches)
+            {
+                GroupCollection groups = match.Groups;
+                Console.WriteLine("'{0}' repeated at positions {1} and {2}",
+                                  groups["word"].Value,
+                                  groups[0].Index,
+                                  groups[1].Index);
+            }
+        }
+        public static void DynamicRegularExpression()
+        {
+            // Get the current NumberFormatInfo object to build the regular 
+            // expression pattern dynamically.
+            NumberFormatInfo nfi = NumberFormatInfo.CurrentInfo;
+
+            // Define the regular expression pattern.
+            string pattern;
+            pattern = @"^\s*[";
+            // Get the positive and negative sign symbols.
+            pattern += Regex.Escape(nfi.PositiveSign + nfi.NegativeSign) + @"]?\s?";
+            // Get the currency symbol.
+            pattern += Regex.Escape(nfi.CurrencySymbol) + @"?\s?";
+            // Add integral digits to the pattern.
+            pattern += @"(\d*";
+            // Add the decimal separator.
+            pattern += Regex.Escape(nfi.CurrencyDecimalSeparator) + "?";
+            // Add the fractional digits.
+            pattern += @"\d{";
+            // Determine the number of fractional digits in currency values.
+            pattern += nfi.CurrencyDecimalDigits.ToString() + "}?){1}$";
+            Console.WriteLine("Regex pattern {0}", pattern);
+
+            Regex rgx = new Regex(pattern);
+
+            // Define some test strings.
+            string[] tests = { "-42", "19.99", "0.001", "100 USD",
+                         ".34", "0.34", "1,052.21", "$10.62",
+                         "+1.43", "-$0.23" };
+
+            // Check each test string against the regular expression.
+            foreach (string test in tests)
+            {
+                if (rgx.IsMatch(test))
+                    Console.WriteLine("{0} is a currency value.", test);
+                else
+                    Console.WriteLine("{0} is not a currency value.", test);
+            }
         }
     }
 }
+

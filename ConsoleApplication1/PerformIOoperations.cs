@@ -77,6 +77,7 @@ namespace Exam70483
 
         static void ListFiles()
         {
+
             string contents = System.IO.File.ReadAllText(@"C:\Users\olivarez\My Documents\DemoWeb\Visual C#\Collections.txt");
             // Console.Out.WriteLine(System.IO.Directory.GetFiles(@"C:\Users\olivarez"));
             // string[] filePaths = Directory.GetFiles(@"C:\Users\olivarez\");

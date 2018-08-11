@@ -68,6 +68,8 @@ namespace Exam70483
                  config file ?
                * Using 'Is' operator to determine if an element in a  Generic List belongs to a class
                * WCF Namespaces
+               * Regex
+               * ?? operator
            
 
 
