@@ -148,6 +148,7 @@ namespace Exam70483
         }
         static void ValidateJSONAgainstSchema()
         {
+            // https://stackoverflow.com/questions/19544183/validate-json-against-json-schema-c-sharp
             string json = "{Name:'blaha', ID:'1'}";
             /* 
              * The value passed is 'json' text
