@@ -40,10 +40,8 @@ namespace Exam70483
                 Console.WriteLine(" XML Examples \n ");
                 Console.WriteLine(" 0.  XML Serialize - Convert class and values into XML \n ");
                 Console.WriteLine(" 1.  XML DeSerialize - Load Raw XML into a class \n ");
-                Console.WriteLine("     Navigate Document Tree");
-                Console.WriteLine(" 2.  Root Node \n ");
-                Console.WriteLine(" 3.  Child Node \n ");
-                Console.WriteLine(" 4.  ....  \n ");
+                Console.WriteLine(" 2.  XML Document Examples");
+                Console.WriteLine(" 3.  ....  \n ");
                 Console.WriteLine(" 9.  Quit            \n\n ");
 
                 int selection;
@@ -59,11 +57,10 @@ namespace Exam70483
                         Console.ReadKey();
                         break;
                     case 2:
-                        Root_Node();
+                        XMLDocumentExamples.Menu();
                         Console.ReadKey();
                         break;
                     case 3:
-                        Child_Node();
                         Console.ReadKey();
                         break;
                     case 9:
@@ -95,45 +92,7 @@ namespace Exam70483
             XMLDeserialize();
 
         }
-        static void Root_Node()
-        {
-            //  https://msdn.microsoft.com/en-us/library/system.xml.xmldocument(v=vs.110).aspx
-            //  https://www.w3schools.com/xml/dom_nodes.asp
-            //Create the XmlDocument.
-            XmlDocument doc = new XmlDocument();
-            doc.LoadXml("<?xml version='1.0' ?>" +
-                        "<book genre='novel' ISBN='1-861001-57-5'>" +
-                        "<title>Pride And Prejudice</title>" +
-                         "<price>19.95</price>" +
-                        "</book>");
-
-            //Display the document element.
-            Console.WriteLine("Document Element OuterXml : {0}",doc.DocumentElement.OuterXml);
-
-           
-        }
-        static void Child_Node()
-        {
-            XmlDocument doc = new XmlDocument();
-            doc.LoadXml("<book ISBN='1-861001-57-5'>" +
-                        "<title>Pride And Prejudice</title>" +
-                        "<price>19.95</price>" +
-                        "</book>");
-
-            XmlNode root = doc.FirstChild;
-
-            Console.WriteLine(" Has Child Nodes {0}", root.HasChildNodes);
-
-            //Display the contents of the child nodes.
-            if (root.HasChildNodes)
-            {
-                for (int i = 0; i < root.ChildNodes.Count; i++)
-                {
-                    Console.WriteLine("Child Node Inner Text {0}", root.ChildNodes[i].InnerText);
-                }
-            }
-        }
-        static class1 LoadFromFile(string fileName) 
+        static class1 LoadFromFile(string fileName)
         {
             using (var stream = new FileStream(fileName, FileMode.Open))
             {
