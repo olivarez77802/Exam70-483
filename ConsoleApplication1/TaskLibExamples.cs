@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 namespace Exam70483
 {
     /*
+     * Parallel Programming
+     * https://docs.microsoft.com/en-us/dotnet/standard/parallel-programming/
+     * 
      * See ThreadPoolExamples.cs; ConcurrentCollections.cs
      * 
      Threading does Time Slicing (versus parallel execution) on each core.
