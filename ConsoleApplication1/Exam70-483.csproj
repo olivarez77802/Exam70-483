@@ -45,6 +45,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -90,6 +91,7 @@
     <Compile Include="ImplementProgramFlow.cs" />
     <Compile Include="Indexer.cs" />
     <Compile Include="ManageObjectCycle.cs" />
+    <Compile Include="Operators.cs" />
     <Compile Include="PerformIOoperations.cs" />
     <Compile Include="Interface1.cs" />
     <Compile Include="InterfacesMenu.cs" />
@@ -117,7 +119,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="ThreadStartDelegate.cs" />
     <Compile Include="WCFWebServiceExamples.cs" />
+    <Compile Include="XMLDocumentExamples.cs" />
     <Compile Include="XMLExamples.cs" />
     <Compile Include="SerializeAndDeSerialize.cs" />
     <Compile Include="SortingExamples.cs" />

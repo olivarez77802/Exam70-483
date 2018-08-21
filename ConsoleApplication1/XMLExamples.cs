@@ -5,6 +5,7 @@ using System.Text;
 using System.IO;
 using System.Xml.Serialization;
 using System.Runtime.Serialization;
+using System.Xml;
 //using System.IO;
 //using System.Runtime.Serialization.Json;
 
@@ -29,6 +30,54 @@ namespace Exam70483
         } // end class1
         public static void Menu()
         {
+           
+           
+          
+            int x = 0;
+            do
+            {
+                Console.Clear();
+                Console.WriteLine(" XML Examples \n ");
+                Console.WriteLine(" 0.  XML Serialize - Convert class and values into XML \n ");
+                Console.WriteLine(" 1.  XML DeSerialize - Load Raw XML into a class \n ");
+                Console.WriteLine(" 2.  XML Document Examples");
+                Console.WriteLine(" 3.  ....  \n ");
+                Console.WriteLine(" 9.  Quit            \n\n ");
+
+                int selection;
+                selection = Common.readInt("Enter Number to Execute Routine : ", 0, 9);
+                switch (selection)
+                {
+                    case 0:
+                        XMLSerialize();
+                        Console.ReadKey();
+                        break;
+                    case 1:
+                        XMLDeSerialize();
+                        Console.ReadKey();
+                        break;
+                    case 2:
+                        XMLDocumentExamples.Menu();
+                        Console.ReadKey();
+                        break;
+                    case 3:
+                        Console.ReadKey();
+                        break;
+                    case 9:
+                        x = 9;
+                        break;
+                    default:
+                        Console.WriteLine(" Invalid Number");
+                        break;
+
+                }
+
+
+            } while (x < 9);
+        }
+
+        static void XMLSerialize()
+        {
             class1 c = new class1();
             c.Age = 10;
             c.Male = true;
@@ -36,11 +85,14 @@ namespace Exam70483
             Console.WriteLine("Serailize - Convert class and values into XML\n");
             Console.WriteLine(@"Raw XML stored in C:\Users\jesse-olivarez\Documents\Repositories\Exam70-483\ConsoleApplication1\bin\Debug");
             c.Save("TestFile.xml");
-           
+        }
+        static void XMLDeSerialize()
+        {
             Console.WriteLine("DeSerialize - Load Raw XML File into class");
             XMLDeserialize();
+
         }
-        static class1 LoadFromFile(string fileName) 
+        static class1 LoadFromFile(string fileName)
         {
             using (var stream = new FileStream(fileName, FileMode.Open))
             {

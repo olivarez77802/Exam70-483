@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
+using System.Web.Script.Serialization;
+using System.Reflection;
 
 namespace Exam70483
 {
@@ -69,11 +71,57 @@ namespace Exam70483
                               }";
         public static void Menu()
         {
-            DisplayJSON();
-            DeSerializeObject();
-            SerializeObject();
-            SerializeIndentedObject();
-        }
+            int x = 0;
+            do
+            {
+                Console.Clear();
+                Console.WriteLine(" JSON - JavaScript Object Notation \n ");
+                Console.WriteLine(" 0.  DisplayJSON \n ");
+                Console.WriteLine(" 1.  DeSerialize Object \n");
+                Console.WriteLine(" 2.  Serialize Object \n");
+                Console.WriteLine(" 3.  Serialize Indented Object \n");
+                Console.WriteLine(" 4.  Validate JSON against Schema");
+                Console.WriteLine(" 9.  Quit            \n\n ");
+                Console.Write(" Enter Number to execute Routine ");
+
+                int selection;
+                selection = Common.readInt("Enter Number to Execute Routine : ", 0, 9);
+                switch (selection)
+                {
+                    case 0:
+                        DisplayJSON();
+                        Console.ReadKey();
+                        break;
+                    case 1:
+                        DeSerializeObject();
+                        Console.ReadKey();
+                        break;
+                    case 2:
+                        SerializeObject();
+                        Console.ReadKey();
+                        break;
+                    case 3:
+                        SerializeIndentedObject();
+                        break;
+                    case 4:
+                        ValidateJSONAgainstSchema();
+                        Console.ReadKey();
+                        break;
+                    case 9:
+                        x = 9;
+                        break;
+                    default:
+                        Console.WriteLine(" Invalid Number");
+                        break;
+                }
+
+
+            } while (x < 9);  // end do
+
+        }  // end Menu()
+
+
+
         static void DisplayJSON()
         {
             Console.Clear();
@@ -95,8 +143,18 @@ namespace Exam70483
         static void SerializeIndentedObject()
         {
             Console.WriteLine("\n Step 4. Serialize Indented Author class");
-            string ExJsonSerializedIndented = JsonConvert.SerializeObject(ExJson,Formatting.Indented);
+            string ExJsonSerializedIndented = JsonConvert.SerializeObject(ExJson, Formatting.Indented);
             Console.WriteLine(ExJsonSerializedIndented);
+        }
+        static void ValidateJSONAgainstSchema()
+        {
+            // https://stackoverflow.com/questions/19544183/validate-json-against-json-schema-c-sharp
+            string json = "{Name:'blaha', ID:'1'}";
+            /* 
+             * The value passed is 'json' text
+             */
+            bool res = json.IsJsonValid<test>();
+            Console.WriteLine("Passed validation {0} json string {1}", res,json);
         }
     }
     public class Author
@@ -114,5 +172,47 @@ namespace Exam70483
     {
         public string model { get; set; }
         public string year { get; set; }
+    }
+    public class test
+    {
+        public string Name { get; set; }
+        public string ID { get; set; }
+    }
+    public static class Test_Schema
+    {
+        /* Was originally TSchema change to T to show that it could be anything
+         * and doesn't not have to be TSchema just creating an ordinary
+         * generic class
+         */
+        // public static bool IsJsonValid<TSchema>(this string value)
+        public static bool IsJsonValid<T>(this string value)
+            where T : new()
+        {
+            bool res = true;
+            //this is a .net object look for it in msdn
+            JavaScriptSerializer ser = new JavaScriptSerializer();
+            //first serialize the string to object.
+            // T - is the Test class
+            // value is the JSON text
+            // Deserializing is loading JSON Text to object (or class Test)
+            var obj = ser.Deserialize<T>(value);
+            Console.WriteLine("obj is {0}", obj);
+            Console.WriteLine("Deserialized - JSON Text loaded to object");
+
+            //get all properties of schema object
+            var properties = typeof(T).GetProperties();
+            //iterate on all properties and test.
+            foreach (PropertyInfo info in properties)
+            {
+                Console.WriteLine(" info.Name {0}", info.Name);
+                // i went on if null value then json string isnt schema complient but you can do what ever test you like her.
+                var valueOfProp = obj.GetType().GetProperty(info.Name).GetValue(obj, null);
+                Console.WriteLine(" valueofProp {0}", valueOfProp);
+                if (valueOfProp == null)
+                    res = false;
+            }
+
+            return res;
+        }
     }
 }

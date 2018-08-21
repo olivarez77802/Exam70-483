@@ -7,75 +7,51 @@ using System.Diagnostics;
 
 namespace Exam70483
 {
-    abstract class ThreadingExamples
+    class ThreadingExamples
     {
-        // Delegates are type safe function pointers.   It is type safe because the signature the delegate points to 
-        // should match the signature of the delegate.
-        //
-        // ThreadStart is a delegate in System.Threading
-        //
-        // Why does a delegate need to be passed as a parameter to the Thread Class Constructor ? 
-        // The purpose of creating a Thread is to execute a function.  A delegate is a type safe function
-        // pointer, meaning it points to a function that the thread has to execute.  In short, all threads
-        // require an entry point. i.e. a pointer to the function where they should begin exectution
-        // So threads always require a delegate.
-        //
-        // In the code below, we are not explicitily creating the ThreadStart delegate, then how is it working?
-        //            Thread T1 = new Thread(Number.PrintNumbers);
-        //            T1.Start();
-        //
-        //  The framework automatically rewrites it to the below behind the scenes :
-        //            Thread T1 = new Thread(new ThreadStart(Numbers.PrintNumbers));
-        //            T1.Start();
-        //
-        //  We can also rewrite using the delegate keyword.
-        //            Thread T1 = new Thread(delegate() {Number.PrintNumbers(); });
-        //
-        //  Also can be rewritten using a lambda expression
-        //            Thread T1 = new Thread(() => Numbers.PrintNumbers());
-        //
+        /*
+           // Process.Start("");
+           Process.Start("http://msdn.microsoft.com/en-us/library/c5kehkcz.aspx");
+           // The lock keyword ensures that one thread does not enter a critical section of code while another thread is in the critical section. 
+
+           // If another thread tries to enter a locked code, it will wait, block, until the object is released.
+
+           //The section Threading (C# and Visual Basic) discusses threading.
+
+           //The lock keyword calls Enter at the start of the block and Exit at the end of the block.
+           // A ThreadInterruptedException is thrown if Interrupt interrupts a thread that is waiting to enter a lock statement.
+
+           //In general, avoid locking on a public type, or instances beyond your code's control. The common constructs 
+           // lock (this), lock (typeof (MyType)), and lock ("myLock") violate this guideline:
+
+           //•lock (this) is a problem if the instance can be accessed publicly.
+
+
+           //•lock (typeof (MyType)) is a problem if MyType is publicly accessible.
+
+
+           //•lock("myLock") is a problem because any other code in the process using the same string, will share the same lock. 
+
+
+           //Best practice is to define a private object to lock on, or a private static object variable to protect data common to all instances
+
+           * Locking only works if you lock EVERYWHERE that shared state is vulnerable.
+           * It is easy to forget locking somewhere
+           * The logic to avoid deadlocks is hard
+           * Locking is good on a small scale, but becomes unmanageable on a larger scale
+           * Concurrent collections avoid the locking deadlock problems.
+   */
 
 
         public static void ThreadPrimaryMain()
         {
-            /*
-            // Process.Start("");
-            Process.Start("http://msdn.microsoft.com/en-us/library/c5kehkcz.aspx");
-            // The lock keyword ensures that one thread does not enter a critical section of code while another thread is in the critical section. 
-
-            // If another thread tries to enter a locked code, it will wait, block, until the object is released.
-
-            //The section Threading (C# and Visual Basic) discusses threading.
-
-            //The lock keyword calls Enter at the start of the block and Exit at the end of the block.
-            // A ThreadInterruptedException is thrown if Interrupt interrupts a thread that is waiting to enter a lock statement.
-
-            //In general, avoid locking on a public type, or instances beyond your code's control. The common constructs 
-            // lock (this), lock (typeof (MyType)), and lock ("myLock") violate this guideline:
-
-            //•lock (this) is a problem if the instance can be accessed publicly.
-
-
-            //•lock (typeof (MyType)) is a problem if MyType is publicly accessible.
-
-
-            //•lock("myLock") is a problem because any other code in the process using the same string, will share the same lock. 
-
-
-            //Best practice is to define a private object to lock on, or a private static object variable to protect data common to all instances
-
-            * Locking only works if you lock EVERYWHERE that shared state is vulnerable.
-            * It is easy to forget locking somewhere
-            * The logic to avoid deadlocks is hard
-            * Locking is good on a small scale, but becomes unmanageable on a larger scale
-            * Concurrent collections avoid the locking deadlock problems.
-    */
+           
             int x = 0;
             do
             {
                 Console.Clear();
                 Console.WriteLine(" Threading Menu \n ");
-                Console.WriteLine(" 0.  ThreadMain - 2 Threads \n ");
+                Console.WriteLine(" 0.  ..");
                 Console.WriteLine(" 1.  Parm Thread Main \n ");
                 Console.WriteLine(" 2.  Stop Thread \n");
                 Console.WriteLine(" 3.  Thread Static Main \n");
@@ -92,8 +68,7 @@ namespace Exam70483
                 selection = Common.readInt("Enter Number to Execute Routine : ", 0, 9);
                 switch (selection)
                 {
-                    case 0: ThreadingExamples.ThreadMain();
-                        Console.ReadKey();
+                    case 0: 
                         break;
                     case 1: ThreadingExamples.ParmThreadMain();
                         Console.ReadKey();
@@ -153,30 +128,7 @@ namespace Exam70483
 
         }
 
-        #region ThreadMain
-        static void ThreadMethod()
-        {
-            for (int i = 0; i < 10; i++)
-            {
-                Console.WriteLine("ThreadProc {0}", i);
-                Thread.Sleep(0);
-            }
-        }
-        static void ThreadMain()
-        {
-            Thread t = new Thread(new ThreadStart(ThreadMethod));
-            t.Start();
-
-            for (int i = 0; i < 10; i++)
-            {
-                Console.WriteLine("Main Thread: Do some work");
-                Thread.Sleep(0);
-            }
-            t.Join();
-            Console.WriteLine("After");
-
-        }
-        #endregion
+       
         #region ParmThreadMain
         //* Parameterized Threads
         static void ParmThreadMethod(object o)
