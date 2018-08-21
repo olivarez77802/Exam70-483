@@ -11,6 +11,7 @@ namespace Exam70483
         public static void Menu()
         {
             /* 
+             *             * 
              * Manage Assemblies
              *    Version assemblies; sign assemblies using strong names; 
              *    implement side-by-side hosting;
@@ -66,6 +67,11 @@ namespace Exam70483
              * 2. Use GacUtil.exe (GAC Utility Tool)
              * 
              * https://www.youtube.com/watch?v=FYmRrEYyhCM&index=4&list=PL8598C97BA1D871C1
+             * 
+             * 
+             * Delay signing an Assembly
+             * - Obtain public key pair created by using Strong Name tool provided by Windows Software Development Kit(SDK)
+             * https://docs.microsoft.com/en-us/dotnet/framework/app-domains/delay-sign-assembly
              * 
              ********************************************************************************************************************************
              * Create a WinMD Assembly

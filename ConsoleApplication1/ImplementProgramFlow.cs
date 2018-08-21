@@ -21,6 +21,8 @@ namespace Exam70483
                 Console.WriteLine("    statements, if/then, and operators; evaluate expressions");
                 Console.WriteLine(" 0.  Ternary / Short-circuiting logic  \n ");
                 Console.WriteLine(" 1.  Iteration Statements \n ");
+                Console.WriteLine(" 2.  Switch Statemement \n");
+                Console.WriteLine(" 3.  Operators ");
                 Console.WriteLine(" 2.   \n");
                 Console.WriteLine(" 9.  Quit            \n\n ");
                 Console.Write(" Enter Number to execute Routine ");
@@ -36,6 +38,12 @@ namespace Exam70483
                     case 1:
                         IterationStatements.Menu();
                         break;
+                    case 2:
+                    // https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/switch
+                        break;
+                    case 3:
+                        break;
+                    // https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/null-coalescing-operator  
 
                     case 9:
                         x = 9;
