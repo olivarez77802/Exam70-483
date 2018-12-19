@@ -59,6 +59,14 @@ namespace Exam70483
                        Have to use a Multi-Dimensional Array if you want more than one index.
                     3. A list can be used with a foreach.
                     4. Strongly typed
+
+                ArrayList
+                    - Represents an ordered collection of an object that can be indexed 
+                      individually.  An Alternative to an array.  However, unlike an array
+                      you can add and remove items from a list at a specified position using
+                      an index and the array resizes itself automatically.  Allows dynamic memory
+                      allocation, adding, searching and sorting items in the list.
+                      https://www.tutorialspoint.com/csharp/csharp_arraylist.htm
                 
                 Multi-Diminesional Arrays.
                     1.  Can have more than one index.

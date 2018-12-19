@@ -38,7 +38,8 @@ namespace Exam70483
                 {
                     case 0: TypeSystem.Menu();
                         break;
-                    case 1: DynamicExamples.DMain();
+                    case 1: GenericExamples.PrimaryMain();
+                        DynamicExamples.DMain();
                         break;
                     case 3: StaticExamples.Menu();
                         Console.ReadKey();

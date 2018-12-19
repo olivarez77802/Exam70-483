@@ -142,6 +142,9 @@ namespace Exam70483
                         */
 
                         SortingExamples.Sort_A_Class();
+                        Console.ReadKey();
+                        SortingExamples.Sort_Numbers();
+                        Console.ReadKey();
                         break;
 
                         // ==, != operators  - Work out of the box only for primitive types and reference types

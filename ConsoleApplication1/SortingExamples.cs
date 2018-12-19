@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Linq.Expressions;
+using System.Collections;
 
 namespace Exam70483
 {
@@ -86,6 +87,42 @@ namespace Exam70483
             }
         }
 
+        class MyObject : IComparable
+        {
+            public int ID { get; set; }
+
+            public int CompareTo(object obj)
+            {
+                MyObject obj1 = obj as MyObject;
+                return this.ID.CompareTo(obj1.ID);
+            }
+        }
+        public static void Sort_Numbers()
+        {
+            ArrayList myList = new ArrayList();
+            myList.Add(new MyObject() { ID = 4});
+            myList.Add(new MyObject() { ID = 2 });
+            myList.Add(new MyObject() { ID = 5 });
+            myList.Add(new MyObject() { ID = 3 });
+            myList.Add(new MyObject() { ID = 2 });
+
+            myList.Sort();
+            int foundIndex = myList.BinarySearch(new MyObject() { ID = 4 });
+            
+            if (foundIndex >= 0)
+            {
+                Console.WriteLine(((MyObject)myList[foundIndex]).ID.ToString());
+            }
+            else
+            {
+                Console.WriteLine(((MyObject)myList[foundIndex]).ID.ToString());
+            }
+            //foreach (int i in myList)
+            //{
+            //    Console.WriteLine(" mylist {0} ", i);
+            //}
+            
+        }
 
         public static void Print_using_orderby(GridSortOptions sort)
         {
