@@ -53,7 +53,7 @@ namespace Exam70483
                          * - The first parameter's type is the type being extended
                          * 
                          * Both the class and the method have to be static
-                         * The type that your extending goes into the signature as the first argument with the 'this' keywordaa
+                         * The type that your extending goes into the signature as the first argument with the 'this' keyword
                          */
                         EnumerableMethods.Menu();
                         break;

@@ -94,6 +94,10 @@ namespace Exam70483
         }
         static class1 LoadFromFile(string fileName)
         {
+            /* By creating a 'using' block, you know for sure the stream.Dispose() will be called
+             * as soon as your done with the file, whether or not an exception was called.
+             * https://www.toptal.com/c-sharp/top-10-mistakes-that-c-sharp-programmers-make  Mistake#9 Neglecting to free resources.
+             */
             using (var stream = new FileStream(fileName, FileMode.Open))
             {
                 var XML = new XmlSerializer(typeof(class1));

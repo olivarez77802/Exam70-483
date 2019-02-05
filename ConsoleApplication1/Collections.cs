@@ -336,6 +336,10 @@ namespace Exam70483
                 //  return LastName + ", " + FirstName;
                 // string lastName = LastName;
 
+                // Ternary Operators
+                // ? - Same thing as a 'THEN'
+                // : - Same thing as a 'ELSE'
+
                 //this: 
                 string lastName = !string.IsNullOrWhiteSpace(LastName)
                     ? !string.IsNullOrWhiteSpace(FirstName)

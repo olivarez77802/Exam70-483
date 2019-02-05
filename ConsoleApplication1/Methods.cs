@@ -238,6 +238,7 @@ namespace Exam70483
         }
         public static void TCAS_Main()
         {
+            //Note!!! - Both class and struct use the 'new' keyword
             TheClass testClass = new TheClass();
             TheStruct testStruct = new TheStruct();
 

@@ -26,6 +26,15 @@ namespace Exam70483
                         *  
                         *    https://www.youtube.com/watch?v=JfNTD7bTscw
                         *    
+                        *    
+                        *    DotNet Program Exectution
+                        *    C#, VB, C++,.. Reside on top of .Net Application
+                        *    Compiled into EXE or DLL
+                        *    DLL or Exe Gets fed to CLR
+                        *    CLR composed of Intermediate Language, JIT Compiler, Native Code
+                        *    CLR interfaces with Operating System
+                        *    https://www.youtube.com/watch?v=ruf4U9_Rbss&list=PL8598C97BA1D871C1
+                        *    
                        */
         public static void Menu()
         {
