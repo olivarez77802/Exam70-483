@@ -9,8 +9,37 @@ namespace Exam70483
 {
     /* 
      * See also ExceptionClassExamples.cs
+     * 
+     * The FileStream constructor takes four parameters
+     * 1. The path to the file
+     * 2. The file mode
+     * 3. The file access
+     * 4. The file share
+     * 
+     * The file mode, access, and share each have their own table of enumerations.
+     * 
+     * File Mode Enumeration
+     * Append       - Opens a file if it exists and seeks to the end of the file, or creates a new file if it doesn’t exist. This can be used only with FileAccess.Write.
+     * CreateNew    - Creates a new file. If the file already exists, an exception is thrown.
+     * Create	    - Creates a new file. If the file already exists it will be overwritten. If the file exists and is hidden, an exception is thrown.
+     * Open         - Opens a file. If the file does not exist, an exception is thrown. 
+     * OpenOrCreate - Opens a file if it exists or creates a new file if it does not exist.
+     * Truncate     - Opens an existing file and truncates the data in the file. If the file does not exist, an exception is thrown.
+     * 
+     * File Access Enumeration
+     * Read -	   Read access to the file
+     * Write -	   Write access to the file
+     * ReadWrite - Read-and-write access to the file
+     * 
+     * FileShare Enumeration  - Determines the type of access other streams can have on this file at the same time, you have it open.
+     * None -      Does not enable another stream to open the file
+     * Read -      Enables subsequent opening of the file for reading only
+     * Write -     Enables subsequent opening of the file for writing
+     * ReadWrite - Enables subsequent opening of the file for reading or writing
+     * Delete -    Enables for subsequent deletion of the file
+     * Inheritable-Makes the file handle inheritable by child processes
      */
-   public static class StreamExamples
+    public static class StreamExamples
     {
         static void FileStreamExamples()
         {
