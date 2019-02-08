@@ -34,6 +34,9 @@ namespace Exam70483
              * reference variables point to the same object on the heap.   So operations on one variable will affect the values 
              * contained by the other reference variable.
              * 
+             * Structs cannot be declared as protected because structs do not support inheritance.  This is another way
+             * of saying Structs are sealed types.
+             * 
              * Structs can't have destructors, but classes can have destructors
              * 
              * Structs cannot have explicit parameter less constructor where as a class can.

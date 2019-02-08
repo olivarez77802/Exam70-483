@@ -19,9 +19,9 @@ namespace Exam70483
                 Console.WriteLine(" Implement Program Flow \n ");
                 Console.WriteLine("    Iterate across collection and array items; program decisions by using switch \n");
                 Console.WriteLine("    statements, if/then, and operators; evaluate expressions");
-                Console.WriteLine(" 0.  Ternary / Short-circuiting logic  \n ");
-                Console.WriteLine(" 1.  Iteration Statements \n ");
-                Console.WriteLine(" 2.  Operators");
+                Console.WriteLine(" 0.  Iteration Statements \n ");
+                Console.WriteLine(" 1.  Operators (Ternary / Short-circuiting logic) \n ");
+               
                 Console.WriteLine(" 9.  Quit            \n\n ");
                 Console.Write(" Enter Number to execute Routine ");
 
@@ -31,16 +31,14 @@ namespace Exam70483
                 switch (selection)
                 {
                     case 0:
-                        ShortCircuit();
-                        break;
-                    case 1:
                         IterationStatements.Menu();
-                        break;
-                    case 2:
-                        Operators.Menu();
                         Console.ReadKey();
                         break;
-
+                    case 1:
+                        Operators.Menu();
+                        break;   
+                    case 2:
+                        break;
                     case 9:
                         x = 9;
                         break;
@@ -53,16 +51,6 @@ namespace Exam70483
 
         }
 
-
-        static void ShortCircuit()
-        {
-            /* 
-             * Short-circuiting logic
-             *   && and || operators
-            
-             *   
-            */
-
-        }
+                
     }
 }
