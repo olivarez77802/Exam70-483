@@ -73,6 +73,7 @@
     <Compile Include="CreateTypes.cs" />
     <Compile Include="CryptographyExamples.cs" />
     <Compile Include="DebugAppImplementSecurity.cs" />
+    <Compile Include="DebugApplication.cs" />
     <Compile Include="Delegate.cs" />
     <Compile Include="DelegateExamples.cs" />
     <Compile Include="DynamicExamples.cs" />

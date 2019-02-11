@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,7 +31,7 @@ namespace Exam70483
                 Console.WriteLine(" 2.  ShortCircuit && Operator ");
                 Console.WriteLine(" 3.  Ternary Operator..Postfix..Prefix");
                 Console.WriteLine(" 4.  Null Coalesce Operator ");
-                Console.WriteLine(" 5.  ... ");
+                Console.WriteLine(" 5.  Operator Prcedence ");
                 Console.WriteLine(" 6.  ... ");
                 Console.WriteLine(" 7.  ... ");
                 Console.WriteLine(" 9.  Quit  ");
@@ -62,6 +63,8 @@ namespace Exam70483
                         Console.ReadKey();
                         break;
                     case 5:
+                        OperatorPrecedence();
+                        Console.ReadKey();
                         break;
                     case 6:
                         break;
@@ -289,6 +292,32 @@ namespace Exam70483
         {
             return null;
         }
+
+        static void OperatorPrecedence()
+        {
+            Process.Start("http://msdn.microsoft.com/en-us/library/6a71f45d.aspx");
+            int i = 0;
+            if (false & ++i == 1)
+            {
+                // i is incremented, but the conditional
+                // expression evaluates to false, so
+                // this block does not execute.
+                Console.WriteLine("This line is never written using &");
+            }
+            Console.WriteLine(" Using & The value of i is {0} ", i);
+
+            int j = 0;
+            if (false && ++j == 1)
+            {
+                // i is incremented, but the conditional
+                // expression evaluates to false, so
+                // this block does not execute.
+                Console.WriteLine("This line is never written using &&");
+            }
+            Console.WriteLine(" Using && The value of j is {0} ", j);
+            Console.ReadKey();
+        }
+
     } // end Class Operators
 
 
