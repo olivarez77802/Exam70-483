@@ -31,6 +31,9 @@ namespace Exam70483
      * ThreadPool offers no way to find out when a work item has been completed (unlike Thread.Join()), nor a way to get 
      * the result. Therefore, ThreadPool is best used for short operations where the caller does not need the result.
      * 
+     * All threads from the thread pool are background threads, whereas the manually created threads are foreground threads
+     * by default (but can be set as background threads as well).
+     * 
      * Task
      * 
      * Finally, the Task class from the Task Parallel Library offers the best of both worlds. Like the ThreadPool, a task does

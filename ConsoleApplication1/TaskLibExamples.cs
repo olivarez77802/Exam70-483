@@ -22,7 +22,15 @@ namespace Exam70483
      Parallel.For is from the Task Parallel Library
      TPL encapsulates multicore execution.  Parallellism across
      cores is taken care of by TPL.
-    
+
+     System.Threading.Tasks.Parallel Methods
+     Parallel.For
+     Parallel.ForEach
+     Parallel.Invoke
+     Try to resist urge to change all of your for and foreach loops into their parallel
+     counterparts.  If you know the iterations are completely independent of each other
+     and you can avoid race conditions then it may be an option.  Most of the time it's
+     better to keep them sequential.
      
     
         Advanced C# - Task Parallel Library

@@ -252,9 +252,12 @@ namespace Exam70483
             testStruct.StructTaker();
             
             // Could also call it this way, however extension methods is preferrred
-            //ClassTaker(testClass);
-            //StructTaker(testStruct);
-
+            // ClassTaker(testClass);
+            // StructTaker(testStruct);
+            //
+            // Displays Class field "changed"
+            //          Struct field "not changed"
+            //
             Console.WriteLine("Class field = {0}", testClass.willIChange);
             Console.WriteLine("Struct field = {0}", testStruct.willIChange);
 

@@ -34,6 +34,7 @@ namespace Exam70483
                 Console.WriteLine(" 4.  Threading \n");
                 Console.WriteLine(" 5.  Tasks \n");
                 Console.WriteLine(" 6.  Async and Await \n");
+                Console.WriteLine(" 7.  Thread Pool");
                 Console.WriteLine(" 9.  Quit            \n\n ");
                 Console.Write(" Enter Number to execute Routine ");
 
@@ -58,6 +59,9 @@ namespace Exam70483
                       
                         AsyncAwaitExamples.AsyncEx2Main();
                         
+                        break;
+                    case 7: ThreadPoolExample.TPEMain();
+                        Console.ReadKey();
                         break;
                     case 9: x = 9;
                         break;

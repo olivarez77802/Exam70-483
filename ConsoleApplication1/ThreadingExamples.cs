@@ -144,6 +144,11 @@ namespace Exam70483
             Console.WriteLine("*************** Begin ParmThreadMain ****************");
             Thread t = new Thread(new ParameterizedThreadStart(ParmThreadMethod));
             t.Start(15);
+            /* 
+             * Join blocks the current thread until the other thread is finished executing.
+             * When the other thread finishes, Join will return and the the current thread
+             * will be unblocked.
+             */
             t.Join();
             Console.WriteLine("*************** End ParmThreadMain ******************");
         }

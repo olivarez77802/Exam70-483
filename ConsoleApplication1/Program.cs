@@ -97,7 +97,6 @@ namespace Exam70483
                         break;
                     case 2:
                         DebugAppImplementSecurity.Menu();
-                        /* CryptographyExamples.Menu(); */
                         break;
                    
                     case 3: ImplementDataAccess.Menu();

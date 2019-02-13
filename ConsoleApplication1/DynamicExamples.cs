@@ -36,6 +36,8 @@ namespace Exam70483
     
      A static method can only call other methods that are defined as static.
 
+    See static versus instance fields in StaticExamples.cs
+
     Example of Anonymous type  - new keyword defines Anonmyous type
       Anonymous type are great for defining types on the fly that can be used for processing or binding scenarios but these types
                 are only useful in the method they are declared - don't try to pass anonymous types from a function. 

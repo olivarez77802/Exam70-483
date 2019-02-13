@@ -214,63 +214,47 @@ namespace Exam70483
             }
         }
 
-        struct zipclass
+        protected struct zipclass
         {
-            public string zip { get; set; }
-            public string pattern { get; set; }
+            public zipclass(string zip, string pattern)
+            {
+                Zip = zip;
+                Pattern = pattern;
+
+            }
+            public string Zip { get; set; }
+            public string Pattern { get; set; }
         }
         static void Anchors()
         {
+            //
+            // Object Initializer
+            // https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/how-to-initialize-objects-by-using-an-object-initializer
+            //
             List<zipclass> mylist = new List<zipclass>
             {
-                new zipclass
-                {
-                    zip = "77802",
-                    pattern = @"\d{5}(-d{4})?"
-                },
-                 new zipclass
-                {
-                    zip = "77802test",
-                    pattern = @"\d{5}(-d{4})?"
-                },
-                 new zipclass
-                {
-                    zip = "  77802",
-                    pattern = @"\d{5}(-d{4})?"
-                },
-                new zipclass
-                {
-                    zip = "  77802",
-                    pattern = @"^\d{5}(-d{4})?"
-                },
-                new zipclass
-                {
-                    zip = "77802",
-                    pattern = @"^\d{5}(-d{4})?$"
-                },
-                 new zipclass
-                {
-                    zip = "77802test",
-                    pattern = @"^\d{5}(-d{4})?$"
-                }
+                new zipclass("77802",@"\d{5}(-d{4})?"),
+                new zipclass("77802test", @"\d{5}(-d{4})?"),
+                new zipclass("  77802",@"\d{5}(-d{4})?"),
+                new zipclass("  77802", @"^\d{5}(-d{4})?"),
+                new zipclass("77802",@"^\d{5}(-d{4})?$"),
+                new zipclass("77802test", @"^\d{5}(-d{4})?$")               
              }; 
-            
-
+         
             foreach (zipclass i in mylist)
             {
                 valpattern(i);
             }
-            
-            
+ 
         }
         static void valpattern(zipclass zip1)
         {
             bool valid = false;
-            if (Regex.IsMatch(zip1.zip, zip1.pattern)) valid = true;
+            if (Regex.IsMatch(zip1.Zip, zip1.Pattern)) valid = true;
             if (valid)
-                Console.WriteLine("zip {0}  matches pattern {1}", zip1.zip, zip1.pattern);
+                Console.WriteLine("zip {0}  matches pattern {1}", zip1.Zip, zip1.Pattern);
             else
-                Console.WriteLine("zip {0} does not match pattern {1}", zip1.zip, zip1.pattern);
+                Console.WriteLine("zip {0} does not match pattern {1}", zip1.Zip, zip1.Pattern);
         }
     }
 }

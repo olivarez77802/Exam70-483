@@ -7,7 +7,7 @@ using System.Text;
 namespace Exam70483
 {
     /*
-     static - cannot ever be instantiated
+     static - cannot ever be instantiated.  A static field is not recreated with each instance object.
      base class types to override - abstract and virtual
      abstract - Incomplete class; must be completed in a derived class.  Also
                 cannot be instantiated.   Will usually hold methods that are defined as either virtual
@@ -42,7 +42,7 @@ namespace Exam70483
      the class that inherited the abstract class can be instantiated.  
      Struct versus Classes - Same as saying Value versus Reference Types.  See TypeSystem.cs for info on Classes versus Structs.
      Note!! - Both Struct and Class will use the 'new' keyword.   See also Static versus Dynamic in Dynamic Examples.cs.  Cannot
-     use the 'new' keyword with Static types.
+     use the 'new' keyword with Static types.   See also instance verus Static fields versus Instance fields in StaticExamples.cs
      
      See InterfacesMenu.cs   -  has more information on Arrays versus Lists
      See ConsumeTypes.cs - Information on casting

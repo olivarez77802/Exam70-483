@@ -22,7 +22,7 @@ namespace Exam70483
                 Console.WriteLine(" 0.  Hashing \n ");
                 Console.WriteLine(" 1.  Symmetric Algorithms \n ");
                 Console.WriteLine(" 2.  Asymmetric Algorithms \n");
-                Console.WriteLine(" 3.  Namespaces \n");
+                Console.WriteLine(" 3.  .... \n");
                 Console.WriteLine(" 9.  Quit            \n\n ");
                 Console.Write(" Enter Number to execute Routine ");
 
@@ -74,7 +74,6 @@ namespace Exam70483
                         Console.ReadKey();
                         break;
                     case 3:
-                        NameSpacesMenu.Menu();
                         break;
                     case 4:
                         break;

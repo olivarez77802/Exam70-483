@@ -104,7 +104,6 @@
     <Compile Include="ManageProgramFlow.cs" />
     <Compile Include="MathOps.cs" />
     <Compile Include="Methods.cs" />
-    <Compile Include="NameSpacesMenu.cs" />
     <Compile Include="ObjectExamples.cs" />
     <Compile Include="ParseExamples.cs" />
     <Compile Include="PinvokeTest.cs" />
