@@ -33,8 +33,7 @@ namespace Exam70483
                 {
                     case 0:
                         CreateTypes.Menu();
-                        //TypeSystem.Menu();
-                        break;
+                         break;
                     case 1:
                         ConsumeTypes.Menu();
                        

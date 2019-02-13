@@ -22,7 +22,7 @@ namespace Exam70483
                 Console.WriteLine(" constructors, static variables, methods, classes, extension methods, \r");
                 Console.WriteLine(" optional and named parameters, and indexed properties; create \r");
                 Console.WriteLine(" overloaded and overridden methods \n");
-                Console.WriteLine(" 0.  Value and Reference Types \n ");
+                Console.WriteLine(" 0.  Value Types \n ");
                 Console.WriteLine(" 1.  Generic Types \n ");
                 Console.WriteLine(" 2.  Constructors \n ");
                 Console.WriteLine(" 3.  Static Variables \n ");
@@ -30,13 +30,14 @@ namespace Exam70483
                 Console.WriteLine(" 5.  Optional/Named/Out Parameters \n ");
                 Console.WriteLine(" 6.  Methods \n");
                 Console.WriteLine(" 7.  Indexers \n");
+                Console.WriteLine(" 8.  Reference Types \n");
                 Console.WriteLine(" 9.  Quit            \n\n ");
 
                 int selection;
                 selection = Common.readInt("Enter Number to Execute Routine : ", 0, 9);
                 switch (selection)
                 {
-                    case 0: TypeSystem.Menu();
+                    case 0: ValueTypes.Menu();
                         break;
                     case 1: GenericExamples.PrimaryMain();
                         DynamicExamples.DMain();
@@ -166,6 +167,9 @@ namespace Exam70483
                     case 6: Methods.Menu();
                         break;
                     case 7: Indexer.Menu();
+                        Console.ReadKey();
+                        break;
+                    case 8: ReferenceTypes.Menu();
                         Console.ReadKey();
                         break;
                     case 9: x = 9;

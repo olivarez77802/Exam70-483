@@ -28,13 +28,13 @@ namespace Exam70483
                 Console.Clear();
                 Console.WriteLine(" Delegates Menu \n ");
                 Console.WriteLine(" 0.  Delegates \n ");
-                Console.WriteLine(" 1.  Async Processing \n ");
-                Console.WriteLine(" 2.  Callbacks  \n");
+                Console.WriteLine(" 1.  ... \n ");
+                Console.WriteLine(" 2.  ....  \n");
                 Console.WriteLine(" 3.  Events \n");
-                Console.WriteLine(" 4.  Threading \n");
-                Console.WriteLine(" 5.  Tasks \n");
-                Console.WriteLine(" 6.  Async and Await \n");
-                Console.WriteLine(" 7.  Thread Pool");
+                Console.WriteLine(" 4.  ... \n");
+                Console.WriteLine(" 5.  ...  \n");
+                Console.WriteLine(" 6.  ...  \n");
+                Console.WriteLine(" 7.  ... \n");
                 Console.WriteLine(" 9.  Quit            \n\n ");
                 Console.Write(" Enter Number to execute Routine ");
 
@@ -45,23 +45,19 @@ namespace Exam70483
                 {
                     case 0: Delegates();
                         break;
-                    case 1: KeyWordsLiterals();
+                    case 1: 
                         break;
-                    case 2: Operators();
+                    case 2:
                         break;
                     case 3: EventProcessing();
                         break;
-                    case 4: ThreadingExamples.ThreadPrimaryMain(); 
+                    case 4:  
                         break;
-                    case 5: TaskLibExamples.Menu();
+                    case 5: 
                         break;
-                    case 6: AsyncAwaitExamples.AsyncEx1Main();
-                      
-                        AsyncAwaitExamples.AsyncEx2Main();
-                        
+                    case 6:
                         break;
-                    case 7: ThreadPoolExample.TPEMain();
-                        Console.ReadKey();
+                    case 7: 
                         break;
                     case 9: x = 9;
                         break;
@@ -81,15 +77,8 @@ namespace Exam70483
             Delegate_Example_2();
             Delegate_Example_3();
          }
-        static void KeyWordsLiterals()
-        {
-
-            Process.Start("http://msdn.microsoft.com/en-us/library/x53a06bb.aspx");
-        }
-        static void Operators()
-        {
-            Process.Start("http://msdn.microsoft.com/en-us/library/6a71f45d.aspx");
-        }
+       
+        
         static void EventProcessing()
         {
             // Process.Start("http://msdn.microsoft.com/en-us/library/vstudio/ed8yd1ha%28v=vs.100%29.aspx");

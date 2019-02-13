@@ -9,7 +9,7 @@ namespace Exam70483
     /*
      * See also ThreadingExamples.cs; ThreadPoolExamples.cs
      * 
-     * Race condition - Results are sensitive to precise timing of threads
+     * Race condition - Results are sensitive to precise timing of threads.  To avoid race condition make data read-only.
      * 
      * Concurrent collections will protect you from:
      *    Internal Data Corruption

@@ -68,7 +68,6 @@
     <Compile Include="ConcurrentCollections.cs" />
     <Compile Include="ConsumeData.cs" />
     <Compile Include="ConsumeTypes.cs" />
-    <Compile Include="ConversionKeyWordExamples.cs" />
     <Compile Include="CreateAndUseTypes.cs" />
     <Compile Include="CreateTypes.cs" />
     <Compile Include="CryptographyExamples.cs" />
@@ -91,7 +90,9 @@
     <Compile Include="ImplementDiagnostics.cs" />
     <Compile Include="ImplementProgramFlow.cs" />
     <Compile Include="Indexer.cs" />
+    <Compile Include="ManageMultithreading.cs" />
     <Compile Include="ManageObjectCycle.cs" />
+    <Compile Include="MultithreadingAndAsync.cs" />
     <Compile Include="Operators.cs" />
     <Compile Include="PerformIOoperations.cs" />
     <Compile Include="Interface1.cs" />
@@ -135,8 +136,6 @@
     <Compile Include="TaskLibExamples.cs" />
     <Compile Include="ThreadingExamples.cs" />
     <Compile Include="ThreadPoolExample.cs" />
-    <Compile Include="TypeMembers.cs" />
-    <Compile Include="TypeSystem.cs" />
     <Compile Include="ValidateAppInput.cs" />
     <Compile Include="ValueTypes.cs" />
   </ItemGroup>

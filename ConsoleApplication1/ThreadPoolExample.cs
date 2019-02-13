@@ -69,7 +69,7 @@ namespace Exam70483
      */
     class ThreadPoolExample
     {
-        public static void TPEMain()
+        public static void Method()
         {
             int maxThreads;
             int minThreads;
