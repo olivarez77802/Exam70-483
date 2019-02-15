@@ -52,6 +52,48 @@ namespace Exam70483
      */
     class EventExamples
     {
+        public static void Menu()
+        {
+            int x = 0;
+            do
+            {
+                Console.Clear();
+                Console.WriteLine(" Event Examples Menu \n ");
+                Console.WriteLine(" 0.  Car Speed \n ");
+                Console.WriteLine(" 1.  Person \n ");
+                Console.WriteLine(" 2.  Cow    \n");
+                Console.WriteLine(" 9.  Quit            \n\n ");
+                Console.Write(" Enter Number to execute Routine ");
+
+
+                int selection;
+                selection = Common.readInt("Enter Number to Execute Routine : ", 0, 9);
+                switch (selection)
+                {
+                    case 0:
+                        EventExamples.CarMain();
+                        Console.ReadKey();
+                        break;
+                    case 1:
+                        EventExamples.PersonMain();
+                        Console.ReadKey();
+                        break;
+                    case 2:
+                        EventExamples.CowMain();
+                        Console.ReadKey();
+                        break;
+                    
+                    case 9:
+                        x = 9;
+                        break;
+                    default:
+                        Console.WriteLine(" Invalid Number");
+                        break;
+                }
+
+            } while (x < 9);
+
+        }
         #region CarMain
 
         class Car

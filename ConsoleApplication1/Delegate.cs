@@ -14,7 +14,7 @@ namespace Exam70483
  * Called by ManageProgramFlow.cs
  * 
  * Defining a delegate type
- * 1.  accessiblity  - for the delegat type such as public or private.
+ * 1.  accessiblity  - for the delegate type such as public or private.
  * 2.  delegate  - The keyword
  * 3.  returnType - The data type that a method of this delegate type returns
  *                  such as void, int, or string.
@@ -41,11 +41,11 @@ namespace Exam70483
             {
                 Console.Clear();
                 Console.WriteLine(" Delegates Menu \n ");
-                Console.WriteLine(" 0.  Delegates \n ");
+                Console.WriteLine(" 0.  ...\n ");
                 Console.WriteLine(" 1.  Instance versus Static Methods \n ");
-                Console.WriteLine(" 2.  ....  \n");
-                Console.WriteLine(" 3.  Events \n");
-                Console.WriteLine(" 4.  ... \n");
+                Console.WriteLine(" 2.  Delegate 1  \n");
+                Console.WriteLine(" 3.  Delegate 2  \n");
+                Console.WriteLine(" 4.  Delegate 3  \n");
                 Console.WriteLine(" 5.  ...  \n");
                 Console.WriteLine(" 6.  ...  \n");
                 Console.WriteLine(" 7.  ... \n");
@@ -55,26 +55,24 @@ namespace Exam70483
 
                 int selection;
                 selection = Common.readInt("Enter Number to Execute Routine : ", 0, 9);
-                // Will stop if selection is 2 or less
-                Debug.Assert(selection > 2);
                 switch (selection)
                 {
-                    case 0: Delegates();
+                    case 0: 
                         break;
                     case 1: InstanceVersusStatic();
                         Console.ReadKey();
                         break;
                     case 2:
+                        Delegate_Example_1();
+                        Console.ReadKey();
                         break;
-                    case 3: EventProcessing();
+                    case 3:
+                        Delegate_Example_2();
+                        Console.ReadKey();
                         break;
-                    case 4:  
-                        break;
-                    case 5: 
-                        break;
-                    case 6:
-                        break;
-                    case 7: 
+                    case 4:
+                        Delegate_Example_3();
+                        Console.ReadKey();
                         break;
                     case 9: x = 9;
                         break;
@@ -86,35 +84,12 @@ namespace Exam70483
 
         }
 
-        static void Delegates()
-        {
-            Process.Start("http://msdn.microsoft.com/en-us/library/aa288459(v=vs.71).aspx");
-            Console.WriteLine(" Delegate Example 1 ");
-            Delegate_Example_1();
-            Delegate_Example_2();
-            Delegate_Example_3();
-         }
-       
-        
-        static void EventProcessing()
-        {
-            // Process.Start("http://msdn.microsoft.com/en-us/library/vstudio/ed8yd1ha%28v=vs.100%29.aspx");
-            EventExamples.CarMain();
-            Console.ReadKey();
-            EventExamples.PersonMain();
-            Console.ReadKey();
-            EventExamples.CowMain();
-            Console.ReadKey();
-            
-        }
-        
-        
-             
+      
         static void Delegate_Example_1()
         {
             Console.WriteLine("Delegate Example 1");
             DelegateExamples.TCMain();
-            Console.ReadKey();
+           
         }
        
         static void Delegate_Example_2()

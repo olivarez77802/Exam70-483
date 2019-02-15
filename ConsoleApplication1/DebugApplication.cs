@@ -26,7 +26,7 @@ namespace Exam70483
             do
             {
                 Console.Clear();
-                Console.WriteLine(" Debug an Appication \n ");
+                Console.WriteLine(" Debug an Application \n ");
                 Console.WriteLine(" 0.  Create and Manage Preprocessor directives \n ");
                 Console.WriteLine(" 1.  Choose an approriate build type \n ");
                 Console.WriteLine(" 2.  Manage program database files (debug symbols) \n ");
