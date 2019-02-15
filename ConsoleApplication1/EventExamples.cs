@@ -9,6 +9,12 @@ namespace Exam70483
      * See GenericExamples.cs for definitions of Func, Action, Predicate delegates and meanings
      * 
      * Event - Something that happened.  i.e. A mouse Click, keyboard click
+     * Defining an Event:
+     * 1. Accessiblity - public or private
+     * 2. Event - keyword
+     * 3. delegate - A delegtate type that defines the kind of method that can act as an event
+     *               handler for the event.
+     * 4. Eventname - The name that the class is giving the event.
      * 
      * Event Listener - Detect an event and call the event handler.
      * 

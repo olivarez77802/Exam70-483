@@ -7,6 +7,16 @@ using System.Threading.Tasks;
 
 namespace Exam70483
 {
+    /*
+     *  A method can use Assert to verify that its data makes sense.   For example
+     *  Debug.Assert(items.Length <=100)
+     *  If an order contains more that 100 items, the Assert statement halts
+     *  execution, so you can examine the code to decide whether this is a bug
+     *  or just an unusual order.
+     *  
+     *  In a "release" build, the above Assert statement is ignored.
+     * 
+     */ 
     class DebugApplication
     {
         public static void Menu()
