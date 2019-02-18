@@ -27,9 +27,11 @@ namespace Exam70483
                 selection = Exam70483.Common.readInt("Enter Number to Execute Routine : ", 0, 9);
                 switch (selection)
                 {
-                    case 0:
-                        EventHandlerExamples.Menu();
-                                     
+                    case 0: EventHandlerExamples.Menu();
+                        Console.ReadKey();
+                        break;
+                    case 1: EventExamples.Menu();
+                            Console.ReadKey();                                
                             break;
                     case 2: Delegate.Menu();
                         break;

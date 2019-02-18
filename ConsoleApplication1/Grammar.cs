@@ -16,15 +16,15 @@ namespace Exam70483
             {
                 Console.Clear();
                 Console.WriteLine(" Grammar Menu \n ");
-                Console.WriteLine(" 0.  Escape Characters \n ");
-                Console.WriteLine(" 1.  Value and Reference Types\n ");
-                Console.WriteLine(" 2.  Operators and their Precedence \n");
-                Console.WriteLine(" 3.  Preprocessing Directives \n");
-                Console.WriteLine(" 4.  Program Flow \n");
+                Console.WriteLine(" 0.  ... \n ");
+                Console.WriteLine(" 1.  ... \n ");
+                Console.WriteLine(" 2.  ... \n");
+                Console.WriteLine(" 3.  ... \n");
+                Console.WriteLine(" 4.  ... \n");
                 Console.WriteLine(" 5.  Statement Keywords \n");              
                 Console.WriteLine(" 6.  Access Keywords \n");
-                Console.WriteLine(" 7.  Conversion Keywords \n");
-                Console.WriteLine(" 8.  KeyWords Menu \n");
+                Console.WriteLine(" 7.  ...  \n");
+                Console.WriteLine(" 8.  ... \n");
                 Console.WriteLine(" 9.  Quit            \n\n ");
                 Console.Write(" Enter Number to execute Routine ");
 
@@ -33,24 +33,23 @@ namespace Exam70483
                 selection = Common.readInt("Enter Number to Execute Routine : ", 0, 9);
                 switch (selection)
                 {
-                    case 0: EscapeCharacters();
+                    case 0: 
                         break;
                     case 1:
-                        
-                    case 2: Operators();
                         break;
-                    case 3: PreProcessorDirectives();
+                    case 2: 
                         break;
-                    case 4: ProgramFlow();
+                    case 3: 
+                        break;
+                    case 4:
                         break;
                     case 5: StatementKeywords.Menu();
                         break;
                     case 6: AccessKeywords.Menu();
                         break;
                     case 7:
-                        //ConversionKeyWordExamples.PMain();
-                        break;
-                    case 8: Console.WriteLine(" Need to recreate KeyWords.Menu()");
+                         break;
+                    case 8: 
                         break;
                     case 9: x = 9;
                         break;
@@ -62,55 +61,7 @@ namespace Exam70483
 
         }  // end Menu
 
-        #region Escape Characters
-        static void EscapeCharacters()
-        {
-            Process.Start("http://msdn.microsoft.com/en-us/library/6tcf2h8w.aspx");
-
-        }
-        #endregion
-
-
-        static void Operators()
-        {
-            Process.Start("http://msdn.microsoft.com/en-us/library/6a71f45d.aspx");
-            int i = 0;
-            if (false & ++i == 1)
-            {
-                // i is incremented, but the conditional
-                // expression evaluates to false, so
-                // this block does not execute.
-                Console.WriteLine("This line is never written using &");
-            }
-            Console.WriteLine(" Using & The value of i is {0} ", i);
-
-            int j = 0;
-            if (false && ++j == 1)
-            {
-                // i is incremented, but the conditional
-                // expression evaluates to false, so
-                // this block does not execute.
-                Console.WriteLine("This line is never written using &&");
-            }
-            Console.WriteLine(" Using && The value of j is {0} ", j);
-            Console.ReadKey();
-        }
-        #region PreProcessor Directives
-        static void PreProcessorDirectives()
-        {
-            Process.Start("http://msdn.microsoft.com/en-us/library/vstudio/ed8yd1ha%28v=vs.100%29.aspx");
-#if DEMO
-            Console.WriteLine("Line only executed in Demo mode");
-#elif DEMO
-            Console.WriteLine("Line only executed in NON-Demo mode");
-#endif
-        }
-        #endregion
-        static void ProgramFlow()
-        {
-            Process.Start("http://msdn.microsoft.com/en-us/library/hh147286%28VS.88%29.aspx");
-        }
-
+       
 
 
     } // end Class Grammer

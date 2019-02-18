@@ -11,42 +11,41 @@ namespace Exam70483
     class RegularExpressionExamples
     {
         /*
-       // ^ - Anchors the regular expression to the beginning of string
-          $ - Marks end of regular expression
-
-       // ? - Means Optional.   Zero or one match.  Anchors regular expression to end of string.
-       // * - Match Zero or more times
-       // + - Match one or more times
-       // \d - Matches decimal digit
-          [] - Define allowable characters, numbers
-       // {6} -The number of allowable characters, numbers
-          {1,3} - Specifies the minumum number charcters, numbers is 1 and the max is 3
-       //  |  - Indicates 'OR'
-       //  \  - Backslash means escaping- Remove special meaning from metacharacter or 
-       //                                 Give special meaning to ordinary characters
-       // (?!expr) - Continue matching only if expression doesn't 
-       //            match on right (negative lookahead).
-       // (?:expr) - Non capturing group
-       //
-       //
-       //  public const string Pattern = ";
-        //  ^([9][0-9][0-9][7][0-9]|[9][0-9][0-9][8][1-8]|[9][0-9][0-9][9][0-2])
-       //  public const string Pattern = ^(?!(?:(\d)\1{8}))
-       //                                 (?!000)
-       //                                 (?!666)
-       //                                 (?:[0-8]\d{2}|7[0-7][0-2])
-       //                                 (?:[ -]?)
-       //                                 ((?!00)\d{2})
-       //                                 (?:[ -]?)
-       //                                 ((?![0]{4})\d{4})$
-       //
-           https://www.youtube.com/watch?v=C2zm0roE-Uc
-        // http://regexr.com
+        ^ - Anchors the regular expression to the beginning of string
+        $ - Marks end of regular expression
+        ? - Matches the previous element Zero or 1 times.  Anchors regular expression to end of string.
+        * - Matches the previous element Zero or more times
+        + - Match the previous element 1 or more times
+        \d - Matches decimal digit
+        [] - Define allowable characters, numbers
+        {6} -The number of allowable characters, numbers
+        {6,} - Matches the previous elmemet 6 or more times
+        {1,3} - Specifies the minumum number charcters, numbers is 1 and the max is 3
+         |  - Indicates 'OR'
+         \  - Backslash means escaping- Remove special meaning from metacharacter or 
+                                        Give special meaning to ordinary characters
+        (?!expr) - Continue matching only if expression doesn't 
+                   match on right (negative lookahead).
+        (?:expr) - Non capturing group
+       
+       
+         public const string Pattern = ";
+          ^([9][0-9][0-9][7][0-9]|[9][0-9][0-9][8][1-8]|[9][0-9][0-9][9][0-2])
+         public const string Pattern = ^(?!(?:(\d)\1{8}))
+                                        (?!000)
+                                        (?!666)
+                                        (?:[0-8]\d{2}|7[0-7][0-2])
+                                        (?:[ -]?)
+                                        ((?!00)\d{2})
+                                        (?:[ -]?)
+                                        ((?![0]{4})\d{4})$
+       
+         http://regexr.com
            
-           https://msdn.microsoft.com/en-us/library/system.text.regularexpressions.regex(v=vs.110).aspx
-             
-       //
-       //
+         https://msdn.microsoft.com/en-us/library/system.text.regularexpressions.regex(v=vs.110).aspx
+ 
+    
+       
        */
 
         public static void Menu()
@@ -63,6 +62,7 @@ namespace Exam70483
                 Console.WriteLine(" 1.  Regex.IsMatch \n");
                 Console.WriteLine(" 2.  RegexOptions (.Compiled.IgnoreCase) Regex.Matches \n");
                 Console.WriteLine(" 3.  Dynamic Regular Expression \n");
+                Console.WriteLine(" 4.  Value of Anchors");
                 Console.WriteLine(" 9.  Quit            \n\n ");
                 Console.Write(" Enter Number to execute Routine ");
 
@@ -95,6 +95,10 @@ namespace Exam70483
                         DynamicRegularExpression();
                         Console.ReadKey();
                         break;
+                    case 4:
+                        Anchors();
+                        Console.ReadKey();
+                        break;
                     case 9:
                         x = 9;
                         break;
@@ -108,7 +112,7 @@ namespace Exam70483
 
         }  // end Menu()
 
-        public static void Print_phone(string phone)
+        static void Print_phone(string phone)
         {
             const string pattern = @"^\d{3}-\d{4}$";
             const string ITINSPattern = @"^([7][0-9]|[8][0-8]|[9][0-2]|[9][4-9])";
@@ -132,7 +136,7 @@ namespace Exam70483
                 Debug.WriteLine("split is {0} ", splt);
             }
         }
-        public static void Matchssn(string ssn)
+        static void Matchssn(string ssn)
         {
             const string pattern = @"^(?!(?:(\d)\1{8}))";
             bool valid = false;
@@ -143,7 +147,7 @@ namespace Exam70483
                 Debug.WriteLine("ssn does not match pattern {0}", ssn);
 
         }
-        public static void CompiledIgnoreCase()
+        static void CompiledIgnoreCase()
         {
             // Define a regular expression for repeated words.
             Regex rx = new Regex(@"\b(?<word>\w+)\s+(\k<word>)\b",
@@ -170,7 +174,7 @@ namespace Exam70483
                                   groups[1].Index);
             }
         }
-        public static void DynamicRegularExpression()
+        static void DynamicRegularExpression()
         {
             // Get the current NumberFormatInfo object to build the regular 
             // expression pattern dynamically.
@@ -208,6 +212,49 @@ namespace Exam70483
                 else
                     Console.WriteLine("{0} is not a currency value.", test);
             }
+        }
+
+        protected struct zipclass
+        {
+            public zipclass(string zip, string pattern)
+            {
+                Zip = zip;
+                Pattern = pattern;
+
+            }
+            public string Zip { get; set; }
+            public string Pattern { get; set; }
+        }
+        static void Anchors()
+        {
+            //
+            // Object Initializer
+            // https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/how-to-initialize-objects-by-using-an-object-initializer
+            //
+            List<zipclass> mylist = new List<zipclass>
+            {
+                new zipclass("77802",@"\d{5}(-d{4})?"),
+                new zipclass("77802test", @"\d{5}(-d{4})?"),
+                new zipclass("  77802",@"\d{5}(-d{4})?"),
+                new zipclass("  77802", @"^\d{5}(-d{4})?"),
+                new zipclass("77802",@"^\d{5}(-d{4})?$"),
+                new zipclass("77802test", @"^\d{5}(-d{4})?$")               
+             }; 
+         
+            foreach (zipclass i in mylist)
+            {
+                valpattern(i);
+            }
+ 
+        }
+        static void valpattern(zipclass zip1)
+        {
+            bool valid = false;
+            if (Regex.IsMatch(zip1.Zip, zip1.Pattern)) valid = true;
+            if (valid)
+                Console.WriteLine("zip {0}  matches pattern {1}", zip1.Zip, zip1.Pattern);
+            else
+                Console.WriteLine("zip {0} does not match pattern {1}", zip1.Zip, zip1.Pattern);
         }
     }
 }

@@ -11,6 +11,7 @@ namespace Exam70483
         public static void Menu()
         {
             /* 
+             *             * 
              * Manage Assemblies
              *    Version assemblies; sign assemblies using strong names; 
              *    implement side-by-side hosting;
@@ -66,6 +67,28 @@ namespace Exam70483
              * 2. Use GacUtil.exe (GAC Utility Tool)
              * 
              * https://www.youtube.com/watch?v=FYmRrEYyhCM&index=4&list=PL8598C97BA1D871C1
+             * 
+             * Advantages of using the GAC
+             * 1. Side-by-side versioning
+             * 2. Sharing of assemblies
+             * 3. The assembly signature is verified before it is installed on the GAC,
+             *    so when the assembly will be loaded by the CLR when it is executed,
+             *    it skips verification, improving the startup time of your application.
+             * 4. Possiblity to precompile the assemblies, so they won't need to be 
+             *    compiled by the JIT compiler everytime you load them.  This can speed
+             *    up the start up process.  To do that you must run a utlity called 
+             *    ngen.exe (Native Image Generator).
+             * 
+             * 
+             * Delay signing an Assembly
+             * - Obtain public key pair created by using Strong Name tool provided by Windows Software Development Kit(SDK)
+             * To keep password secret but still have other developers working with your application,
+             * you must use Delay sign 
+             * https://docs.microsoft.com/en-us/dotnet/framework/app-domains/delay-sign-assembly
+             * 
+             * When an assembly needs to be digitally signed, the compiler sighns the assembly using the private key
+             * and embeds the public key in the assembly for later verification by other assemblies that refer to it.
+             * 
              * 
              ********************************************************************************************************************************
              * Create a WinMD Assembly

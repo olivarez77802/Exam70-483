@@ -23,7 +23,7 @@ namespace Exam70483
                 Console.WriteLine(" 4.  Run Example 4 ");
                 Console.WriteLine(" 5.  Statement Keywords ");
                 Console.WriteLine(" 6.  While, do-while ");
-                Console.WriteLine(" 7.  .. ");
+                Console.WriteLine(" 7.  for Statement ");
                 Console.WriteLine(" 9.  Quit  ");
                 Console.Write(" Enter Number to execute Routine ");
 
@@ -46,6 +46,9 @@ namespace Exam70483
                         break;
                     case 6: WhiledoWhile();
                         break;
+                    case 7: For_Loop();
+                        Console.ReadKey();
+                        break;                            
                     case 9: x = 9;
                         break;
                     default: Console.WriteLine(" Invalid Number");
@@ -72,9 +75,8 @@ namespace Exam70483
             Dictionary_Key_Value_Pair();
             List_Remove();
             foreach_performance();
-                        
-            //Program p = new Program();
-            //p.Program_Main();
+
+            Program p = new Program();
             Console.WriteLine("Using Collections");            
             Collections.Using_Collections();
 
@@ -271,57 +273,82 @@ namespace Exam70483
             *   
            */
         }
-        public class Program
+        static void For_Loop()
         {
-
-            const int _max = 100000000;
-            public void Program_Main()
+          /* For Loop Sequence.
+           * 1. Initialize (int counter=0;)...Only done once.
+           * .. Start Loop
+           * 2. Condition (counter <=10;)
+           * 3. Execute Statement (Console.WriteLine(counter))
+           * 3. Iterator  (counter +=2)
+           * .. End Loop
+           */
+            for (int counter =0; counter <= 10; counter +=2)
             {
-            Program program = new Program();
-            var s1 = Stopwatch.StartNew();
-            for (int i = 0; i < _max; i++)
-             {
-               program.Method1();
-             }
-                s1.Stop();
-                var s2 = Stopwatch.StartNew();
-                for (int i = 0; i < _max; i++)
-                {
-                    program.Method2();
-                }
-                s2.Stop();
-                Console.WriteLine(((double) (s1.Elapsed.TotalMilliseconds * 1000 * 1000) /
-                    _max).ToString("0.00 ns"));
-                Console.WriteLine(((double) (s2.Elapsed.TotalMilliseconds * 1000 * 1000) /
-                    _max).ToString("0.00 ns"));
-                Console.Read();
+                Console.WriteLine("Counter value is {0}", counter);
             }
-
-            int[] _values = { 1, 2, 3 };
-
-            int Method1()
+            Console.WriteLine("Example using ++Prefix Operator");
+            for (int counter = 0; counter <= 5; ++counter)
             {
-                //Access the field directly in the foreach expression
-                int result = 0;
-                foreach (int value in this._values)
-                {
-                    result += value;
-                }
-                return result;
+                Console.WriteLine("Counter value is {0}", counter);
             }
-
-            int Method2()
+            Console.WriteLine("Example using Postfix++ Operator");
+            for (int counter = 0; counter <= 5; counter++)
             {
-                // Store the field into a local variable and then iterate.
-                int result = 0;
-                var values = this._values;
-                foreach (int value in values)
-                {
-                    result += value;
-                }
-                return result;
+                Console.WriteLine("Counter value is {0}", counter);
             }
         }
+        //public class Program
+        //{
+
+        //    const int _max = 100000000;
+        //    public static void Program_Main()
+        //    {
+        //    Program program = new Program();
+        //    var s1 = Stopwatch.StartNew();
+        //    for (int i = 0; i < _max; i++)
+        //     {
+        //       program.Method1();
+        //     }
+        //        s1.Stop();
+        //        var s2 = Stopwatch.StartNew();
+        //        for (int i = 0; i < _max; i++)
+        //        {
+        //            program.Method2();
+        //        }
+        //        s2.Stop();
+        //        Console.WriteLine(((double) (s1.Elapsed.TotalMilliseconds * 1000 * 1000) /
+        //            _max).ToString("0.00 ns"));
+        //        Console.WriteLine(((double) (s2.Elapsed.TotalMilliseconds * 1000 * 1000) /
+        //            _max).ToString("0.00 ns"));
+        //        Console.Read();
+        //    }
+
+        //    int[] _values = { 1, 2, 3 };
+
+        //    int Method1()
+        //    {
+        //        //Access the field directly in the foreach expression
+        //        int result = 0;
+        //        foreach (int value in this._values)
+        //        {
+        //            result += value;
+        //        }
+        //        return result;
+        //    }
+
+        //    int Method2()
+        //    {
+        //        // Store the field into a local variable and then iterate.
+        //        int result = 0;
+        //        var values = this._values;
+        //        foreach (int value in values)
+        //        {
+        //            result += value;
+        //        }
+        //        return result;
+        //    }
+        //}
        
     }
 

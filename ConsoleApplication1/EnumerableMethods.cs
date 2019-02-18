@@ -21,7 +21,7 @@ namespace Exam70483
      An IEnumerable Interface specifies that the underlying type implements IEnumerable
 
 
-     Linq Syntax  - Query Syntax versus Method Syntax
+     Linq Syntax  - Query Syntax versus Method Syntax  - Linq statements work on any object that implements IEnumerable.
 
      Query Syntax -  var query = from c in customerList
                                  where c.CustomerId == customerId
@@ -34,6 +34,13 @@ namespace Exam70483
     extension methods require class to be static and parameter to have 'this'
      Extension methods use the Enumerable Class.The Enumerable class is in the
    System.Linq namespace
+
+   Mistake#5 - Failing to consider the underlying objects in a LINQ Statement.
+   https://www.toptal.com/c-sharp/top-10-mistakes-that-c-sharp-programmers-make
+   The underlying objects in a LINQ statement are references to SQL Table data(as
+   is the case with the Entity Framework DbSet object), the statement is converted
+   into a T-SQL statement.  Operators then follow T-SQL rules, not C# rules, the
+   the comparison operator '==' ends up being case insesitive.
 
    Extension methods require 3 things:
      * Must reside in a static class

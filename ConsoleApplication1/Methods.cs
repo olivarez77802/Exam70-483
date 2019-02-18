@@ -238,6 +238,7 @@ namespace Exam70483
         }
         public static void TCAS_Main()
         {
+            //Note!!! - Both class and struct use the 'new' keyword
             TheClass testClass = new TheClass();
             TheStruct testStruct = new TheStruct();
 
@@ -251,9 +252,12 @@ namespace Exam70483
             testStruct.StructTaker();
             
             // Could also call it this way, however extension methods is preferrred
-            //ClassTaker(testClass);
-            //StructTaker(testStruct);
-
+            // ClassTaker(testClass);
+            // StructTaker(testStruct);
+            //
+            // Displays Class field "changed"
+            //          Struct field "not changed"
+            //
             Console.WriteLine("Class field = {0}", testClass.willIChange);
             Console.WriteLine("Struct field = {0}", testStruct.willIChange);
 

@@ -10,30 +10,40 @@ namespace Exam70483
     class ThreadingExamples
     {
         /*
-           // Process.Start("");
-           Process.Start("http://msdn.microsoft.com/en-us/library/c5kehkcz.aspx");
-           // The lock keyword ensures that one thread does not enter a critical section of code while another thread is in the critical section. 
+            Process.Start("");
+            Process.Start("http://msdn.microsoft.com/en-us/library/c5kehkcz.aspx");
 
-           // If another thread tries to enter a locked code, it will wait, block, until the object is released.
+            Using Locking Mechanisms - One way to deal with data sharing is mutual exclusion.  Mutal exclusion is implemented in .NET
+            in several ways: monitors, mutexes, semaphores, reader-writer locks.  Locking is both dangerous and resource-intensive. 
+            Sometimes, you just need to perform simple operations, and you need to make sure that they are atomic.  To solve this
+            kind of problem,.NET offers a clas called Interlocked, defined in the System.Threading namespace.   The Interlocked
+            class has only static methods, and all represent atomic operations, meaning they will be performed without being 
+            interrupted by the scheduler.
 
-           //The section Threading (C# and Visual Basic) discusses threading.
+            Monitors - Work Only with reference objects, not value objects.
 
-           //The lock keyword calls Enter at the start of the block and Exit at the end of the block.
-           // A ThreadInterruptedException is thrown if Interrupt interrupts a thread that is waiting to enter a lock statement.
+            The lock keyword ensures that one thread does not enter a critical section of code while another thread is in the critical section. 
 
-           //In general, avoid locking on a public type, or instances beyond your code's control. The common constructs 
-           // lock (this), lock (typeof (MyType)), and lock ("myLock") violate this guideline:
+            If another thread tries to enter a locked code, it will wait, block, until the object is released.
 
-           //•lock (this) is a problem if the instance can be accessed publicly.
+           The section Threading (C# and Visual Basic) discusses threading.
+
+           The lock keyword calls Enter at the start of the block and Exit at the end of the block.
+            A ThreadInterruptedException is thrown if Interrupt interrupts a thread that is waiting to enter a lock statement.
+
+           In general, avoid locking on a public type, or instances beyond your code's control. The common constructs 
+            lock (this), lock (typeof (MyType)), and lock ("myLock") violate this guideline:
+
+           •lock (this) is a problem if the instance can be accessed publicly.
 
 
-           //•lock (typeof (MyType)) is a problem if MyType is publicly accessible.
+           •lock (typeof (MyType)) is a problem if MyType is publicly accessible.
 
 
-           //•lock("myLock") is a problem because any other code in the process using the same string, will share the same lock. 
+           •lock("myLock") is a problem because any other code in the process using the same string, will share the same lock. 
 
 
-           //Best practice is to define a private object to lock on, or a private static object variable to protect data common to all instances
+           Best practice is to define a private object to lock on, or a private static object variable to protect data common to all instances
 
            * Locking only works if you lock EVERYWHERE that shared state is vulnerable.
            * It is easy to forget locking somewhere
@@ -43,7 +53,7 @@ namespace Exam70483
    */
 
 
-        public static void ThreadPrimaryMain()
+        public static void Menu()
         {
            
             int x = 0;
@@ -144,6 +154,11 @@ namespace Exam70483
             Console.WriteLine("*************** Begin ParmThreadMain ****************");
             Thread t = new Thread(new ParameterizedThreadStart(ParmThreadMethod));
             t.Start(15);
+            /* 
+             * Join blocks the current thread until the other thread is finished executing.
+             * When the other thread finishes, Join will return and the the current thread
+             * will be unblocked.
+             */
             t.Join();
             Console.WriteLine("*************** End ParmThreadMain ******************");
         }

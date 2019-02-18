@@ -21,6 +21,10 @@ namespace Exam70483
              *  Video uses Performance Monitor
              *   https://www.youtube.com/watch?v=No7QqSc5cl8
              * 
+             * Go to Start and type 'Performance Monitor'
+             * -- Lots of Documentation
+             * 
+             * 
              */
 
 

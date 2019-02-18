@@ -32,6 +32,8 @@ namespace Exam70483
                         break;
                     case 2: ManageAssemblies.Menu();
                         break;
+                    case 3: DebugApplication.Menu();
+                        break;
                     case 4: ImplementDiagnostics.Menu();
                         break;
                     case 9: x = 9;

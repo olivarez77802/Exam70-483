@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,15 +9,81 @@ namespace Exam70483
 {
     /*
     https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/increment-operator
+
+    See Collections.cs for more information on Ternary Operators.
     */
     class Operators
     {
+        /*
+         * See also ReferenceTypes.cs for Nullable Value Types (int?,double?, bool?, char?).
+        */
         public static void Menu()
         {
-            Operator_plus();
-            Ternary_Operator();
-            ShortCircuitAND();
-            //ShortCircuitOR();
+
+           
+            int x = 0;
+            do
+            {
+                Console.Clear();
+                Console.WriteLine(" Iteration Statements Menu \n ");
+                Console.WriteLine(" 0.  Prefix_PostFix Operator ");
+                Console.WriteLine(" 1.  Ternary_Operator ");
+                Console.WriteLine(" 2.  ShortCircuit && Operator ");
+                Console.WriteLine(" 3.  Ternary Operator..Postfix..Prefix");
+                Console.WriteLine(" 4.  Null Coalesce Operator ");
+                Console.WriteLine(" 5.  Operator Prcedence ");
+                Console.WriteLine(" 6.  ... ");
+                Console.WriteLine(" 7.  ... ");
+                Console.WriteLine(" 9.  Quit  ");
+                Console.Write(" Enter Number to execute Routine ");
+
+
+                int selection;
+                selection = Common.readInt("Enter Number to Execute Routine : ", 0, 9);
+                switch (selection)
+                {
+                    case 0:
+                        Operator_plus();
+                        Console.ReadKey();
+                        break;
+                    case 1:
+                        Ternary_Operator();
+                        Console.ReadKey();
+                        break;
+                    case 2:
+                        ShortCircuitAND();
+                        Console.ReadKey();
+                        break;
+                    case 3:
+                        Ternary_Operator2();
+                        Console.ReadKey();
+                        break;
+                    case 4:
+                        Null_Coalesce_Example();
+                        Console.ReadKey();
+                        break;
+                    case 5:
+                        OperatorPrecedence();
+                        Console.ReadKey();
+                        break;
+                    case 6:
+                        break;
+                    case 7:
+                        break;
+                    case 9:
+                        x = 9;
+                        break;
+                    default:
+                        Console.WriteLine(" Invalid Number");
+                        break;
+                }
+
+            } while (x < 9);
+
+        
+          
+            
+            
         }
 
 
@@ -70,6 +137,31 @@ namespace Exam70483
             // ?: conditional operator.  
             classify = (input > 0) ? "positive" : "negative";
             Console.WriteLine("classify is {0}", classify);
+        }
+        static void Ternary_Operator2()
+        {
+            int i = 1;
+            int j;
+            // Result is 1
+            j = i < 5 ? square(i++) : square(i--);
+            Console.WriteLine("Postfix Square is {0}", j);
+            // Result is 36
+            i = 6;
+            j = i < 5 ? square(i++) : square(i--);
+            Console.WriteLine("Postfix Square is {0}", j);
+            // Result is 4
+            i = 1;
+            j = i < 5 ? square(++i) : square(--i);
+            Console.WriteLine("Prefix Square is {0}", j);
+            // Result is 25
+            i = 6;
+            j = i < 5 ? square(++i) : square(--i);
+            Console.WriteLine("Prefix Square is {0}", j);
+
+        }
+        static int square (int i)
+        {
+            return i * i;
         }
         static void ShortCircuitAND()
         {
@@ -173,6 +265,60 @@ namespace Exam70483
             // see the exception.
             //return !(divisor == 0 | number % divisor != 0);
         }
+        static void Null_Coalesce_Example()
+        {
+            int? x = null;
+
+            // Set y to the value of x if x is not NULL; otherwise
+            // if x==null, set y to -1
+            int y = x ?? -1;
+
+            // Assign i to return value of the method if the method's result
+            // is not NULL; otherwise, if the result is null, set i to the 
+            // default value of int.
+            int i = GetNullableInt() ?? default(int);
+
+            // Display the value of s if s is NOT null; otherwise,
+            // display the string "Unspecified".
+            string s = GetStringValue();
+            Console.WriteLine(s ?? "Unspecified");
+
+        }
+        static int? GetNullableInt()
+        {
+            return null;
+        }
+        static string GetStringValue()
+        {
+            return null;
+        }
+
+        static void OperatorPrecedence()
+        {
+            Process.Start("http://msdn.microsoft.com/en-us/library/6a71f45d.aspx");
+            int i = 0;
+            if (false & ++i == 1)
+            {
+                // i is incremented, but the conditional
+                // expression evaluates to false, so
+                // this block does not execute.
+                Console.WriteLine("This line is never written using &");
+            }
+            Console.WriteLine(" Using & The value of i is {0} ", i);
+
+            int j = 0;
+            if (false && ++j == 1)
+            {
+                // i is incremented, but the conditional
+                // expression evaluates to false, so
+                // this block does not execute.
+                Console.WriteLine("This line is never written using &&");
+            }
+            Console.WriteLine(" Using && The value of j is {0} ", j);
+            Console.ReadKey();
+        }
+
     } // end Class Operators
+
 
 }

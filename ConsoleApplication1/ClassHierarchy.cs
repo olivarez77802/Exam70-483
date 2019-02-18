@@ -33,7 +33,7 @@ namespace Exam70483
          * 1. Public
          * 2. Private   -  Even an instance of a class cannot access its own private members.
          * 3. Protected  - Only available to containing type and to type that derive from the containing type.
-         * 4. Internal
+         * 4. Internal   - Is the default if no access modifier is specified.
          * 5. Protected Internal
          * 
          * Interface 
@@ -76,16 +76,19 @@ namespace Exam70483
             {
                 Console.Clear();
                 Console.WriteLine(" Create and Implement a Class Hierarchy \n ");
-                Console.WriteLine(" 0.  Attributes \n ");
-                Console.WriteLine(" 1.  \n ");
-                Console.WriteLine(" 2.  Inheritance and Polymorphism \n ");
-                Console.WriteLine(" 3.  Namespaces \n");
-                Console.WriteLine(" 4.  Object Creation and Lifetime \n");
-                Console.WriteLine(" 5.  \n");
-                Console.WriteLine(" 6.  ...\n");
-                Console.WriteLine(" 7.  Classes and Constructors \n");
-                Console.WriteLine(" 8.  Generics \n");
-                Console.WriteLine(" 9.  Quit            \n\n ");
+                Console.WriteLine("    Design and Implement an Interface; inherit from a base class; \n");
+                Console.WriteLine("    create and implement classes based on IComparable, IEnumerable, \n");
+                Console.WriteLine("    IDisposable, and IUknown interfaces \n");
+                Console.WriteLine(" 0.  Interfaces \n ");
+                Console.WriteLine(" 1.  Inheritance\n ");
+                Console.WriteLine(" 2.  Classes and Constructors \n");
+                Console.WriteLine(" 3.  ...... \n");
+                Console.WriteLine(" 4.  ...... \n");
+                Console.WriteLine(" 5.  ...... \n");
+                Console.WriteLine(" 6.  ...... \n");
+                Console.WriteLine(" 7.  ...... \n");
+                Console.WriteLine(" 8.  .......\n");
+                Console.WriteLine(" 9.  Quit \n\n");
                 Console.Write(" Enter Number to execute Routine ");
 
 
@@ -93,22 +96,24 @@ namespace Exam70483
                 selection = Common.readInt("Enter Number to Execute Routine : ", 0, 9);
                 switch (selection)
                 {
-                    case 0: Attributes();
+                    case 0:
+                        InterfacesMenu.Menu();
                         break;
-                    case 1:
+                    case 1: InheritanceAndPolymorphism();
                         break;
-                    case 2: InheritanceAndPolymorphism();
+                    case 2:
+                        Constructors();
+                        ClassesAndStructs();
                         break;
-                    case 3: Namespaces();
+                    case 3: 
                         break;
-                    case 4: ObjectCreation();
+                    case 4: 
                         break;
                     case 6:
                         break;
-                    case 7: Constructors();
-                        ClassesAndStructs();
+                    case 7: 
                         break;
-                    case 8: GenericExamples.PrimaryMain();
+                    case 8: 
                         break;
                     case 9: x = 9;
                         break;
@@ -121,13 +126,7 @@ namespace Exam70483
 
         }  // end Menu()
 
-        static void Attributes()
-        {
-            Process.Start("http://msdn.microsoft.com/en-us/library/aa288454(v=vs.71).aspx");
-            //Attribute_Program.APMain();
-
-        }
-
+       
         static void InheritanceAndPolymorphism()
         {
             /*
@@ -147,16 +146,8 @@ namespace Exam70483
             P_Program.ProgramMain();
 
         }
-        static void Namespaces()
-        {
-            NameSpacesMenu.Menu();
-
-        }
-        static void ObjectCreation()
-        {
-            Process.Start("https://www.youtube.com/watch?v=SZotrU_5Tf4");
-        }
        
+              
         static void Constructors()
         {
             // What is the difference between constructors and other methods ?
@@ -325,10 +316,6 @@ namespace Exam70483
         }
 
     } // End of Class ClassesandInterfaces
-
-
-
-
 
 }  // End Namespace
 

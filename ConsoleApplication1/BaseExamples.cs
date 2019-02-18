@@ -7,43 +7,45 @@ using System.Text;
 namespace Exam70483
 {
     /*
-    // static - cannot ever be instantiated
-    // base class types to override - abstract and virtual
-    // abstract - Incomplete class; must be completed in a derived class.  Also
-    //            cannot be instantiated.   Will usually hold methods that are defined as either virtual
-    //            or abstract.  Abstract classes are useful because of Polymorphism.  Abstract class can
-    //            provide some implementation details.  This is a difference between them and Interfaces.
-    //            Interfaces cannot provide implementation details.
-    // inherit  - You can inherit from many interfaces.  You are restricted from inheriting from only one class
-    //            whether it is abstract or concrete.
-    // virtual - first implementation.   When you use the virtual keyword you enable Polymorphism
-    //
-    // public abstract class Window
-    // {
-    //   public virtual string Title { get; set; }
-    //  
-    //   public virtual void Draw()
-    //   {
-    //     ** Drawing Code
-    //   }
-    //
-    //   public abstract void Open()    <-- Nested abstract means the class deriving from class Window must provide 
-    //                                      an implmentation for the Open method.   
-    // }
-    // 
-    // override - further implementation.  Keyword used in concrete classes to provide further implementations for methods
-    //                                     that were defined as either virtual or abstract.
-    // Difference between virtual and abstract.  Abstract methods must be overriden. Overriding virtual methods is optional.
-    // sealed - Final implementation - cannot be derived (or inherited).
-    //        -  Examples of Sealed Classes are String Builder
-    //        - If you want to make sure no one overrides or extends the functionality of a class then mark it as sealed.
-    // making this class abstract means that I do not ever want this class 
-    // to be instantiated.    However, the abstract class can be inherited and
-    // the class that inherited the abstract class can be instantiated.  
-    // Struct versus Classes - Same as saying Value versus Reference Types.  See TypeSystem.cs for info on Classes versus Structs.
-    // 
-    // See InterfacesMenu.cs   -  has more information on Arrays versus Lists
-    // See ConsumeTypes.cs - Information on casting
+     static - cannot ever be instantiated.  A static field is not recreated with each instance object.
+     base class types to override - abstract and virtual
+     abstract - Incomplete class; must be completed in a derived class.  Also
+                cannot be instantiated.   Will usually hold methods that are defined as either virtual
+                or abstract.  Abstract classes are useful because of Polymorphism.  Abstract class can
+                provide some implementation details.  This is a difference between them and Interfaces.
+                Interfaces cannot provide implementation details.
+     inherit  - You can inherit from many interfaces.  You are restricted from inheriting from only one class
+                whether it is abstract or concrete.
+     virtual - first implementation.   When you use the virtual keyword you enable Polymorphism
+    
+     public abstract class Window
+     {
+       public virtual string Title { get; set; }
+      
+       public virtual void Draw()
+       {
+         ** Drawing Code
+       }
+    
+       public abstract void Open()    <-- Nested abstract means the class deriving from class Window must provide 
+                                          an implmentation for the Open method.   
+     }
+     
+     override - further implementation.  Keyword used in concrete classes to provide further implementations for methods
+                                         that were defined as either virtual or abstract.
+     Difference between virtual and abstract.  Abstract methods must be overriden. Overriding virtual methods is optional.
+     sealed - Final implementation - cannot be derived (or inherited).
+            -  Examples of Sealed Classes are String Builder
+            - If you want to make sure no one overrides or extends the functionality of a class then mark it as sealed.
+     making this class abstract means that I do not ever want this class 
+     to be instantiated.    However, the abstract class can be inherited and
+     the class that inherited the abstract class can be instantiated.  
+     Struct versus Classes - Same as saying Value versus Reference Types.  See TypeSystem.cs for info on Classes versus Structs.
+     Note!! - Both Struct and Class will use the 'new' keyword.   See also Static versus Dynamic in Dynamic Examples.cs.  Cannot
+     use the 'new' keyword with Static types.   See also instance verus Static fields versus Instance fields in StaticExamples.cs
+     
+     See InterfacesMenu.cs   -  has more information on Arrays versus Lists
+     See ConsumeTypes.cs - Information on casting
     
     */
     static class BaseExamples   

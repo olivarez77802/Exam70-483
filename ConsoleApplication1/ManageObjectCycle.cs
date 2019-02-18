@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,6 +26,15 @@ namespace Exam70483
                         *  
                         *    https://www.youtube.com/watch?v=JfNTD7bTscw
                         *    
+                        *    
+                        *    DotNet Program Exectution
+                        *    C#, VB, C++,.. Reside on top of .Net Application
+                        *    Compiled into EXE or DLL
+                        *    DLL or Exe Gets fed to CLR
+                        *    CLR composed of Intermediate Language, JIT Compiler, Native Code
+                        *    CLR interfaces with Operating System
+                        *    https://www.youtube.com/watch?v=ruf4U9_Rbss&list=PL8598C97BA1D871C1
+                        *    
                        */
         public static void Menu()
         {
@@ -37,7 +47,7 @@ namespace Exam70483
                 Console.WriteLine("     with finalization, manage IDisposable by using the 'Using' statement, ");
                 Console.WriteLine("     manage finalization and garbage collection \n ");
                 Console.WriteLine(" 0.  Garbage Collection ");
-                Console.WriteLine(" 1.  .. ");
+                Console.WriteLine(" 1.  Object Creation  ");
                 Console.WriteLine(" 2.  ... ");
                 Console.WriteLine(" 3.  .. ");
                 Console.WriteLine(" 4.  .. ");
@@ -150,6 +160,7 @@ namespace Exam70483
                         */
                         break;
                     case 1:
+                        ObjectCreation();
                        break;
                     case 3:
                         break;
@@ -171,7 +182,11 @@ namespace Exam70483
 
 
             } while (x < 9);
-
+            
+        }
+        static void ObjectCreation()
+        {
+            Process.Start("https://www.youtube.com/watch?v=SZotrU_5Tf4");
         }
     }
 }

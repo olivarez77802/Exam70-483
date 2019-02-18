@@ -8,29 +8,36 @@ namespace Exam70483
 { 
     abstract class StringEquality
     {
-        // https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/equality-comparison-operator
-        //
-        //
-        // For reference types other than string, == returns true if its two operands refer to the same object.
-        // For the string type, == compares the values of the strings.   So String is the only refernce type
-        // that you can use == with.
-        //
-        // String implements IComparable<string>
-        // 
-        // IComarable versus IComparer 
-        // IComparable as I’m comparable. which means I can be compared to another instance of the same type.
-        //             - used for natural comparisons
-        // IComparer as I’m a comparer, I simply compare which means I compare two instances. 
-        //             - allows for plugging in alternative comparisons
-        //             - Can do one thing, great example of single responsilibity principle 
-        // Comparers are needed to sort collections, or anything else that needs to sort objects.
-        // http://www.karthikscorner.com/sharepoint/icomparable-vs-icomparer-c/
-        //
-        // Comparer<T> Implements IComarer<T>
-        // Writing a comparer for non-sealed classes is problematic
-        // Consider using sealed class when writing a class to compare 
-        //
-        //
+        /*
+         https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/equality-comparison-operator
+        
+        
+         For reference types other than string, == returns true if its two operands refer to the same object.
+         For the string type, == compares the values of the strings.   So String is the only refernce type
+         that you can use == with.
+        
+         String implements IComparable<string>
+         
+         IComarable versus IComparer 
+         IComparable as I’m comparable. which means I can be compared to another instance of the same type.
+                     - used for natural comparisons
+         IComparer as I’m a comparer, I simply compare which means I compare two instances. 
+                     - allows for plugging in alternative comparisons
+                     - Can do one thing, great example of single responsilibity principle 
+         Comparers are needed to sort collections, or anything else that needs to sort objects.
+         http://www.karthikscorner.com/sharepoint/icomparable-vs-icomparer-c/
+        
+         Comparer<T> Implements IComarer<T>
+         Writing a comparer for non-sealed classes is problematic
+         Consider using sealed class when writing a class to compare 
+        
+        Mistake #3 - Using improper or unspecified string comparison methods
+        https://www.toptal.com/c-sharp/top-10-mistakes-that-c-sharp-programmers-make
+        The preferred way to test for string equality is with the 'Equals' method.
+        public bool Equals(string value);   <-- Same as using '=='
+        public bool Equals(string value, StringComparison comparisonType);
+
+        */
 
         internal static void SE_Main()
         {

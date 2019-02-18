@@ -22,7 +22,15 @@ namespace Exam70483
      Parallel.For is from the Task Parallel Library
      TPL encapsulates multicore execution.  Parallellism across
      cores is taken care of by TPL.
-    
+
+     System.Threading.Tasks.Parallel Methods
+     Parallel.For
+     Parallel.ForEach
+     Parallel.Invoke
+     Try to resist urge to change all of your for and foreach loops into their parallel
+     counterparts.  If you know the iterations are completely independent of each other
+     and you can avoid race conditions then it may be an option.  Most of the time it's
+     better to keep them sequential.
      
     
         Advanced C# - Task Parallel Library
@@ -58,13 +66,13 @@ namespace Exam70483
                 Console.WriteLine(" 0.  Task Example 0 \n ");
                 Console.WriteLine(" 1.  Task Example 1 \n ");
                 Console.WriteLine(" 2.  Task Example 2 - Task.Factory \n ");
-                Console.WriteLine(" 3.  Task Example 3 - ContinueWith \n");
+                Console.WriteLine(" 3.  ... \n");
                 Console.WriteLine(" 4.  Task Example 4 - Message \n");
                 Console.WriteLine(" 5.  Task Example 5 - WaitAll \n");
                 Console.WriteLine(" 6.  Task Example 6 - WaitAll \n");
-                Console.WriteLine(" 7.  Task Example 7 - Parallel.ForEach \n");
-                Console.WriteLine(" 8.  Task Example 8 - Paralle.ForEach \n");
-                Console.WriteLine(" 9.  Quit - CanellationToken             \n\n ");
+                Console.WriteLine(" 7.  ... \n");
+                Console.WriteLine(" 8.  ... \n");
+                Console.WriteLine(" 9.  Quit \n\n ");
                 Console.Write(" Enter Number to execute Routine ");
                  
                 int selection;
@@ -78,7 +86,7 @@ namespace Exam70483
                         break;
                     case 2: TaskExample_2(); 
                         break;
-                    case 3: TaskExample_3();
+                    case 3: 
                         break;
                     case 4: TaskExample_4();
                         break;
@@ -86,13 +94,12 @@ namespace Exam70483
                         break;
                     case 6: TaskExample_6();
                         break;
-                    case 7: TaskExample_7();
+                    case 7: 
                         break;
-                    case 8: TaskExample_8();
+                    case 8: 
                         break;
-                    case 9: TaskExample_9();  
-                         Console.ReadKey();
-                         x = 9;
+                    case 9:
+                        x = 9;
                         break;
                     default: Console.WriteLine(" Invalid Number");
                         break;
@@ -139,19 +146,7 @@ namespace Exam70483
             Console.WriteLine("Press any key to quit");
             Console.ReadKey();
         }
-        private static void TaskExample_3()
-        {
-            /*
-            // Do not  need tx.Start
-               ContinueWith does an implicit Wait so that it does not execute until Previous Task has completed
-            */
-            var t1 = Task.Factory.StartNew(() => DoSomeVeryImportantWork(1, 1500)).ContinueWith((PrevTask) => DoSomeOtherVeryImportantWork(1, 2000));
-            var t2 = Task.Factory.StartNew(() => DoSomeVeryImportantWork(2, 3000));
-            var t3 = Task.Factory.StartNew(() => DoSomeVeryImportantWork(3, 1000));
-
-            Console.WriteLine("Press any key to quit");
-            Console.ReadKey();
-        }
+       
         public static void TaskExample_4()
         {
             // Do not  need tx.Start
@@ -202,48 +197,9 @@ namespace Exam70483
             Console.ReadKey();
 
         }
-        private static void TaskExample_7()
-        {
-            var intList = new List<int> { 1, 2, 5, 6, 8, 76, 5, 3, 54, 68, 78, 89, 9, 7, 6, 5, 4, 4 };
-            // ThreadBlocking occurs with Parallel.ForEach.   Simulates a WaitAll.   "Press any Key to Quit is not
-            // displayed until Parallel.ForEach is finished.
-            Parallel.ForEach(intList, (i) => Console.WriteLine(i));
-            Console.WriteLine("Press any key to quit");
-            Console.ReadKey();
-
-        }
-        private static void TaskExample_8()
-        {
-            /*
-            // Parallel.For takes in a Range.   Will not display in order, but will execute in Parallel.   Blocks Threads
-            // Simulates WaitAll.  Waits until all threads are finished.
-            */
-            Parallel.For(0, 100, (i) => Console.WriteLine(i));
-            Console.WriteLine("Press any key to quit Example 9");
-            Console.ReadKey();
-
-        }
-        private static void TaskExample_9()
-        {
-            CancellationTokenSource cts = new CancellationTokenSource();
-            CancellationToken ct = cts.Token;
-            var t = Task.Factory.StartNew(() =>
-            {
-                foreach (var item in
-                    Enumerable.Range(0, 100).AsParallel().WithCancellation(ct).Select(i => i).Where(i => i % 5 == 0))
-                {
-                    Console.WriteLine(" Example of Cancellation Token item is {0}", item);
-                }
-            }, ct);
-
-            // Comment out Thread.Sleep if you want it to cancel, otherwise it will fishish before the cancel is called.
-
-            Thread.Sleep(250);
-            cts.Cancel();
-            Console.WriteLine("Press any key to quit Example 10");
-            Console.ReadKey();
-
-        }
+       
+       
+      
         private static void DoSomeVeryImportantWork(int id, int Sleeptime)
         {
             Console.WriteLine("task {0} is beginning Sleeptime {1}", id, Sleeptime);

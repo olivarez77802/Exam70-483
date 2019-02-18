@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 namespace Exam70483
 {
     /*
+     *  See also DynamicExamples.cs
+     * 
      *  Static Fields versus Instance Fields
      *  
      *  Everything defined in a class either Fields, Methods, Properties, ... can be either Instance Members or Static Fields.
@@ -14,10 +16,13 @@ namespace Exam70483
      *  
      *  Important! - Once you make a field static you can no longer refer to the field using the 'this' key.
      *               this is because the 'this' keyword refers to the instance of the class.   You will have to change the 'this'
-     *               to prefix it with the name of the class 'Circle._PI'.
+     *               to prefix it with the name of the class 'Circle._PI'.  Now compare this with what is written about Extension
+     *               Methods in Methods.cs (let's see if this throws you for a loop).
      *               
      *   Static members are invoked using the name of the class
      *   Instance Members are invoked using an Object or Instance of the class.
+     *   
+     *   Static methods can only call other methods that are defined as static.
      *   
      *   Access modifiers are not allowed on Static Constructors 
      *   e.g.  public static Circle()  - not allowed.   By default if you don't specifiy an access modififier by default it is marked private.
