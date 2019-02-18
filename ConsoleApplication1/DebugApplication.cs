@@ -15,7 +15,7 @@ namespace Exam70483
     {
         public static void Menu()
         {
-
+            Init_Trace();
             int x = 0;
             do
             {
@@ -26,6 +26,7 @@ namespace Exam70483
                 Console.WriteLine(" 2.  Manage program database files (debug symbols) \n ");
                 Console.WriteLine(" 3.  Debug.Assert");
                 Console.WriteLine(" 4.  Trace File");
+                Console.WriteLine(" 5.  Event Viewer");
                 Console.WriteLine(" 9.  Quit            \n\n ");
 
                 int selection;
@@ -33,20 +34,29 @@ namespace Exam70483
                 switch (selection)
                 {
                     case 0:
+                        Trace.WriteLine(" Calling PreProcessor Directives");
                         PreProcessorDirectives();
                         Console.ReadKey();
                         break;
                     case 1:
+                        Trace.WriteLine(" Calling Selection 1");
                         break;
                     case 2:
+                        Trace.WriteLine(" Calling Selection 2");
                         break;
                     case 3: DebugAssert();
+                        Trace.WriteLine(" Calling Selection 3");
                         break;
                     case 4: Trace_File();
+                        Trace.WriteLine(" Calling Trace File");
+                        Console.ReadKey();
+                        break;
+                    case 5: Event_Viewer();
                         Console.ReadKey();
                         break;
                     case 9:
                         x = 9;
+                        Trace.Flush();
                         break;
                     default:
                         Console.WriteLine(" Invalid Number");
@@ -145,6 +155,11 @@ namespace Exam70483
         }
         static void Trace_File()
         {
+            
+           
+        }
+        static void Init_Trace()
+        {
             // Create the trace output file
             // Stored in C:\Users\olivarez77802\Documents\Visual Studio 2015\Projects\GitRemoteRepositories\ConsoleApplication1\ConsoleApplication1\bin\Debug
             Stream traceStream = File.Create("TraceFile.txt");
@@ -160,8 +175,27 @@ namespace Exam70483
 
             //write a startup note into the trace file
             Trace.WriteLine("Trace started " + DateTime.Now.ToString());
-            Trace.Flush();
         }
+        static void Event_Viewer()
+        {
+            /*
+             * Go to Start Menu and type in 'Event Viewer' to open Desktop App
+             * Open Directory 'Applications and Service Logs'
+             * You should find 'Exam70483'.
+            */
+            string source = "OrderMaker";
+            string log = "Exam70483";
+            string message = "Created new order 120192";
+            int id = 1001;
 
+            //Create the source if necessary. (Requires admin privelage)
+            if (!EventLog.SourceExists(source))
+                EventLog.CreateEventSource(source, log);
+
+            // Write the log entry.
+            EventLog.WriteEntry(source, message, EventLogEntryType.Information, id);
+
+
+        }
     }
 }
