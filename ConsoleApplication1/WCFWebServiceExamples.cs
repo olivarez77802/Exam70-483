@@ -46,7 +46,7 @@ namespace Exam70483
      * then use DataContract and DataMember attributes.
      * 1. Using DataContractAttribute, you can define an XML namespace for your data.
      * 2. Using DataMemberAttribute, you can
-     *    a) Define Name, Order, and make decision if a propert or field is required.
+     *    a) Define Name, Order, and make decision if a property or field is required.
      *    b) Also, serialize private fields and properties.
      * 
      * https://www.youtube.com/watch?v=RPgTKzSGcKY&index=6&list=PL6n9fhu94yhVxEyaRMaMN_-qnDdNVGsL1
