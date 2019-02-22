@@ -1,4 +1,6 @@
 ﻿#define OldMethod
+#define ConsoleTrace
+// #define StreamTrace
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -24,9 +26,10 @@ namespace Exam70483
                 Console.WriteLine(" 0.  Create and Manage Preprocessor directives \n ");
                 Console.WriteLine(" 1.  Choose an approriate build type \n ");
                 Console.WriteLine(" 2.  Manage program database files (debug symbols) \n ");
-                Console.WriteLine(" 3.  Debug.Assert");
-                Console.WriteLine(" 4.  Trace File");
-                Console.WriteLine(" 5.  Event Viewer");
+                Console.WriteLine(" 3.  Debug.Assert \n");
+                Console.WriteLine(" 4.  Trace File\n");
+                Console.WriteLine(" 5.  Event Viewer \n");
+                Console.WriteLine(" 6.  Listeners\n");
                 Console.WriteLine(" 9.  Quit            \n\n ");
 
                 int selection;
@@ -52,6 +55,9 @@ namespace Exam70483
                         Console.ReadKey();
                         break;
                     case 5: Event_Viewer();
+                        Console.ReadKey();
+                        break;
+                    case 6: Listeners();
                         Console.ReadKey();
                         break;
                     case 9:
@@ -160,6 +166,10 @@ namespace Exam70483
         }
         static void Init_Trace()
         {
+#if ConsoleTrace
+            ConsoleTraceListener traceListener =
+               new ConsoleTraceListener();
+#elif StreamTrace
             // Create the trace output file
             // Stored in C:\Users\olivarez77802\Documents\Visual Studio 2015\Projects\GitRemoteRepositories\ConsoleApplication1\ConsoleApplication1\bin\Debug
             Stream traceStream = File.Create("TraceFile.txt");
@@ -171,10 +181,11 @@ namespace Exam70483
             // Create a TextWriterTraceListener for the trace output file.
             TextWriterTraceListener traceListener =
                 new TextWriterTraceListener(traceStream);
+#endif
             Trace.Listeners.Add(traceListener);
-
             //write a startup note into the trace file
             Trace.WriteLine("Trace started " + DateTime.Now.ToString());
+
         }
         static void Event_Viewer()
         {
@@ -196,6 +207,16 @@ namespace Exam70483
             EventLog.WriteEntry(source, message, EventLogEntryType.Information, id);
 
 
+        }
+        static void Listeners()
+        {
+            /*
+             Both the Debug and Trace Classes have a Listeners collection that hold references to listener objects.
+             1. ConsoleTraceListener : Sends output to Console Window.
+             2. EventLogTraceListener : Sends output to an event log.
+             3. TextWriterTraceListener : Sends output to a stream such as a FileStream.  This lets you write output
+                                          to any file.
+            */
         }
     }
 }
