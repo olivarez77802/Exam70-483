@@ -1,6 +1,4 @@
 ﻿#define OldMethod
-#define ConsoleTrace
-// #define StreamTrace
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -17,19 +15,21 @@ namespace Exam70483
     {
         public static void Menu()
         {
-            Init_Trace();
             int x = 0;
             do
             {
                 Console.Clear();
                 Console.WriteLine(" Debug an Application \n ");
+                Console.WriteLine("- Create and manage preprocessor directives; choose ");
+                Console.WriteLine("- an appropriate build type; manage program database");
+                Console.WriteLine("- files (PDB) Debug symbols");
                 Console.WriteLine(" 0.  Create and Manage Preprocessor directives \n ");
                 Console.WriteLine(" 1.  Choose an approriate build type \n ");
                 Console.WriteLine(" 2.  Manage program database files (debug symbols) \n ");
                 Console.WriteLine(" 3.  Debug.Assert \n");
-                Console.WriteLine(" 4.  Trace File\n");
-                Console.WriteLine(" 5.  Event Viewer \n");
-                Console.WriteLine(" 6.  Listeners\n");
+                Console.WriteLine(" 4.  ...\n");
+                Console.WriteLine(" 5.  ... \n");
+                Console.WriteLine(" 6.  ...\n");
                 Console.WriteLine(" 9.  Quit            \n\n ");
 
                 int selection;
@@ -50,19 +50,14 @@ namespace Exam70483
                     case 3: DebugAssert();
                         Trace.WriteLine(" Calling Selection 3");
                         break;
-                    case 4: Trace_File();
-                        Trace.WriteLine(" Calling Trace File");
-                        Console.ReadKey();
+                    case 4: 
                         break;
-                    case 5: Event_Viewer();
-                        Console.ReadKey();
+                    case 5: 
                         break;
-                    case 6: Listeners();
-                        Console.ReadKey();
+                    case 6:
                         break;
                     case 9:
                         x = 9;
-                        Trace.Flush();
                         break;
                     default:
                         Console.WriteLine(" Invalid Number");
@@ -140,9 +135,6 @@ namespace Exam70483
 #warning testing
 #endif
 
-
-
-
         }
         static void DebugAssert()
         {
@@ -159,64 +151,7 @@ namespace Exam70483
     */
 
         }
-        static void Trace_File()
-        {
-            
-           
-        }
-        static void Init_Trace()
-        {
-#if ConsoleTrace
-            ConsoleTraceListener traceListener =
-               new ConsoleTraceListener();
-#elif StreamTrace
-            // Create the trace output file
-            // Stored in C:\Users\olivarez77802\Documents\Visual Studio 2015\Projects\GitRemoteRepositories\ConsoleApplication1\ConsoleApplication1\bin\Debug
-            Stream traceStream = File.Create("TraceFile.txt");
-            //Alternative - to append new text at end of file
-            // Stream traceStream = File.Open("TraceFile.txt",
-            //        FileMode.Append, FileAccess.Write, FileShare.Read);
-            //
-
-            // Create a TextWriterTraceListener for the trace output file.
-            TextWriterTraceListener traceListener =
-                new TextWriterTraceListener(traceStream);
-#endif
-            Trace.Listeners.Add(traceListener);
-            //write a startup note into the trace file
-            Trace.WriteLine("Trace started " + DateTime.Now.ToString());
-
-        }
-        static void Event_Viewer()
-        {
-            /*
-             * Go to Start Menu and type in 'Event Viewer' to open Desktop App
-             * Open Directory 'Applications and Service Logs'
-             * You should find 'Exam70483'.
-            */
-            string source = "OrderMaker";
-            string log = "Exam70483";
-            string message = "Created new order 120192";
-            int id = 1001;
-
-            //Create the source if necessary. (Requires admin privelage)
-            if (!EventLog.SourceExists(source))
-                EventLog.CreateEventSource(source, log);
-
-            // Write the log entry.
-            EventLog.WriteEntry(source, message, EventLogEntryType.Information, id);
-
-
-        }
-        static void Listeners()
-        {
-            /*
-             Both the Debug and Trace Classes have a Listeners collection that hold references to listener objects.
-             1. ConsoleTraceListener : Sends output to Console Window.
-             2. EventLogTraceListener : Sends output to an event log.
-             3. TextWriterTraceListener : Sends output to a stream such as a FileStream.  This lets you write output
-                                          to any file.
-            */
-        }
+      
+      
     }
 }
