@@ -153,8 +153,7 @@ namespace Exam70483
                     case eMenu.Deferred:
                         LINQExamples.Menu();
                         break;
-
-                   
+                 
                     case eMenu.Quit:
                         x = 9;
                         break;

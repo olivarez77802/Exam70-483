@@ -6,6 +6,18 @@ using System.Threading.Tasks;
 
 namespace Exam70483
 {
+    /* Event Sytax
+     * 1. Accessiblity (public or private)
+     * 2. event - keyword
+     * 3. delegate: A delegate type that defines the kind of method that can act as an event
+     *              handler for the event.
+     * 4. EventName: The name that the class is giving the event.
+     * 
+     * Example:
+     *  public delegate void OverdrawnEventHandler();
+     *  public event OverdrawnEventHandler Overdrawn;
+     * 
+     */
     public class EventHandlerExamples
     {
 

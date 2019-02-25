@@ -50,7 +50,9 @@ namespace Exam70483
                          */
                         break;
                     case 4:
-                       
+                       // See EnumerableMethods.cs
+                       // See EventHandlers.cs
+                       // See GenericExamples.cs
                         break;
                     case 9:
                         x = 9;

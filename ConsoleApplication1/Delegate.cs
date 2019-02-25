@@ -34,8 +34,18 @@ namespace Exam70483
 {
     class Delegate
     {
+        /*
+         * You can use a delegatee much as you use any other type.  First, use the delegate
+         * keyword to define the delegate type.  Next, create variables of the delegate type,
+         * and set them equal to methods that match the delegate's parameters and return type.
+         * Finally write code to invoke the variable, which calls the mthod refered to by 
+         * the variable.
+        */
+        public delegate void Action();
         public static void Menu()
         {
+            Action Option1, Option2, Option3, Option4;
+            
             int x = 0;
             do
             {
@@ -59,19 +69,24 @@ namespace Exam70483
                 {
                     case 0: 
                         break;
-                    case 1: InstanceVersusStatic();
+                    case 1:
+                        Option1 = InstanceVersusStatic;
+                        Option1();
                         Console.ReadKey();
                         break;
                     case 2:
-                        Delegate_Example_1();
+                        Option2 = Delegate_Example_1;
+                        Option2();
                         Console.ReadKey();
                         break;
                     case 3:
-                        Delegate_Example_2();
+                        Option3 = Delegate_Example_2;
+                        Option3();
                         Console.ReadKey();
                         break;
                     case 4:
-                        Delegate_Example_3();
+                        Option4 = Delegate_Example_3;
+                        Option4();
                         Console.ReadKey();
                         break;
                     case 9: x = 9;
