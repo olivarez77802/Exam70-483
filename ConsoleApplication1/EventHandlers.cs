@@ -16,11 +16,32 @@ namespace Exam70483
      * Example:
      *  public delegate void OverdrawnEventHandler();
      *  public event OverdrawnEventHandler Overdrawn;
+     *  
+     *  Common mistakes: Oversubscribed
+     *  If you subscribe to an event more than once, the event handler is called more than once.
+     *  For example, if the program executes the statmement processOrderButton += processOrderButton_Click
+     *  three times, when the user clicks the button, the processOrderButton_Click event handler executes
+     *  three times.
+     *  Each time you unsubscribe from an event, the event handler is removed from the list of subcribers
+     *  once.  For example, if the program executes the statemement processOrderButton.Click += processOrderButton_Click
+     *  three times and the statement processOrderButton -= processOrderButton_Click once, if the user
+     *  clicks the button, the event handler executes two times.
+     *  If you unsubscribe an event handler that is not subcribed for an event, nothing happens and there
+     *  is no error.  For example, if a program executes the statement processOrderButton -= processOrderButton_Click
+     *  but that event handler has not been subcribed to the event, the program continues running normally.
+     *  
+     *  
      * 
      */
     public class EventHandlerExamples
     {
-
+        /* 
+         * Event Handlers will usually be coupled with an Event Listener.
+        */
+        // Same as defining public delegatate void Action1(); 
+        public delegate void EventHandler();
+        public static event EventHandler Option1;
+        public static event EventHandler Option2;
         public static void Menu()
         {
 
@@ -29,8 +50,8 @@ namespace Exam70483
             {
                 Console.Clear();
                 Console.WriteLine(" EventHandlers \n ");
-                Console.WriteLine(" 0. EventHandler Example 1 .. ");
-                Console.WriteLine(" 1. Metronome ");
+                Console.WriteLine(" 0. Invoke Event \n");
+                Console.WriteLine(" 1. Metronome \n");
                 Console.WriteLine(" 2.  .. ");
                 Console.WriteLine(" 3.  .. ");
                 Console.WriteLine(" 4.  .. ");
@@ -44,11 +65,17 @@ namespace Exam70483
                 switch (selection)
                 {
                     case 0:
-                        EH_Main_1();
-                        Console.ReadLine();
+                        // The below is the same thing as making the Event a Listener
+                        Option1 += new EventHandler(EH_Main_1);
+                        // Below is the same as Firing an Event
+                        Option1.Invoke();
+                        // Firing an event, does not unsubscribe the method
+                        //Console.WriteLine(" Doing again to prove Firing an event does not unsubscribe a method");
+                        //Option1.Invoke();
+                        Console.ReadKey();
                         break;
-                    case 1:
-                        EH_Main_2();
+                    case 1: Option2 += new EventHandler(EH_Main_2);
+                        Option2.Invoke();
                         Console.ReadLine();
                         break;
                     case 3:
@@ -88,12 +115,14 @@ namespace Exam70483
             /* 
              * Event Handler
              */
-            public delegate void TickHandler(Metronome m, EventArgs e);
-            public event TickHandler Tick;       /* TicketHandler is a delegate */
-            public EventArgs e = null;
+            public delegate void TickHandler(Metronome m);
+            public event TickHandler Tick;       /* Event Tick uses delegate TicketHandler */
+            
            
             /*
-             * Listener
+             * Listener.  Metronome class creates a tick at a tick of 3 seconds and 
+             * a Listener class hears the metronome ticks and prints 'Heard it' every 
+             * time it receives an event.
              */
             public void Start()
             {
@@ -105,8 +134,8 @@ namespace Exam70483
                     if (Tick != null)
                     {
                         ++i;
-                        /* Fire event */
-                        Tick(this, e);
+                        /* Fire event - Firing an event only executes the method, it does not unsubcribe the method from the event */
+                        Tick(this);
                     }
                 }
             }
@@ -114,11 +143,15 @@ namespace Exam70483
 
         public class Listener
         {
+            /* 
+             * Will put a method on the Queue, whatever is on the Queue will get executed 
+             * whenever the Event is fired.  
+            */
             public void Subscribe(Metronome m)
             {
                 m.Tick += new Metronome.TickHandler(HeardIt);
             }
-            private void HeardIt(Metronome m, EventArgs e)
+            private static void HeardIt(Metronome m)
             {
                 System.Console.WriteLine("HEARD IT");
             }

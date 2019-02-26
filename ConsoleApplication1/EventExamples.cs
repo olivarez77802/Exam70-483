@@ -96,7 +96,7 @@ namespace Exam70483
         }
         #region CarMain
 
-        class Car
+        public class Car
         {
             /* 
              * Event Handler
@@ -109,6 +109,7 @@ namespace Exam70483
              */
             public double Speed
             {
+                /* Don't really need a 'get' in this program */
                 get
                 {
                     return speed;
@@ -133,26 +134,37 @@ namespace Exam70483
             }
         } // end Class Car
       
+        public class Listener
+        {
+            public void Subscribe(Car c)
+            {
+                c.OnChange += c_OnChange;
+                c.OffChange += c_OffChange;
+            }
+            private static void c_OnChange()
+            {
+                Console.WriteLine("Event Fired : Car is >= 60mph. ");
+            }
+            private static void c_OffChange()
+            {
+                Console.WriteLine("Event Fired : Car is < 60mph");
+            }
+        }
         public static void CarMain()
         {
             Car c = new Car();
             // Adding a function to a delegate will call all functions hooked up to a delegate
-            c.OnChange += c_OnChange;
-            c.OffChange += c_OffChange;
+            //c.OnChange += c_OnChange;
+            //c.OffChange += c_OffChange;
+            Listener l = new Listener();
+            l.Subscribe(c);
             c.Speed = 5;
             c.Speed = 55;
             c.Speed = 65;
 
 
         }
-        public static void c_OnChange()
-        {
-            Console.WriteLine("Event Fired : Car is >= 60mph");
-        }
-        public static void c_OffChange()
-        {
-            Console.WriteLine("Event Fired : Car is < 60mph");
-        }
+      
         #endregion
         #region PersonMain
         class Person

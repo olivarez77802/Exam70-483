@@ -28,6 +28,17 @@ namespace Exam70483
  * method shared by all the instances of the class that defines it, so
  * that is the method that is called.
  * 
+ * Covariance and Contravariance
+ * - Give flexiblity when assigning methods to delegate variables.  They basically
+ * - let you treat the return type and parameters of a delegate polymorphically.
+ * 
+ * Covariance Example.
+ * 
+ *   Employee : Person
+ *  
+ *   public delegate Person ReturnPersonDelegate()
+ *   You could set a ReturnPersonDelegate variable equal to a method that returns an Employee objects.
+ * 
  * 
 */
 
