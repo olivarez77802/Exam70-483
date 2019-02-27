@@ -62,6 +62,8 @@ namespace Exam70483
                 Console.WriteLine(" 0.  Car Speed \n ");
                 Console.WriteLine(" 1.  Person \n ");
                 Console.WriteLine(" 2.  Cow    \n");
+                Console.WriteLine(" 3.  Bank Account \n");
+                Console.WriteLine(" 4.  Event Inheritance");
                 Console.WriteLine(" 9.  Quit            \n\n ");
                 Console.Write(" Enter Number to execute Routine ");
 
@@ -82,7 +84,12 @@ namespace Exam70483
                         EventExamples.CowMain();
                         Console.ReadKey();
                         break;
-                    
+                    case 3:
+                        BankMain();
+                        Console.ReadKey();
+                        break;
+                    case 4:
+
                     case 9:
                         x = 9;
                         break;
@@ -246,6 +253,124 @@ namespace Exam70483
             Console.WriteLine(" Giggle giggle ... we made" + c.Name + "moo!");
         }
         #endregion
+        #region BankAccount
+        class BankAccount
+        {
+            public delegate void OverdrawnEventHandler(BankAccount b);
+            public event OverdrawnEventHandler Overdrawn;
 
+            //The account balance
+            public decimal Balance { get; set; }
+
+            // Add money to the Account
+            public void Credit(decimal amount)
+            {
+                Balance += amount;
+            }
+
+            //Remove money from the account.
+            public void Debit(decimal amount)
+            {
+                // See if there is this much money in the account.
+                if (Balance >= amount)
+                {
+                    //Remove the money
+                    Balance -= amount;
+                }
+                else
+                {
+                    // Raise the overdrawn envent.
+                    if (Overdrawn != null)
+                    {
+                        Overdrawn(this);
+                    }
+                }
+            }
+           
+        } // End of BankAccount
+        class ListenToBank
+        {
+            public void Subscribe(BankAccount b)
+            {
+                b.Overdrawn += new BankAccount.OverdrawnEventHandler(Heardit);
+            }
+            private void Heardit(BankAccount b)
+            {
+                Console.WriteLine("Account is overdrawn Balance is {0}", b.Balance);
+            }
+        }
+        public static void BankMain()
+        {
+            BankAccount b = new BankAccount();
+            ListenToBank l = new ListenToBank();
+           
+            l.Subscribe(b);
+            b.Credit(10);
+            Console.WriteLine("Credit 10 Balance is {0}", b.Balance);
+            b.Debit(5);
+            Console.WriteLine("Debit 5 Balance is {0}", b.Balance);
+            b.Debit(5);
+            Console.WriteLine("Debit 5 Balance is {0}", b.Balance);
+            Console.WriteLine("Debit 5 ");
+            b.Debit(5);
+       
+        }
+        #endregion
+        #region BankAccountUsingEventInheritance
+        class OverdrawnEventArgs : EventArgs
+        {
+            public decimal CurrentBalance, DebitAmount;
+
+            public OverdrawnEventArgs(decimal currentBalance, decimal debitAmount)
+            {
+                CurrentBalance = currentBalance;
+                DebitAmount = debitAmount;
+            }
+        }
+        class BankAccountEH
+        {
+            public delegate void OverdrawnEventHandler(BankAccount b);
+            public event OverdrawnEventHandler Overdrawn;
+
+            //The account balance
+            public decimal Balance { get; set; }
+
+            // Add money to the Account
+            public void Credit(decimal amount)
+            {
+                Balance += amount;
+            }
+
+            public virtual void OnOverdrawn (OverdrawnEventArgs args)
+            {
+                if (Overdrawn != null)
+                {
+                    Overdrawn(this, args);
+                }
+            }
+
+
+            //Remove money from the account.
+            public void Debit(decimal amount)
+            {
+                // See if there is this much money in the account.
+                if (Balance >= amount)
+                {
+                    //Remove the money
+                    Balance -= amount;
+                }
+                else
+                {
+                    // Raise the overdrawn envent.
+                    if (Overdrawn != null)
+                    {
+                        OnOverdrawn(new OverdrawnEventArgs(Balance, amount);
+                    }
+                }
+            }
+
+        } // End of BankAccount
+
+        #endregion
     }
 }
