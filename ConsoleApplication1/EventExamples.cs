@@ -89,7 +89,9 @@ namespace Exam70483
                         Console.ReadKey();
                         break;
                     case 4:
-
+                        BankMainEI();
+                        Console.ReadKey();
+                        break;
                     case 9:
                         x = 9;
                         break;
@@ -327,21 +329,36 @@ namespace Exam70483
                 DebitAmount = debitAmount;
             }
         }
-        class BankAccountEH
+        /*
+        * EVENT INHERITANCE
+        * - While building Windows Forms Classes, Microsoft found that simple events don't work well with derived classes.
+        *   The problem is that an event can be raised only from within the class that declared it, so a subclass cannot
+        *   raise the base class events.
+        * - The solution that Microsoft uses in the .NET Framework and many other class heirarchies is to give the base
+        *   class a protected method that raises the event.   Then a derived class can call that method to raise the event.
+        *   By convention, this method's name should begin with "On" and end with the name of the event, as in OnOverdrawn.
+        */
+        class BankAccountEI
         {
-            public delegate void OverdrawnEventHandler(BankAccount b);
+            public delegate void OverdrawnEventHandler(BankAccountEI b, OverdrawnEventArgs e);
             public event OverdrawnEventHandler Overdrawn;
 
             //The account balance
-            public decimal Balance { get; set; }
-
+            public decimal Balance { get ; set ;  }
             // Add money to the Account
             public void Credit(decimal amount)
             {
                 Balance += amount;
             }
-
-            public virtual void OnOverdrawn (OverdrawnEventArgs args)
+            /*
+             protected virtual void OnOverdrawn (OverdrawnEventArgs args) 
+              
+             Not sure why the original method was set up to be virtual.
+             Virtual means you can optionally override the method.  I am
+             not sure why we would want to ever override.
+                        
+            */
+            protected void OnOverdrawn(OverdrawnEventArgs args)
             {
                 if (Overdrawn != null)
                 {
@@ -361,15 +378,63 @@ namespace Exam70483
                 }
                 else
                 {
-                    // Raise the overdrawn envent.
+                    // Raise the overdrawn event.
                     if (Overdrawn != null)
                     {
-                        OnOverdrawn(new OverdrawnEventArgs(Balance, amount);
+                        OnOverdrawn(new OverdrawnEventArgs(Balance, amount));
                     }
                 }
             }
 
-        } // End of BankAccount
+        } // End of BankAccountEI
+        class ListenToBankEI
+        {
+            public void Subscribe(BankAccountEI b)
+            {
+                b.Overdrawn += new BankAccountEI.OverdrawnEventHandler(Heardit);
+            }
+            private void Heardit(BankAccountEI b, OverdrawnEventArgs e)
+            {
+                Console.WriteLine("Account is overdrawn Balance is {0} Amount is {1}", e.CurrentBalance, e.DebitAmount);
+            }
+        }
+       
+        class MoneyMarketAccount : BankAccountEI
+        {
+            public void DebitFee(decimal amount)
+            {
+                //See if there is this much money in the account
+                if (Balance >= amount)
+                {
+                    //Remove the money
+                    Balance -= amount;
+                }
+                else
+                {
+                    //Raise the overdrawn event.
+                    // base.Overdrawn is not allowed, a subclass must use a
+                    // method to raise a base class events.
+                    OnOverdrawn(new OverdrawnEventArgs(Balance, amount));
+                }
+            }
+        }
+        public static void BankMainEI()
+        {
+            MoneyMarketAccount mm = new MoneyMarketAccount() { Balance = 0 };
+            ListenToBankEI l = new ListenToBankEI();
+
+            l.Subscribe(mm);
+            //Console.WriteLine("Balance is {0)", mm.Balance);
+            mm.Credit(10);
+            Console.WriteLine("Credit 10 Balance is {0}", mm.Balance);
+            mm.Debit(5);
+            Console.WriteLine("Debit 5 Balance is {0}", mm.Balance);
+            mm.DebitFee(5);
+            Console.WriteLine("DebitFee 5 Balance is {0}", mm.Balance);
+            mm.DebitFee(10);
+            Console.WriteLine("DebitFee 10 Balance is {0}", mm.Balance);
+
+        }
 
         #endregion
     }
