@@ -51,6 +51,15 @@ namespace Exam70483
      * 
      * https://www.youtube.com/watch?v=RPgTKzSGcKY&index=6&list=PL6n9fhu94yhVxEyaRMaMN_-qnDdNVGsL1
      * 
+     * Basic Rules of Data Ordering for Data Contract
+     * 1. If a data contract type is a part of an inheritance heirarchy, data members of its base
+     *    type are always first in order.
+     * 2. Next in order are the current type's data members that do not have the "Order" property
+     *    of the "DataMemberAttribute" attribute set, in alphabetical order.
+     * 3. Next are any data members that have the "Order" property of the "DataMember" Attribute.
+     *    These are ordered by the value of the "Order" property first and then alphabetically
+     *    if there is more than one member of a certain "Order" value.  Order values may be skipped.
+     * 
      * 
     */
     class WCFWebServiceExamples

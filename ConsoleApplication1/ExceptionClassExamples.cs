@@ -39,6 +39,23 @@ namespace Exam70483
      *  Note: It is good practice to always release resources in the finally block, because finally
      *        block is guaranteed to execute, irrespective of whether there is an exception or not.
      *        
+     *  The try-catch-finally block allows a program to catch unexpected errors and handle them.
+     *  This block consists of threee sections: a try section, one or more catch sections, and a finally
+     *  section.  The "try" section is required, and you must include at least one 'catch' or 'finally'
+     *  section.  Although, you don't need to include both, and you don't need to include any code inside
+     *  the 'catch' or 'finally' section.   You can nest other try-catch-finally (Wow! you can have 2 
+     *  finally blocks.)  sequences inside a 'try' section to catch errors without leaving the original
+     *  try section.
+     *  
+     *  Note: only the code in the 'try' section of a try-catch-finally block is protected by the block.
+     *  If an exception occurs inside a 'catch' or 'finally' section, the exception is not caught
+     *  by the block.
+     *  
+     *  You can nest another try-catch-finally block inside a 'catch' or 'finally' section to protect
+     *  the program from errors in those places.  That can make the code rather cluttered, however, so
+     *  in some cases it may be better to move the risky code into another method that includes its 
+     *  own error handling.
+     *        
      *  https://www.youtube.com/watch?v=WxdSb3ZCWYc&index=40&list=PLAC325451207E3105
      *  
      *  Use GetType() Method to determine the type of exception
