@@ -13,8 +13,7 @@ namespace Exam70483
     {
         public static void Menu()
         {
-           
-             
+                   
             Init_Trace();
             int x = 0;
             do

@@ -19,6 +19,7 @@ namespace Exam70483
      * The file mode, access, and share each have their own table of enumerations.
      * 
      * File Mode Enumeration
+     * - An exception is thrown on every mode except Append and OpenOrCreate.
      * Append       - Opens a file if it exists and seeks to the end of the file, or creates a new file if it doesn’t exist. This can be used only with FileAccess.Write.
      * CreateNew    - Creates a new file. If the file already exists, an exception is thrown.
      * Create	    - Creates a new file. If the file already exists it will be overwritten. If the file exists and is hidden, an exception is thrown.
