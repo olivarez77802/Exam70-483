@@ -229,11 +229,12 @@ namespace Exam70483
             else
                 Console.WriteLine("Anonymous..Name found...");
 
-            // Example of Lambda Expression ...Does same as above
-            // Lambda - Input parameter goes to Expression
-            //   Input parmater (string name)
-            //   Exression return name.Equals("sekhar")'
-            //
+            /*
+             Example of Lambda Expression ...Does same as above
+             Lambda - Input parameter goes to Expression
+             Input parameter (string name)
+             Exression return name.Equals("sekhar")'
+            */
             string result3 = names.Find
                 (name => name.Equals("sekhar"));
 
@@ -242,20 +243,24 @@ namespace Exam70483
             else
                 Console.WriteLine("Lambda..Name found...");
 
-            // Differences between Function / Action / Predicate
-            //
-            // Func:  A delegate for a function that may or may not take 
-            //  parameters and return a value.
-            // Func <string, bool> - far right in this case bool is the return type
-            //  left is the parameters.  Can have more than one parameter.
-            //
-            // Action: A delegate for a function that may or may not take
-            //         parameters and does NOT return a value.
-            //
-            // Predicate: A specialized version of a Func that takes an argument
-            //            evaluates a value against a set of criteria and always returns
-            //            a boolean value as a results.
-
+           /*
+             Differences between Function / Action / Predicate
+            
+             Func:  A delegate for a function that may or may not take 
+              parameters and return a value.
+             Func <string, bool> - far right in this case bool is the return type
+              left is the parameters.  Can have more than one parameter.
+            
+             Action: A delegate for a function that may or may not take
+                     parameters and does NOT return a value.
+            
+             Predicate: A specialized version of a Func that takes an argument
+                        evaluates a value against a set of criteria and always returns
+                        a boolean value as a results.   Nice thing about Predicate is that 
+                        the return type of Boolean does not have to be a parameter.  Func can
+                        similate a Predicate but the return type of boolean must be included as the
+                        last parameter.
+            */
 
 
             Func<string, bool> fn = SearchName;
@@ -275,13 +280,14 @@ namespace Exam70483
             else
                 Console.WriteLine("Predicate...Name found...");
 
-            //Predicate with Lamda
-            //  Predicate<string> pred2 = names.Find(name => name.Equals("sekhar"));
-            //  if (pred2("sekhar") == false)
-            //      Console.WriteLine("Predicate Lambda ...Name not found..");
-            //  else
-            //      Console.WriteLine("Predicate Lambda...Name found..."); 
-
+            /*
+            Predicate with Lamda
+            Predicate<string> pred2 = names.Find(name => name.Equals("sekhar"));
+            if (pred2("sekhar") == false)
+                Console.WriteLine("Predicate Lambda ...Name not found..");
+            else
+                 Console.WriteLine("Predicate Lambda...Name found..."); 
+            */
 
         }
         private static bool SearchName(string name)

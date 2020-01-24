@@ -70,7 +70,7 @@ namespace Exam70483
         static void PreProcessorDirectives()
         {
             /*  The #define directive defines a preprocessor symbol or conditional compilation symbol for the module
-             *  that contains the directive.  You can use the #if and #elif proprocessor directive to see if the sybmol
+             *  that contains the directive.  You can use the #if and #elif preprocessor directive to see if the sybmol
              *  is defined.  Note: You cannot assign a value to the symbol, so it isn't comparable to a C# variable or
              *  constant.  All you can do is define or undefine the symbol and see if it has been defined.
              *  

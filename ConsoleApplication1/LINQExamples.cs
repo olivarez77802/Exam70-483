@@ -5,21 +5,25 @@ using System.Text;
 
 namespace Exam70483
 {
-    // LINQ Operators categories based on execution behavior, divided into 2 groups.
-    //
-    // 1. Deferred or Lazy Operators - These query's use deferred executuion.
-    //    Examples - select, where, Take, Skip, etc.
-    // 2. Immediate or Greedy Operators - These query operators use immediate execution.
-    //    Examples - count, average, min, max, ToList, etc.
-    //
-    // IEnumerable - A List, Array, Query implements IEnumerable.
-    // An IEnumerable Interface specifies that the underlying type implements IEnumerable
-    //
-    // Deferred Execution An important feature of most query operators is that they execute
-    // not when constructed, but when enumerated (in other words, when MoveNext is called on 
-    // its enumerator). 
-    //
-    // testing
+    /*
+     * LINQ can use any type of IEnumerable or IEnumerable<T> as a datasource
+     * 
+     LINQ Operators categories based on execution behavior, divided into 2 groups.
+    
+     1. Deferred or Lazy Operators - These query's use deferred executuion.
+        Examples - select, where, Take, Skip, etc.
+     2. Immediate or Greedy Operators - These query operators use immediate execution.
+        Examples - count, average, min, max, ToList, etc.
+    
+     IEnumerable - A List, Array, Query implements IEnumerable.
+     An IEnumerable Interface specifies that the underlying type implements IEnumerable
+    
+     Deferred Execution An important feature of most query operators is that they execute
+     not when constructed, but when enumerated (in other words, when MoveNext is called on 
+     its enumerator). 
+    
+    
+    */
 
     abstract class LINQExamples
     {
