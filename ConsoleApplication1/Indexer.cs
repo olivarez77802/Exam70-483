@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 namespace Exam70483
 {
    /*
+    * Create Types.
+    * 
     * Indexers helps us simplify how we access a collection from a class.
     * 
     * There are two things to remember about indexer:
@@ -43,6 +45,7 @@ namespace Exam70483
             Console.WriteLine("Name of Employee with Id = 4:" + company[4]);
             Console.WriteLine("Name of Employee with Id = 6:" + company[6]);
         }
+        #region IndexerDictionary
         static void Indexer_using_Dictionary()
         {
             var stock = new Dictionary<string, int>()
@@ -54,6 +57,7 @@ namespace Exam70483
             Console.WriteLine(string.Format("No of shirts in stock = {0} ", stock.Count));
             stock.Add("pluralsight", 6);
             stock["buddahistgeeks"] = 5;
+            Console.WriteLine(string.Format("\r\nstock[buddahistgeeks] = {0}", stock["buddahistgeeks"]));
             stock["pluralsight"] = 7;
             Console.WriteLine(string.Format("\r\nstock[pluralsight] = {0}", stock["pluralsight"]));
 
@@ -65,6 +69,8 @@ namespace Exam70483
                 Console.WriteLine("{0}, {1}", keyValuePair.Key, keyValuePair.Value);
             }
         }
+        #endregion
+        #region IndexerUsingList
         static void Indexer_using_Properties()
         {
 
@@ -104,5 +110,6 @@ namespace Exam70483
             }
             
         }
-        }
+        #endregion
+    }
 }

@@ -8,6 +8,14 @@ using System.Diagnostics;
 namespace Exam70483
 {
     /* 
+     * Streams
+     *   Streams are an interface to data(files, network, memory,etc)
+     *   Streams allow a common style interface for accessing information
+     *   
+     *   StreamReader/Stream Writer work as a pair to access text files
+     *   BinaryReader/BinaryWriter work as a pair to access binary files
+     *   StringReader/StringWriter work as a pair to access strings
+     * 
      * See also ExceptionClassExamples.cs
      * 
      * The FileStream constructor takes four parameters

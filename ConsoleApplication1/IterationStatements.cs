@@ -4,9 +4,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Diagnostics;
+using Newtonsoft.Json;
+using System.Xml.Serialization;
+using System.IO;
 
 namespace Exam70483
 {
+    /* 
+     * Manage Program Flow / Implement Program Flow 
+    */
     class IterationStatements
     {
         public static void Menu()
@@ -24,6 +30,7 @@ namespace Exam70483
                 Console.WriteLine(" 5.  Statement Keywords ");
                 Console.WriteLine(" 6.  While, do-while ");
                 Console.WriteLine(" 7.  for Statement ");
+                Console.WriteLine(" 8.  Yield Return");
                 Console.WriteLine(" 9.  Quit  ");
                 Console.Write(" Enter Number to execute Routine ");
 
@@ -32,26 +39,40 @@ namespace Exam70483
                 selection = Common.readInt("Enter Number to Execute Routine : ", 0, 9);
                 switch (selection)
                 {
-                    case 0: WebPage();
+                    case 0:
+                        WebPage();
                         break;
-                    case 1: foreach_1();
+                    case 1:
+                        foreach_1();
                         break;
-                    case 2: Operators();
+                    case 2:
+                        Operators();
                         break;
-                    case 3: PreProcessing();
+                    case 3:
+                        PreProcessing();
                         break;
-                    case 4: ProgramFlow();
+                    case 4:
+                        ProgramFlow();
                         break;
-                    case 5: StatementKeywords();
+                    case 5:
+                        StatementKeywords();
                         break;
-                    case 6: WhiledoWhile();
+                    case 6:
+                        WhiledoWhile();
                         break;
-                    case 7: For_Loop();
+                    case 7:
+                        For_Loop();
                         Console.ReadKey();
-                        break;                            
-                    case 9: x = 9;
                         break;
-                    default: Console.WriteLine(" Invalid Number");
+                    case 8:
+                        Yield_Return();
+                        Console.ReadKey();
+                        break;
+                    case 9:
+                        x = 9;
+                        break;
+                    default:
+                        Console.WriteLine(" Invalid Number");
                         break;
                 }
 
@@ -77,15 +98,77 @@ namespace Exam70483
             foreach_performance();
 
             Program p = new Program();
-            Console.WriteLine("Using Collections");            
+            Console.WriteLine("Using Collections");
             Collections.Using_Collections();
 
         }
+        public static void SerializeFibArray()
+        {
+            /*
+             * This was just put in this module to get practice Serializing and Desearializing JSON and XML.
+             * 
+             * Notice prefix heading for JSON is not required, the output is simply
+             * [0,1,1,2,3,5,8,13]  and not 'fib:[0,1,1,2,3,5,8,13]'
+             *
+             */
+            int[] fibarray = new int[] { 0, 1, 1, 2, 3, 5, 8, 13 };
+            Console.WriteLine("\n Serialize fib array into Raw Jason");
+            string ExJsonSerialized = JsonConvert.SerializeObject(fibarray);
+            Console.WriteLine(ExJsonSerialized);
+
+            Console.WriteLine("\n DeSerialize - Takes JSON Raw Text and loads to array ");
+            int[] exJson = JsonConvert.DeserializeObject<int[]>(ExJsonSerialized);
+            foreach (int element in exJson)
+            {
+                System.Console.WriteLine(element);
+            }
+            /* 
+             * XML Serialization
+             * https://support.microsoft.com/en-us/help/815813/how-to-serialize-an-object-to-xml-by-using-visual-c
+             */
+            Console.WriteLine("XML Serialization");
+            var XML = new XmlSerializer(typeof(int[]));
+            XML.Serialize(Console.Out,fibarray);
+
+            /*
+             * XML - Assign to string variable 
+            */
+            StringWriter sw = new StringWriter();
+            XML.Serialize(sw, fibarray);
+            string result = sw.ToString();
+            Console.WriteLine("XML to variable result {0}", result);
+            /*
+             * DeSerialize XML
+             */
+            Console.WriteLine("\n DeSerialize fibds - Takes XML and loads to object");
+            StringReader stringReader = new StringReader(result);
+            int[] fibds = (int[])XML.Deserialize(stringReader);
+            foreach (int element in fibds)
+            {
+                System.Console.WriteLine(element);
+            }
+            Console.WriteLine("End of XML Serialization");
+
+        }
+
+        
         static void one_dim_array()
         {
+            SerializeFibArray();
             Console.WriteLine("One Dimensional Array");
-            //**
-            int[] fibarray = new int[] { 0, 1, 1, 2, 3, 5, 8, 13 };
+            /*
+             * Three different ways of writing
+             * 1. JSON using variable JSONFib
+             * 2. Have JSON Embedded
+             * 3. Use regular method.
+            */
+            // 1.
+            // string JSONfib = "[0,1,1,2,3,5,8,13]";
+            // int[] fibarray = JsonConvert.DeserializeObject<int[]>(JSONfib);
+            // 2.
+             int[] fibarray = JsonConvert.DeserializeObject<int[]>("[0,1,1,2,3,5,8,13]");
+            // 3.
+            // int[] fibarray = new int[] { 0, 1, 1, 2, 3, 5, 8, 13 };
             foreach (int element in fibarray)
             {
                 System.Console.WriteLine(element);
@@ -169,7 +252,7 @@ namespace Exam70483
             {
                 Console.WriteLine("{0},{1}", pair.Key, pair.Value);
             }
-            
+
             Console.ReadKey();
 
         }
@@ -230,7 +313,7 @@ namespace Exam70483
         static void foreach_performance()
         {
         }
-        
+
         static void Operators()
         {
             Process.Start("http://msdn.microsoft.com/en-us/library/6a71f45d.aspx");
@@ -249,41 +332,41 @@ namespace Exam70483
         }
         static void WhiledoWhile()
         {
-           /*
-            * while and do-while statements execute a body of code if the expression evaluates
-            * to true.
-            * - while evaluates the expression before
-            *   executing the body, so the body may execute
-            *   0 or more times.
-            *   
-            * - do-while evaluates the expression after the
-            *   first execution of the body, so the body executes
-            *   at least once.
-            *   
-            *   var loopcounter = 0;
-            *   while (loopcounter > 0)
-            *   {
-            *     Console.WriteLine("This will not execute");
-            *   }
-            *   
-            *   do
-            *   {
-            *     Console.WriteLine("This will execute");
-            *   } while (loopcounter > 0);
-            *   
-           */
+            /*
+             * while and do-while statements execute a body of code if the expression evaluates
+             * to true.
+             * - while evaluates the expression before
+             *   executing the body, so the body may execute
+             *   0 or more times.
+             *   
+             * - do-while evaluates the expression after the
+             *   first execution of the body, so the body executes
+             *   at least once.
+             *   
+             *   var loopcounter = 0;
+             *   while (loopcounter > 0)
+             *   {
+             *     Console.WriteLine("This will not execute");
+             *   }
+             *   
+             *   do
+             *   {
+             *     Console.WriteLine("This will execute");
+             *   } while (loopcounter > 0);
+             *   
+            */
         }
         static void For_Loop()
         {
-          /* For Loop Sequence.
-           * 1. Initialize (int counter=0;)...Only done once.
-           * .. Start Loop
-           * 2. Condition (counter <=10;)
-           * 3. Execute Statement (Console.WriteLine(counter))
-           * 3. Iterator  (counter +=2)
-           * .. End Loop
-           */
-            for (int counter =0; counter <= 10; counter +=2)
+            /* For Loop Sequence.
+             * 1. Initialize (int counter=0;)...Only done once.
+             * .. Start Loop
+             * 2. Condition (counter <=10;)
+             * 3. Execute Statement (Console.WriteLine(counter))
+             * 3. Iterator  (counter +=2)
+             * .. End Loop
+             */
+            for (int counter = 0; counter <= 10; counter += 2)
             {
                 Console.WriteLine("Counter value is {0}", counter);
             }
@@ -296,6 +379,44 @@ namespace Exam70483
             for (int counter = 0; counter <= 5; counter++)
             {
                 Console.WriteLine("Counter value is {0}", counter);
+            }
+        }
+        public static IEnumerable<int> Totals(List<int> numbers)
+        {
+            /*
+            Things to know about yield return:
+                        1.We don't have to create an intermediate list to hold our variables
+                        2.Does not return a list, but a promise to return a sequence of numbers when
+                           asked for it(more concretely it exposes an iterator to allow us to act
+                           on that promise).
+                        3.Each iteration of the foreach loop calls the iterator method.  When the yield
+                          return statement is reached the value is returned, and the current location 
+                           in the code is retained.Execution is restarted from that location the next
+                         time that the iterator function is called.
+                        4.Since the method containing the yield return statement will be paused and
+                           resumed where the yield statement takes place, it still maintains its state.
+                        5.Yield helps exercise deferred execution.
+             */
+            var total = 0;
+            foreach (var number in numbers)
+            {
+                total += number;
+                yield return total;
+            }
+
+        }
+        static void Yield_Return()
+        {
+            /*  See also Notes in InterfacesMenu.cs  IEnumerable
+             *  Examples from:
+             *  https://www.kenneth-truyers.net/2016/05/12/yield-return-in-c/
+             *  Below outputs 1, 3, 6, 10, 15
+             */
+
+            foreach (var total in Totals(new List<int> { 1, 2, 3, 4, 5 }))
+            {
+                // Output is controlled by yield return
+                Console.WriteLine(total);
             }
         }
         //public class Program
@@ -349,7 +470,7 @@ namespace Exam70483
         //        return result;
         //    }
         //}
-       
+
     }
 
 }

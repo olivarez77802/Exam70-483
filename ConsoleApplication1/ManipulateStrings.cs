@@ -7,13 +7,18 @@ using System.Diagnostics;
 namespace Exam70483
 {
     /*
+     * Create and Use Types/ Manipulate Strings
+     *    Manipulate strings by using the StringBuilder, StringWriter, and StringReader classes; search strings;
+     *    enumerate string methods; format strings; use string interpolation.
+     * 
      * StringBuilder versus String
      * https://www.youtube.com/watch?v=hF-6eudOD0M
      * 
      * String was designed to be immutable (not able to be changed).  It was designed this way primarily
      * for thread saftey.  New allocations are created rather than reusing the old one.  
      * 
-     * String Builder will not create new space allocations
+     * String Builder will not create new space allocations.  The StringBuilder class creates a string buffer
+     * that provides better performance in the below situation.
      * 
      * Ex.  String - Resource intensive
      * static void Main()

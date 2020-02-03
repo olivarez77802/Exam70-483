@@ -10,6 +10,9 @@ using System.Reflection;
 namespace Exam70483
 {
     /*
+     * Implement Data Access / Serialize and DeSerialize Data
+     *
+     * 
      * Case for JSON
      *  - Binary Formats are cryptic
      *  - XML - Very Verbose
