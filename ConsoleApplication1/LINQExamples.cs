@@ -5,13 +5,15 @@ using System.Text;
 
 namespace Exam70483
 {
+
+
     /*
      * LINQ can use any type of IEnumerable or IEnumerable<T> as a datasource
      * 
      LINQ Operators categories based on execution behavior, divided into 2 groups.
     
      1. Deferred or Lazy Operators - These query's use deferred executuion.
-        Examples - select, where, Take, Skip, etc.
+        Examples - select, where, Take, Orderby, Skip, etc.
      2. Immediate or Greedy Operators - These query operators use immediate execution.
         Examples - count, average, min, max, ToList, etc.
     
@@ -22,12 +24,192 @@ namespace Exam70483
      not when constructed, but when enumerated (in other words, when MoveNext is called on 
      its enumerator). 
     
-    
+    Deferred Execution.
+    The entire LINQ part of C# is built around deferred execution.  Deferred execution can make
+    things more effectient.  The yield keyword is what's powering deferred execution used in 
+    LINQ and allows us to use in our code.
+
+    See also how Deferred Execution is done with the Yield Statement (See IterationStatements.cs)
+    https://www.kenneth-truyers.net/2016/05/12/yield-return-in-c/
     */
 
-    abstract class LINQExamples
+    public class LINQExamples 
     {
-        private static void LQMain()
+        /* Example of a class within a class.   All classes within LINQExamples can use the private classes.
+         * GetAllDepartment is an example of an accessor that needs to be made public within a private class.
+         * Another class within LINQExamples can use the private classes and also access any public properties.
+        */
+        private class Department
+        {
+            public int ID { get; set; }
+            public string Name { get; set; }
+            public static List<Department> GetAllDepartments()
+            {
+                return new List<Department>
+                   {
+                       new Department { ID = 1, Name = "IT"},
+                       new Department { ID = 2, Name = "HR"},
+                       new Department { ID = 3, Name = "Payroll"},
+                   };
+            }
+        }
+
+        private class Employee
+        {
+            public int ID { get; set; }
+            public string Name { get; set; }
+            public int DepartmentID { get; set; }
+            public static List<Employee> GetAllEmployees()
+            {
+                return new List<Employee>()
+               {
+                   new Employee {ID = 1, Name = "Mark", DepartmentID = 1},
+                   new Employee {ID = 2, Name = "Steve", DepartmentID = 2},
+                    new Employee {ID = 3, Name = "Steve", DepartmentID = 1},
+                    new Employee {ID = 4, Name = "Philip", DepartmentID = 1},
+                   new Employee {ID = 5, Name = "Mary", DepartmentID = 2},
+                    new Employee {ID = 6, Name = "Valarie", DepartmentID = 2},
+                    new Employee {ID = 7, Name = "John", DepartmentID = 1},
+                    new Employee {ID = 8, Name = "Pam", DepartmentID = 1},
+                   new Employee {ID = 9, Name = "Staley", DepartmentID = 2},
+                    new Employee {ID = 10, Name = "Andy"}
+               };
+            }
+        }
+        private class Hometown
+        {
+            public string City { get; set; }
+            public string State { get; set; }
+            public string CityCode { get; set; }
+
+            public static List<Hometown> GetHometown()
+            {
+                return new List<Hometown>()
+                {
+                   new Hometown()
+                   {
+                       City = "Haverton",
+                       State = "PA",
+                       CityCode = "1234"
+                   },
+                   new Hometown
+                   {
+                       City = "Ewing",
+                       State = "NJ",
+                       CityCode = "5678"
+                   },
+                   new Hometown
+                   {
+                       City = "Fort Washington",
+                       State = "PA",
+                       CityCode = "9012"
+                   }
+
+              };  // End List
+            } //End GetHometown
+        }
+        private class Employ
+        {
+            public string FirstName { get; set; }
+            public string LastName { get; set; }
+            public string City { get; set; }
+            public string State { get; set; }
+
+            public static List<Employ> GetAllEmploy()
+            {
+
+                return new List<Employ>()
+                {
+                  new Employ()
+                  {
+                   FirstName = "John",
+                   LastName = "Smith",
+                   City = "Haverton",
+                   State = "PA"
+                  },
+                  new Employ()
+                  {
+                   FirstName = "Jane",
+                   LastName = "Doe",
+                   City = "Ewing",
+                   State = "NJ"
+                  },
+                 new Employ()
+                 {
+                   FirstName = "Jack",
+                   LastName = "Jones",
+                   City = "Fort Washington",
+                   State = "PA"
+                 },
+              };
+
+            } // End GetAllEmploy
+
+
+        }  // End Class Employ
+
+        public static void Menu()
+        {
+            int x = 0;
+            do
+            {
+                Console.Clear();
+                Console.WriteLine(" 0.  LINQ Deferred Execution ");
+                Console.WriteLine(" 1.  LINQ Deferred Execution ");
+                Console.WriteLine(" 2.  LINQ Projection ");
+                Console.WriteLine(" 3.  LINQ Method Based ");
+                Console.WriteLine(" 4.  LINQ Comprehension Query");
+                Console.WriteLine(" 5.  ... ");
+                Console.WriteLine(" 6.  ... ");
+                Console.WriteLine(" 7.  ... ");
+                Console.WriteLine(" 8.  ....");
+                Console.WriteLine(" 9.  Quit            \n\n ");
+
+
+                int selection;
+                selection = Common.readInt("Enter Number to Execute Routine : ", 0, 9);
+                switch (selection)
+                {
+                    case 0:
+                        LQDeferred_Exec();
+                        break;
+                    case 1:
+                        LQDeferred_Exec2();
+                        break;
+                    case 2:
+                        LQProjection();
+                        break;
+                    case 3:
+                        LQMethod();
+                        break;
+                    case 4:
+                        LQComprehensionQuery();
+                        Console.ReadKey();
+                        break;
+                    case 5:
+                        break;
+                    case 6:
+                        break;
+                    case 7:
+                        break;
+                    case 8:
+                        break;
+                    case 9:
+                        x = 9;
+                        break;
+                    default:
+                        Console.WriteLine(" Invalid Number");
+                        break;
+                }
+
+
+            } while (x < 9);
+
+
+        }
+
+        #region LQDeferredExec 
+        private static void LQDeferred_Exec()
         {
             Tuple<int, int>[] tuples = new Tuple<int, int>[4];
             tuples[0] = new Tuple<int, int>(3, 6);
@@ -46,8 +228,9 @@ namespace Exam70483
             }
             Console.ReadKey();
         }
-
-        private static void LQMain2()
+        #endregion
+        #region LQDeferred_Exec2
+        private static void LQDeferred_Exec2()
         {
             int[] myArray = new int[10] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 
@@ -78,46 +261,10 @@ namespace Exam70483
             }
             Console.ReadKey();
         }
-        private class Department
-        {
-            public int ID { get; set; }
-            public string Name { get; set; }
-            public static List<Department> GetAllDepartments()
-            {
-                return new List<Department>
-               {
-                   new Department { ID = 1, Name = "IT"},
-                   new Department { ID = 2, Name = "HR"},
-                   new Department { ID = 3, Name = "Payroll"},
-               };
+        #endregion
+        #region LQProjection
 
-
-            }
-        }
-
-        private class Employee
-        {
-            public int ID { get; set; }
-            public string Name { get; set; }
-            public int DepartmentID { get; set; }
-            public static List<Employee> GetAllEmployees()
-            {
-                return new List<Employee>()
-               {
-                   new Employee {ID = 1, Name = "Mark", DepartmentID = 1},
-                   new Employee {ID = 2, Name = "Steve", DepartmentID = 2},
-                    new Employee {ID = 3, Name = "Steve", DepartmentID = 1},
-                    new Employee {ID = 4, Name = "Philip", DepartmentID = 1},
-                   new Employee {ID = 5, Name = "Mary", DepartmentID = 2},
-                    new Employee {ID = 6, Name = "Valarie", DepartmentID = 2},
-                    new Employee {ID = 7, Name = "John", DepartmentID = 1},
-                    new Employee {ID = 8, Name = "Pam", DepartmentID = 1},
-                   new Employee {ID = 9, Name = "Staley", DepartmentID = 2},
-                    new Employee {ID = 10, Name = "Andy"}
-               };
-            }
-        }
-        private static void LQMain3()
+        private static void LQProjection()
         {
             var result = from e in Employee.GetAllEmployees()
                          join d in Department.GetAllDepartments()
@@ -141,9 +288,10 @@ namespace Exam70483
             Console.ReadKey();
 
         }
+        #endregion
+        #region LQMethod 
 
-
-        private static void LQMain4()
+        private static void LQMethod()
         {
             var result = from e in Employee.GetAllEmployees()
                          join d in Department.GetAllDepartments()
@@ -166,88 +314,37 @@ namespace Exam70483
             Console.ReadKey();
 
         }
-        public static void Menu()
-        {
-            LINQExamples.LQMain();
-            LINQExamples.LQMain_Composite_key();
-            LINQExamples.LQMain2();
-            LINQExamples.LQMain3();
-            LINQExamples.LQMain4();
-        }
-        private class Hometown
-        {
-            public string City { get; set; }
-            public string State { get; set; }
-            public string CityCode { get; set; }
-        }
-        private class Employ
-        {
-            public string FirstName { get; set; }
-            public string LastName { get; set; }
-            public string City { get; set; }
-            public string State { get; set; }
+        #endregion
+        #region LQComprehensionQuery
+        /* 
+         * Comprehension Queries
+         * https://learning.oreilly.com/library/view/linq-pocket-reference/9780596519247/ch01s03.html
+         * 
+         * C# provides a syntatic shortcut for writing LINQ queries, called query comprehension syntax,
+         * or simply query syntax.
+         * 
+         * A comprehnsion query always starts with a 'from' clause and end with either a 'select or group'
+         * clause.  The 'from' clause declares an iteration variable.   The compiler processes comprehension
+         * queries by translating them to lambda syntax this is similar to what it does to the 'foreach' statements
+         * translating them into calls to GetEnumerator and MoveNext.  This means anything you can write in 
+         * comprehension syntax you can also write in lambda syntax.
+         */
 
-        }
-        private static void LQMain_Composite_key()
+        private static void LQComprehensionQuery()
         {
-            List<Employ> employees = new List<Employ>()
-           {
-               new Employ()
-               {
-                   FirstName = "John",
-                   LastName = "Smith",
-                   City = "Haverton",
-                   State = "PA"
-               },
-               new Employ()
-               {
-                   FirstName = "Jane",
-                   LastName = "Doe",
-                   City = "Ewing",
-                   State = "NJ"
-               },
-               new Employ()
-               {
-                   FirstName = "Jack",
-                   LastName = "Jones",
-                   City = "Fort Washington",
-                   State = "PA"
-               },
-           };
-            List<Hometown> hometowns = new List<Hometown>()
-
-               {
-                   new Hometown()
-                   {
-                       City = "Haverton",
-                       State = "PA",
-                       CityCode = "1234"
-                   },
-                   new Hometown
-                   {
-                       City = "Ewing",
-                       State = "NJ",
-                       CityCode = "5678"
-                   },
-                   new Hometown
-                   {
-                       City = "Fort Washington",
-                       State = "PA",
-                       CityCode = "9012"
-                   }
-
-               };
-            var employeeByState = from e in employees
-                                  join h in hometowns
-                                  on new { City = e.City, State = e.State }
-                                  equals
-                                  new { City = h.City, State = h.State }
+            
+            var employeeByState = from e in Employ.GetAllEmploy()                             
+                                  join h in Hometown.GetHometown()
+                                on new { City = e.City, State = e.State }
+                                equals
+                                new { City = h.City, State = h.State }
                                   select new { e.LastName, h.CityCode };
             foreach (var employee in employeeByState)
             {
                 Console.WriteLine(employee.LastName + ", " + employee.CityCode);
             }
 
-        }
-    }
-}
+        } // End LQComprehensionQuery 
+        #endregion
+    } // End LINQExamples
+} //End Namespace

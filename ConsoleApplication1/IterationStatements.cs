@@ -381,6 +381,7 @@ namespace Exam70483
                 Console.WriteLine("Counter value is {0}", counter);
             }
         }
+        #region YiedReturn
         public static IEnumerable<int> Totals(List<int> numbers)
         {
             /*
@@ -419,6 +420,7 @@ namespace Exam70483
                 Console.WriteLine(total);
             }
         }
+        #endregion
         //public class Program
         //{
 
