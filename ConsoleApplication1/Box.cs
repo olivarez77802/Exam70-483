@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Exam70483
 {
-    // Instantiated in the Methods.cs 
+    // Instantiated in Methods.cs 
     
     class Box
     {
