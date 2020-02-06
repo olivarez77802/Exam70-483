@@ -95,7 +95,7 @@ namespace Exam70483
     class Delegate
     {
         /*
-         * You can use a delegatee much as you use any other type.  First, use the delegate
+         * You can use a delegate much as you use any other type.  First, use the delegate
          * keyword to define the delegate type.  Next, create variables of the delegate type,
          * and set them equal to methods that match the delegate's parameters and return type.
          * Finally write code to invoke the variable, which calls the mthod refered to by 

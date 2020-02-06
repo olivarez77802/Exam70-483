@@ -14,17 +14,23 @@ namespace Exam70483
          * C# Modifiers
          * 1. Access Modifers
          * 2. Abstract
-         * 3. Const
-         * 4. extern
-         * 5. override
-         * 6. partial
-         * 7. readonly
-         * 8. sealed
-         * 9. unsafe  - trust that you know what you are doing.  Used when efficency is important or your interfacing with 
+         * 3. Async
+         * 4. Const
+         * 5. Event
+         * 6. extern
+         * 7. override
+         * 8. partial
+         * 9. readonly
+         * 10. sealed
+         * 11. static -  Use the static modifier, which belongs to the type itself rather than to a specific object. The 
+         *               static modifier can be used with classes, fields, methods, properties, operators, Events, and
+         *               constructors.   
+         *               https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/static-classes-and-static-class-members
+         * 12. unsafe  - trust that you know what you are doing.  Used when efficency is important or your interfacing with 
          *              an unmanaged language.
          *              https://www.youtube.com/watch?v=GLxW7oDLloY
-         * 10. virtual
-         * 11. volatile
+         * 13. virtual
+         * 14. volatile
          * http://www.diranieh.com/NETCSharp/Modifiers.htm
          * 
          * See TypeSystem.cs for Classes versus Structs.
@@ -45,24 +51,22 @@ namespace Exam70483
          * - When you inherit from both a class and interface(s), the class must come first. 
          * See also IntefacesMenu.cs
          
-        // As a guideline:
-        //  * Use classes and subclasses for types that naturally share an implementation.
-        //  * Use interfaces for types that have independent implementations.
-        //
-        //  Consider the following classes
-        //  abstract class Animal {}
-        //  abstract class Bird       : Animal {}
-        //  abstract class Insect     : Animal {}
-        //  abstract class FlyingCreature : Animal {}
-        //  abstract Carnivore        : Animal {}
-        //
-        // Concrete classes:
-        //
-        //  class Ostrich : Bird {}
-        //  
-        //
-
-            Entity / Class / Object
+         As a guideline:
+          * Use classes and subclasses for types that naturally share an implementation.
+          * Use interfaces for types that have independent implementations.
+        
+          Consider the following classes
+            abstract class Animal {}
+            abstract class Bird       : Animal {}
+            abstract class Insect     : Animal {}
+            abstract class FlyingCreature : Animal {}
+            abstract Carnivore        : Animal {}
+        
+          Concrete classes:
+        
+           class Ostrich : Bird {}
+          
+         Entity / Class / Object
             * Entity is the name of the Class
             * An Object is an instance of a class
             * Each Ojbect can perform the defined actions
@@ -136,9 +140,9 @@ namespace Exam70483
              * 
              * Four pillars of OOP
              * 1. Abstraction
-             * 2. Encapsulation
-             * 3. Inheritance
-             * 4. Polymorphism - Many shapes
+             * 2. Encapsulation  - Using a class with a private property
+             * 3. Inheritance  - Using a base class  
+             * 4. Polymorphism - Many shapes.  Abstract Classses that get overridden.
              */
             Process.Start("http://msdn.microsoft.com/en-us/library/ms173152.aspx");
             Process.Start("http://www.csharp-station.com/Tutorial/CSharp/Lesson09");
@@ -154,6 +158,7 @@ namespace Exam70483
             // 1.  Constructors must have the same name as the class and can not return a value.
             // 2.  Constructors are only called once while regular methods could be called many times.
             // 3.  The only method you can write where you do not have to specify the return type.
+            // 4.  May have more than one constructor that have different parameters.
             // 
             //
             Process.Start("http://msdn.microsoft.com/en-us/library/ace5hbzh.aspx");

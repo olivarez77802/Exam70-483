@@ -24,7 +24,7 @@ namespace Exam70483
      *                            
      *  Press Control-Alt-E to list all .Net exceptions
      *  
-     *  There are a variety of different exceptions, it is not possible to guard against all excpetions.
+     *  There are a variety of different exceptions, it is not possible to guard against all exceptions.
      *  It is good to include the most commmon exceptions but at the end it is good to include the base
      *  Exception to serve as a 'catch all' for any unguarded exceptions.
      *  
@@ -40,7 +40,7 @@ namespace Exam70483
      *        block is guaranteed to execute, irrespective of whether there is an exception or not.
      *        
      *  The try-catch-finally block allows a program to catch unexpected errors and handle them.
-     *  This block consists of threee sections: a try section, one or more catch sections, and a finally
+     *  This block consists of three sections: a try section, one or more catch sections, and a finally
      *  section.  The "try" section is required, and you must include at least one 'catch' or 'finally'
      *  section.  Although, you don't need to include both, and you don't need to include any code inside
      *  the 'catch' or 'finally' section.   You can nest other try-catch-finally (Wow! you can have 2 

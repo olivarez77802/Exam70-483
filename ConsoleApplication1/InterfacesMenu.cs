@@ -154,7 +154,7 @@ namespace Exam70483
                         // >, <, >=, <=  operators - Work out of the box only for primitive types
                         //
                     case 2:
-                        /* IEnumerable - A List, Array, Query implements IEnumerable.
+                        /* IEnumerable - A List, Array, Query, String implements IEnumerable.
                         // An IEnumerable Interface specifies that the underlying type implements IEnumerable
                         //
                         // public Interface IEnumerator
@@ -182,7 +182,11 @@ namespace Exam70483
                         //**  to return is.  
                         //**
                         //**  Use 'yield return' when you want to return elements from a collection one at a time. 
-                        */
+                          
+                       
+                        See also IterationStatements.cs for examples of Yield Return.
+                         * 
+                         *  */
 
                         //    
                         //   IEnumerator GetEnumerator();
@@ -262,9 +266,6 @@ namespace Exam70483
                     case 6: Console.WriteLine (" Not yet built");
                         Console.ReadKey();
                         break;
-
-                        //* Differences between IEnumerable and IQueryable
-                        //* http://blog.falafel.com/understanding-ienumerable-iqueryable-c/
 
                     case 8:
                         Process.Start("http://msdn.microsoft.com/en-us/library/87d83y5b.aspx");

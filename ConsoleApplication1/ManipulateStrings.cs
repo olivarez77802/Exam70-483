@@ -3,40 +3,16 @@
 //using System.Linq;
 using System.Text;
 using System.Diagnostics;
+using System.IO;
 
 namespace Exam70483
 {
     /*
-     * StringBuilder versus String
-     * https://www.youtube.com/watch?v=hF-6eudOD0M
+     * Create and Use Types/ Manipulate Strings
+     *    Manipulate strings by using the StringBuilder, StringWriter, and StringReader classes; search strings;
+     *    enumerate string methods; format strings; use string interpolation.
      * 
-     * String was designed to be immutable (not able to be changed).  It was designed this way primarily
-     * for thread saftey.  New allocations are created rather than reusing the old one.  
-     * 
-     * String Builder will not create new space allocations
-     * 
-     * Ex.  String - Resource intensive
-     * static void Main()
-     * {
-     *   string x="";
-     *   for (int i=0; i<10000; i++)
-     *   {
-     *      x = "Shiv" + x;
-     *   }
-     * }
-     * Ex.  StringBuilder - Optimal - Updates the same memory location
-     * static void Main()
-     * {
-     *   StringBuilder x= new StringBuilder;
-     *   for (int i=0; i<10000; i++)
-     *   {
-     *      x.Append = "Shiv";
-     *   }
-     * }
-     * 
-     * CLR Profiler allows you to see the memory allocation for the managed area
-     * https://www.microsoft.com/en-us/download/details.aspx?id=16273
-     * 
+     
      * 
      */
     class ManipulateStrings   // and String Examples
@@ -69,11 +45,11 @@ namespace Exam70483
 
             // Display with Debug.
             Debug.WriteLine(innerString);
-            Console.WriteLine("{0}",innerString);
+            Console.WriteLine("{0}", innerString);
         }
         #endregion
 
-        static void SBMain3 ()
+        static void SBMain3()
         {
             StringBuilder builder = new StringBuilder(
                 "This is an example string that is an example.");
@@ -94,9 +70,9 @@ namespace Exam70483
                 builder2.Append(item).AppendLine();
             }
             Console.WriteLine(builder2.ToString());
-            
+
         }
-        
+
         public static void Menu()
         {
 
@@ -114,7 +90,7 @@ namespace Exam70483
                 Console.WriteLine(" 0.  StringBuilder");
                 Console.WriteLine(" 1.  StringWriter");
                 Console.WriteLine(" 2.  StringReader");
-                Console.WriteLine(" 3.  StringWriter");
+                Console.WriteLine(" 3.  ......");
                 Console.WriteLine(" 4.  String Methods");
                 Console.WriteLine(" 5.  ...");
                 Console.WriteLine(" 6.  ...");
@@ -128,12 +104,13 @@ namespace Exam70483
                         StringBuilder_Ex();
                         break;
                     case 1:
+                        StringWriter_Ex();
+                        Console.ReadKey();
                         break;
                     case 2:
                         StringReaderExamples.Menu();
                         break;
                     case 3:
-                        StringWriter_Ex();
                         break;
                     case 4:
                         Process.Start("https://msdn.microsoft.com/en-us/library/system.string_methods(v=vs.110).aspx");
@@ -156,12 +133,53 @@ namespace Exam70483
 
             } while (x < 9);
 
-           
 
-       }
+
+        }
 
         static void StringBuilder_Ex()
         {
+            /*
+             * * StringBuilder versus String
+             * https://www.youtube.com/watch?v=hF-6eudOD0M
+             * 
+             * String was designed to be immutable (not able to be changed).  It was designed this way primarily
+             * for thread saftey.  New allocations are created rather than reusing the old one.  
+             * 
+             * String Builder will not create new space allocations.  The StringBuilder class creates a string buffer
+             * that provides better performance in the below situation.
+             * 
+             * Ex.  String - Resource intensive
+             * static void Main()
+             * {
+             *   string x="";
+             *   for (int i=0; i<10000; i++)
+             *   {
+             *      x = "Shiv" + x;
+             *   }
+             * }
+             * Ex.  StringBuilder - Optimal - Updates the same memory location
+             * static void Main()
+             * {
+             *   StringBuilder x= new StringBuilder;
+             *   for (int i=0; i<10000; i++)
+             *   {
+             *      x.Append = "Shiv";
+             *   }
+             * }
+             * 
+             * CLR Profiler allows you to see the memory allocation for the managed area
+             * https://www.microsoft.com/en-us/download/details.aspx?id=16273
+             * 
+             * StringBuilder
+             * https://learning.oreilly.com/videos/programming-in-microsoft/9781771373579/9781771373579-video211210
+             * 
+             * StringReader and StringWriter classes provide the ability to manipulate string data inside a StringBuilder
+             * object.
+             *  - StringWriter writes to the StringBuilder object
+             *  - StringReader reads string data from the StringBuilder Object
+             *  - Use them when you are dealing with a lot of string manipulations.
+             */
             Console.WriteLine(" SBMain1 ");
             ManipulateStrings.SBMain1();
             Console.ReadKey();
@@ -179,9 +197,43 @@ namespace Exam70483
         {
             /*
              * https://www.youtube.com/watch?v=uEcwwjB7Fg4
+             * 
+             * https://learning.oreilly.com/videos/programming-in-microsoft/9781771373579/9781771373579-video211211
             */
-                        
+            StringReadWrite srw = new StringReadWrite();
         }
+         
 
+    } /* end Class ManipulateStrings */
+
+    public class StringReadWrite
+    {
+        StringBuilder sb = new StringBuilder();
+        public StringReadWrite()
+        {
+            WriteData();
+            ReadData();
+        }
+        public void WriteData()
+        {
+            StringWriter sw = new StringWriter(sb);
+            Console.WriteLine("Please enter your first and last name...");
+            string name = Console.ReadLine();
+            sw.WriteLine("Name: " + name);
+            sw.Flush();
+            sw.Close();
+        }
+        public void ReadData()
+        {
+            StringReader sr = new StringReader(sb.ToString());
+            Console.WriteLine("Reading the information...");
+            while (sr.Peek() > -1)
+            {
+                Console.WriteLine(sr.ReadLine());
+            }
+            Console.WriteLine();
+            Console.WriteLine("Thank You!");
+            sr.Close();
+        }
     }
 }

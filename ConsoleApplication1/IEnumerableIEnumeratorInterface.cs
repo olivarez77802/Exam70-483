@@ -22,7 +22,7 @@ namespace Exam70483
              Quit
         }
         /*
-         IEnumerable - A List, Array, Query implements IEnumerable.
+         IEnumerable - A List, Array, String, Query implements IEnumerable.
          An IEnumerable Interface specifies that the underlying type implements IEnumerable
         
          public Interface IEnumerator

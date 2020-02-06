@@ -51,6 +51,13 @@ namespace Exam70483
                              for Nulls.  If there are any missed it increases the risk there will be a null exception thrown.
                          2.  Always return null anytime the return value is nothing.  So if you are asking for Customers and
                              none are found then you want to return a null.
+                    
+                     See also Operaters.cs for
+                     1. Null Conditional (Ternary) Operator ? :
+                     2. Null Coalesce Operator ??
+                         // Set y to the value of x if x is not NULL; otherwise
+                         // if x==null, set y to -1
+                         // int y = x ?? -1;
 
                  * 
                  * 

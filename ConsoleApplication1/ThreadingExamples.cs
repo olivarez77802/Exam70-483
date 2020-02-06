@@ -16,7 +16,7 @@ namespace Exam70483
             Using Locking Mechanisms - One way to deal with data sharing is mutual exclusion.  Mutal exclusion is implemented in .NET
             in several ways: monitors, mutexes, semaphores, reader-writer locks.  Locking is both dangerous and resource-intensive. 
             Sometimes, you just need to perform simple operations, and you need to make sure that they are atomic.  To solve this
-            kind of problem,.NET offers a clas called Interlocked, defined in the System.Threading namespace.   The Interlocked
+            kind of problem,.NET offers a class called Interlocked, defined in the System.Threading namespace.   The Interlocked
             class has only static methods, and all represent atomic operations, meaning they will be performed without being 
             interrupted by the scheduler.
 

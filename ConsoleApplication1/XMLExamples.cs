@@ -86,6 +86,7 @@ namespace Exam70483
             Console.WriteLine(@"Raw XML stored in C:\Users\jesse-olivarez\Documents\Repositories\Exam70-483\ConsoleApplication1\bin\Debug");
             c.Save("TestFile.xml");
         }
+        #region DeSerialize
         static void XMLDeSerialize()
         {
             Console.WriteLine("DeSerialize - Load Raw XML File into class");
@@ -110,7 +111,7 @@ namespace Exam70483
             Console.WriteLine(" Age = {0}, Name = {1}", c.Age, c.Name); 
 
         }
-
+        #endregion
 
 
         public class Employee

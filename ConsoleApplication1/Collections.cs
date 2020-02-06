@@ -141,7 +141,8 @@ namespace Exam70483
                         break;
 
                     case 5:
-                        Arrays_Collections();
+                        // Arrays_Collections();
+                        Using_Collections();
                         break;
                     case 6:
                         Test_To_take.TopThree();

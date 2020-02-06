@@ -21,7 +21,7 @@ namespace Exam70483
                 Console.WriteLine("    syntax; select data by using anonymous types; force ");
                 Console.WriteLine("    execution of a query; read, filter, create and modify  ");
                 Console.WriteLine("    data structures by using LINQ to XML.  ");
-                Console.WriteLine(" 0.  ... ");
+                Console.WriteLine(" 0.  LINQ Examples ");
                 Console.WriteLine(" 1.  ... ");
                 Console.WriteLine(" 2.  ... ");
                 Console.WriteLine(" 3.  ... ");
@@ -38,7 +38,7 @@ namespace Exam70483
                 switch (selection)
                 {
                     case 0:
-                       
+                        LINQExamples.Menu();
                         break;
                     case 1:
                        
