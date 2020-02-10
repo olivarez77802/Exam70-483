@@ -86,7 +86,7 @@ namespace Exam70483
              * you must use Delay sign 
              * https://docs.microsoft.com/en-us/dotnet/framework/app-domains/delay-sign-assembly
              * 
-             * When an assembly needs to be digitally signed, the compiler sighns the assembly using the private key
+             * When an assembly needs to be digitally signed, the compiler signs the assembly using the private key
              * and embeds the public key in the assembly for later verification by other assemblies that refer to it.
              * 
              * 

@@ -1,7 +1,11 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
+using System.Xml.Serialization;
 
 namespace Exam70483
 {
@@ -39,7 +43,8 @@ namespace Exam70483
          * GetAllDepartment is an example of an accessor that needs to be made public within a private class.
          * Another class within LINQExamples can use the private classes and also access any public properties.
         */
-        private class Department
+        // Had to make Department public in order to use 'new XmlSerializer(typeof(List<Department>));'
+        public class Department
         {
             public int ID { get; set; }
             public string Name { get; set; }
@@ -52,6 +57,9 @@ namespace Exam70483
                        new Department { ID = 3, Name = "Payroll"},
                    };
             }
+            // public var XML = new XmlSerializer(typeof(List<Department>));
+            //public string JsonSerializedDept = JsonConvert.SerializeObject(GetAllDepartments());
+
         }
 
         private class Employee
@@ -74,7 +82,10 @@ namespace Exam70483
                    new Employee {ID = 9, Name = "Staley", DepartmentID = 2},
                     new Employee {ID = 10, Name = "Andy"}
                };
-            }
+
+           }
+           
+           
         }
         private class Hometown
         {
@@ -159,7 +170,7 @@ namespace Exam70483
                 Console.WriteLine(" 2.  LINQ Projection ");
                 Console.WriteLine(" 3.  LINQ Method Based ");
                 Console.WriteLine(" 4.  LINQ Comprehension Query");
-                Console.WriteLine(" 5.  ... ");
+                Console.WriteLine(" 5.  Serialize/DeSerialize Class Deparment");
                 Console.WriteLine(" 6.  ... ");
                 Console.WriteLine(" 7.  ... ");
                 Console.WriteLine(" 8.  ....");
@@ -187,6 +198,8 @@ namespace Exam70483
                         Console.ReadKey();
                         break;
                     case 5:
+                        Serialize_DeSerialize_Class_Department();
+                        Console.ReadKey();
                         break;
                     case 6:
                         break;
@@ -346,5 +359,49 @@ namespace Exam70483
 
         } // End LQComprehensionQuery 
         #endregion
+        private static void Serialize_DeSerialize_Class_Department()
+        {
+            Department SDept = new Department();
+            Console.WriteLine("\n Serialize Class Dept into Raw Jason");
+            string ExJsonSerialized = JsonConvert.SerializeObject(SDept);
+            Console.WriteLine(ExJsonSerialized);
+            string ExJsonSerializedList = JsonConvert.SerializeObject(Department.GetAllDepartments());
+            Console.WriteLine(ExJsonSerializedList);
+            Console.WriteLine("\n DeSerialize - Takes JSON Raw Text and List<Department>  ");
+            List<Department> exJson = JsonConvert.DeserializeObject<List<Department>>(ExJsonSerializedList);
+            foreach (var element in exJson)
+            {
+                System.Console.WriteLine("ID: {0} Name: {1}", element.ID,element.Name);
+            }
+            Console.ReadKey();
+            
+            Console.WriteLine("\n XML Serialization to Console");
+           
+            var XML = new XmlSerializer(typeof(List<Department>));
+            XML.Serialize(Console.Out, Department.GetAllDepartments());
+            Console.ReadKey();
+            Console.WriteLine("\n XML Serialzation to String Variable");
+            /*
+             * XML - Serialize and Assign to string variable 
+            */
+            StringWriter sw = new StringWriter();
+            XML.Serialize(sw, Department.GetAllDepartments());
+            string result = sw.ToString();
+            Console.WriteLine("XML to variable result {0}", result);
+            /*
+             * DeSerialize XML
+             */
+            Console.ReadKey();
+            Console.WriteLine("\n DeSerialize- Takes XML and loads to object Department.GetAllDepartments() ");
+            StringReader stringReader = new StringReader(result);
+            List<Department> Departments = (List<Department>)XML.Deserialize(stringReader);
+            foreach (Department element in Departments)
+            {
+                System.Console.WriteLine("ID is: {0} Name is: {1} ", element.ID,element.Name );
+            }
+            Console.WriteLine("End of XML Serialization");
+
+
+        }
     } // End LINQExamples
 } //End Namespace
