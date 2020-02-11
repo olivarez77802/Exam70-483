@@ -6,6 +6,8 @@ using System.Text;
 namespace Exam70483
 {
     /*
+     * See Memory Leaks (caused by not unsubscribing to Events) in ManageObjectCycle.cs
+     * 
      * See GenericExamples.cs for definitions of Func, Action, Predicate delegates and meanings
      * 
      * Event - Something that happened.  i.e. A mouse Click, keyboard click

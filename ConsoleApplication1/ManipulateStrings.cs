@@ -11,68 +11,10 @@ namespace Exam70483
      * Create and Use Types/ Manipulate Strings
      *    Manipulate strings by using the StringBuilder, StringWriter, and StringReader classes; search strings;
      *    enumerate string methods; format strings; use string interpolation.
-     * 
-     
-     * 
-     */
-    class ManipulateStrings   // and String Examples
+    */
+    struct ManipulateStrings   // and String Examples
     {
-        #region SBMain1 - Example of using Append
-        static void SBMain1()
-        {
-            StringBuilder builder = new StringBuilder();
-            // Append to StringBuilder.
-            for (int i = 0; i < 10; i++)
-            {
-                builder.Append(i).Append(" ");
-
-            }
-            Console.WriteLine(builder);
-        }
-        #endregion
-
-        #region SBMain2 - Example of Appending a sentence
-        static void SBMain2()
-        {
-            // Declare a new StringBuilder.
-            StringBuilder builder = new StringBuilder();
-            builder.Append("The list starts here:");
-            builder.AppendLine();
-            builder.Append("1 cat").AppendLine();
-
-            // Get a reference to the StringBuilder's buffer content.
-            string innerString = builder.ToString();
-
-            // Display with Debug.
-            Debug.WriteLine(innerString);
-            Console.WriteLine("{0}", innerString);
-        }
-        #endregion
-
-        static void SBMain3()
-        {
-            StringBuilder builder = new StringBuilder(
-                "This is an example string that is an example.");
-            builder.Replace("an", "the"); // Replaces 'an' with 'the'.
-            Console.WriteLine(builder.ToString());
-            Console.ReadLine();
-        }
-
-        static void SBMain4()
-        {
-            string[] items = { "Cat", "Dog", "Celebrity" };
-
-            StringBuilder builder2 = new StringBuilder(
-                "These items are required:").AppendLine();
-
-            foreach (string item in items)
-            {
-                builder2.Append(item).AppendLine();
-            }
-            Console.WriteLine(builder2.ToString());
-
-        }
-
+        #region Main
         public static void Menu()
         {
 
@@ -136,7 +78,66 @@ namespace Exam70483
 
 
         }
+        #endregion
+        #region SBMain1 - Example of using Append
+        static void SBMain1()
+        {
+            StringBuilder builder = new StringBuilder();
+            // Append to StringBuilder.
+            for (int i = 0; i < 10; i++)
+            {
+                builder.Append(i).Append(" ");
 
+            }
+            Console.WriteLine(builder);
+        }
+        #endregion
+
+        #region SBMain2 - Example of Appending a sentence
+        static void SBMain2()
+        {
+            // Declare a new StringBuilder.
+            StringBuilder builder = new StringBuilder();
+            builder.Append("The list starts here:");
+            builder.AppendLine();
+            builder.Append("1 cat").AppendLine();
+
+            // Get a reference to the StringBuilder's buffer content.
+            string innerString = builder.ToString();
+
+            // Display with Debug.
+            Debug.WriteLine(innerString);
+            Console.WriteLine("{0}", innerString);
+        }
+        #endregion
+        #region SBMain3
+        static void SBMain3()
+        {
+            StringBuilder builder = new StringBuilder(
+                "This is an example string that is an example.");
+            builder.Replace("an", "the"); // Replaces 'an' with 'the'.
+            Console.WriteLine(builder.ToString());
+            Console.ReadLine();
+        }
+        #endregion
+        #region SBMain4
+        static void SBMain4()
+        {
+            string[] items = { "Cat", "Dog", "Celebrity" };
+
+            StringBuilder builder2 = new StringBuilder(
+                "These items are required:").AppendLine();
+
+            foreach (string item in items)
+            {
+                builder2.Append(item).AppendLine();
+            }
+            Console.WriteLine(builder2.ToString());
+
+        }
+        #endregion
+       
+        #region StringBuilder_Ex
         static void StringBuilder_Ex()
         {
             /*
@@ -193,6 +194,8 @@ namespace Exam70483
             ManipulateStrings.SBMain4();
             Console.ReadKey();
         }
+        #endregion
+        #region StringWriter_EX
         static void StringWriter_Ex()
         {
             /*
@@ -202,38 +205,42 @@ namespace Exam70483
             */
             StringReadWrite srw = new StringReadWrite();
         }
-         
 
+        #endregion
+        #region StringReadWrite
+
+        private class StringReadWrite
+        {
+            StringBuilder sb = new StringBuilder();
+            public StringReadWrite()
+            {
+                WriteData();
+                ReadData();
+            }
+            public void WriteData()
+            {
+                StringWriter sw = new StringWriter(sb);
+                Console.WriteLine("Please enter your first and last name...");
+                string name = Console.ReadLine();
+                sw.WriteLine("Name: " + name);
+                sw.Flush();
+                sw.Close();
+            }
+            public void ReadData()
+            {
+                StringReader sr = new StringReader(sb.ToString());
+                Console.WriteLine("Reading the information...");
+                while (sr.Peek() > -1)
+                {
+                    Console.WriteLine(sr.ReadLine());
+                }
+                Console.WriteLine();
+                Console.WriteLine("Thank You!");
+                sr.Close();
+            }
+        }
+        #endregion
     } /* end Class ManipulateStrings */
 
-    public class StringReadWrite
-    {
-        StringBuilder sb = new StringBuilder();
-        public StringReadWrite()
-        {
-            WriteData();
-            ReadData();
-        }
-        public void WriteData()
-        {
-            StringWriter sw = new StringWriter(sb);
-            Console.WriteLine("Please enter your first and last name...");
-            string name = Console.ReadLine();
-            sw.WriteLine("Name: " + name);
-            sw.Flush();
-            sw.Close();
-        }
-        public void ReadData()
-        {
-            StringReader sr = new StringReader(sb.ToString());
-            Console.WriteLine("Reading the information...");
-            while (sr.Peek() > -1)
-            {
-                Console.WriteLine(sr.ReadLine());
-            }
-            Console.WriteLine();
-            Console.WriteLine("Thank You!");
-            sr.Close();
-        }
-    }
+
 }
