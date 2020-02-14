@@ -109,7 +109,6 @@
     <Compile Include="Methods.cs" />
     <Compile Include="ObjectExamples.cs" />
     <Compile Include="ParseExamples.cs" />
-    <Compile Include="PinvokeTest.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QueryLINQ.cs" />

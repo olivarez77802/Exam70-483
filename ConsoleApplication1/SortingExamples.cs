@@ -10,6 +10,8 @@ namespace Exam70483
     class SortingExamples  // Called by Collections
     {
 
+        #region SortAscendingDescending 
+
         public static void Sort_Ascending_Descending()
         {
             Console.WriteLine("Cats listed by name in ASCENDING Order:");
@@ -43,6 +45,8 @@ namespace Exam70483
             Print_using_orderby(temp4);
 
         }
+        #endregion        
+        #region ClassEmployee
 
         class Employee : IComparable<Employee>
         {
@@ -66,6 +70,8 @@ namespace Exam70483
                 return this.Salary.ToString() + "," + this.Name;
             }
         }
+        #endregion
+        #region Sort_A_Class
 
 
         public static void Sort_A_Class()
@@ -86,6 +92,8 @@ namespace Exam70483
                 Console.WriteLine(element);
             }
         }
+        #endregion
+        #region Sort_Numbers
 
         class MyObject : IComparable
         {
@@ -123,6 +131,8 @@ namespace Exam70483
             //}
             
         }
+        #endregion
+        #region Print_using_orderby 
 
         public static void Print_using_orderby(GridSortOptions sort)
         {
@@ -134,7 +144,8 @@ namespace Exam70483
             }
             Console.ReadKey();
         }
-
+        #endregion
+        #region PrintCats
 
 
 
@@ -148,10 +159,10 @@ namespace Exam70483
             return output;
 
         }
-
-
+        #endregion
 
     }
+    #region ClassGridSortOptions
 
     /// <summary>
     /// SortDirection type enum contains Ascending, Descending
@@ -170,6 +181,8 @@ namespace Exam70483
         public string Column { get; set; }
         public SortDirection Direction { get; set; }
     }
+    #endregion
+    #region SortExtensions
 
     /// <summary>
     /// Extension methods for sorting.
@@ -228,4 +241,5 @@ namespace Exam70483
             return datasource.Provider.CreateQuery<T>(orderByCall);
         }
     }
+    #endregion
 }

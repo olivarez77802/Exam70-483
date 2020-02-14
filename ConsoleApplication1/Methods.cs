@@ -16,7 +16,7 @@ namespace Exam70483
             ConstructorsandFinalizers,
             Overloading,
             Parameters,
-            Pinvoke,
+            dummy,
             UserDefinedConversions,
             EnumerableMethods,
             GetPropertyMethods,
@@ -55,7 +55,7 @@ namespace Exam70483
                 Console.WriteLine(" 0.  Constructors and Finalizers \n ");
                 Console.WriteLine(" 1.  Overloading \n ");
                 Console.WriteLine(" 2.  Parameters and Extension Methods\n");
-                Console.WriteLine(" 3.  Pinvoke \n");
+                Console.WriteLine(" 3.  ... \n");
                 Console.WriteLine(" 4.  User Defined Conversions \n");
                 Console.WriteLine(" 5.  ....");
                 Console.WriteLine(" 6.  GetProperty Method \n");
@@ -78,9 +78,9 @@ namespace Exam70483
                         Parameters();
                         break;
 
-                    case eMenu.Pinvoke:
-                        PreProcessing();
-                        break;
+                    //case eMenu.Pinvoke:
+                    //    PreProcessing();
+                    //    break;
 
                     //case eMenu.EnumerableMethods:
                     //    EnumerableMethods.Menu();
@@ -128,11 +128,11 @@ namespace Exam70483
             Console.ReadKey();
             
         }
-        static void PreProcessing()
-        {
-            Console.WriteLine(" PreProcessing is Empty ");
-            Console.ReadKey();
-        }
+        //static void PreProcessing()
+        //{
+        //    Console.WriteLine(" PreProcessing is Empty ");
+        //    Console.ReadKey();
+        //}
 
 
 
@@ -253,6 +253,7 @@ namespace Exam70483
     }
     struct TheStruct
     {
+        // It is an error to initialize an instance field in a struct body.
         public string willIChange;
     }
     public static class TestClassAndStruct
@@ -278,6 +279,7 @@ namespace Exam70483
             // extension methods require class to be static and parameter to have 'this'
             //
             testClass.ClassTaker();
+            //Struct is a value type and may create a new instance but will not change.
             testStruct.StructTaker();
 
             // Could also call it this way, however extension methods is preferrred
