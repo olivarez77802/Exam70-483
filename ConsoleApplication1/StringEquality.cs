@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Exam70483
 { 
-    abstract class StringEquality
+    class StringEquality
     {
         /*
          https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/equality-comparison-operator
@@ -39,7 +39,7 @@ namespace Exam70483
 
         */
 
-        internal static void SE_Main()
+        public static void SE_Main()
         {
             // Numeric equality: True
             Console.WriteLine((2 + 2) == 4);

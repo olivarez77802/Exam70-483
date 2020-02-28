@@ -50,7 +50,8 @@ namespace Exam70483
                         Console.ReadKey();
                         break;
                     case 2:
-                        StringReaderExamples.Menu();
+                        StringReader_Ex();
+                        Console.ReadKey();
                         break;
                     case 3:
                         break;
@@ -136,7 +137,32 @@ namespace Exam70483
 
         }
         #endregion
-       
+        #region StringReader
+        static void StringReader_Ex()
+        {
+           // http://www.dotnetperls.com/stringreader
+            const string _input = @"Dot Net Perls
+           is a website
+           you are reading";
+
+                /* Creates new StringReader instance from System.IO
+                   ReadLine: We can then read each line individually
+                   from the string data, in a way similar to reading
+                   a file with StreamReader.
+                */
+                using (StringReader reader = new StringReader(_input))
+                {
+                    // Loop over the lines in the string.
+                    int count = 0;
+                    string line;
+                    while ((line = reader.ReadLine()) != null)
+                    {
+                        count++;
+                        Console.WriteLine("Line {0}: {1}", count, line);
+                    }
+                }          
+        }
+        #endregion
         #region StringBuilder_Ex
         static void StringBuilder_Ex()
         {
@@ -180,6 +206,7 @@ namespace Exam70483
              *  - StringWriter writes to the StringBuilder object
              *  - StringReader reads string data from the StringBuilder Object
              *  - Use them when you are dealing with a lot of string manipulations.
+             *  See also StreamExamples.cs
              */
             Console.WriteLine(" SBMain1 ");
             ManipulateStrings.SBMain1();

@@ -133,7 +133,6 @@
     <Compile Include="ManipulateStrings.cs" />
     <Compile Include="StringEquality.cs" />
     <Compile Include="StringMethodExamples.cs" />
-    <Compile Include="StringReaderExamples.cs" />
     <Compile Include="TaskLibExamples.cs" />
     <Compile Include="ThreadingExamples.cs" />
     <Compile Include="ThreadPoolExample.cs" />
