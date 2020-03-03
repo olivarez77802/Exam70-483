@@ -160,6 +160,12 @@ namespace Exam70483
             {
                 Console.WriteLine("Event Fired : Car is < 60mph");
             }
+            public void UnSubscribe(Car c)
+            {
+                c.OnChange -= c_OnChange;
+                c.OffChange -= c_OffChange;
+                Console.WriteLine("Unsubscribed from Event");
+            }
         }
         public static void CarMain()
         {
@@ -172,7 +178,10 @@ namespace Exam70483
             c.Speed = 5;
             c.Speed = 55;
             c.Speed = 65;
-
+            /*
+             * Unsubscribe - See Memory Leaks write up in ManageObjectCycle.cs
+            */
+            l.UnSubscribe(c);
 
         }
       
