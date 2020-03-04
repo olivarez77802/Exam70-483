@@ -13,7 +13,8 @@ namespace Exam70483
                 cannot be instantiated.   Will usually hold methods that are defined as either virtual
                 or abstract.  Abstract classes are useful because of Polymorphism.  Abstract class can
                 provide some implementation details.  This is a difference between them and Interfaces.
-                Interfaces cannot provide implementation details.
+                Interfaces cannot provide implementation details.   Abstract Classes should be compared
+                with Interfaces.   See InterfacesMenu.cs
      inherit  - You can inherit from many interfaces.  You are restricted from inheriting from only one class
                 whether it is abstract or concrete.
      virtual - first implementation.   When you use the virtual keyword you enable Polymorphism
@@ -33,7 +34,7 @@ namespace Exam70483
      
      override - further implementation.  Keyword used in concrete classes to provide further implementations for methods
                                          that were defined as either virtual or abstract.
-     Difference between virtual and abstract.  Abstract methods must be overriden. Overriding virtual methods is optional.
+     Difference between virtual and abstract methods.  Abstract methods must be overriden. Overriding virtual methods is optional.
      sealed - Final implementation - cannot be derived (or inherited).
             -  Examples of Sealed Classes are String Builder
             - If you want to make sure no one overrides or extends the functionality of a class then mark it as sealed.
@@ -56,12 +57,18 @@ namespace Exam70483
             private string ssn = "444-55-666";
             private string name = "Jesse Olivarez";
             // making this method virtual means that this method can be overridden.  A method
-            // that is not marked virtual cannot be overriden.
+            // that is not marked virtual cannot be overriden.  Methods can be either virtual
+            // or abstract and the derived class must use the override keyword for both.  Notice
+            // the abstract method is not alloweed to have an implementation in the base class.
+            // An implementation of the virtual method is required in the base class.   The derive
+            // class requires you to implement an abstract method.  Implementation of virtual methods
+            // is optional in the derived class.
             public virtual void GetInfo()
             {
                 Console.WriteLine("Name: {0}", name);
                 Console.WriteLine("SSN: {0}", ssn);
             }
+            public abstract void GetInfo2();
         }
         class Employee : Person
         {
@@ -70,6 +77,10 @@ namespace Exam70483
             public override void GetInfo()
             {
                 base.GetInfo();
+                Console.WriteLine("Employee ID: {0}", id);
+            }
+            public override void GetInfo2()
+            {
                 Console.WriteLine("Employee ID: {0}", id);
             }
         }

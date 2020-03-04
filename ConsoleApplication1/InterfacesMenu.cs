@@ -59,7 +59,9 @@ namespace Exam70483
                 //  Abstract Classes        versus Interfaces
                 //  -------------------------  |  ---------------------
                 //  May Contain implementation |  May not contain implementation code - Biggest weakness
-                //  Code
+                //  Code or may simulate an    |  By default all objects are public and absract.
+                //  interface and just have    |
+                //  abstract signature.        |
                 //  A class may inherit from a |  A class may implement any number of interfaces - Biggest 
                 //  single base class          |  strength.
                 //  Members have access        |  Members are automatically public  
@@ -70,7 +72,11 @@ namespace Exam70483
                 //  destructors, methods,      |  Interfaces may not contain fields 
                 //  events, and indexers       |
                 //
-
+                //  Note:  You can use interface when you know signature but you don't know the implmentation.
+                //  You can use abstract class when you know some implementation but not all.  A class may only
+                //  inherit from one abstract class, but a class may inherit from multiple interfaces.  See 
+                //  info on Abstract Methods in BaseExamples.cs
+                // 
                 //  As a guideline:
                 //  Use classes and subclasses for types that naturally share an implementation
                 //  Use interfaces for types that have independent implementations.
