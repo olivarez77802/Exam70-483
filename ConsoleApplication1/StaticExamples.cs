@@ -41,7 +41,11 @@ namespace Exam70483
      *               
      *   https://www.youtube.com/watch?v=cFQLmHCguGs
      *   
-     *   Note! - If you remove the Accessor (see ClassHeirarchy.cs) on a class member by default it will be 'private', so you cannot access member outside class.
+     *   Note! - If you remove the Accessor (see ClassHeirarchy.cs) on a class member by default it will be 'private', so you cannot
+     *   access member outside class.
+     *   
+     *   Interfaces can't have static methods.  A class that implements an interface needs to implement them all as instance methods.
+     *   Static classes can't have instance methods.
      */
     class Circle
     {
