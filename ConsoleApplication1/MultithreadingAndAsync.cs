@@ -9,6 +9,7 @@ namespace Exam70483
 {
     class MultithreadingAndAsync
     {
+        #region Menu
         public static void Menu()
         {
 
@@ -67,7 +68,9 @@ namespace Exam70483
 
             } while (x < 9);
         }
-        static void ContinuationExample()
+        #endregion
+        #region Methods
+        private static void ContinuationExample()
         {
             /*
             // Do not  need tx.Start
@@ -113,5 +116,6 @@ namespace Exam70483
             Console.ReadKey();
 
         }
+        #endregion
     }
 }

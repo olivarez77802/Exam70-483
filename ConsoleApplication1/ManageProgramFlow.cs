@@ -5,14 +5,15 @@ using System.Text;
 
 namespace Exam70483
 {
-    class ManageProgramFlow
+    class ManageProgramFlow : MPF_Methods
     {
+       
         public static void Menu()
         {
-
-            int x = 0;
-            do
-            {
+             IMenu zero = new MPF_Methods();
+             int x = 0;
+             do
+             {
                 Console.Clear();
                 Console.WriteLine(" Manage Program Flow \n");
                 Console.WriteLine(" 0.  Implement MultiThreading and ASynchrounous Processing \r ");
@@ -41,9 +42,8 @@ namespace Exam70483
                 selection = Common.readInt("Enter Number to Execute Routine : ", 0, 9);
                 switch (selection)
                 {
-                    case 0:
-                         MultithreadingAndAsync.Menu();
-                         break;
+                    case 0: zero.MenuOpt0();                         
+                            break;
                     case 1:
                          ManageMultithreading.Menu();
                          break;
@@ -73,5 +73,6 @@ namespace Exam70483
 
             } while (x < 9);
         }
-    }
+        
+    } /* end class */
 }

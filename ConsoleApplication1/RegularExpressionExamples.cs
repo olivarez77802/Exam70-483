@@ -26,12 +26,20 @@ namespace Exam70483
                                         Give special meaning to ordinary characters
         (?!expr) - Continue matching only if expression doesn't 
                    match on right (negative lookahead).
-        (?:expr) - Non capturing group
+        (?:expr) - Non capturing group.   Groups multiple tokens together without creating a group.
+                   Example: (?:red|green|blue)  Each character is a token red is 3 tokens.  re or gree won't
+                   be found, however red or green will be found.
+        \1  - Back reference to group #1
+
+        Example:
+        (?:(\d)\1{8})  -  \1 back reference to ?:(\d)  - Find 8 digits of the same number for a total
+                                                         of 9 digits that are the same.
+        (?[ -]?)  - The last ? is a Quantifier says Match between 0 and 1 of the preceding token.
        
        
-         public const string Pattern = ";
+         public static const string Pattern = ";
           ^([9][0-9][0-9][7][0-9]|[9][0-9][0-9][8][1-8]|[9][0-9][0-9][9][0-2])
-         public const string Pattern = ^(?!(?:(\d)\1{8}))
+         public static const string Pattern = ^(?!(?:(\d)\1{8}))
                                         (?!000)
                                         (?!666)
                                         (?:[0-8]\d{2}|7[0-7][0-2])

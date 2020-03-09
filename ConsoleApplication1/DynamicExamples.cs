@@ -21,6 +21,15 @@ namespace Exam70483
     such as IronPython, from the HTML Document Object Model(DOM), from reflection, or from somewhere else in the program.However, if the
     code is not valid, errors are caught at run time.
 
+    How do I get Type data ?
+    - Statically at compile time
+    - Dynamically at run time
+    Example:
+    var dog = new Dog { NumberOfLegs = 4 };
+    // At compile time
+    Type t1 = typeof(Dog);
+    // At run time
+    Type t2 = dog.GetType();
 
     Static types get resolved at compile time.
 

@@ -29,7 +29,7 @@ namespace Exam70483
                 Console.WriteLine(" 4.  Run Example 4 ");
                 Console.WriteLine(" 5.  Statement Keywords ");
                 Console.WriteLine(" 6.  While, do-while ");
-                Console.WriteLine(" 7.  for Statement ");
+                Console.WriteLine(" 7.  Prefix and Postfix Operator ");
                 Console.WriteLine(" 8.  Yield Return");
                 Console.WriteLine(" 9.  Quit  ");
                 Console.Write(" Enter Number to execute Routine ");
@@ -61,7 +61,7 @@ namespace Exam70483
                         WhiledoWhile();
                         break;
                     case 7:
-                        For_Loop();
+                        Prefix_and_Postfix_Operator();
                         Console.ReadKey();
                         break;
                     case 8:
@@ -95,7 +95,7 @@ namespace Exam70483
             Key_Value_Pair();
             Dictionary_Key_Value_Pair();
             List_Remove();
-            foreach_performance();
+          
 
             Program p = new Program();
             Console.WriteLine("Using Collections");
@@ -310,10 +310,6 @@ namespace Exam70483
             }
             Console.ReadKey();
         }
-        static void foreach_performance()
-        {
-        }
-
         static void Operators()
         {
             Process.Start("http://msdn.microsoft.com/en-us/library/6a71f45d.aspx");
@@ -356,7 +352,7 @@ namespace Exam70483
              *   
             */
         }
-        static void For_Loop()
+        static void Prefix_and_Postfix_Operator()
         {
             /* For Loop Sequence.
              * 1. Initialize (int counter=0;)...Only done once.

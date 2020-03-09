@@ -33,11 +33,19 @@ namespace Exam70483
      *    Circle._PI = 3.141F;
      *  }
      *  
-     *  Static constructors are called only once, no matter how many instances you create.
+     *  Static constructors are called only once, no matter how many instances you create.  By default a static constructor cannot have an access
+     *  modifier, it is by default private.  You don't have to call a static constructor.  A static constructor are called before instance fields 
+     *  are called. We use a static constructor to initialize static fields.
      *  
      *  Static constructors are called before instance constructors.
      *               
      *   https://www.youtube.com/watch?v=cFQLmHCguGs
+     *   
+     *   Note! - If you remove the Accessor (see ClassHeirarchy.cs) on a class member by default it will be 'private', so you cannot
+     *   access member outside class.
+     *   
+     *   Interfaces can't have static methods.  A class that implements an interface needs to implement them all as instance methods.
+     *   Static classes can't have instance methods.
      */
     class Circle
     {
@@ -66,12 +74,13 @@ namespace Exam70483
 
         }
 
-        /*
-         * Can't use this._PI if _PI is made static.
-        */
+        
         public float CalculateArea()
         {
-          //  return this._PI * this._Radius * this._Radius;
+         /*
+         * Can't use this._PI if _PI is made static, we have to make it Circle._PI.
+        */
+            //  return this._PI * this._Radius * this._Radius;
             return Circle._PI * this._Radius * this._Radius;
         }
     }

@@ -19,7 +19,8 @@ namespace Exam70483
                 Console.WriteLine(" Manage Mulithreading - Synchronize resources; implement locking; cancel a long-running task; \n ");
                 Console.WriteLine(" Implement thread-safe methods to handle race conditions. \n ");
                 Console.WriteLine(" 0.  Threading Examples");
-                Console.WriteLine(" 1.  Cancel a long-running task");
+                Console.WriteLine(" 1.  CancellationTokenSource with Task.Factory");
+                Console.WriteLine(" 2.  CancellationTokenSource with TaskFactory");
                 Console.WriteLine(" 9.  Quit            \n\n ");
                 Console.Write(" Enter Number to execute Routine ");
 
@@ -33,8 +34,11 @@ namespace Exam70483
                         Console.ReadKey();
                         break;
                     case 1:
-                       // CancelTask();
-                        CancelTask2();
+                        CancellationTokenSource_wTask();
+                        Console.ReadKey();
+                        break;
+                    case 2:
+                        CancellationTokenSource_wTaskFactory();
                         Console.ReadKey();
                         break;
                     case 9:
@@ -47,7 +51,7 @@ namespace Exam70483
 
             } while (x < 9);
         }
-        static void CancelTask()
+        static void CancellationTokenSource_wTask()
         {
             CancellationTokenSource cts = new CancellationTokenSource();
             CancellationToken ct = cts.Token;
@@ -61,11 +65,34 @@ namespace Exam70483
             }, ct);
 
             // May have to Comment out or change time on Thread.Sleep if you want it to cancel, otherwise it will finish before the cancel is called.
+            // Thread.Sleep(100) will usaully be enough time for it to run start to finish.
+            // Thread.Spleed(10) will usually cause cts.Cancel() to be called.
             Thread.Sleep(10);
             cts.Cancel();
-
+            /* Example Output  - Output may be different each time because of .AsParallel
+            Example of Cancellation Token item is 0
+            Example of Cancellation Token item is 45
+            Example of Cancellation Token item is 5
+            Example of Cancellation Token item is 55
+            Example of Cancellation Token item is 10
+            Example of Cancellation Token item is 65
+            Example of Cancellation Token item is 15
+            Example of Cancellation Token item is 85
+            Example of Cancellation Token item is 20
+            Example of Cancellation Token item is 95
+            Example of Cancellation Token item is 25
+            Example of Cancellation Token item is 30
+            Example of Cancellation Token item is 35
+            Example of Cancellation Token item is 40
+            Example of Cancellation Token item is 50
+            Example of Cancellation Token item is 60
+            Example of Cancellation Token item is 70
+            Example of Cancellation Token item is 75
+            Example of Cancellation Token item is 80
+            Example of Cancellation Token item is 90
+            */
         }
-        static void CancelTask2()
+        static void CancellationTokenSource_wTaskFactory()
         {
             /*
             Attained from
@@ -74,7 +101,7 @@ namespace Exam70483
             The following example uses a random number generator to emulate a data collection application that reads
             10 integral values from eleven different instruments.  A value of zero indicates that the measurement
             has failed for one instrument, in which case the operation should be cancelled and no overall mean should
-            be computed            
+            be computed.    You will have to run multiple times in order for the mean to get computed.            
             */
             CancellationTokenSource source = new CancellationTokenSource();
             CancellationToken token = source.Token;
@@ -112,9 +139,15 @@ namespace Exam70483
                 }, token));
 
             }
-            /* The TaskFactory.ContinueWhenAll method is called to ensure that the mean is computed only
-             * after all the readings have been gathered successfully.  If a task has not because it has
-             * been cancelled, the call to TaskFactory.ContinueWhenAll methods throws an exceptions.
+            /* 
+             * Once the above is done, it will either go in the try or the catch block.  If the above
+             * completed successfully it will go to the try block.  If it got cancelled it will go to 
+             * the catch block.
+             * 
+             * The TaskFactory.ContinueWhenAll method is called to ensure that the mean is computed only
+             * after all the readings have been gathered successfully.   If a task has not because it has
+             * been cancelled, the call to the TaskFactory.ContinueWhenAll method throws an exception.  
+             * Notice the catch block uses the InnerException.
              */
             try
             {

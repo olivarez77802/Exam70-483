@@ -6,6 +6,8 @@ using System.Text;
 namespace Exam70483
 {
     /*
+     * See Memory Leaks (caused by not unsubscribing to Events) in ManageObjectCycle.cs
+     * 
      * See GenericExamples.cs for definitions of Func, Action, Predicate delegates and meanings
      * 
      * Event - Something that happened.  i.e. A mouse Click, keyboard click
@@ -158,6 +160,12 @@ namespace Exam70483
             {
                 Console.WriteLine("Event Fired : Car is < 60mph");
             }
+            public void UnSubscribe(Car c)
+            {
+                c.OnChange -= c_OnChange;
+                c.OffChange -= c_OffChange;
+                Console.WriteLine("Unsubscribed from Event");
+            }
         }
         public static void CarMain()
         {
@@ -170,7 +178,10 @@ namespace Exam70483
             c.Speed = 5;
             c.Speed = 55;
             c.Speed = 65;
-
+            /*
+             * Unsubscribe - See Memory Leaks write up in ManageObjectCycle.cs
+            */
+            l.UnSubscribe(c);
 
         }
       

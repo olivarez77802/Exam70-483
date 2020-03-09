@@ -19,91 +19,81 @@ namespace Exam70483
                  * the method defined in the interface in a different way, making it Polymorphic.
                  * 
                  * 
-                //  See Generic Examples also
-                //
-                //  Interfaces should be programmed at the right level.   Interfaces should be granular
-                //  IList<T> - ICollection  -> IENumberable 
-                //
-                //
-                //  IEnumerable Implementations (IEnumerable<T> limited to collectsions that are strongly typed: 
-                //  List<T>
-                //  Array 
-                //  ArrayList 
-                //  SortedList<TKey, TValue>
-                //  HashTable
-                //  Queue / Queue<T>
-                //  Stack / Stack<T>
-                //  Dictionary<TKey, TValue>
-                //  ObservableCollection<T>
-                //
-                //  ICollection<T> Implementations
-                //  List<T> 
-                //  SortedList<TKey, TValue>
-                //  Dictionary<TKey, TValue>
-                //  
-                //  IList<T> Implementations
-                //  List<T>
-                // 
-                //  Program at the Right Level
-                //  IEnumerable <T>  -  If we need to Iterate over a Collection / Sequence or Data Bind
-                //                      to a List Control
-                //  ICollection<T>  - If we need to Add/Remove Items in a Collection, 
-                //                    Count Items in a Collection,
-                //                    Clear a Collection.
-                //  IList<T> -        If we need to Control the Order Items in a Collection,
-                //                    Get an Item by the Index.
-                //
+                  See Generic Examples also
+                
+                  Interfaces should be programmed at the right level.   Interfaces should be granular
+                  IList<T> - ICollection  -> IENumberable 
+                
+                  IEnumerable Implementations (IEnumerable<T> limited to collectsions that are strongly typed: 
+                    List<T>
+                    Array 
+                    ArrayList 
+                    SortedList<TKey, TValue>
+                    HashTable
+                    Queue / Queue<T>
+                    Stack / Stack<T>
+                    Dictionary<TKey, TValue>
+                    ObservableCollection<T>
+                
+                    ICollection<T> Implementations
+                    List<T> 
+                    SortedList<TKey, TValue>
+                    Dictionary<TKey, TValue>
+                  
+                    IList<T> Implementations
+                    List<T>
+                  
+                    Program at the Right Level
+                    IEnumerable <T>  -  If we need to Iterate over a Collection / Sequence or Data Bind
+                                        to a List Control
+                    ICollection<T>  - If we need to Add/Remove Items in a Collection, 
+                                      Count Items in a Collection,
+                                      Clear a Collection.
+                    IList<T> -        If we need to Control the Order Items in a Collection,
+                                      Get an Item by the Index.
+                 
                     Differences between IEnumerable, ICollection, and IList Interfaces
                     https://www.c-sharpcorner.com/UploadFile/78607b/difference-between-ienumerable-icollection-and-ilist-interf/
-                //
-                //  Abstract Classes        versus Interfaces
-                //  -------------------------  |  ---------------------
-                //  May Contain implementation |  May not contain implementation code - Biggest weakness
-                //  Code
-                //  A class may inherit from a |  A class may implement any number of interfaces - Biggest 
-                //  single base class          |  strength.
-                //  Members have access        |  Members are automatically public  
-                //  modifiers
-                //  May contain fields,        |  May only contain properties, methods, events, and indexers .
-                //                             |  No implementation usually just contain signatures.
-                //  properties, constructors,  |
-                //  destructors, methods,      |  Interfaces may not contain fields 
-                //  events, and indexers       |
-                //
+                
+                    Abstract Classes        versus Interfaces
+                    -------------------------  |  ---------------------
+                    May Contain implementation |  May not contain implementation code - Biggest weakness
+                    Code or may simulate an    |  By default all objects are public and absract.
+                    interface and just have    |
+                    abstract signature.        |
+                    A class may inherit from a |  A class may implement any number of interfaces - Biggest 
+                    single base class          |  strength.
+                    Members have access        |  Members are automatically public  
+                    modifiers
+                    May contain fields,        |  May only contain properties, methods, events, and indexers .
+                                               |  No implementation usually just contain signatures.
+                    properties, constructors,  |
+                    destructors, methods,      |  Interfaces may not contain fields 
+                    events, and indexers       |
+                
+                    Note:  You can use interface when you know signature but you don't know the implmentation.
+                    You can use abstract class when you know some implementation but not all.  A class may only
+                    inherit from one abstract class, but a class may inherit from multiple interfaces.  See 
+                    info on Abstract Methods in BaseExamples.cs
 
-                //  As a guideline:
-                //  Use classes and subclasses for types that naturally share an implementation
-                //  Use interfaces for types that have independent implementations.
-                //
-                //  Natural - Can Compare with other Instances of the same type
-                //
-                //                 EQUALITY                   COMPARISONS
-                //  Natural        IEquatable<T>              IComparable<T>
-                //                                            IComparable
-                //  Plugged_in     IEqualityComparer          IComparer
-                //                 IEqualityComparer<T>       IComparer<T>
-                //  Structural     IStructuralEquatable       IStructuralEquatable
-                //
-                //
-                //Console.WriteLine("\n Interface contains only the signatures of methods, properties, ");
-                //Console.WriteLine(" events, or indexers.  A class or struct that implements the    ");
-                //Console.WriteLine("Interface must implement the members of the interface that ");
-                //Console.WriteLine("are specified in the interface definition. \n");
-                //Console.WriteLine("Interface1 is the name of an interface with Start() and Stop() ");
-                //Console.WriteLine("methods. \n");
-                //
-                // * Generic Interfaces are based on IEnumerable<T>
-                // * Concept of collection define by ICollection<T> (but this interface isn't always useful)
-                // * Three categories of collection defined by:
-                //     ** IList<T>
-                //     ** IDictionary<T>
-                //     ** ISet<T>
-                //
-                //  * Collection<T> class is specifically designed to be overridden if you want to customize
-                //                        the behavior of your Lists.
-                //    An example of this is ObservableCollection<T> which provide change notificatons for a list.
-                //
+                    Note_2: Interfaces can't have static methods.  A class that implements an iterface needs to implement
+                    them all as instance methods.
                  
+                    As a guideline:
+                    Use classes and subclasses for types that naturally share an implementation
+                    Use interfaces for types that have independent implementations.
+                
+                    Natural - Can Compare with other Instances of the same type
+                 
+                                  EQUALITY                   COMPARISONS
+                   Natural        IEquatable<T>              IComparable<T>
+                                                             IComparable
+                   Plugged_in     IEqualityComparer          IComparer
+                                  IEqualityComparer<T>       IComparer<T>
+                   Structural     IStructuralEquatable       IStructuralEquatable
+                
+                
+                               
 
                 */
                 Console.Clear();

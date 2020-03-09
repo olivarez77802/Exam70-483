@@ -23,7 +23,6 @@ namespace Exam70483
                  *  string s = null;    - ok, Nullable type
                  *  int i = null;       - Compile error, value type cannot be null
                  *  
-                 *  
                  *  Nullablity for value types introduced in C# 2.0
                  *    Nullable types - int?, double?, bool?, char?, int?
                       https://msdn.microsoft.com/en-us/library/2cf62fcy.aspx
@@ -66,8 +65,8 @@ namespace Exam70483
                  *    Reference Types pass a copy of the reference
                  *       So both the calling code and the method being called both will have pointers to the exact same object.
                  *    Value types pass a copy of the value
-                 *    Value types are immutable  - methods used on a value type may create a new instance and may not change the underlying value
-                 *    and that rule also applies to strings which behaves like a value type.
+                 *    Value types are immutable  - methods used on a value type may create a new instance and may not change
+                 *    the underlying value and that rule also applies to strings which behaves like a value type.
                  *    
                  *    Even though string is a reference type it behave very much like a value type
                  *    Example:

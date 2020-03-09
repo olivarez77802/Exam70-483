@@ -86,6 +86,7 @@
     <Compile Include="GenericExamples.cs" />
     <Compile Include="Grammar.cs" />
     <Compile Include="IEnumerableIEnumeratorInterface.cs" />
+    <Compile Include="IMenu.cs" />
     <Compile Include="ImplementDataAccess.cs" />
     <Compile Include="ImplementDiagnostics.cs" />
     <Compile Include="ImplementProgramFlow.cs" />
@@ -93,6 +94,7 @@
     <Compile Include="ISpecialDefence.cs" />
     <Compile Include="ManageMultithreading.cs" />
     <Compile Include="ManageObjectCycle.cs" />
+    <Compile Include="MPF_Methods.cs" />
     <Compile Include="MultithreadingAndAsync.cs" />
     <Compile Include="Nulls.cs" />
     <Compile Include="Operators.cs" />
@@ -109,7 +111,6 @@
     <Compile Include="Methods.cs" />
     <Compile Include="ObjectExamples.cs" />
     <Compile Include="ParseExamples.cs" />
-    <Compile Include="PinvokeTest.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QueryLINQ.cs" />
@@ -134,7 +135,6 @@
     <Compile Include="ManipulateStrings.cs" />
     <Compile Include="StringEquality.cs" />
     <Compile Include="StringMethodExamples.cs" />
-    <Compile Include="StringReaderExamples.cs" />
     <Compile Include="TaskLibExamples.cs" />
     <Compile Include="ThreadingExamples.cs" />
     <Compile Include="ThreadPoolExample.cs" />

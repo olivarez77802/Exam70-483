@@ -7,7 +7,7 @@ using System.Reflection;
 
 namespace Exam70483
 {
-    
+    /* CreateAndUseTypes/CreateTypes/Methods.cs */
 
     class Methods
     {
@@ -16,15 +16,15 @@ namespace Exam70483
             ConstructorsandFinalizers,
             Overloading,
             Parameters,
-            Pinvoke,
+            dummy,
             UserDefinedConversions,
             EnumerableMethods,
             GetPropertyMethods,
-            xxx,
+            ClassVsStruct,
             Eight,
             Quit
         }
-
+        #region Menu
 
         public static void Menu()
         {
@@ -55,11 +55,11 @@ namespace Exam70483
                 Console.WriteLine(" 0.  Constructors and Finalizers \n ");
                 Console.WriteLine(" 1.  Overloading \n ");
                 Console.WriteLine(" 2.  Parameters and Extension Methods\n");
-                Console.WriteLine(" 3.  Pinvoke \n");
+                Console.WriteLine(" 3.  ... \n");
                 Console.WriteLine(" 4.  User Defined Conversions \n");
-                Console.WriteLine(" 5.  ...... ");
+                Console.WriteLine(" 5.  ....");
                 Console.WriteLine(" 6.  GetProperty Method \n");
-                Console.WriteLine(" 7.  ..... \n");
+                Console.WriteLine(" 7.  Class versus Struct \n");
                 Console.WriteLine(" 9.  Quit            \n\n ");
                 Console.Write(" Enter Number to execute Routine ");
 
@@ -78,9 +78,9 @@ namespace Exam70483
                         Parameters();
                         break;
 
-                    case eMenu.Pinvoke:
-                        PreProcessing();
-                        break;
+                    //case eMenu.Pinvoke:
+                    //    PreProcessing();
+                    //    break;
 
                     //case eMenu.EnumerableMethods:
                     //    EnumerableMethods.Menu();
@@ -92,7 +92,9 @@ namespace Exam70483
                         MyTypeClass.MainMTC();
                         Console.ReadKey();
                         break;
-                    case eMenu.xxx:
+                    case eMenu.ClassVsStruct:
+                        TestClassAndStruct.TCAS_Main();
+                        Console.ReadKey();
                         break;
                     case eMenu.Quit:
                         x = 9;
@@ -105,7 +107,8 @@ namespace Exam70483
             } while (x < 9);
 
         }  // End Menu
-
+        #endregion
+        #region Methods
         static void ConstructorsFinalizers()
         {
             Console.WriteLine(" ConstructorsFinalizers is Empty ");
@@ -123,13 +126,13 @@ namespace Exam70483
             // Process.Start("http://msdn.microsoft.com/en-us/library/ty67wk28.aspx");
             Process.Start("https://msdn.microsoft.com/en-us/library/0f66670z.aspx");
             Console.ReadKey();
-            TestClassAndStruct.TCAS_Main();
+            
         }
-        static void PreProcessing()
-        {
-            Console.WriteLine(" PreProcessing is Empty ");
-            Console.ReadKey();
-        }
+        //static void PreProcessing()
+        //{
+        //    Console.WriteLine(" PreProcessing is Empty ");
+        //    Console.ReadKey();
+        //}
 
 
 
@@ -152,7 +155,7 @@ namespace Exam70483
             Box Box3 = new Box();
             double volume = 0.0;
 
-            // box 1 Spefication
+            // box 1 Specification
             Box1.setLength(6.0);
             Box1.setBreadth(7.0);
             Box1.setHeight(5.0);
@@ -178,52 +181,79 @@ namespace Exam70483
             Console.WriteLine("Volume of Box3 : {0}", volume);
             Console.ReadKey();
         }
+        #endregion
+        #region Myclass
+        class Myclass
+        {
+            private int myProperty;
+            // Declare MyProperty.
+            public int MyProperty
+            {
+                get
+                {
+                    return myProperty;
+                }
+                set
+                {
+                    myProperty = value;
+                }
+            }
+        }
+        #endregion
+        #region MyTypeClass
+        public class MyTypeClass
+        {
+            public static void MainMTC()
+            {
+                try
+                {
+                    // Get the Type object corresponding to MyClass
+                    Type myType = typeof(Myclass);
+                    // Get the PropertyInfo object by passing the property
+                    PropertyInfo myPropInfo = myType.GetProperty("MyProperty");
+                    // Display the property name.
+                    Console.WriteLine("The {0} property exists in MyClass.", myPropInfo.Name);
+                    Console.WriteLine(" Attributes are ", myPropInfo.Attributes);
+                    Console.WriteLine(" Property Type is ", myPropInfo.PropertyType);
+                    Console.WriteLine(" Can Read  ", myPropInfo.CanRead);
+                    Console.WriteLine(" Declaring Type  ", myPropInfo.DeclaringType);
+                }
+                catch (NullReferenceException e)
+                {
+                    Console.WriteLine("The property does not exist in MyClass ", e.Message);
+                }
+            }
+        }
+        #endregion
+        
     }  // End Class Methods
-    class Myclass
-    {
-        private int myProperty;
-        // Declare MyProperty.
-        public int MyProperty
-        {
-            get
-            {
-                return myProperty;
-            }
-            set
-            {
-                myProperty = value;
-            }
-        }
-    }
-    public class MyTypeClass
-    {
-        public static void MainMTC()
-        {
-            try
-            {
-                // Get the Type object corresponding to MyClass
-                Type myType = typeof(Myclass);
-                // Get the PropertyInfo object by passing the property
-                PropertyInfo myPropInfo = myType.GetProperty("MyProperty");
-                // Display the property name.
-                Console.WriteLine("The {0} property exists in MyClass.", myPropInfo.Name);
-                Console.WriteLine(" Attributes are ", myPropInfo.Attributes);
-                Console.WriteLine(" Property Type is ", myPropInfo.PropertyType);
-                Console.WriteLine(" Can Read  ", myPropInfo.CanRead);
-                Console.WriteLine(" Declaring Type  ", myPropInfo.DeclaringType);
-            }
-            catch (NullReferenceException e)
-            {
-                Console.WriteLine("The property does not exist in MyClass ", e.Message);
-            }
-        }
-    }
+    #region TestClassAndStruct
+    /* When to use a Struct versus a Class  
+     * (See also StaticExamples.cs for comparison of Static versus Instance fields/methods).
+     * 
+      A struct type is a value type that is typically used to encapsulate small groups of related variables, 
+      such as the coordinates of a rectangle or the characteristics of an item in an inventory.
+      public struct Book
+      {
+        public decimal price;
+        public string title;
+        public string author;
+       }
+       Structs can also contain constructors, constants, fields, methods, properties, indexers, operators,
+       events, and nested types, although if several such members are required, you should consider making
+       your type a class instead.
+
+    https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/using-structs
+    https://docs.microsoft.com/en-us/dotnet/standard/design-guidelines/choosing-between-class-and-struct
+
+    */
     class TheClass
     {
         public string willIChange;
     }
     struct TheStruct
     {
+        // It is an error to initialize an instance field in a struct body.
         public string willIChange;
     }
     public static class TestClassAndStruct
@@ -244,13 +274,14 @@ namespace Exam70483
 
             testClass.willIChange = "Not Changed";
             testStruct.willIChange = "Not Changed";
-            
+
             // made extension methods
             // extension methods require class to be static and parameter to have 'this'
             //
             testClass.ClassTaker();
+            //Struct is a value type and may create a new instance but will not change.
             testStruct.StructTaker();
-            
+
             // Could also call it this way, however extension methods is preferrred
             // ClassTaker(testClass);
             // StructTaker(testStruct);
@@ -261,10 +292,8 @@ namespace Exam70483
             Console.WriteLine("Class field = {0}", testClass.willIChange);
             Console.WriteLine("Struct field = {0}", testStruct.willIChange);
 
-            Console.WriteLine(" Press any key to exit");
-            Console.ReadKey();
-
+            
         }
     }
-
+    #endregion
 }  // End Namespace

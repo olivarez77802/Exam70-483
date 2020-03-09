@@ -25,6 +25,10 @@ namespace Exam70483
              * .Net Framework Class Library consist of several assemblies.   The assemblies get installed into the
              * GAC (Global Assembly Cache).  GAC resides in C:\Windows\assembly.  All of these assemblies are strongly named.
              * 
+             * In .Net assemblies can be broadly classified into 2 types
+             * 1. Weak Named Assemblies
+             * 2. Strong Named Assemblies
+             * 
              * An Assembly consists of 4 parts
              * 1. Simple textual name
              * 2. Version Number
@@ -89,8 +93,11 @@ namespace Exam70483
              * When an assembly needs to be digitally signed, the compiler signs the assembly using the private key
              * and embeds the public key in the assembly for later verification by other assemblies that refer to it.
              * 
+             *************************************************************************************************
+             * DLL HELL (Also shows you how to create and use different assemblies)
+             * https://www.youtube.com/watch?v=ZNeAmskh-pc&list=PL8598C97BA1D871C1&index=6
              * 
-             ********************************************************************************************************************************
+             *************************************************************************************************
              * Create a WinMD Assembly
              * 
              * WinMd - is a Windows Run Time Component allows you to share code across languages in Windows 8

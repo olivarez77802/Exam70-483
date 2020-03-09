@@ -8,13 +8,19 @@ using System.Diagnostics;
 namespace Exam70483
 {
     /* 
+     * See also ManipulateStrings.cs
+     * 
      * Streams
      *   Streams are an interface to data(files, network, memory,etc)
      *   Streams allow a common style interface for accessing information
      *   
      *   StreamReader/Stream Writer work as a pair to access text files
      *   BinaryReader/BinaryWriter work as a pair to access binary files
-     *   StringReader/StringWriter work as a pair to access strings
+     *   StringReader/StringWriter work as a pair to access strings.  
+     *   
+     *   StringReader reads from the StringBuilder object. StringWriter writes from the StringBuilder object. 
+     *   Using StringBuilder we eliminate making copies of Strings so it is more effecient.
+     *       
      * 
      * See also ExceptionClassExamples.cs
      * 
@@ -34,6 +40,7 @@ namespace Exam70483
      * Open         - Opens a file. If the file does not exist, an exception is thrown. 
      * OpenOrCreate - Opens a file if it exists or creates a new file if it does not exist.
      * Truncate     - Opens an existing file and truncates the data in the file. If the file does not exist, an exception is thrown.
+     * Note! - 6 File Modes.  Exceptions are thrown for CreateNew,Open,Truncate.
      * 
      * File Access Enumeration
      * Read -	   Read access to the file

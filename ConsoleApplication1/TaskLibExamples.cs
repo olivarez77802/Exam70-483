@@ -49,6 +49,22 @@ namespace Exam70483
 
            Thread - is used for creating and maniupulating a thread in OS and allows us to fully control by using Resume, Abort, or Suspend methods.
                     Big disadvantage is the expense of creating threads.
+        
+        -Old Method
+        var t1 = new Task({Lamda Expression})  t1.Start()  
+        -Replacement Method Start is automatic
+        var1 t1 = Task.Factory.StartNew({Lambda Expression})
+
+        // Multiple parallel tasks that hold execution using Task.WaitAll(List<Task>)
+        // before continuing on with program.
+        var t1 = Task.Factory.StartNew(() => DoSomeVeryImportantWork(1, 1500));
+            var t2 = Task.Factory.StartNew(() => DoSomeVeryImportantWork(2, 3000));
+            var t3 = Task.Factory.StartNew(() => DoSomeVeryImportantWork(3, 1000));
+
+            var tasklist = new List<Task> { t1, t2, t3 };
+
+        // Waits until all tasks have completed before continuing with execution of the program.
+            Task.WaitAll(tasklist.ToArray());
 
        
 
@@ -113,18 +129,25 @@ namespace Exam70483
 
         private static void TaskExample_0()
         {
+            /* Task takes a Lamda Expression as input
+            */
             var t1 = new Task(() =>
             {
                 Console.WriteLine("task 1 is beginning Sleep(1000) or 1 sec");
                 Thread.Sleep(1000);
                 Console.WriteLine("task 1 is completed");
             });
+            /*  This is the old way of call Task so you have to call Start()..  this is not required if you used Task Factory
+            */
             t1.Start();
             Console.WriteLine("Press any key to quit");
             Console.ReadKey();
         }
         private static void TaskExample_1()
         {
+            /* Note!  Run and see that message 'Press any key to quit shows up first
+             * Good example to show that you have 2 threads (or Tasks) going at the same time
+             */
             var t1 = new Task(() => DoSomeVeryImportantWork(1, 1500));
             t1.Start();
             var t2 = new Task(() => DoSomeVeryImportantWork(2, 3000));

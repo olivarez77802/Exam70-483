@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 namespace Exam70483
 {
     /*
+     * Manage Program Flow/Implement Program Flow/Operators.cs
     https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/increment-operator
 
     See Collections.cs for more information on Ternary Operators.
@@ -55,7 +56,7 @@ namespace Exam70483
                         Console.ReadKey();
                         break;
                     case 3:
-                        Ternary_Operator2();
+                        Ternary_Prefix_Postfix();
                         Console.ReadKey();
                         break;
                     case 4:
@@ -138,7 +139,7 @@ namespace Exam70483
             classify = (input > 0) ? "positive" : "negative";
             Console.WriteLine("classify is {0}", classify);
         }
-        static void Ternary_Operator2()
+        static void Ternary_Prefix_Postfix()
         {
             int i = 1;
             int j;
