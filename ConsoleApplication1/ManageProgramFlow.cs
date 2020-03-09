@@ -10,7 +10,7 @@ namespace Exam70483
        
         public static void Menu()
         {
-             IMenu zero = new MPF_Methods();
+             IMenu MPF = new MPF_Methods();
              int x = 0;
              do
              {
@@ -42,34 +42,22 @@ namespace Exam70483
                 selection = Common.readInt("Enter Number to Execute Routine : ", 0, 9);
                 switch (selection)
                 {
-                    case 0: zero.MenuOpt0();                         
+                    case 0: MPF.MenuOpt0();                         
                             break;
-                    case 1:
-                         ManageMultithreading.Menu();
-                         break;
-                    case 2:
-                        ImplementProgramFlow.Menu();
-                        break;
-                    case 3:
-                        EventsandCallBacksMenu.Menu();
-                        break; 
-                    case 4:
-                        /*
-                         * A "finally" statement will execute even there is an exception that goes through "catch" block
-                         * The "finally" statement will also execute when there is no exception
-                         * Finally block will always execute so it is a good place to close file or shut down resources.
-                         * A try/Finally block can also be used by the "using" statement
-                         */
-
-                        ExceptionClassExamples.Menu();
-                        break;
+                    case 1: MPF.MenuOpt1();
+                            break;
+                    case 2: MPF.MenuOpt2();
+                            break;
+                    case 3: MPF.MenuOpt3();
+                            break; 
+                    case 4: MPF.MenuOpt4();
+                           break;
                     case 9: x = 9;
                         break;
                     default: Console.WriteLine(" Invalid Number");
                         break;
 
                 }
-
 
             } while (x < 9);
         }
