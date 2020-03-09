@@ -94,8 +94,9 @@
     <Compile Include="ISpecialDefence.cs" />
     <Compile Include="ManageMultithreading.cs" />
     <Compile Include="ManageObjectCycle.cs" />
+    <Compile Include="MPF0_Methods.cs" />
     <Compile Include="MPF_Methods.cs" />
-    <Compile Include="MultithreadingAndAsync.cs" />
+    <Compile Include="ManageProgramFlow_0.cs" />
     <Compile Include="Nulls.cs" />
     <Compile Include="Operators.cs" />
     <Compile Include="PerformIOoperations.cs" />
