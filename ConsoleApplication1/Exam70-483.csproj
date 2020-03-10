@@ -92,9 +92,10 @@
     <Compile Include="ImplementProgramFlow.cs" />
     <Compile Include="Indexer.cs" />
     <Compile Include="ISpecialDefence.cs" />
-    <Compile Include="ManageMultithreading.cs" />
+    <Compile Include="ManageProgramFlow_1.cs" />
     <Compile Include="ManageObjectCycle.cs" />
     <Compile Include="MPF0_Methods.cs" />
+    <Compile Include="MPF1_Methods.cs" />
     <Compile Include="MPF_Methods.cs" />
     <Compile Include="ManageProgramFlow_0.cs" />
     <Compile Include="Nulls.cs" />

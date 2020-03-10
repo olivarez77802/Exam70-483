@@ -2,55 +2,47 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
 
 namespace Exam70483
 {
-    class ManageMultithreading
+    class MPF1_Methods : IMenu
     {
-        public static void Menu()
+        public void MenuOpt0()
         {
-
-            int x = 0;
-            do
-            {
-                Console.Clear();
-                Console.WriteLine(" Manage Mulithreading - Synchronize resources; implement locking; cancel a long-running task; \n ");
-                Console.WriteLine(" Implement thread-safe methods to handle race conditions. \n ");
-                Console.WriteLine(" 0.  Threading Examples");
-                Console.WriteLine(" 1.  CancellationTokenSource with Task.Factory");
-                Console.WriteLine(" 2.  CancellationTokenSource with TaskFactory");
-                Console.WriteLine(" 9.  Quit            \n\n ");
-                Console.Write(" Enter Number to execute Routine ");
-
-
-                int selection;
-                selection = Common.readInt("Enter Number to Execute Routine : ", 0, 9);
-                switch (selection)
-                {
-                    case 0:
-                        ThreadingExamples.Menu();
-                        Console.ReadKey();
-                        break;
-                    case 1:
-                        CancellationTokenSource_wTask();
-                        Console.ReadKey();
-                        break;
-                    case 2:
-                        CancellationTokenSource_wTaskFactory();
-                        Console.ReadKey();
-                        break;
-                    case 9:
-                        x = 9;
-                        break;
-                    default:
-                        Console.WriteLine(" Invalid Number");
-                        break;
-                }
-
-            } while (x < 9);
+            ThreadingExamples.Menu();
+            Console.ReadKey();
+            
         }
+
+        public void MenuOpt1()
+        {
+            CancellationTokenSource_wTask();
+            Console.ReadKey();
+           
+        }
+
+        public void MenuOpt2()
+        {
+            CancellationTokenSource_wTaskFactory();
+            Console.ReadKey();
+        }
+
+        public void MenuOpt3()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void MenuOpt4()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void MenuOpt5()
+        {
+            throw new NotImplementedException();
+        }
+
         static void CancellationTokenSource_wTask()
         {
             CancellationTokenSource cts = new CancellationTokenSource();
@@ -123,12 +115,14 @@ namespace Exam70483
                 {
                     int value;
                     int[] values = new int[10];
-                    for (int ctr = 1; ctr <= 10; ctr++) { 
+                    for (int ctr = 1; ctr <= 10; ctr++)
                     {
-                        lock (lockObj)
-                            value = rnd.Next(0, 101);
-                    }
-                    if (value == 0) {
+                        {
+                            lock (lockObj)
+                                value = rnd.Next(0, 101);
+                        }
+                        if (value == 0)
+                        {
                             source.Cancel();
                             Console.WriteLine("Cancelling at task {0}", iteration);
                             break;
@@ -168,9 +162,9 @@ namespace Exam70483
                                                                 return sum / (double)n;
                                                             }, token);
                 Console.WriteLine("The mean is {0}.", fTask.Result);
-                    
+
             }
-            catch(AggregateException ae)
+            catch (AggregateException ae)
             {
                 foreach (Exception e in ae.InnerExceptions)
                 {
