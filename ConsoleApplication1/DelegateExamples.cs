@@ -57,9 +57,20 @@ namespace Exam70483
 
         public static void Lambda_Main()
         {
+            /* Explicit typing for Lambda Expression, the parameter x has to be int since it has to match the 
+               type for Countit
+             */
             Countit testDel = (int x) => x + 5;
             int result = testDel(5);
             Console.WriteLine(result);
+            /* Implicit typing for Lambda Expression, no type is specified for parmater x since it gets its
+             * type from Countit.
+             */
+            Countit testDel2 = (x) => x + 5;
+            int result2 = testDel2(5);
+            Console.WriteLine(result);
+
+            
         }
 
 

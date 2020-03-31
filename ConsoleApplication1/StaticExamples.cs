@@ -46,6 +46,17 @@ namespace Exam70483
      *   
      *   Interfaces can't have static methods.  A class that implements an interface needs to implement them all as instance methods.
      *   Static classes can't have instance methods.
+     *   
+     *   Static verus Constanct verus Read-Only
+     *   const - Must be assigned a value at declaration and cannot change at a later time.  Const is defined at compile time and
+     *           is immutable.  Only primitive or built in types are allowed to be declared as const.  Example string, double.  A 
+     *           class you created would not be a primitive or built in type.  Any variable declared as const will implicitily be
+     *           declared as static.
+     *   static - belongs to the type of the object, rather than an instance of that type.  
+     *   readonly - A readonly field is one where assignment to that field can only occur as part of the declaration of the class or in a constructor.
+     *              This means that a readonly variable can have different values for different constructors in the same class.   You cannot declare
+     *              the field outside of the class.
+     *   https://exceptionnotfound.net/const-vs-static-vs-readonly-in-c-sharp-applications/
      */
     class Circle
     {

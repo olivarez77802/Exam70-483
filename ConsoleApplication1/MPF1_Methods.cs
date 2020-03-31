@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Exam70483
@@ -39,6 +40,10 @@ namespace Exam70483
         }
 
         public void MenuOpt5()
+        {
+            throw new NotImplementedException();
+        }
+        public void MenuOpt6()
         {
             throw new NotImplementedException();
         }
@@ -175,5 +180,7 @@ namespace Exam70483
                 }
             }
         }
+
+       
     }
 }

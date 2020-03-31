@@ -15,7 +15,8 @@ namespace Exam70483
          
         public void MenuOpt1()
         {
-            ManageMultithreading.Menu();
+            // ManageMultithreading.Menu();
+            ManageProgramFlow_1.Menu();
 
         }
 
@@ -42,6 +43,11 @@ namespace Exam70483
        }
 
         public void MenuOpt5()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void MenuOpt6()
         {
             throw new NotImplementedException();
         }

@@ -71,6 +71,8 @@
     <Compile Include="CreateAndUseTypes.cs" />
     <Compile Include="CreateTypes.cs" />
     <Compile Include="CryptographyExamples.cs" />
+    <Compile Include="CUT6_Methods.cs" />
+    <Compile Include="CUT_Methods.cs" />
     <Compile Include="DebugAppImplementSecurity.cs" />
     <Compile Include="DebugApplication.cs" />
     <Compile Include="Delegate.cs" />
@@ -134,9 +136,7 @@
     <Compile Include="StatementKeywords.cs" />
     <Compile Include="StaticExamples.cs" />
     <Compile Include="StreamExamples.cs" />
-    <Compile Include="ManipulateStrings.cs" />
-    <Compile Include="StringEquality.cs" />
-    <Compile Include="StringMethodExamples.cs" />
+    <Compile Include="CreateAndUseTypes_6.cs" />
     <Compile Include="TaskLibExamples.cs" />
     <Compile Include="ThreadingExamples.cs" />
     <Compile Include="ThreadPoolExample.cs" />

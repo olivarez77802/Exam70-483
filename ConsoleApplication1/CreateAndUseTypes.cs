@@ -8,10 +8,11 @@ namespace Exam70483
     /*
      *  Called by Program.cs
      */
-    class CreateAndUseTypes
+    class CreateAndUseTypes : CUT_Methods
     {
        public static void Menu()
         {
+            IMenu CUT = new CUT_Methods();
 
             int x = 0;
             do
@@ -31,26 +32,28 @@ namespace Exam70483
                 selection = Common.readInt("Enter Number to Execute Routine : ", 0, 9);
                 switch (selection)
                 {
-                    case 0:
-                        CreateTypes.Menu();
-                         break;
-                    case 1:
-                        ConsumeTypes.Menu();
-                       
+                    case 0: CUT.MenuOpt0();
+                            break;
+                    case 1: CUT.MenuOpt1();
+                            break;
+                    case 2: CUT.MenuOpt2();
+                            break;
+                    case 3: CUT.MenuOpt3();
+                            break;
+                    case 4: CUT.MenuOpt4();
+                        // RunTimeTypes.Menu();
                         break;
-                    case 3: ClassHierarchy.Menu();
-                        break;
-                    case 4: RunTimeTypes.Menu();
-                        break;
-                    case 5:
-                        ManageObjectCycle.Menu();
+                    case 5: CUT.MenuOpt5();
+                        // ManageObjectCycle.Menu();
                         break;
                                             
-                    case 6: ManipulateStrings.Menu();
-                        Console.WriteLine("Equality");
-                        Console.ReadKey();
-                        StringEquality.SE_Main();
-                        Console.ReadKey();
+                    case 6: CUT.MenuOpt6();
+
+                        //ManipulateStrings.Menu();
+                        //Console.WriteLine("Equality");
+                        //Console.ReadKey();
+                        //StringEquality.SE_Main();
+                        //Console.ReadKey();
                         
                         break;
                     case 9: x = 9;

@@ -47,6 +47,10 @@ namespace Exam70483
             Console.ReadKey();
            
         }
+        public void MenuOpt6()
+        {
+            throw new NotImplementedException();
+        }
         private static void ContinuationExample()
         {
             /*
@@ -93,5 +97,7 @@ namespace Exam70483
             Console.ReadKey();
 
         }
+
+        
     }
 }

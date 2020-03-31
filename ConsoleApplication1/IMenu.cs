@@ -14,5 +14,7 @@ namespace Exam70483
         void MenuOpt3();
         void MenuOpt4();
         void MenuOpt5();
+
+        void MenuOpt6();
     }
 }

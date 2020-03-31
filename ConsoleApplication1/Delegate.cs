@@ -31,6 +31,13 @@ namespace Exam70483
  * Covariance and Contravariance
  * - Give flexiblity when assigning methods to delegate variables.  They basically
  * - let you treat the return type and parameters of a delegate polymorphically.
+ * - When you assign a method to a delegate, covariance and contravariance provide
+ *   flexibility for matching a delegate type with a method signature. 
+ * - Covariance permits a method to have return type that is more derived than defined in the 
+ *   delegate.
+ * - Contravariance permits a method that has a parameter types that are less derived than
+ *   those in the delegate type.
+ *      
  * 
  * Covariance Example.
  * 
@@ -172,8 +179,7 @@ namespace Exam70483
           // Lambda Delegates
             Console.WriteLine("Delegate Example 2 - Lambda Delegate ");
             DelegateExamples.Lambda_Main();
-            Console.ReadKey();
-         }
+        }
 
         static void Delegate_Example_3()
         {

@@ -10,6 +10,10 @@ namespace Exam70483
      * 
      * See GenericExamples.cs for definitions of Func, Action, Predicate delegates and meanings
      * 
+     * EVENT BEST PRACTICES
+     * Microsoft recommends that all events provide two parameters: the object that is raising the event and another object that gives arguments that are relevant
+     * to the event. The second object should be of a class derived from the EventArgs class.
+     * 
      * Event - Something that happened.  i.e. A mouse Click, keyboard click
      * Defining an Event:
      * 1. Accessiblity - public or private
@@ -190,8 +194,10 @@ namespace Exam70483
         class Person
         {
             /* 
-             * Event Handler
-             */ 
+             * The class containing the event is used to publish the event. This is called the publisher class. Some other class that accepts this event 
+             * is called the subscriber class. Events use the publisher-subscriber model.
+             * https://www.tutorialspoint.com/csharp/csharp_events.htm
+             */
             public delegate void MyEventHandler();
             public event MyEventHandler cashEvent;
 
@@ -210,6 +216,7 @@ namespace Exam70483
                     cash = value;
                     if (cash >= 100)
                     {
+                        // cashEvent would be null if it did not have any subcriptions to the event or +=
                         if (cashEvent != null)
                         {
                             /* Fire an Event */
@@ -226,10 +233,17 @@ namespace Exam70483
         public static void PersonMain()
         {
             Person p = new Person();
-            //
-            // Lamda expression equivalent would be 
-            // p.cashEvent += () => Console.WriteLine("Person has 100 Books ");
-            //
+            /*
+               +=   Is how you subscribe to an Event.   This is why you check for Null in Person in case you
+                    didn't subscribe to the Event.
+                    Event += EventHandler
+                    Event Handler signture must match with delegate signature
+                    https://www.tutorialsteacher.com/csharp/csharp-event
+
+                     
+               Lamda expression equivalent would be 
+               p.cashEvent += () => Console.WriteLine("Person has 100 Books ");
+            */
             p.cashEvent += p_CashEvent;
             p.AddCash(50);
             p.AddCash(50);
@@ -253,13 +267,36 @@ namespace Exam70483
        
         public static void CowMain()
         {
+            /*
+            *  Subscribe using Event Handler.  When you subscribe, you are not calling the method.  The method is called
+            *  when the event is triggered.
+            */
             Cow c1 = new Cow { Name = "Betsy" };
             c1.Moo += giggle;
             Cow c2 = new Cow { Name = "Georgy" };
             c2.Moo += giggle;
             Cow victim = new Random().Next() % 2 == 0 ? c1 : c2;
             victim.BeTippedOver();
-        }
+            /*
+             *  Subscribe using a Lambda expression.   Ordinarily paramters are s,e... I just made them xrx,cce to
+             *  show that you can make them anything.
+             */
+            Cow c3 = new Cow { Name = "Jesse" };
+            c3.Moo += (xrx, cce) => giggle(xrx, cce);
+            Cow victum2 = c3;
+            victum2.BeTippedOver();
+            /*
+             * Subscribe using a delegate; otherwise known as an Anonymous method
+             */
+            Cow c4 = new Cow { Name = "Arthur" };
+            c4.Moo += delegate (object s, EventArgs e)
+              {
+                  giggle(s, e);
+              };
+            Cow victum3 = c4;
+            victum3 = c4;
+            victum3.BeTippedOver();
+       }
         static void giggle(object sender, EventArgs e)
         {
             Cow c = sender as Cow;
