@@ -269,6 +269,10 @@ namespace Exam70483
             storing or retrieving a value.
             
             If two values x and y evaluate to equal then they must evaluate to the same hash code.
+
+            foreach (KeyValuePair<int,int> pair in _h) - Example showing KeyValuePair is a defined type that 
+            can only be used with Dictionaries.
+            https://www.tutorialsteacher.com/csharp/csharp-dictionary
             
             */
 

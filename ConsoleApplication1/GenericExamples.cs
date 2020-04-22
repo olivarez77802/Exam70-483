@@ -49,6 +49,10 @@ namespace Exam70483
          * Generic Constraint syntax - Method Signature
          * public T RetrieveValue<T, V>(string sql, V parameter) where T : struct
          *                                                       where V : struct
+         *                                                       
+         * Populate<T>  could be interpreted as everthing in the class or struct is defined as type T.
+         * https://www.tutorialsteacher.com/csharp/csharp-generics
+         *                                                       
          */
         #region GA_Main()
         public static void GA_Main()
