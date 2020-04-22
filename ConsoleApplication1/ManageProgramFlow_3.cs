@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace Exam70483
 {
-    public class EventsandCallBacksMenu
+    // public class EventsandCallBacksMenu
+    class ManageProgramFlow_3 
     {
         public static void Menu()
         {
-
+            IMenu MPF3 = new MPF3_Methods();
             int x = 0;
             do
             {
@@ -27,15 +28,18 @@ namespace Exam70483
                 selection = Exam70483.Common.readInt("Enter Number to Execute Routine : ", 0, 9);
                 switch (selection)
                 {
-                    case 0: EventHandlerExamples.Menu();
+                    case 0: MPF3.MenuOpt0();
+                       // EventHandlerExamples.Menu();
                         Console.ReadKey();
                         break;
-                    case 1: EventExamples.Menu();
+                    case 1: MPF3.MenuOpt1();
+                        // EventExamples.Menu();
                             Console.ReadKey();                                
                             break;
-                    case 2: Delegate.Menu();
+                    case 2: MPF3.MenuOpt2();
+                        // Delegate.Menu();
                         break;
-                    case 3:
+                    case 3: MPF3.MenuOpt3();
                         /*
                          * c - Input parameter
                          * No type was specified for 'c'.  Lambda expressions have implicit typing
@@ -49,7 +53,7 @@ namespace Exam70483
                          * c => C.CustomerId == customerid
                          */
                         break;
-                    case 4:
+                    case 4: MPF3.MenuOpt4();
                        // See EnumerableMethods.cs
                        // See EventHandlers.cs
                        // See GenericExamples.cs

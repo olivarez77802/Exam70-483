@@ -99,7 +99,8 @@ namespace Exam70483
 */
 
 {
-    class Delegate
+    // class Delegate
+    class ManageProgramFlow_3_2
     {
         /*
          * You can use a delegate much as you use any other type.  First, use the delegate
