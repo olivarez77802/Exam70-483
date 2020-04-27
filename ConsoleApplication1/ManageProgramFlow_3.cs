@@ -38,7 +38,7 @@ namespace Exam70483
                             break;
                     case 2: MPF3.MenuOpt2();
                         // Delegate.Menu();
-                        break;
+                            break;
                     case 3: MPF3.MenuOpt3();
                         /*
                          * c - Input parameter

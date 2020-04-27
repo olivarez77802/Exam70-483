@@ -22,7 +22,7 @@ namespace Exam70483
                 Console.WriteLine("    execution of a query; read, filter, create and modify  ");
                 Console.WriteLine("    data structures by using LINQ to XML.  ");
                 Console.WriteLine(" 0.  LINQ Examples ");
-                Console.WriteLine(" 1.  ... ");
+                Console.WriteLine(" 1.  Anonymous Types ");
                 Console.WriteLine(" 2.  ... ");
                 Console.WriteLine(" 3.  ... ");
                 Console.WriteLine(" 4.  ....");
@@ -41,7 +41,7 @@ namespace Exam70483
                         LINQExamples.Menu();
                         break;
                     case 1:
-                       
+                        Anonymous.Menu();
                         break;
                     case 2:
                        

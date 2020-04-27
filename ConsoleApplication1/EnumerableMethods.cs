@@ -40,7 +40,7 @@ namespace Exam70483
    The underlying objects in a LINQ statement are references to SQL Table data(as
    is the case with the Entity Framework DbSet object), the statement is converted
    into a T-SQL statement.  Operators then follow T-SQL rules, not C# rules, the
-   the comparison operator '==' ends up being case insesitive.
+   the comparison operator '==' ends up being case insensitive.
 
    Extension methods require 3 things:
      * Must reside in a static class

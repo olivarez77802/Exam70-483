@@ -55,6 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccessKeywords.cs" />
+    <Compile Include="Anonymous.cs" />
     <Compile Include="AssemblyClassExamples.cs" />
     <Compile Include="AsyncAwaitExamples.cs" />
     <Compile Include="AttributeExamples.cs" />

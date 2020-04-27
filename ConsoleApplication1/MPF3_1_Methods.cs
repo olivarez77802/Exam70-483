@@ -231,6 +231,12 @@ namespace Exam70483
             Cow victum3 = c4;
             victum3 = c4;
             victum3.BeTippedOver();
+            /* 
+             * Subscribe using Lamda Expression.  Testing EventHandler using s,e but not using s,e
+             */
+            Cow c5 = new Cow { Name = "BigFoot" };
+            c5.Moo += (s, e) => Console.WriteLine("Big Foot gets tipped over");
+            c5.BeTippedOver();
         }
         static void giggle(object sender, EventArgs e)
         {
