@@ -76,6 +76,7 @@
     <Compile Include="CUT_Methods.cs" />
     <Compile Include="DebugAppImplementSecurity.cs" />
     <Compile Include="DebugApplication.cs" />
+    <Compile Include="Lambda.cs" />
     <Compile Include="ManageProgramFlow_3_2.cs" />
     <Compile Include="DelegateExamples.cs" />
     <Compile Include="DynamicExamples.cs" />
@@ -101,6 +102,7 @@
     <Compile Include="MPF1_Methods.cs" />
     <Compile Include="MPF3_0_Methods.cs" />
     <Compile Include="MPF3_1_Methods.cs" />
+    <Compile Include="MPF3_3_Methods.cs" />
     <Compile Include="MPF3_Methods.cs" />
     <Compile Include="MPF_Methods.cs" />
     <Compile Include="ManageProgramFlow_0.cs" />

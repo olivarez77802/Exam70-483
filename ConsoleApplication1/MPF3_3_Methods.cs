@@ -6,36 +6,31 @@ using System.Threading.Tasks;
 
 namespace Exam70483
 {
-    class MPF3_Methods : IMenu
+    class MPF3_3_Methods : IMenu
     {
         public void MenuOpt0()
         {
-            ManageProgramFlow_3_0.Menu();
-          //  EventHandlerExamples.Menu();
+            throw new NotImplementedException();
         }
 
         public void MenuOpt1()
         {
-            ManageProgramFlow_3_1.Menu();
-            //EventExamples.Menu();
-            
+            throw new NotImplementedException();
         }
 
         public void MenuOpt2()
         {
-            ManageProgramFlow_3_2.Menu();
-         //   Delegate.Menu();
-            
+            throw new NotImplementedException();
         }
 
         public void MenuOpt3()
         {
-            Lambda.Menu();
+            throw new NotImplementedException();
         }
 
         public void MenuOpt4()
         {
-            Anonymous.Menu();
+            throw new NotImplementedException();
         }
 
         public void MenuOpt5()
