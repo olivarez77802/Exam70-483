@@ -12,6 +12,22 @@ namespace Exam70483
 
 
     /*
+     * See also EnumerableMethods.cs for more information about LINQ.
+     * 
+     * LINQ: Query Syntax versus Method Syntax
+     * 
+     * Query Syntax Examples:
+     * var qNames = from name in listOfNames where name.Length <= 8 select name;
+     * 
+     * Method Syntax Examples:
+     * var mNames = listOfNames.Where(name => name.Length <= 8);
+     * 
+     * Note! - Method Syntax uses Lambda Expressions (see Lambda.cs)
+     * 
+     * https://csharp.net-tutorials.com/linq/linq-query-syntax-vs-method-syntax/
+     * 
+     * 
+     * 
      * LINQ can use any type of IEnumerable or IEnumerable<T> as a datasource
      * 
      LINQ Operators categories based on execution behavior, divided into 2 groups.

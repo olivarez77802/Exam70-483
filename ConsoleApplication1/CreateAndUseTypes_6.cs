@@ -33,7 +33,7 @@ namespace Exam70483
                 Console.WriteLine(" 0.  StringBuilder");
                 Console.WriteLine(" 1.  StringWriter");
                 Console.WriteLine(" 2.  StringReader");
-                Console.WriteLine(" 3.  ......");
+                Console.WriteLine(" 3.  Format Strings");
                 Console.WriteLine(" 4.  String Methods");
                 Console.WriteLine(" 5.  String Equality");
                 Console.WriteLine(" 6.  Display Character Set");

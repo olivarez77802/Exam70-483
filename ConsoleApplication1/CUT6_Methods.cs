@@ -29,7 +29,10 @@ namespace Exam70483
 
         public void MenuOpt3()
         {
-            throw new NotImplementedException();
+            // DateTimeFormat in C#
+            Process.Start("https://www.c-sharpcorner.com/blogs/date-and-time-format-in-c-sharp-programming1");
+            // String Format
+            Process.Start("https://www.dotnetperls.com/format");
         }
 
         public void MenuOpt4()
