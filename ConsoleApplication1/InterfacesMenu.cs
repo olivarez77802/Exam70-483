@@ -145,43 +145,45 @@ namespace Exam70483
                         //
                     case 2:
                         /* IEnumerable - A List, Array, Query, String implements IEnumerable.
-                        // An IEnumerable Interface specifies that the underlying type implements IEnumerable
-                        //
-                        // public Interface IEnumerator
-                        // {
-                        //***
-                        //***  MoveNext will throw an exception if collection has changed.  
-                        //***  Cannot modify a collection while enumerating.
-                        //***
-                        //***
-                        //   bool MoveNext();
-                        //   object Current {get;}
-                        //   void Reset();
-                        //  }
-                        //
-                        //  public interface IEnumerable
-                        //  {
-                        //**
-                        //** You can implement a class that uses the IEnumerable<string> interface.  If you do this
-                        //** you will have to use the 'yield return'
-                        //** 'yield return' statements are NOT Return statements.
-                        //** 
-                        //**  What happens when a yield return occurs inside a method that returns an IEnumerator interface
-                        //**  The C# compiler determines this is a case where you want the compiler to write an enumerator for
-                        //**  you.  The yield return statements simply tell the compiler what the sequence of enumeration values
-                        //**  to return is.  
-                        //**
-                        //**  Use 'yield return' when you want to return elements from a collection one at a time. 
+                          An IEnumerable Interface specifies that the underlying type implements IEnumerable
+                        
+                           public Interface IEnumerator
+                           {
+                            ***
+                            ***  MoveNext will throw an exception if collection has changed.  
+                            ***  Cannot modify a collection while enumerating.
+                            ***
+                            ***
+                             bool MoveNext();
+                             object Current {get;}
+                             void Reset();
+                          }
+                        
+                          public interface IEnumerable
+                          {
+                            IEnumerator GetEnumerator();
+                          }
+                        
+                           **
+                           ** You can implement a class that uses the IEnumerable<string> interface.  If you do this
+                           ** you will have to use the 'yield return'
+                           ** 'yield return' statements are NOT Return statements.
+                           ** 
+                           **  What happens when a yield return occurs inside a method that returns an IEnumerator interface
+                           **  The C# compiler determines this is a case where you want the compiler to write an enumerator for
+                           **  you.  The yield return statements simply tell the compiler what the sequence of enumeration values
+                           **  to return is.  
+                           *
+                           **  Use 'yield return' when you want to return elements from a collection one at a time. 
                           
                        
                         See also IterationStatements.cs for examples of Yield Return.
-                         * 
-                         *  */
+                        See also LINQExamples.cs on how deferred execution works.
+                          
+                        
 
-                        //    
-                        //   IEnumerator GetEnumerator();
-                        //  }
-                        //
+                        
+                        */
                         EnumerableMethods.Menu();
                         IEnumeratorInterface.Menu();
                         break;

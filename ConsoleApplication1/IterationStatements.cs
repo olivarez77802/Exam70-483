@@ -385,6 +385,8 @@ namespace Exam70483
         public static IEnumerable<int> Totals(List<int> numbers)
         {
             /*
+             * See Also LINQExamples.cs and InterfacesMenu.cs
+             * 
             Things to know about yield return:
                         1.We don't have to create an intermediate list to hold our variables
                         2.Does not return a list, but a promise to return a sequence of numbers when

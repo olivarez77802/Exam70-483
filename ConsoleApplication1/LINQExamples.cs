@@ -53,7 +53,7 @@ namespace Exam70483
     https://www.kenneth-truyers.net/2016/05/12/yield-return-in-c/
     */
 
-    public class LINQExamples 
+    public class LINQExamples
     {
         /* Example of a class within a class.   All classes within LINQExamples can use the private classes.
          * GetAllDepartment is an example of an accessor that needs to be made public within a private class.
@@ -99,9 +99,9 @@ namespace Exam70483
                     new Employee {ID = 10, Name = "Andy"}
                };
 
-           }
-           
-           
+            }
+
+
         }
         private class Hometown
         {
@@ -181,15 +181,15 @@ namespace Exam70483
             do
             {
                 Console.Clear();
-                Console.WriteLine(" 0.  LINQ Deferred Execution ");
-                Console.WriteLine(" 1.  LINQ Deferred Execution ");
-                Console.WriteLine(" 2.  LINQ Projection ");
-                Console.WriteLine(" 3.  LINQ Method Based ");
-                Console.WriteLine(" 4.  LINQ Comprehension Query");
-                Console.WriteLine(" 5.  Serialize/DeSerialize Class Deparment");
+                Console.WriteLine(" 0.  LINQ Add to Array before Deferred Execution ");
+                Console.WriteLine(" 1.  LINQ Deferred versus Immediate Execution ");
+                Console.WriteLine(" 2.  LINQ Projection - Query Syntax ");
+                Console.WriteLine(" 3.  LINQ Query Syntax ");
+                Console.WriteLine(" 4.  LINQ Comprehension - Query Syntax");
+                Console.WriteLine(" 5.  Deferred Execution of LINQ Query using yield return");
                 Console.WriteLine(" 6.  ... ");
                 Console.WriteLine(" 7.  ... ");
-                Console.WriteLine(" 8.  ....");
+                Console.WriteLine(" 8.  Serialize/DeSerialize Class Department");
                 Console.WriteLine(" 9.  Quit            \n\n ");
 
 
@@ -207,14 +207,14 @@ namespace Exam70483
                         LQProjection();
                         break;
                     case 3:
-                        LQMethod();
+                        LQ_QuerySyntax2();
                         break;
                     case 4:
                         LQComprehensionQuery();
                         Console.ReadKey();
                         break;
                     case 5:
-                        Serialize_DeSerialize_Class_Department();
+                        Deferred_Exec_using_yield();
                         Console.ReadKey();
                         break;
                     case 6:
@@ -222,6 +222,8 @@ namespace Exam70483
                     case 7:
                         break;
                     case 8:
+                        Serialize_DeSerialize_Class_Department();
+                        Console.ReadKey();
                         break;
                     case 9:
                         x = 9;
@@ -248,7 +250,6 @@ namespace Exam70483
             // Order by descending on Item1
             var result = tuples.OrderByDescending(a => a.Item1);
             //* we can add here, because of deferrred execution
-
             tuples[3] = new Tuple<int, int>(4, 65);
             Console.WriteLine("Example of deferred Excution");
             foreach (var item in result)
@@ -320,7 +321,7 @@ namespace Exam70483
         #endregion
         #region LQMethod 
 
-        private static void LQMethod()
+        private static void LQ_QuerySyntax2()
         {
             var result = from e in Employee.GetAllEmployees()
                          join d in Department.GetAllDepartments()
@@ -361,8 +362,8 @@ namespace Exam70483
 
         private static void LQComprehensionQuery()
         {
-            
-            var employeeByState = from e in Employ.GetAllEmploy()                             
+
+            var employeeByState = from e in Employ.GetAllEmploy()
                                   join h in Hometown.GetHometown()
                                 on new { City = e.City, State = e.State }
                                 equals
@@ -387,12 +388,12 @@ namespace Exam70483
             List<Department> exJson = JsonConvert.DeserializeObject<List<Department>>(ExJsonSerializedList);
             foreach (var element in exJson)
             {
-                System.Console.WriteLine("ID: {0} Name: {1}", element.ID,element.Name);
+                System.Console.WriteLine("ID: {0} Name: {1}", element.ID, element.Name);
             }
             Console.ReadKey();
-            
+
             Console.WriteLine("\n XML Serialization to Console");
-           
+
             var XML = new XmlSerializer(typeof(List<Department>));
             XML.Serialize(Console.Out, Department.GetAllDepartments());
             Console.ReadKey();
@@ -413,11 +414,65 @@ namespace Exam70483
             List<Department> Departments = (List<Department>)XML.Deserialize(stringReader);
             foreach (Department element in Departments)
             {
-                System.Console.WriteLine("ID is: {0} Name is: {1} ", element.ID,element.Name );
+                System.Console.WriteLine("ID is: {0} Name is: {1} ", element.ID, element.Name);
             }
             Console.WriteLine("End of XML Serialization");
 
 
         }
+        static void Deferred_Exec_using_yield()
+        {
+            IList<Student2> studentList = new List<Student2>()
+            {
+                new Student2() {StudentId = 1, StudentName = "John", age = 18 },
+                new Student2() {StudentId = 2, StudentName = "Steve", age = 21 },
+                new Student2() {StudentId = 3, StudentName = "Bill", age = 18 },
+                new Student2() {StudentId = 4, StudentName = "Ram", age = 20 },
+                new Student2() {StudentId = 5, StudentName = "Ron", age = 21 },
+            };
+            var teenAgerStudents = from s in studentList             // Query does not execute here..being deferred
+                                   where s.age > 12 && s.age < 20
+                                   select s;
+
+            foreach (Student2 teenStudent in teenAgerStudents)
+            {
+                Console.WriteLine("Student Name: {0}", teenStudent.StudentName);
+            }
+
+            Console.WriteLine("Enumerate using yield return \n");
+
+            /* yield return does the deferred work
+             * The number of iterations in teenAgerStudents2 is controlled by the yield return statement
+            https://www.tutorialsteacher.com/linq/linq-deferred-execution
+            */
+            var teenAgerStudents2 = from s in studentList.GetTeenAgerStudents() select s;
+            
+            foreach (Student2 teenStudent in teenAgerStudents2)
+
+            {
+                Console.WriteLine("Student Name: {0}", teenStudent.StudentName);
+            }
+
+             
+        }
     } // End LINQExamples
+
+    public static class EnumerableExtensionMethods
+    {
+        public static IEnumerable<Student2> GetTeenAgerStudents(this IEnumerable<Student2> source)
+        {
+            foreach (Student2 std in source)
+            {
+                Console.WriteLine("Accessing Student {0}", std.StudentName);
+                if (std.age > 12 && std.age < 20)
+                    yield return std;
+            }
+        }
+    }
+    public class Student2
+    {
+        public int StudentId { get; set; }
+        public string StudentName { get; set; }
+        public int age { get; set; }
+   }
 } //End Namespace
