@@ -68,6 +68,9 @@ namespace Exam70483
    harder to write and manage.  In C# 3.0 Lambda expressions are introduced, it provides a simple,
    more concise syntax to write lambda methods.
     
+    See also NamedMethods - Anonymous methods replaced Named Methods.   Lambda Expressions (C# 3.0) are 
+    better alternative to anonymous methods (C# 2.0).
+    https://www.tutorialspoint.com/csharp/csharp_anonymous_methods.htm
 
     */
 
@@ -141,11 +144,24 @@ namespace Exam70483
         } // End Menu()
         static void AnonymousType1()
         {
+            /* Anonymous Types allow you to cut down on the column list, the number
+             * of columns may be in the 100's, anonymous types let you trim so that
+             * you only work with what you need.   Anonymous types are also beneficial when
+             * you use the Linq join operator and have data from two tables that you want
+             * to show, anonymous types allow you to combine for one neat result.  The below
+             * is query syntax, Anonymous types can also be used with method syntax, in this 
+             * case the select is not used just the new { } operator.  Anonymous types are 
+             * sometimes described as projections.
+             */
             var studentNames = from s in studentList
                                select new
                                {
+                                   s.StudentID,
+                                   s.StudentName
+                                /*  Alternative syntax
                                    StudentID = s.StudentID,
                                    StudentName = s.StudentName
+                                */
                                };
 
             foreach (var name in studentNames)

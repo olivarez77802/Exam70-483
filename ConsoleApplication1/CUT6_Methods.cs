@@ -29,6 +29,8 @@ namespace Exam70483
 
         public void MenuOpt3()
         {
+            //DatetimeNow
+            Process.Start("https://www.dotnetperls.com/datetime-now");
             // DateTimeFormat in C#
             Process.Start("https://www.c-sharpcorner.com/blogs/date-and-time-format-in-c-sharp-programming1");
             // String Format
@@ -45,6 +47,7 @@ namespace Exam70483
         public void MenuOpt5()
         {
             SE_Main();
+            Console.ReadKey();
            
         }
 
@@ -57,7 +60,7 @@ namespace Exam70483
         #region SBMain1 - Example of using Append
         static void SBMain1()
         {
-            StringBuilder builder = new StringBuilder();
+            StringBuilder builder = new StringBuilder(5);
             // Append to StringBuilder.
             for (int i = 0; i < 10; i++)
             {
@@ -141,6 +144,24 @@ namespace Exam70483
         static void StringBuilder_Ex()
         {
             /*
+             * StringBuilder is a dynamic object that allows you to expand the number of characters in a string.
+             * It does create a new object in memory but dynamically expands memory to accomodate the 
+             * modified string.  StringBuilder can be initialized the same way as class.
+             * 
+             * StringBuilder sb = new StringBuilder();
+             * //or
+             * StringBuilder sb = new StringBuilder("Hello World!!");
+             * 
+             * You can give an initial capacity of characters by passing an int value in the constructor.
+             * The follow will allocate 50 characters sequentially on the memory heap.  The memory allocation
+             * automatically expands once it reaches the capacity.
+             * 
+             * StringBuilder sb = new StringBuilder(50);
+             * //or
+             * StringBuilder sb = new StringBuilder("Hello World!!",50);
+             * 
+             * https://www.tutorialsteacher.com/csharp/csharp-stringbuilder
+             * 
              * * StringBuilder versus String
              * https://www.youtube.com/watch?v=hF-6eudOD0M
              * 
@@ -453,6 +474,21 @@ namespace Exam70483
             // have the same value, so string interning
             // points to same reference: True.
             Console.WriteLine((object)a == (object)c);
+
+            /* Compare two strings and ignore casing
+             * Returns an integer that give the relative position in sort order
+             * See InterfacesMenu.cs  1 means greater than; 0 means equal to; -1 means less than.
+            */
+            string t0 = "HELLO";
+            string t1 = "hello";
+            var honorcaset0t1 = String.Compare(t0, t1, false );
+            var honorcaset1t0 = String.Compare(t1, t0, false);
+            var ignorecase = String.Compare(t0, t1,true);
+            Console.WriteLine("Honour case when comparing strings {0}", honorcaset0t1);  //Outputs 1
+            Console.WriteLine("Honour case when comparing strings {0}", honorcaset1t0);  //Outputs -1
+            Console.WriteLine("Ignore case when comparing strings {0}", ignorecase); //Outputs 0
+
+
         }
         #endregion
 

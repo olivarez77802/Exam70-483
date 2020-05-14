@@ -16,13 +16,20 @@ namespace Exam70483
      * 
      * LINQ: Query Syntax versus Method Syntax
      * 
+     * Query Syntax always start with 'from'.  Query ends with 'select' or 'group'
      * Query Syntax Examples:
      * var qNames = from name in listOfNames where name.Length <= 8 select name;
      * 
      * Method Syntax Examples:
      * var mNames = listOfNames.Where(name => name.Length <= 8);
      * 
-     * Note! - Method Syntax uses Lambda Expressions (see Lambda.cs)
+     * Note! - Method Syntax uses Lambda Expressions (see Lambda.cs).  Extension methods are also 
+     * reliant on Extension methods.   The Extension methods do not require you to supply a value.
+     * Extension methods can extend any type this includes interfaces, class, sealed class (like string),
+     * object type (in this case extension method would be available everywhere).  You can extend an 
+     * instance method on an object, e.g. cannot replace an object method named .ToString() since every
+     * object already has this method.  The namespace is important with extension methods since he can
+     * either add or take away the methods that are available.
      * 
      * https://csharp.net-tutorials.com/linq/linq-query-syntax-vs-method-syntax/
      * 
@@ -36,6 +43,9 @@ namespace Exam70483
         Examples - select, where, Take, Orderby, Skip, etc.
      2. Immediate or Greedy Operators - These query operators use immediate execution.
         Examples - count, average, min, max, ToList, etc.
+
+     Classification of Standard Query Operators by Manner of Execution
+     https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/classification-of-standard-query-operators-by-manner-of-execution
     
      IEnumerable - A List, Array, Query implements IEnumerable.
      An IEnumerable Interface specifies that the underlying type implements IEnumerable

@@ -230,6 +230,7 @@ namespace Exam70483
     #region TestClassAndStruct
     /* When to use a Struct versus a Class  
      * (See also StaticExamples.cs for comparison of Static versus Instance fields/methods).
+     * (See also BaseExamples.cs)
      * 
       A struct type is a value type that is typically used to encapsulate small groups of related variables, 
       such as the coordinates of a rectangle or the characteristics of an item in an inventory.
@@ -243,6 +244,75 @@ namespace Exam70483
        events, and nested types, although if several such members are required, you should consider making
        your type a class instead.
 
+    Structs are mainly useful to hold small data values. A structure can be defined using the struct operator.
+    
+    Structure Declaration
+    A structure is declared using struct keyword with public or internal modifier. The default modifer is internal
+    for the struct and its members. However, you can use private or protected modifier when declared inside a class.
+    struct Employee
+    {
+    public int EmpId;
+    public string FirstName;
+    public string LastName;
+    }
+    
+    A struct object can be created with or without the new operator, same as primitive type variables. When you create a
+    struct object using the new operator, an appropriate constructor is called.
+    Employee emp = new Employee();
+    Console.Write(emp.EmpId); // prints 0
+    
+    In the above code, an object of the structure Employee is created using the new keyword. So, this calls the 
+    default parameterless constructor that initializes all the members to their default value.
+    When you create a structure object without using new keyword, it does not call any constructor and so all
+    the members remain unassigned. So, you must assign values to each member before accessing them, otherwise it will 
+    give a compile time error.
+    
+    Employee emp;
+    Console.Write(emp.EmpId); // Compile time error  
+
+    emp.EmpId = 1;
+    Console.Write(emp.EmpId); // prints 1   
+    
+    A struct cannot contain parameterless constructor. It can only contain parameterized constructors or a static constructor.
+    A struct can include static parameterless constructor and static fields.  Example of a static parameterless constructor 
+    is below.  Note! Paramterless methods are allowed, differerent from a parameterless constructor.
+    
+   struct Employee
+    {
+    public int EmpId;
+    public string FirstName;
+    public string LastName;
+    // Static parameterless constructor
+    static Employee()
+    {
+        Console.Write("First object created");
+    }
+
+    public Employee(int empid, string fname, string lname)
+    {
+        EmpId = empid;
+        FirstName = fname;
+        LastName = lname;
+    }
+   }
+
+   Employee emp1 = new Employee(10, "Bill", "Gates");
+   Employee emp2 = new Employee(10, "Steve", "Jobs");    
+
+    A struct is a value type so it is faster than a class object. Use struct whenever you want to just store the data. 
+    Generally structs are good for game programming. However, it is easier to transfer a class object than a struct. 
+    So do not use struct when you are passing data across the wire or to other classes.   
+    
+    Difference between Struct and Class:
+      Class is reference type whereas struct is value type    
+      Struct cannot declare a default constructor or destructor. However, it can have parametrized constructors.
+      Struct can be instasntiated without the new operator. However, you won't be able to use any of its methods, 
+      events or properties if you do so.
+      Struct cannot be used as a base or cannot derive another struct or class.  
+    
+    DateTime.Now is an example of a struct.  DateTime is a struct and Now is a static type.
+    https://www.dotnetperls.com/datetime-now
+    https://www.tutorialsteacher.com/csharp/csharp-struct
     https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/using-structs
     https://docs.microsoft.com/en-us/dotnet/standard/design-guidelines/choosing-between-class-and-struct
 

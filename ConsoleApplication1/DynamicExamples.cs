@@ -34,7 +34,10 @@ namespace Exam70483
     Static types get resolved at compile time.
 
      <summary>
-     var says, “Let the compiler figure out the type.” 
+     var says, “Let the compiler figure out the type.” .  You can only use the 'var' keyword for local variables,
+     you cannot use 'var' keyword when defining parameters to a method, cannot use when defining a field or property
+     of a class.  The var keyword is used for local variables.  Variable must be initialized when using 'var' keyword.
+     You cannot initialize the 'var' variable to null, since any reference type can be null.
      dynamic says, “Let the runtime figure out the type.” 
      
      Static typing eliminates a large class of errors before a program is even run.It shifts the burden away from runtime 

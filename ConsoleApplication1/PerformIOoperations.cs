@@ -80,8 +80,11 @@ namespace Exam70483
         {
 
             string contents = System.IO.File.ReadAllText(@"C:\Users\olivarez\My Documents\DemoWeb\Visual C#\Collections.txt");
-            // Console.Out.WriteLine(System.IO.Directory.GetFiles(@"C:\Users\olivarez"));
-            // string[] filePaths = Directory.GetFiles(@"C:\Users\olivarez\");
+            /* File.ReadAllLines may be used instead of ReadAllText
+            
+              Console.Out.WriteLine(System.IO.Directory.GetFiles(@"C:\Users\olivarez"));
+              string[] filePaths = Directory.GetFiles(@"C:\Users\olivarez\");
+            */
             string[] filePaths = Directory.GetFiles(@"C: \Users\olivarez\My Documents\DemoWeb\Visual C#");
             Console.WriteLine("List all of the files (NOT Folders) in Directory");
             for (int i = 0; i < filePaths.Length; ++i)

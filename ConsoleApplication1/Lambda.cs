@@ -22,6 +22,10 @@ namespace Exam70483
             It is a collection of statements.
          * 
          * https://www.c-sharpcorner.com/article/anonymous-methods-and-lambda-expressions-in-c-sharp/
+         * 
+         * Named Methods - Anonymous methods were a replacement for Named Methods.  Lamda Expressions are 
+         * better alternative to using named anonymous methods
+         * https://www.tutorialspoint.com/csharp/csharp_anonymous_methods.htm
          */
 
         public static List<int> list = new List<int>() { 1, 2, 3, 4, 5 };

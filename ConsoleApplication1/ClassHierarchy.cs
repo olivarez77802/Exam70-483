@@ -37,7 +37,8 @@ namespace Exam70483
          * 
          * Access Modifiers
          * 1. Public
-         * 2. Private   -  Even an instance of a class cannot access its own private members.
+         * 2. Private   -  Even an instance of a class cannot access its own private members. Properties defined in a class
+         *                 are private by default.
          * 3. Protected  - Only available to containing type and to type that derive from the containing type.
          * 4. Internal   - Is the default if no access modifier is specified.
          * 5. Protected Internal

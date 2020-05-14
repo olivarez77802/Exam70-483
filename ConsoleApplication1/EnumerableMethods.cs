@@ -19,6 +19,9 @@ namespace Exam70483
 
      IEnumerable - A List, Array, Query implements IEnumerable.
      An IEnumerable Interface specifies that the underlying type implements IEnumerable
+     Example:
+     var developers = new Employee[] is same as IEnumerable developers = new Employee[] 
+     var sales = new List<Employee> is same as IEnumerable sales = new List<Employee>() 
 
 
      Linq Syntax  - Query Syntax versus Method Syntax  - Linq statements work on any object that implements IEnumerable.
