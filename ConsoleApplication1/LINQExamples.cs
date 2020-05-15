@@ -46,6 +46,12 @@ namespace Exam70483
 
      Classification of Standard Query Operators by Manner of Execution
      https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/classification-of-standard-query-operators-by-manner-of-execution
+     It may be best to use the greed operator ToList to put the data in memory, rather than wait and use the deferred operators especially if this
+     happens more than once.   This is especially true when using IQueryable or datasets that are stored in SQL. 
+     
+     IEnumerable - specifies that datasource it always an in memory.
+     IQueryable -  specifies that Lamda statements are translated in expressions that query datasource via SQL.   
+     See IQueryable in InterfacesMenu.cs.
     
      IEnumerable - A List, Array, Query implements IEnumerable.
      An IEnumerable Interface specifies that the underlying type implements IEnumerable

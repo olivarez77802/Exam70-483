@@ -144,7 +144,11 @@ namespace Exam70483
                         // >, <, >=, <=  operators - Work out of the box only for primitive types
                         //
                     case 2:
-                        /* IEnumerable - A List, Array, Query, String implements IEnumerable.
+                        /* 
+                         * When something is define as IEnumerable it lets you know that you can use
+                         * LINQ to Query.
+                         * 
+                         * IEnumerable - A List, Array, Query, String implements IEnumerable.
                           An IEnumerable Interface specifies that the underlying type implements IEnumerable
                         
                            public Interface IEnumerator
@@ -255,7 +259,19 @@ namespace Exam70483
                             Using_Collections();
                         Console.ReadKey();
                         break;
-                    case 6: Console.WriteLine (" Not yet built");
+                    case 6:
+                        /* IQueryable is used in Entity Frameworks and serves as a replacement for IEnumerable.  It is how
+                         * a database is accessed via SQL.  Like IEnumerable it represents a datasource something you can query.
+                         * IQueryable does not execute code in memory.  IQueryable translates code into SQL.   IQueryable works
+                         * with the Expression clause.  The Expression Clause will translate Lambda statements and passes them
+                         * so that they can be translated into SQL.  The Entity Framework will inspect the Expression to tranlate
+                         * into SQL.
+                         * 
+                         * Watch this video again at some point to write program that will use Entity Frameworks and display
+                         * SQL to Console.
+                         * https://app.pluralsight.com/course-player?clipId=64018007-2730-4598-9fca-6aee3d4e0fcd 
+                        */
+                        Console.WriteLine (" Not yet built");
                         Console.ReadKey();
                         break;
 
