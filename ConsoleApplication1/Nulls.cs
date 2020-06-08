@@ -55,7 +55,7 @@ namespace Exam70483
                      1. Null Conditional (Ternary) Operator ? :
                      2. Null Coalesce Operator ??
                          // Set y to the value of x if x is not NULL; otherwise
-                         // if x==null, set y to -1
+                         // if x==null, set y to -1 else set y to x.
                          // int y = x ?? -1;
 
                  

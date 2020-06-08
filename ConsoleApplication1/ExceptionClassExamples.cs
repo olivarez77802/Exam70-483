@@ -11,14 +11,58 @@ namespace Exam70483
     /*
      * Called by ManageProgramFlog.cs
      * 
+     * Exception Handling Good Practices
+     * 1. Do not add a catch block that does nothing or just rethrows.  Catch block should add some value.
+     *    Value would be considered logging the error, or report error to end user.  Bad practice to (swallow/trap)
+     *    exceptions.
+     * 2. Do not use exceptions for normal program flow logic.  e.g. Input Validation. You expect input to be invalid
+     *    sometimes.  Invalid input is not an exceptional situation, it is considered normal flow.  Should write IsValid(xxx)
+     *    methods instead.
+     * 3. Design code to avoid exceptions. e.g. Use TryPase instead of Parse.
+     * 4. Use finally blocks for cleanup.
+     * 
      * Exception Handling
      * An exception is a class that derives from the System.Exception class.   The System.Exception class 
      * has several useful properties, that provide valuable information about the exception.
      * Message: Gets a message that describes the exception
      * Stack Trace: Provides the call stack to the line number in the method where the exception occured.
      * 
-     * Classes
-     * - Exception - Parent class for all Exception classes
+     * Exceptions are used in descending order. The Exception base class is used as a catch-all
+     * 
+     * try
+     * {
+     * 
+     * }
+     * catch (ArgumentNullException ex)
+     * {
+     * Log.Error(ex);
+     * }
+     * catch (ArgumentOutOfRangeException ex)
+     * {
+     * Log.Error(ex);
+     * }
+     * catch (Exception ex)
+     * {
+     * WriteLine($"Operation is not supported. {ex}");
+     * }
+     * finally
+     * {
+     *   WriteLine(" Finally always executes regadless if there was an exception ");
+     *   Dispose();
+     *   OtherCleanup();
+     * }
+     * 
+     * 
+     * System.Exception base class
+     * System.Exception constructors
+     * - public Exception()
+     * - public Exception(string message)
+     * - public Exception(string message, Exception innerException)
+     * 
+     * Exception and System Exception: Base Classes. Do not throw, Do not catch (except in top level handlers).
+     *                                 Do not catch in framework code unless rethrowing.
+     * SystemException is also a Base class for exceptions in system namespace.
+     * 
      * - FileNotFoundException  - Inherits from IOException; IOException inherits from SystemException; 
      *                            SystemException inherits from Exception class.
      *                            
@@ -88,15 +132,21 @@ namespace Exam70483
      *     and StreamingContext objects as parameters.
      *     
      ****************************************************************************************************************
-     * 
-     *  throw does not  modify(or preserves)  the callstack
-        or preserves the stack trace information
-        throws to the next level.   So the throw simulates logging the exception.  The runtime then will handle
-        until it finds some code that will handle the exception.  The program then lands there for the progrmam to 
-        deal with.
+     * Throw versus Throw ex
+     * 1. throw does not  modify(or preserves)  the callstack
+          or preserves the stack trace information
+          throws to the next level.   So the throw simulates logging the exception.  The runtime then will handle
+          until it finds some code that will handle the exception.  The program then lands there for the progrmam to 
+          deal with.
         
-        If you were to throw ex - you would lose stack trace information.  'Throw ex' throws a new exception instead
-        of throwing the original exception.
+       2.  If you were to throw ex - you would lose stack trace information.  'Throw ex' throws a new exception instead
+           of throwing the original exception.
+
+       3.  throw new ArithmeticException()
+           could be any exception but written in this format you will lose stack trace information.
+           
+       4.  throw new AritmeticExcption("Inner Excpetion",ex)
+           ex is the Inner Exception
         
      *****************************************************************************************************************
      * Global Exception Handler
@@ -107,6 +157,8 @@ namespace Exam70483
      * Global exception handler is your applications safety net allowing your exceptions to fall through.  The syntax
      * for a global exception handler is different depending on the application.  A console and Web application will have
      * a different syntax for the global exception handler.
+     * 
+     * See Global Exception Handler in Program.cs
      */
     class ExceptionClassExamples
     {

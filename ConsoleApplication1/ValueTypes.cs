@@ -7,51 +7,52 @@ namespace Exam70483
 {
     class ValueTypes
     {
-        /*
-            * Classes versus Structs
-            * {
-            * A struct is a value type where a class is a reference type.  Structs cannot have a default constructor.
-            * 
-            * All the differences that are applicable to a value type and reference types are also applicable to classes and structs.
-            * 
-            * Value types hold their value in memory where they are declared, but reference types hold a reference to an object in 
-            * memory.
-            * 
-            * Value types are destroyed immediately after the scope is lost, where as for reference types only the reference 
-            * variable is destroyed after the scope is lost.   The object is later destroyed by garabage collectors.
-            * 
-            * When you copy a struct into another struct, a new copy of that struct gets created and modifications on one
-            * struct will not affect the values contained by another struct.
-            * 
-            * When you copy a class into another class, we only get a copy of the reference variable.  Both the 
-            * reference variables point to the same object on the heap.   So operations on one variable will affect the values 
-            * contained by the other reference variable.
-            * 
-            * Structs cannot be declared as protected because structs do not support inheritance.  This is another way
-            * of saying Structs are sealed types.
-            * 
-            * Structs can't have destructors, but classes can have destructors
-            * 
-            * Structs cannot have explicit parameter less constructor where as a class can.
-            * 
-            * Structs can't inherit from another class where where as a class can, Both Structs and classes can inherit from
-            * an interface.
-            * 
-            * Structs are sealed types.  A class or a struct cannot inherit from another struct.
-            * You use sealed keyword to prevent your classes from being inherited by another class.
-            * 
-            * Examples of structs in the .NET Framework - int(System.Int32), double(System.Double) etc.
-            * }
-            * 
-            * Stack and Heap
-            * {
-            * Physical Memory is divided into a Stack and Heap
-            * 
-            * Stack - Values types are stored here.  Object Reference Variables are also stored here.
-            * 
-            * Heap - The place in memory where Object Reference Variables will point to.
-            * }
-            */
+        /* Value Types are Independent Instances or Copies.  Value Change doesn't affect other copies.
+         * Classes versus Structs
+         * {
+         * A struct is a value type where a class is a reference type.  Structs cannot have a default constructor.
+         * 
+         * All the differences that are applicable to a value type and reference types are also applicable to classes and structs.
+         * 
+         * Value types hold their value in memory where they are declared, but reference types hold a reference to an object in 
+         * memory.
+         * 
+         * Value types are destroyed immediately after the scope is lost, where as for reference types only the reference 
+         * variable is destroyed after the scope is lost.   The object is later destroyed by garabage collectors.
+         * 
+         * When you copy a struct into another struct, a new copy of that struct gets created and modifications on one
+         * struct will not affect the values contained by another struct.
+         * 
+         * When you copy a class into another class, we only get a copy of the reference variable.  Both the 
+         * reference variables point to the same object on the heap.   So operations on one variable will affect the values 
+         * contained by the other reference variable.
+         * 
+         * Structs cannot be declared as protected because structs do not support inheritance.  This is another way
+         * of saying Structs are sealed types.
+         * 
+         * Structs can't have destructors, but classes can have destructors
+         * 
+         * Structs cannot have explicit parameter less constructor where as a class can.
+         * 
+         * Structs can't inherit from another class where where as a class can, Both Structs and classes can inherit from
+         * an interface.
+         * 
+         * Structs are sealed types.  A class or a struct cannot inherit from another struct.
+         * You use sealed keyword to prevent your classes from being inherited by another class.
+         * 
+         * Examples of structs in the .NET Framework - int(System.Int32), double(System.Double) etc.
+         *  }
+         * 
+         * Stack and Heap
+         * {
+         * Physical Memory is divided into a Stack and Heap
+         * 
+         * Stack - Values types are stored here.  Object Reference Variables are also stored here.
+         * 
+         * Heap - The place in memory where Object Reference Variables will point to.
+         * }
+         
+             */
         /*
         The 'var' key word indicates implicit typing 
         string[] colorOptions = new string[4];   Is the same as

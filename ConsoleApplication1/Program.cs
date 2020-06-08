@@ -74,6 +74,13 @@ namespace Exam70483
 
 
             */
+            /* Global Exception Handler
+             * See https://stackify.com/csharp-catch-all-exceptions/
+             */
+            AppDomain.CurrentDomain.FirstChanceException += (sender, eventArgs) =>
+            {
+                Debug.WriteLine(eventArgs.Exception.ToString());
+            };
             int x = 0;
             do
             {
