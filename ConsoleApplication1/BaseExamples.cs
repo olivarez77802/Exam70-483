@@ -7,7 +7,14 @@ using System.Text;
 namespace Exam70483
 {
     /*
-     static - cannot ever be instantiated.  A static field is not recreated with each instance object.
+     Static Class - cannot ever be instantiated.  A static field is not recreated with each instance object.
+                    See StaticExamples.cs for more info. on Static Classes;Static Methods; Static variables.
+     Advantage of Static Classes
+     1. If you declare any member as a not-static member, you will get an error.
+     2. When you try to create an instance to the static class, it will generate a compile error.
+     3. Static class members are accessed by the class name followed by the member name.
+     https://www.c-sharpcorner.com/UploadFile/74ce7b/static-class-in-C-Sharp/#:~:text=There%20are%20two%20types%20of,%2C%20static%20and%20non%2Dstatic.&text=This%20is%20the%20default%20type,%22Non%2Dstatic%20member%22.
+
      base class types to override - abstract and virtual
      abstract - Incomplete class; must be completed in a derived class.  Also
                 cannot be instantiated.   Will usually hold methods that are defined as either virtual
@@ -39,10 +46,12 @@ namespace Exam70483
             -  Examples of Sealed Classes are String Builder
             - If you want to make sure no one overrides or extends the functionality of a class then mark it as sealed.
      making this class abstract means that I do not ever want this class 
-     to be instantiated.    However, the abstract class can be inherited and
+     to be instantiated. (Abstract class should be compared to an Interface).
+     However, the abstract class can be inherited and
      the class that inherited the abstract class can be instantiated.  
      
-        Struct versus Classes - Same as saying Value versus Reference Types.  See TypeSystem.cs for info on Classes versus Structs.
+     Struct versus Classes - 
+       1. Same as saying Value versus Reference Types.  See TypeSystem.cs for info on Classes versus Structs.
      Note!! - Both Struct and Class will use the 'new' keyword.   See also Static versus Dynamic in Dynamic Examples.cs.  Cannot
      use the 'new' keyword with Static types.   
      See also instance verus Static fields versus Instance fields in StaticExamples.cs

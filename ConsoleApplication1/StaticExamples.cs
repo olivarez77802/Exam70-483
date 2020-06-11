@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Exam70483
 {
     /*
-     *  See also DynamicExamples.cs
+     *  See also DynamicExamples.cs; BaseExamples.cs
      * 
      *  Static Fields versus Instance Fields
      *  
@@ -41,13 +41,14 @@ namespace Exam70483
      *               
      *   https://www.youtube.com/watch?v=cFQLmHCguGs
      *   
-     *   Note! - If you remove the Accessor (see ClassHeirarchy.cs) on a class member by default it will be 'private', so you cannot
-     *   access member outside class.
+     *   Note! - If you remove the Accessor (see ClassHeirarchy.cs) on a class member by default it will be 'private', 
+     *   so you cannot access member outside class.   The class itself will be internal if an access modifier
+     *   is not declared.
      *   
-     *   Interfaces can't have static methods.  A class that implements an interface needs to implement them all as instance methods.
-     *   Static classes can't have instance methods.
+     *   Interfaces can't have static methods.  A class that implements an interface needs to implement them all
+     *   as instance methods.  Static classes can't have instance methods.
      *   
-     *   Static verus Constanct verus Read-Only
+     *   Static verus Constant verus Read-Only
      *   const - Must be assigned a value at declaration and cannot change at a later time.  Const is defined at compile time and
      *           is immutable.  Only primitive or built in types are allowed to be declared as const.  Example string, double.  A 
      *           class you created would not be a primitive or built in type.  Any variable declared as const will implicitily be

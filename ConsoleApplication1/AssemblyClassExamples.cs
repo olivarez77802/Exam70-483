@@ -15,7 +15,7 @@ namespace Exam70483
     class AssemblyClassExamples
     {
 
-        public static void GetTypes()
+        internal static void GetTypes()
         {
             // List all Types in Executing Assembly 
             Assembly myAssembly = Assembly.GetExecutingAssembly();
@@ -27,7 +27,7 @@ namespace Exam70483
             }
             Console.WriteLine(" End of GetTypes");
         }
-        public static void GetExecutingAssembly()
+        internal static void GetExecutingAssembly()
         {
 
 
@@ -46,7 +46,7 @@ namespace Exam70483
                               assemFromType.Equals(currentAssem));
         }
 
-        public static void Determine_type()
+        internal static void Determine_type()
         {
             Console.WriteLine(" Type of verb ");
             Type type = typeof(IEnumerable<CommonCollections.Cat>);

@@ -88,7 +88,7 @@ namespace Exam70483
 
 
      See IEnumeratorInterfaces.cs for more information on IEnumerable
-     public IEnumrable<string> GetNames(List<Customer> customerList)
+     public IEnumerable<string> GetNames(List<Customer> customerList)
     {
         var query = customerList.Select(c => c.LastName + ", " + c.FirstName);
         return query;
@@ -114,7 +114,7 @@ namespace Exam70483
 
     }
     */
-    abstract class EnumerableMethods
+    class EnumerableMethods
     {
         private enum eMenu
         {
@@ -168,7 +168,6 @@ namespace Exam70483
             } while (x < 9);
 
         }  // End Menu
-
-        
+                
     }
 }

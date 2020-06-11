@@ -7,7 +7,9 @@ namespace Exam70483
 {
     class ValueTypes
     {
-        /* Value Types are Independent Instances or Copies.  Value Change doesn't affect other copies.
+        /* See also Methods.cs on when to use a Class versus Struct.
+         * 
+         * Value Types are Independent Instances or Copies.  Value Change doesn't affect other copies.
          * Classes versus Structs
          * {
          * A struct is a value type where a class is a reference type.  Structs cannot have a default constructor.
@@ -51,8 +53,7 @@ namespace Exam70483
          * 
          * Heap - The place in memory where Object Reference Variables will point to.
          * }
-         
-             */
+        
         /*
         The 'var' key word indicates implicit typing 
         string[] colorOptions = new string[4];   Is the same as

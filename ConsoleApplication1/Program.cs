@@ -71,7 +71,15 @@ namespace Exam70483
                * Regex
                * ?? operator
            
-
+            C# Defaults - Implicit
+            1. Classes are non-static by default.
+            2. Classes have a default constructor, structs do not.
+            3. Internal is the default modifier for a class or struct if no access
+               modifer is declared (i.e. public, private,etc.)
+               Delegates behave like classes and structs.  By default they have internal
+               access, they are private when nested.
+               https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/access-modifiers
+            4. Interfaces are internal by default.  Interface members are public by default.
 
             */
             /* Global Exception Handler

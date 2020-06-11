@@ -15,7 +15,7 @@ namespace Exam70483
     class AsyncAwaitExamples
     {
        
-        public static void AsyncEx1Main()
+        internal static void AsyncEx1Main()
         {
             /* Display Order:
              * New Thread
@@ -29,20 +29,20 @@ namespace Exam70483
             Console.ReadLine();
         }
 
-        public static void Method()
+        static void Method()
         {
             Task.Factory.StartNew(new Action(LongTask));   // Invoking this Task in a Parallel Way -Starts a new thread
             Console.WriteLine("New Thread");               // back to Main Thread - Does NOT wait! Returns to Primary 
                                                            // Thread.
         }
 
-        public static void LongTask()
+        static void LongTask()
         {
             Thread.Sleep(1000);
             Console.WriteLine("End Long Task");
         }
 
-        public static void AsyncEx2Main()
+        internal static void AsyncEx2Main()
         {
             /*
              * Display Order:
@@ -57,7 +57,7 @@ namespace Exam70483
               Console.ReadLine();
         }
 
-        public static async void Method2()
+        static async void Method2()
         {
             await Task.Factory.StartNew(new Action(LongTask));   // Invoking this Task in a Parallel Way - starts a new thread
             Console.WriteLine("New Thread");                     // await forces you to wait until task is finished.  Returns 

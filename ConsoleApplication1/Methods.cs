@@ -304,11 +304,15 @@ namespace Exam70483
     So do not use struct when you are passing data across the wire or to other classes.   
     
     Difference between Struct and Class:
-      Class is reference type whereas struct is value type    
-      Struct cannot declare a default constructor or destructor. However, it can have parametrized constructors.
+      Class is reference type whereas struct is value type  
+      Class has a default constructor, Struct Do Not have a default constructor  
+      Struct cannot declare a default constructor or destructor. However, it can have parameterized constructors.
       Struct can be instasntiated without the new operator. However, you won't be able to use any of its methods, 
       events or properties if you do so.
-      Struct cannot be used as a base or cannot derive another struct or class.  
+      Struct cannot be used as a base or cannot derive another struct or class. 
+      Structs cannot inherit from another struct or class.  They can implement and interface. 
+      Struct using the new keyword is optional
+      https://www.youtube.com/watch?v=G5KJolM2uzs
     
     DateTime.Now is an example of a struct.  DateTime is a struct and Now is a static type.
     https://www.dotnetperls.com/datetime-now

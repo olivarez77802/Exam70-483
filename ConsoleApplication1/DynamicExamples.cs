@@ -15,10 +15,14 @@ namespace Exam70483
        * When you access weakly typed data such as XML, JSON
        * When you don't want to Reflection
         
-    Visual C# 2010 introduces a new type, dynamic. The type is a static type, but an object of type dynamic bypasses static type checking.
-    In most cases, it functions like it has type object. At compile time, an element that is typed as dynamic is assumed to support any
-    operation.Therefore, you do not have to be concerned about whether the object gets its value from a COM API, from a dynamic language
-    such as IronPython, from the HTML Document Object Model(DOM), from reflection, or from somewhere else in the program.However, if the
+    Visual C# 2010 introduces a new type, dynamic. The type is a static type, 
+    but an object of type dynamic bypasses static type checking.
+    In most cases, it functions like it has type object. At compile time, 
+    an element that is typed as dynamic is assumed to support any
+    operation.Therefore, you do not have to be concerned about whether the
+    object gets its value from a COM API, from a dynamic language
+    such as IronPython, from the HTML Document Object Model(DOM), from reflection, 
+    or from somewhere else in the program.However, if the
     code is not valid, errors are caught at run time.
 
     How do I get Type data ?
@@ -68,8 +72,10 @@ namespace Exam70483
     }    
     */
 
-    class DynamicExamples
+    /* Since no access modifier is declared class is Internal by default */
+    static class DynamicExamples
     {
+        /* We are declaring an access modifier; otherwise it would be private by default */
         public static void DMain()
         {
 

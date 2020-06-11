@@ -6,7 +6,7 @@ using System.Diagnostics;
 
 namespace Exam70483
 {
-    class AccessKeywords  //making it abstract means I will never want this class to be instantiated.
+    static class AccessKeywords  
     {
 
         public static void Menu()

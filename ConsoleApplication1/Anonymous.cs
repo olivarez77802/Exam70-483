@@ -74,24 +74,24 @@ namespace Exam70483
 
     */
 
-    public class Student
+    class Student
     {
-        public int StudentID { get; set; }
-        public string StudentName { get; set; }
-        public int age { get; set; }
+        internal int StudentID { get; set; }
+        internal string StudentName { get; set; }
+        internal int age { get; set; }
     }
-    class Anonymous
+    static class Anonymous
     {
-        public delegate void Print(int value);
+        internal delegate void Print(int value);
 
-        public static List<Student> studentList = new List<Student>() {
+        internal static List<Student> studentList = new List<Student>() {
                         new Student() { StudentID = 1, StudentName = "John", age = 18 } ,
                         new Student() { StudentID = 2, StudentName = "Steve",  age = 21 } ,
                         new Student() { StudentID = 3, StudentName = "Bill",  age = 18 } ,
                         new Student() { StudentID = 4, StudentName = "Ram" , age = 20  } ,
                         new Student() { StudentID = 5, StudentName = "Ron" , age = 21 }
                     };
-        public static void Menu()
+        internal static void Menu()
         {
             int x = 0;
             do
@@ -180,7 +180,7 @@ namespace Exam70483
             print(100);
         }
 
-        public static void PrintHelperMethod(Print printDel, int val)
+        static void PrintHelperMethod(Print printDel, int val)
         {
             val += 10;
             printDel(val);

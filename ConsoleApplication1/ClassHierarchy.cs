@@ -24,7 +24,7 @@ namespace Exam70483
          * 10. sealed
          * 11. static -  Use the static modifier, which belongs to the type itself rather than to a specific object. The 
          *               static modifier can be used with classes, fields, methods, properties, operators, Events, and
-         *               constructors.   
+         *               constructors.  See BaseExamples.cs;DynamicExamples.cs;StaticExamples.cs 
          *               https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/static-classes-and-static-class-members
          * 12. unsafe  - trust that you know what you are doing.  Used when efficency is important or your interfacing with 
          *              an unmanaged language.
