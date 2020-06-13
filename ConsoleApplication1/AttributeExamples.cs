@@ -26,7 +26,7 @@ namespace Exam70483
          * 
          */
 
-        public static void Menu()
+        internal static void Menu()
         {
             int x = 0;
             do
@@ -80,14 +80,18 @@ namespace Exam70483
             Calculator.Add(new List<int> { 10, 20, 40 });
 
         }
-        class Calculator
+        /* 
+         * Nested classes are private by default, so I could delete private
+         * Example of how the outside class is private but the inside method is public or internal
+         */
+        private static class Calculator
         {
             [Obsolete("Write any comment can be used to  point to new Method to use")]
-            public static int Add(int FirstNumber, int SecondNumber)
+            internal static int Add(int FirstNumber, int SecondNumber)
             {
                 return FirstNumber + SecondNumber;
             }
-            public static int Add(List<int> Numbers)
+            internal static int Add(List<int> Numbers)
             {
                 int Sum = 0;
                 foreach (int Number in Numbers)
@@ -102,13 +106,13 @@ namespace Exam70483
             [System.Obsolete("use class B")]
             class A
             {
-                public void Method() { }
+                private void Method() { }
             }
             class B
             {
                 [System.Obsolete("use New Method", true)]
-                public void OldMethod() { }
-                public void NewMethod() { }
+                private static void OldMethod() { }
+                internal void NewMethod() { }
             }
             class Check : Attribute
             {
@@ -119,7 +123,7 @@ namespace Exam70483
                 private string _CustomerCode;
 
                 [Check(MaxLength = 12)]
-                public string CustomerCode
+                internal string CustomerCode
                 {
                     get { return _CustomerCode; }
                     set { _CustomerCode = value; }

@@ -313,6 +313,15 @@ namespace Exam70483
       Structs cannot inherit from another struct or class.  They can implement and interface. 
       Struct using the new keyword is optional
       https://www.youtube.com/watch?v=G5KJolM2uzs
+
+      In general, classes are used to model more complex behavior, or data that is intended to be modified
+      after a class object is created. Structs are best suited for small data structures that contain primarily
+      data that is not intended to be modified after the struct is created.
+      https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/
+
+      If you find your self using getter and setters, abstract and virtual method you 
+      should probably use a class instead of struct
+      http://geekswithblogs.net/BlackRabbitCoder/archive/2010/07/29/c-fundamentals-the-differences-between-struct-and-class.aspx
     
     DateTime.Now is an example of a struct.  DateTime is a struct and Now is a static type.
     https://www.dotnetperls.com/datetime-now

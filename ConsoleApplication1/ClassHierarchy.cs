@@ -8,7 +8,7 @@ using System.IO;
 
 namespace Exam70483
 {
-    public class ClassHierarchy
+    class ClassHierarchy
     {
         /*
          * C# Modifiers
@@ -21,8 +21,8 @@ namespace Exam70483
          * 7. override
          * 8. partial
          * 9. readonly
-         * 10. sealed
-         * 11. static -  Use the static modifier, which belongs to the type itself rather than to a specific object. The 
+         * 10. sealed (cannot be used as base class)
+         * 11. static (sealed)-  Use the static modifier, which belongs to the type itself rather than to a specific object. The 
          *               static modifier can be used with classes, fields, methods, properties, operators, Events, and
          *               constructors.  See BaseExamples.cs;DynamicExamples.cs;StaticExamples.cs 
          *               https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/static-classes-and-static-class-members
@@ -33,7 +33,6 @@ namespace Exam70483
          * 14. volatile
          * http://www.diranieh.com/NETCSharp/Modifiers.htm
          * 
-         * See TypeSystem.cs for Classes versus Structs.
          * 
          * Access Modifiers
          * 1. Public
@@ -54,7 +53,7 @@ namespace Exam70483
          
          As a guideline:
           * Use classes and subclasses for types that naturally share an implementation.
-          * Use interfaces for types that have independent implementations.
+          * Use interfaces and abstract classes for types that have independent implementations.
         
           Consider the following classes
             abstract class Animal {}
@@ -74,7 +73,7 @@ namespace Exam70483
             * Class is like the cookie cutter that creates objects.  It will contain the properties and actions
             *          to perform.
         */
-        public static void Menu()
+        internal static void Menu()
         {
             int x = 0;
             do
@@ -108,7 +107,6 @@ namespace Exam70483
                         break;
                     case 2:
                         Constructors();
-                        ClassesAndStructs();
                         break;
                     case 3: 
                         break;
@@ -166,38 +164,42 @@ namespace Exam70483
             MainClass.MC_Main();
             Console.ReadKey();
         }
-        static void ClassesAndStructs()
-        {
-            Process.Start("http://msdn.microsoft.com/en-us/library/ms173109(v=vs.110).aspx");
-            TypeProgram.TypeMain();
-        }
+        
 
 
-        public class PShape
+        /* Points to remember
+         * 1. Can't make this class static because static classes don't have instance objects so why have getter and setters
+         *    if you don't expect to have instance objects.
+         * 2. Made the class internal instead of public since I am not expecting another dll to use.
+         * 3. On the property X,Y Definition the setter is private.  So X and Y have to be something less restrictive
+         *    than private, which is why I didn't use the default of private and instead made internal.
+         * 
+         */
+        internal class PShape
         {
             // A few example members
-            public int X { get; private set; }
-            public int Y { get; private set; }
-            public int Height { get; set; }
-            public int Width { get; set; }
+            internal int X { get; private set; }
+            internal int Y { get; private set; }
+            int Height { get; set; }
+            int Width { get; set; }
 
             //Virtual method
-            public virtual void Draw()
+            internal virtual void Draw()
             {
                 Console.WriteLine("Performing base class drawing tasks");
             }
         }
-        class Circle : PShape
+        internal class Circle : PShape
         {
-            public override void Draw()
+            internal override void Draw()
             {
                 Console.WriteLine("Drawing a circle ");
                 base.Draw();
             }
         }
-        class Rectangle : PShape
+        internal class Rectangle : PShape
         {
-            public override void Draw()
+            internal override void Draw()
             {
                 Console.WriteLine("Drawing a rectangle");
                 base.Draw();
@@ -205,7 +207,7 @@ namespace Exam70483
         }
         class Triangle : PShape
         {
-            public override void Draw()
+            internal override void Draw()
             {
                 //Code to draw a triangle
                 Console.WriteLine("Drawing a traingle");
@@ -251,7 +253,7 @@ namespace Exam70483
             private decimal salary;
 
             //Constructor
-            public Employee(string name, string alias, decimal salary)
+            internal Employee(string name, string alias, decimal salary)
             {
                 //use 'this' to qualify the field, name and alias and salary"
                 Console.WriteLine("Instance Constructor Called");
@@ -279,9 +281,9 @@ namespace Exam70483
                 return 0.08m * E.Salary;
             }
         }
-        public static class MainClass
+        internal static class MainClass
         {
-            public static void MC_Main()
+            internal static void MC_Main()
             {
                 //Create Object
                 Employee E1 = new Employee("Mingda Pan", "mpan", 3000.00m);
@@ -309,17 +311,7 @@ namespace Exam70483
             public string name { get; set; }
             public string surname { get; set; }
         }
-        public class TypeProgram
-        {
-            public static void TypeMain()
-            {
-                Second s = new Second();
-                s.name = "Tricia";
-                s.surname = "Robich";
-                First<Second> objf = new First<Second>(s);
-                Console.ReadLine();
-            }
-        }
+       
 
     } // End of Class ClassesandInterfaces
 

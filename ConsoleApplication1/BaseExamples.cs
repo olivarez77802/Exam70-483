@@ -9,8 +9,25 @@ namespace Exam70483
     /*
      Static Class - cannot ever be instantiated.  A static field is not recreated with each instance object.
                     See StaticExamples.cs for more info. on Static Classes;Static Methods; Static variables.
+                    Since a static class will not have instances, it will not have getter and setters.
+                    Static classes are sealed so cannot inherit from any class except object.
+
+     Static and Sealed Classes
+     A. Features of Static Class:
+       1. It can only have static members.
+       2. It cannot have instance members as static class instance cannot be created.
+       3. It is a sealed class. As static class is sealed, so no class can inherit from a static class.
+          We cannot create instance of static class that's the reason we cannot have instance members in static class,
+          as static means shared so one copy of the class is shared to all. Static class also cannot inherit from other classes.
+     B. The following are the points to keep in mind about sealed class:
+      1. Sealed class can be instantiated.
+      2. It can inherit from other classes.
+      3. It cannot be inherited.  Class A : Class B  Class A cannnot inherit from Class B if B is sealed.
+
+     https://www.c-sharpcorner.com/UploadFile/f1047f/static-and-sealed-class-in-C-Sharp/
+
      Advantage of Static Classes
-     1. If you declare any member as a not-static member, you will get an error.
+     1. If you declare any member as a non-static member, you will get an error.
      2. When you try to create an instance to the static class, it will generate a compile error.
      3. Static class members are accessed by the class name followed by the member name.
      https://www.c-sharpcorner.com/UploadFile/74ce7b/static-class-in-C-Sharp/#:~:text=There%20are%20two%20types%20of,%2C%20static%20and%20non%2Dstatic.&text=This%20is%20the%20default%20type,%22Non%2Dstatic%20member%22.
@@ -51,7 +68,7 @@ namespace Exam70483
      the class that inherited the abstract class can be instantiated.  
      
      Struct versus Classes - 
-       1. Same as saying Value versus Reference Types.  See TypeSystem.cs for info on Classes versus Structs.
+       1. Same as saying Value versus Reference Types.  See ValueTypes.cs and Methods.cs for info on Classes versus Structs.
      Note!! - Both Struct and Class will use the 'new' keyword.   See also Static versus Dynamic in Dynamic Examples.cs.  Cannot
      use the 'new' keyword with Static types.   
      See also instance verus Static fields versus Instance fields in StaticExamples.cs
@@ -97,7 +114,7 @@ namespace Exam70483
             }
         }
         
-        public static void TMain()
+        internal static void TMain()
         {
             Employee E = new Employee();
             E.GetInfo();
@@ -105,7 +122,7 @@ namespace Exam70483
         #endregion
         #region DMain
 
-        public class BaseClass
+        class BaseClass
         {
             int num;
             string baseString;
@@ -133,24 +150,24 @@ namespace Exam70483
             }
 
         }
-        public class DerivedClass : BaseClass
+        class DerivedClass : BaseClass
         {
             //This constructor will call BaseClass.BaseClass()
-            public DerivedClass()
+            internal DerivedClass()
                 : base()
             {
             }
-            public DerivedClass(string MyString)
+            internal DerivedClass(string MyString)
                 : base("From Derived")
             {
                 Console.WriteLine("Derived Constructor ");
             }
             //This constructor will call BaseClass.BaseClass(int i)
-            public DerivedClass(int i)
+            internal DerivedClass(int i)
                 : base(i)
             {
             }
-            public new void print()
+            internal new void print()
             {
                 base.print();
                 Console.WriteLine("I'm in a Derived Print class");
@@ -158,7 +175,7 @@ namespace Exam70483
            
         }
 
-        public static void D_Main()
+        internal static void D_Main()
         {
             DerivedClass md = new DerivedClass();
             DerivedClass md1 = new DerivedClass(1);

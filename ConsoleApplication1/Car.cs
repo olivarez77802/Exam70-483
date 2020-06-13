@@ -5,9 +5,10 @@ using System.Text;
 
 namespace Exam70483 
 {
-    public class Car : Interface1
+    class Car : Interface1
     {
-        #region Interface1 Members
+        #region Implement Interface1 
+        
 
         public bool Start()
         {

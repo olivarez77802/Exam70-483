@@ -9,23 +9,24 @@ namespace Exam70483
     
     class Box
     {
-        private double length;      // Length of a box
-        private double breadth;     // Breadth of a box
-        private double height;      // Height of a box
+        /* Variables, Members are private by default */
+        internal double length;      // Length of a box
+        internal double breadth;     // Breadth of a box
+        internal double height;      // Height of a box
 
-        public double GetVolume()
+        internal double GetVolume()
         {
             return length * breadth * height;
         }
-        public void setLength(double len)
+        internal void setLength(double len)
         {
             length = len;
         }
-        public void setBreadth(double bre)
+        internal void setBreadth(double bre)
         {
             breadth = bre;
         }
-        public void setHeight(double hei)
+        internal void setHeight(double hei)
         {
             height = hei;
         }

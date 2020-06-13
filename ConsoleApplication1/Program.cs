@@ -72,14 +72,21 @@ namespace Exam70483
                * ?? operator
            
             C# Defaults - Implicit
-            1. Classes are non-static by default.
-            2. Classes have a default constructor, structs do not.
-            3. Internal is the default modifier for a class or struct if no access
-               modifer is declared (i.e. public, private,etc.)
+            1. Classes are non-static by default. i.e. instance members will be created.
+            2. Classes have a default constructor, structs do not.  Remember that with classes 
+               if you do not define a constructor, C# generates generates one that initializes all members
+               to their default values. 
+            3. Static classes are sealed by default
+            4. Internal is the default modifier for a class or struct if no access
+               modifer is declared (i.e. public, private,etc.) and are not nested.
                Delegates behave like classes and structs.  By default they have internal
-               access, they are private when nested.
+               access, they are private by default when nested.
                https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/access-modifiers
-            4. Interfaces are internal by default.  Interface members are public by default.
+            5. Interfaces are internal by default.  Interface members are public by default.
+            6. Class members are private by defuault.
+               https://stackoverflow.com/questions/2521459/what-are-the-default-access-modifiers-in-c/3175697
+            7. Members of an interface must be public, since they have to be callable via the interface.
+               public must be declared explicitily.
 
             */
             /* Global Exception Handler
