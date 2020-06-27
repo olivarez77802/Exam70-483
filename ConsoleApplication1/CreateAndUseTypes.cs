@@ -20,12 +20,36 @@ namespace Exam70483
                 Console.Clear();
                 Console.WriteLine(" Create and Use Types \n ");
                 Console.WriteLine(" 0.  Create Types (Value-Reference) \n ");
+                /* Create value types, including structs and enum; create reference types, constructors, 
+                 * static variables, methods, classes, extension methods; create optional and named parameters;
+                 * create indexed properties; create overloaded and overriden methods
+                */
                 Console.WriteLine(" 1.  Consume Types  \n ");
+                /* Box or unbox to convert between value types; cast types; convert types; handle dynamic types;
+                 * ensure interoperability with code that accesses COM APIs
+                */
                 Console.WriteLine(" 2.  Enforce Encapsulation \n ");
+                /* Enforce encapsulation by using properties; enforce encapsulation by using accessors, including
+                 * public, private, protected, and internal; enforce encapsulation by using explicit interface
+                 * implementation
+                 */
                 Console.WriteLine(" 3.  Create and Implement a Class Hierarchy \n ");
+                /* Design and implement an interface; inherit from a base class; create and implement classes
+                 * on the IComparable, IEnumerable, IDisposable, and IUnknown Interfaces
+                */
                 Console.WriteLine(" 4.  Find,execute, and create types at run time using Reflection \n ");
+                /* Find and apply attributes; read attributes; generate code at runtime by using CodeDom and
+                 * Lambda expressions; use types from the System.Reflection namespace, including Assembly, 
+                 * PropertyInfo, MethodInfo, Type.
+                */
                 Console.WriteLine(" 5.  Manage the object lifecycle \n ");
+                /* Manage unmanaged resources; implement IDisposable, including interaction with finalization;
+                 * manage IDisposable by using the  Using statement; manage finalization and garbage collection
+                */
                 Console.WriteLine(" 6.  Manipulate Strings \n");
+                /* Manipulate strings by using the StringBuilder, StringWriter, and StringReader classes, search
+                 * strings; enumerate string methods; format strings; use string interpolation
+                */
                 Console.WriteLine(" 9.  Quit            \n\n ");
 
                 int selection;

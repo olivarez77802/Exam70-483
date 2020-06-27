@@ -10,7 +10,7 @@ using System.Diagnostics;
 namespace Exam70483
 {
     //
-    // Called by Namespaces Menu - System.Reflection
+    // Called by RunTime Types
     //      
     class AssemblyClassExamples
     {

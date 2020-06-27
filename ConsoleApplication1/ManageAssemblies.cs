@@ -104,6 +104,36 @@ namespace Exam70483
              * Class Libraries - Are how you share code across assemblies or different projects
              * Portable Class Libraries - How you share code across the .Net ecosystem
              * 
+             *************************************************************************************************
+             * Namespaces - Are used to organize your programs and they also provide assistance in avoiding 
+             * name clashes.
+             * 
+             * 'using' clause versus fully qualified names.
+             *  fully qualified names lets you know the namespace where the class is being used, if you use
+             *  the 'using' clause you will have to look up the namespace where the class resides.  There may
+             *  be several using clauses, so not having a fully qualified name will make you do more work
+             *  to find the namespace that contains the class.  The bad side of the fully qualified name method
+             *  is that it requires extra typing.
+             *  
+             *  Namespaces don't correspond to file, directory or assembly names.  They could be written in
+             *  separate files and/or separate assemblies and still belong to the same namespace.
+             *  
+             *  Namespace alias directives.  Sometimes you may encounter a long namespace and wish to have it 
+             *  shorter.  This could improve readability and still avoid name clashes with similarily named methods.
+             *  
+             *  A namespace can contain another namespace (Not sure why you would want to do this, but you can).
+             *  
+             * https://www.youtube.com/watch?v=IQTbvVemMAg&list=PLAC325451207E3105&index=18
+             * 
+             * How to structure a .net project - Good Video!  Watch again
+             * Folders are created under references.
+             * When you create a Class Library and add a new Folder it will put it under
+             * the References folder.
+             * https://www.youtube.com/watch?v=KM5o9M4cuQA
+             * 
+             * 
+             * 
+             * 
              * 
              */
         }

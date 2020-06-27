@@ -64,7 +64,7 @@ namespace Exam70483
                 Console.WriteLine(" Find, execute, and create types at runtime by using reflection");
                 Console.WriteLine("    Create and apply attributes; read attributes; generate code at runtime");
                 Console.WriteLine("    using CodeDom and Lambda expressions; use types from the System.Refection");
-                Console.WriteLine("    namespace, including Assembly, PropetryInfo, MethodInfo, Type");
+                Console.WriteLine("    namespace, including Assembly, PropertyInfo, MethodInfo, Type");
           
                 Console.WriteLine(" 0.  Reflection ");
                 Console.WriteLine(" 1.  Relection - GetTypes");

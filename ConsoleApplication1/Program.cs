@@ -73,9 +73,10 @@ namespace Exam70483
            
             C# Defaults - Implicit
             1. Classes are non-static by default. i.e. instance members will be created.
-            2. Classes have a default constructor, structs do not.  Remember that with classes 
+            2. Constructors - Classes have a default constructor, structs do not.  Remember that with classes 
                if you do not define a constructor, C# generates generates one that initializes all members
-               to their default values. 
+               to their default values.   Static constructors cannot have access modifiers they are by default private
+               (See Static Examples.cs).  Static constructors are called before instance constructors by default.
             3. Static classes are sealed by default
             4. Internal is the default modifier for a class or struct if no access
                modifer is declared (i.e. public, private,etc.) and are not nested.

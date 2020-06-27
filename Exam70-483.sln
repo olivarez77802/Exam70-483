@@ -14,6 +14,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathService1", "MathService
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProject1", "UnitTestProject1\UnitTestProject1.csproj", "{F6E766CE-993F-4F94-8088-F371A980B6E7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExamLibrary", "ExamLibrary\ExamLibrary.csproj", "{A47ECB0A-63C0-4FC1-89AA-218A2B57543B}"
+EndProject
 Global
 	GlobalSection(Performance) = preSolution
 		HasPerformanceSessions = true
@@ -35,6 +37,10 @@ Global
 		{F6E766CE-993F-4F94-8088-F371A980B6E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F6E766CE-993F-4F94-8088-F371A980B6E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F6E766CE-993F-4F94-8088-F371A980B6E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A47ECB0A-63C0-4FC1-89AA-218A2B57543B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A47ECB0A-63C0-4FC1-89AA-218A2B57543B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A47ECB0A-63C0-4FC1-89AA-218A2B57543B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A47ECB0A-63C0-4FC1-89AA-218A2B57543B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

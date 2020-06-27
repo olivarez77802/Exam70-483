@@ -170,12 +170,12 @@ namespace Exam70483
         /* Points to remember
          * 1. Can't make this class static because static classes don't have instance objects so why have getter and setters
          *    if you don't expect to have instance objects.
-         * 2. Made the class internal instead of public since I am not expecting another dll to use.
+         * 2. class is defaulted to private since it is nested under class ClassHeirarchy
          * 3. On the property X,Y Definition the setter is private.  So X and Y have to be something less restrictive
          *    than private, which is why I didn't use the default of private and instead made internal.
          * 
          */
-        internal class PShape
+        class PShape
         {
             // A few example members
             internal int X { get; private set; }
@@ -189,7 +189,7 @@ namespace Exam70483
                 Console.WriteLine("Performing base class drawing tasks");
             }
         }
-        internal class Circle : PShape
+        class Circle : PShape
         {
             internal override void Draw()
             {
@@ -197,7 +197,7 @@ namespace Exam70483
                 base.Draw();
             }
         }
-        internal class Rectangle : PShape
+        class Rectangle : PShape
         {
             internal override void Draw()
             {
@@ -216,9 +216,9 @@ namespace Exam70483
         }
 
 
-        public static class P_Program
+        static class P_Program
         {
-            public static void ProgramMain()
+            internal static void ProgramMain()
             {
                 //Polymorphism at work #1: a rectangle, Triangle, Circle
                 //can all be used wherever a shape is expected.  No cast is 
@@ -243,16 +243,19 @@ namespace Exam70483
             }
         }
 
-
-
-
         class Employee
         {
             private string name;
             private string alias;
             private decimal salary;
 
-            //Constructor
+            static Employee()
+            {
+                Console.WriteLine("Static constructors are called only once and I'm not saying once for each instance");
+            }
+            /* Constructor.  Each instance will have a name, alias, salary variable. Using 'this'
+             * will allow you to fully qualify and specify the instance.
+             */
             internal Employee(string name, string alias, decimal salary)
             {
                 //use 'this' to qualify the field, name and alias and salary"
@@ -263,13 +266,13 @@ namespace Exam70483
             }
 
             //Printing
-            public void printEmployee()
+            internal void printEmployee()
             {
                 Console.WriteLine("Name: {0} \n Alias: {1} \n Salary: {2} ", name, alias, salary);
                 //Passing the object to the CalcTax method by using 'this'"
                 Console.WriteLine("Taxes: {0:C} \n", Tax.CalcTax(this));
             }
-            public decimal Salary
+            internal decimal Salary
             {
                 get { return salary; }
             }
