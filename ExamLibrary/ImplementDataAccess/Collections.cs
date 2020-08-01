@@ -172,7 +172,7 @@ namespace Exam70483
         {
             Console.WriteLine("ObjectArray.Print");
             string[] myArray = { "str 0", "str 1", "str 2", "str 3" };
-            Console.WriteLine(" Object obj is {0} ", obj);
+            Console.WriteLine($" Object obj is {obj} ");
 
             for (int i = 0; i < myArray.Length; i++)
             {

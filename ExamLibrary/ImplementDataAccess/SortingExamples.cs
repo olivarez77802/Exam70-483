@@ -7,7 +7,7 @@ using System.Collections;
 
 namespace Exam70483
 {
-    class SortingExamples  // Called by Collections
+    public class SortingExamples  // Called by Collections
     {
 
         #region SortAscendingDescending 
