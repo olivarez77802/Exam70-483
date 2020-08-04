@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Diagnostics;
-//  using Newtonsoft.Json;
+using Newtonsoft.Json;
 using System.Xml.Serialization;
 using System.IO;
 
@@ -113,16 +113,16 @@ namespace Exam70483
              */
             int[] fibarray = new int[] { 0, 1, 1, 2, 3, 5, 8, 13 };
             Console.WriteLine("\n Serialize fib array into Raw Jason");
-            // string ExJsonSerialized = JsonConvert.SerializeObject(fibarray);
-            // Console.WriteLine(ExJsonSerialized);
+            string ExJsonSerialized = JsonConvert.SerializeObject(fibarray);
+            Console.WriteLine(ExJsonSerialized);
 
             Console.WriteLine("\n DeSerialize - Takes JSON Raw Text and loads to array ");
-            /* int[] exJson = JsonConvert.DeserializeObject<int[]>(ExJsonSerialized);
+            int[] exJson = JsonConvert.DeserializeObject<int[]>(ExJsonSerialized);
             foreach (int element in exJson)
             {
                 System.Console.WriteLine(element);
             }
-            */
+            
             /* 
              * XML Serialization
              * https://support.microsoft.com/en-us/help/815813/how-to-serialize-an-object-to-xml-by-using-visual-c
@@ -167,7 +167,7 @@ namespace Exam70483
             // string JSONfib = "[0,1,1,2,3,5,8,13]";
             // int[] fibarray = JsonConvert.DeserializeObject<int[]>(JSONfib);
             // 2.
-            /*
+            
              int[] fibarray = JsonConvert.DeserializeObject<int[]>("[0,1,1,2,3,5,8,13]");
             
             // 3.
@@ -193,7 +193,7 @@ namespace Exam70483
             }
             System.Console.WriteLine("Number of Elements in the array: {0}", count);
             Console.ReadKey();
-            */
+            
         }
         static void string_array()
         {
