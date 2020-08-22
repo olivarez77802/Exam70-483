@@ -12,10 +12,10 @@ namespace Exam70483
     //
     // Called by RunTime Types
     //      
-    class AssemblyClassExamples
+    public class AssemblyClassExamples
     {
 
-        internal static void GetTypes()
+        public static void GetTypes()
         {
             // List all Types in Executing Assembly 
             Assembly myAssembly = Assembly.GetExecutingAssembly();
@@ -27,7 +27,7 @@ namespace Exam70483
             }
             Console.WriteLine(" End of GetTypes");
         }
-        internal static void GetExecutingAssembly()
+        public static void GetExecutingAssembly()
         {
 
 
@@ -46,7 +46,7 @@ namespace Exam70483
                               assemFromType.Equals(currentAssem));
         }
 
-        internal static void Determine_type()
+        public static void Determine_type()
         {
             Console.WriteLine(" Type of verb ");
             Type type = typeof(IEnumerable<CommonCollections.Cat>);

@@ -8,7 +8,7 @@ namespace Exam70483
     /*
      * Called by CreateAndUseTypes.cs
     */
-    class CreateTypes
+    public class CreateTypes
     {
         public static void Menu()
         {

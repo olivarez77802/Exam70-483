@@ -5,14 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
 
-namespace ImplementDataAccess
+namespace Exam70483
 {
     // Async and Await are not supported until C# 5.0
     // Class called by Delegate.cs
     // async and await are markers which mark code positions from where control should resume after a task (thread) completes.
     
     // Called by Delegate.cs
-    class AsyncAwaitExamples
+    public class AsyncAwaitExamples
     {
        
         internal static void AsyncEx1Main()

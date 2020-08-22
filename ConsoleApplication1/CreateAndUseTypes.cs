@@ -8,7 +8,7 @@ namespace Exam70483
     /*
      *  Called by Program.cs
      */
-    class CreateAndUseTypes : CUT_Methods
+    public class CreateAndUseTypes : CUT_Methods
     {
        public static void Menu()
         {

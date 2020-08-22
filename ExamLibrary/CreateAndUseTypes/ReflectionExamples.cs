@@ -17,7 +17,7 @@ namespace Exam70483
      * var sampleType = typeof(Sample);     <-- known at Compile time
      * var sampleType = sample.GetType;     <-- know at run time
      */
-    class ReflectionExamples
+    public class ReflectionExamples
     {
         public static void Menu()
         {

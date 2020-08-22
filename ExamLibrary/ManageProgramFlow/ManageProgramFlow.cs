@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Exam70483
 {
-    class ManageProgramFlow : MPF_Methods
+    public class ManageProgramFlow : MPF_Methods
     {
        
         public static void Menu()

@@ -74,24 +74,24 @@ namespace Exam70483
 
     */
 
-    class Student
+    public class Student
     {
-        internal int StudentID { get; set; }
-        internal string StudentName { get; set; }
-        internal int age { get; set; }
+        public int StudentID { get; set; }
+        public string StudentName { get; set; }
+        public int age { get; set; }
     }
-    static class Anonymous
+    public static class Anonymous
     {
         internal delegate void Print(int value);
 
-        internal static List<Student> studentList = new List<Student>() {
+        public static List<Student> studentList = new List<Student>() {
                         new Student() { StudentID = 1, StudentName = "John", age = 18 } ,
                         new Student() { StudentID = 2, StudentName = "Steve",  age = 21 } ,
                         new Student() { StudentID = 3, StudentName = "Bill",  age = 18 } ,
                         new Student() { StudentID = 4, StudentName = "Ram" , age = 20  } ,
                         new Student() { StudentID = 5, StudentName = "Ron" , age = 21 }
                     };
-        internal static void Menu()
+        public static void Menu()
         {
             int x = 0;
             do

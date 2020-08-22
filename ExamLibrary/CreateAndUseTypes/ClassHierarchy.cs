@@ -8,7 +8,7 @@ using System.IO;
 
 namespace Exam70483
 {
-    class ClassHierarchy
+    public class ClassHierarchy
     {
         /*
          * C# Modifiers
@@ -73,7 +73,7 @@ namespace Exam70483
             * Class is like the cookie cutter that creates objects.  It will contain the properties and actions
             *          to perform.
         */
-        internal static void Menu()
+        public static void Menu()
         {
             int x = 0;
             do

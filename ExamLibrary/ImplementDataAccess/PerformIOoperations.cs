@@ -12,7 +12,7 @@ namespace Exam70483
     /*
      * Called by ImplementDataAccess.cs
     */
-    class PerformIOoperations
+    public class PerformIOoperations
     {
         public static void Menu()
         {
