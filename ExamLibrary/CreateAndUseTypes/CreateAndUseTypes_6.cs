@@ -18,7 +18,7 @@ namespace Exam70483
         #region Main
         public static void Menu()
         {
-            IMenu CUT6 = new CUT6_Methods();
+            IMenu CUT6 = new ManipulateStrings();
             int x = 0;
             do
             {

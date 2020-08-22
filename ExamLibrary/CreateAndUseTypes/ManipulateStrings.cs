@@ -9,7 +9,7 @@ using System.Diagnostics;
 namespace Exam70483 
     
 {
-    class CUT6_Methods : IMenu
+    class ManipulateStrings : IMenu
     {
         public void MenuOpt0()
         {

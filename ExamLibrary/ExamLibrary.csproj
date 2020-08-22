@@ -54,7 +54,7 @@
     <Compile Include="CreateAndUseTypes\ConsumeTypes.cs" />
     <Compile Include="CreateAndUseTypes\CreateAndUseTypes_6.cs" />
     <Compile Include="CreateAndUseTypes\CreateTypes.cs" />
-    <Compile Include="CreateAndUseTypes\CUT6_Methods.cs" />
+    <Compile Include="CreateAndUseTypes\ManipulateStrings.cs" />
     <Compile Include="CreateAndUseTypes\DynamicExamples.cs" />
     <Compile Include="CreateAndUseTypes\EnumerableImmmediateMethods.cs" />
     <Compile Include="CreateAndUseTypes\EnumerableMethods.cs" />
@@ -74,9 +74,9 @@
     <Compile Include="CreateAndUseTypes\StatementKeywords.cs" />
     <Compile Include="CreateAndUseTypes\StaticExamples.cs" />
     <Compile Include="CreateAndUseTypes\ValueTypes.cs" />
-    <Compile Include="IMenu.cs" />
     <Compile Include="CreateAndUseTypes\InterfacesMenu.cs" />
     <Compile Include="CreateAndUseTypes\ManageObjectCycle.cs" />
+    <Compile Include="IMenu.cs" />
     <Compile Include="ImplementDataAccess\Collections.cs" />
     <Compile Include="ImplementDataAccess\Common.cs" />
     <Compile Include="ImplementDataAccess\CommonCollections.cs" />
