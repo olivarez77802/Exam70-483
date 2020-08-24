@@ -1,4 +1,8 @@
-﻿using System;
+﻿
+
+
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,7 +11,7 @@ namespace Exam70483
 {
     class ValueTypes
     {
-        /* See also Methods.cs on when to use a Class versus Struct.
+        /* See also Methods.cs and  BaseExamples.cs on when to use a Class versus Struct.
          * 
          * Value Types are Independent Instances or Copies.  Value Change doesn't affect other copies.
          * Classes versus Structs

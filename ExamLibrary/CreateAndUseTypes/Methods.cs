@@ -231,6 +231,8 @@ namespace Exam70483
     /* When to use a Struct versus a Class  
      * (See also StaticExamples.cs for comparison of Static versus Instance fields/methods).
      * (See also BaseExamples.cs)
+     * (See also ValueTypes.cs)
+     * 
      * 
       A struct type is a value type that is typically used to encapsulate small groups of related variables, 
       such as the coordinates of a rectangle or the characteristics of an item in an inventory.
@@ -355,12 +357,15 @@ namespace Exam70483
             TheClass testClass = new TheClass();
             TheStruct testStruct = new TheStruct();
 
+            /* Initialize both Class and Struct to 'Not Changed' */
             testClass.willIChange = "Not Changed";
             testStruct.willIChange = "Not Changed";
 
-            // made extension methods
-            // extension methods require class to be static and parameter to have 'this'
-            //
+            /*
+             Made extension methods
+             Extension methods require class to be static and parameter to have 'this'
+             Set both Class and Struct to 'Not Changed' 
+            */
             testClass.ClassTaker();
             //Struct is a value type and may create a new instance but will not change.
             testStruct.StructTaker();
