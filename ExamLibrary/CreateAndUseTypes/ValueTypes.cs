@@ -104,7 +104,9 @@ namespace Exam70483
                 selection = Common.readInt("Enter Number to Execute Routine : ", 0, 9);
                 switch (selection)
                 {
-                    case 0: 
+                    case 0:
+                        Struct1.TCAS_Main();
+                        Console.ReadKey();
                         break;
                     case 1: 
                         EnumTest.EnumMain();

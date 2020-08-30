@@ -73,6 +73,7 @@
     <Compile Include="CreateAndUseTypes\ReflectionExamples.cs" />
     <Compile Include="CreateAndUseTypes\StatementKeywords.cs" />
     <Compile Include="CreateAndUseTypes\StaticExamples.cs" />
+    <Compile Include="CreateAndUseTypes\Struct1.cs" />
     <Compile Include="CreateAndUseTypes\ValueTypes.cs" />
     <Compile Include="CreateAndUseTypes\InterfacesMenu.cs" />
     <Compile Include="CreateAndUseTypes\ManageObjectCycle.cs" />
