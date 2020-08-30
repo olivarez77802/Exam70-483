@@ -72,21 +72,26 @@ namespace Exam70483
                * ?? operator
            
             C# Defaults - Implicit
-            1. Classes are non-static by default. i.e. instance members will be created.
-            2. Constructors - Classes have a default constructor, structs do not.  Remember that with classes 
-               if you do not define a constructor, C# generates generates one that initializes all members
-               to their default values.   Static constructors cannot have access modifiers they are by default private
-               (See Static Examples.cs).  Static constructors are called before instance constructors by default.
-            3. Static classes are sealed by default
-            4. Internal is the default modifier for a class or struct if no access
-               modifer is declared (i.e. public, private,etc.) and are not nested.
-               Delegates behave like classes and structs.  By default they have internal
+            1. Classes are non-static and their access modifier is internal by default. Non-Static means instance members will be created (you use new Class1).  
+               Classes have a default constructor.  Structs do not have a default constructor.
+            2. Class members -   Are private by default.  If you remove the Accessor (see ClassHeirarchy.cs) on a class member by default it will be 'private', 
+               so you cannot access member outside class.   
+               https://stackoverflow.com/questions/2521459/what-are-the-default-access-modifiers-in-c/3175697
+
+            3. Constructors - Classes and structes have a default constructor, structs cannot have a paramterless 
+               contructor defined explicitly, the reason being is that structs are value types. Classes can have a parameteless constructor.
+               When you use the new keyword objects are initialized to their default values (i.e. an int is set to zero, a string set to null).
+               If you declare a variable of struct type without using the new keyword, it does not call any constructor, so all the
+               members remain unassigned and will generate a comile error.  Remember that with classes if you do not define a constructor, 
+               C# generates generates one that initializes all members to their default values.   Static constructors cannot have access modifiers 
+               they are by default private (See Static Examples.cs).  Static constructors are called before instance constructors by default.
+
+            4. Static classes are sealed by default
+            5. Delegates behave like classes and structs.  By default they have internal
                access, they are private by default when nested.
                https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/access-modifiers
-            5. Interfaces are internal by default.  Interface members are public by default.
-            6. Class members are private by defuault.
-               https://stackoverflow.com/questions/2521459/what-are-the-default-access-modifiers-in-c/3175697
-            7. Members of an interface must be public, since they have to be callable via the interface.
+            6. Interfaces are internal by default.  Interface members are public by default.
+               Members of an interface must be public, since they have to be callable via the interface.
                public must be declared explicitily.
 
             */

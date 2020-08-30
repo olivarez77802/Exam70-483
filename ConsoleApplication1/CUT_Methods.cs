@@ -43,7 +43,8 @@ namespace Exam70483
 
         public void MenuOpt6()
         {
-            CreateAndUseTypes_6.Menu();
+            // CreateAndUseTypes_6.Menu();
+            ManipulateStringsMenu.Menu();
             Console.ReadKey();
             //ManipulateStrings.Menu();
             //Console.WriteLine("Equality");

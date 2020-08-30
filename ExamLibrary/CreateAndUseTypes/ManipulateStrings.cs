@@ -41,8 +41,8 @@ namespace Exam70483
         public void MenuOpt4()
         {
             Process.Start("https://msdn.microsoft.com/en-us/library/system.string_methods(v=vs.110).aspx");
-            SMEMain();
-            
+            // SMEMain();
+
         }
 
         public void MenuOpt5()
@@ -54,8 +54,8 @@ namespace Exam70483
 
         public void MenuOpt6()
         {
-            DisplayCharSet();
-          
+            // DisplayCharSet();
+
         }
 
         #region SBMain1 - Example of using Append
@@ -327,16 +327,20 @@ namespace Exam70483
             /* Compare two strings and ignore casing
              * Returns an integer that give the relative position in sort order
              * See InterfacesMenu.cs  1 means greater than; 0 means equal to; -1 means less than.
+             * https://docs.microsoft.com/en-us/dotnet/api/system.string.compare?view=netcore-3.1
             */
             string t0 = "HELLO";
             string t1 = "hello";
             var honorcaset0t1 = String.Compare(t0, t1, false );
             var honorcaset1t0 = String.Compare(t1, t0, false);
             var ignorecase = String.Compare(t0, t1,true);
+            var ignorecaset0t1No3rdParm = String.Compare(t0, t1);
+            var ignorecaset1t0No3rdParm = String.Compare(t1, t0);
             Console.WriteLine("Honour case when comparing strings {0}", honorcaset0t1);  //Outputs 1
             Console.WriteLine("Honour case when comparing strings {0}", honorcaset1t0);  //Outputs -1
             Console.WriteLine("Ignore case when comparing strings {0}", ignorecase); //Outputs 0
-
+            Console.WriteLine("Ignore case(No 3rd Parm, default is false) when comparing strings {0}", ignorecaset0t1No3rdParm);  //Outputs 1
+            Console.WriteLine("Ignore case(No 3rd Parm, default is false) when comparing strings {0}", ignorecaset1t0No3rdParm);  //Outputs -1
 
         }
         #endregion

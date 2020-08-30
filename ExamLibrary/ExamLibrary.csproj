@@ -52,7 +52,7 @@
     <Compile Include="CreateAndUseTypes\Class1.cs" />
     <Compile Include="CreateAndUseTypes\ClassHierarchy.cs" />
     <Compile Include="CreateAndUseTypes\ConsumeTypes.cs" />
-    <Compile Include="CreateAndUseTypes\CreateAndUseTypes_6.cs" />
+    <Compile Include="CreateAndUseTypes\ManipulateStringsMenu.cs" />
     <Compile Include="CreateAndUseTypes\CreateTypes.cs" />
     <Compile Include="CreateAndUseTypes\ManipulateStrings.cs" />
     <Compile Include="CreateAndUseTypes\DynamicExamples.cs" />

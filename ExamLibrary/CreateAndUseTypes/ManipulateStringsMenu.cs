@@ -13,7 +13,8 @@ namespace Exam70483
      *    enumerate string methods; format strings; use string interpolation.
     */
    // struct ManipulateStrings   // and String Examples
-   public struct CreateAndUseTypes_6
+   public static class ManipulateStringsMenu
+        // struct CreateAndUseTypes_6
     {
         #region Main
         public static void Menu()

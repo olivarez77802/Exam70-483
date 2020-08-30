@@ -58,8 +58,7 @@ namespace Exam70483
                         StreamExamples.StreamMain();
                         break;
                     case 7:
-                        CreateAndUseTypes_6.Menu();
-                        // ManipulateStrings.Menu();
+                        ManipulateStringsMenu.Menu();
                         Console.ReadKey();
                         break;
                     case 8:

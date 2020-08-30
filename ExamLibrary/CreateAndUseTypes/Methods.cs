@@ -364,7 +364,9 @@ namespace Exam70483
             /*
              Made extension methods
              Extension methods require class to be static and parameter to have 'this'
-             Set both Class and Struct to 'Not Changed' 
+             Set both Class and Struct to 'Not Changed'
+             
+             
             */
             testClass.ClassTaker();
             //Struct is a value type and may create a new instance but will not change.
