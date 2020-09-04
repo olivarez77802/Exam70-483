@@ -94,7 +94,7 @@ namespace Exam70483
                         break;
                     case eMenu.ClassVsStruct:
                         // TestClassAndStruct.TCAS_Main();
-                        Struct1.TCAS_Main();
+                        Struct1.Menu();
                         Console.ReadKey();
                         break;
                     case eMenu.Quit:

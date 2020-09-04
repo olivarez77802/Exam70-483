@@ -331,16 +331,16 @@ namespace Exam70483
             */
             string t0 = "HELLO";
             string t1 = "hello";
-            var honorcaset0t1 = String.Compare(t0, t1, false );
-            var honorcaset1t0 = String.Compare(t1, t0, false);
+            var honorcaset0t1 = String.Compare(t0, t1, false );   // Same as String.Compare(t0,t1);
+            var honorcaset1t0 = String.Compare(t1, t0, false);    // Same as String.Compare(t1,t0);
             var ignorecase = String.Compare(t0, t1,true);
             var ignorecaset0t1No3rdParm = String.Compare(t0, t1);
             var ignorecaset1t0No3rdParm = String.Compare(t1, t0);
             Console.WriteLine("Honour case when comparing strings {0}", honorcaset0t1);  //Outputs 1
             Console.WriteLine("Honour case when comparing strings {0}", honorcaset1t0);  //Outputs -1
             Console.WriteLine("Ignore case when comparing strings {0}", ignorecase); //Outputs 0
-            Console.WriteLine("Ignore case(No 3rd Parm, default is false) when comparing strings {0}", ignorecaset0t1No3rdParm);  //Outputs 1
-            Console.WriteLine("Ignore case(No 3rd Parm, default is false) when comparing strings {0}", ignorecaset1t0No3rdParm);  //Outputs -1
+            Console.WriteLine("Honour case(No 3rd Parm, default is false) when comparing strings {0}", ignorecaset0t1No3rdParm);  //Outputs 1
+            Console.WriteLine("Honour case(No 3rd Parm, default is false) when comparing strings {0}", ignorecaset1t0No3rdParm);  //Outputs -1
 
         }
         #endregion

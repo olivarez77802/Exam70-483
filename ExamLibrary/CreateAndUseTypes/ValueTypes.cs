@@ -105,7 +105,7 @@ namespace Exam70483
                 switch (selection)
                 {
                     case 0:
-                        Struct1.TCAS_Main();
+                        Struct1.Menu();
                         Console.ReadKey();
                         break;
                     case 1: 
