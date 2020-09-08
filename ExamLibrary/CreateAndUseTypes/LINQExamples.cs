@@ -39,18 +39,18 @@ namespace Exam70483
      * 
      LINQ Operators categories based on execution behavior, divided into 2 groups.
     
-     1. Deferred or Lazy Operators - These query's use deferred executuion.
+     1. Deferred or Lazy Operators - These query's use deferred execution.
         Examples - select, where, Take, Orderby, Skip, etc.
      2. Immediate or Greedy Operators - These query operators use immediate execution.
         Examples - count, average, min, max, ToList, etc.
 
      Classification of Standard Query Operators by Manner of Execution
      https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/classification-of-standard-query-operators-by-manner-of-execution
-     It may be best to use the greed operator ToList to put the data in memory, rather than wait and use the deferred operators especially if this
+     It may be best to use the greedy operator ToList to put the data in memory, rather than wait and use the deferred operators especially if this
      happens more than once.   This is especially true when using IQueryable or datasets that are stored in SQL. 
      
-     IEnumerable - specifies that datasource it always an in memory.
-     IQueryable -  specifies that Lamda statements are translated in expressions that query datasource via SQL.   
+     IEnumerable - specifies that datasource is always in memory.
+     IQueryable -  specifies that Lambda statements are translated in expressions that query datasource via SQL.   
      See IQueryable in InterfacesMenu.cs.
     
      IEnumerable - A List, Array, Query implements IEnumerable.
@@ -62,7 +62,7 @@ namespace Exam70483
     
     Deferred Execution.
     The entire LINQ part of C# is built around deferred execution.  Deferred execution can make
-    things more effectient.  The yield keyword is what's powering deferred execution used in 
+    things more effecient.  The yield keyword is what's powering deferred execution used in 
     LINQ and allows us to use in our code.
 
     See also how Deferred Execution is done with the Yield Statement (See IterationStatements.cs)

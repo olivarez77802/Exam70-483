@@ -230,7 +230,7 @@ namespace Exam70483
                 Console.WriteLine(value);
             }
             Console.WriteLine("Sorted Version using LINQ - Language Integrated Query");
-            //Use LINQ - Language Integrated Query
+            //Use LINQ - Language Integrated Query - Query Syntax
             var sorted = from letter in letters
                          orderby letter
                          select letter;
@@ -289,6 +289,7 @@ namespace Exam70483
             {
                 Console.WriteLine("{0},{1}", pair.Key, pair.Value);
             }
+            Console.WriteLine("Distinct {0}", _h.Distinct());     // Just put in to verify that I could use Distinct with Dictionary
             Console.ReadKey();
         }
         static void List_Remove()
@@ -394,14 +395,15 @@ namespace Exam70483
                         1.We don't have to create an intermediate list to hold our variables
                         2.Does not return a list, but a promise to return a sequence of numbers when
                            asked for it(more concretely it exposes an iterator to allow us to act
-                           on that promise).
+                           on that promise).   It returns a State Machine.  
                         3.Each iteration of the foreach loop calls the iterator method.  When the yield
                           return statement is reached the value is returned, and the current location 
                            in the code is retained.Execution is restarted from that location the next
                          time that the iterator function is called.
                         4.Since the method containing the yield return statement will be paused and
                            resumed where the yield statement takes place, it still maintains its state.
-                        5.Yield helps exercise deferred execution.
+                        5.Yield helps exercise deferred execution.   Deferred execution in some cases
+                          makes your code more efficient.
              */
             var total = 0;
             foreach (var number in numbers)
