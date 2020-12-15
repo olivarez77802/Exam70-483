@@ -17,7 +17,8 @@ namespace Exam70483
                 /*
                  * Interfaces Implement Polymorphism.   Each class that Inherits an Interfaces will implement
                  * the method defined in the interface in a different way, making it Polymorphic.
-                 * 
+                 * Interfaces make it easier to make code easier to maintain,extend, and test.   
+                 * When a class implements an Interface, it fufills a contract set by the Interface.
                  * 
                   See Generic Examples also
                 
@@ -58,8 +59,8 @@ namespace Exam70483
                     Abstract Classes        versus Interfaces
                     -------------------------  |  ---------------------
                     May Contain implementation |  May not contain implementation code - Biggest weakness
-                    Code or may simulate an    |  By default all objects are public and absract.
-                    interface and just have    |
+                    Code or may simulate an    |  By default all objects are public and absract.  Since it is
+                    interface and just have    |  abstract by default then all methods must be implemented.
                     abstract signature.        |
                     A class may inherit from a |  A class may implement any number of interfaces - Biggest 
                     single base class          |  strength.
@@ -183,8 +184,7 @@ namespace Exam70483
                        
                         See also IterationStatements.cs for examples of Yield Return.
                         See also LINQExamples.cs on how deferred execution works.
-                          
-                        
+                                             
 
                         
                         */

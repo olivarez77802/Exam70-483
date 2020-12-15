@@ -10,13 +10,15 @@ namespace Exam70483
 
     called by Methods.cs
 
-    LINQ Operators categories based on execution behavior, divided into 2 groups.
+    
+     LINQ Operators categories based on execution behavior, divided into 2 groups.
     
      1. Deferred or Lazy Operators - These query's use deferred executuion.
         Examples - select, where, Take, Skip, etc.
      2. Immediate or Greedy Operators - These query operators use immediate execution.
         Examples - count, average, min, max, ToList, etc.
 
+     For more info on LINQ see LINQExamples.cs, QueryLINQ.cs
      IEnumerable - A List, Array, Query implements IEnumerable.
      An IEnumerable Interface specifies that the underlying type implements IEnumerable
      Example:

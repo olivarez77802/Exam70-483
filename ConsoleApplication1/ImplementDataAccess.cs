@@ -23,7 +23,7 @@ namespace Exam70483
                 Console.WriteLine("     and XML data; retrieve data by using web services \r");
                 Console.WriteLine(" 2.  Query and Manipulate data and Objects using LINQ \r ");
                 Console.WriteLine("     Query data by using operators, including projection, join, group \r");
-                Console.WriteLine("     take, skip, aggregate; create methodbased LINQ Queries \r");
+                Console.WriteLine("     take, skip, aggregate; create method based LINQ Queries \r");
                 Console.WriteLine("     query data by using query comprehension syntax; select data by using \r");
                 Console.WriteLine("     anonymous types; force execution of a query; read, filter, create, and \r");
                 Console.WriteLine("     modify data structures by using LINQ to XML \r");

@@ -12,7 +12,7 @@ namespace Exam70483
 
 
     /*
-     * See also EnumerableMethods.cs for more information about LINQ.
+     * See also EnumerableMethods.cs, QueryLINQ.cs for more information about LINQ.
      * 
      * LINQ: Query Syntax versus Method Syntax
      * 

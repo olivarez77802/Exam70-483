@@ -8,6 +8,8 @@ using System.Xml.Linq;
 
 namespace Exam70483
 { 
+    /*  See also LINQExamples.cs, EnumerableMethods.cs, QueryLINQ.cs for more info. on LINQ
+    */
     class QueryLINQ
     {
         public static void Menu()
