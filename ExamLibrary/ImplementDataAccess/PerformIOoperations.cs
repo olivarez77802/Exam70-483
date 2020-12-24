@@ -102,26 +102,37 @@ namespace Exam70483
         static void ListDir()
         {
             Console.WriteLine(" Begin Directories C:Users olivarez ");
-            string[] dirs = Directory.GetDirectories(@"C:\Users\olivarez");
+            string[] dirs = Directory.GetDirectories(@"C:\Users\olivarez77802");
             foreach (string dir in dirs)
             {
                 Console.WriteLine(dir);
             }
             Console.WriteLine(" End List of Directories  ");
             Console.ReadKey();
+            /*
+             * Utilize C# 2.0 Anonymous Method using delegate key word
+             */
 
             Console.WriteLine(" Begin Directories C: Users olivarez My Documents DemoWeb ");
-            string[] dir2 = Directory.GetDirectories(@"C:\Users\olivarez\My Documents\DemoWeb");
-
-            foreach (string dir in dir2)
+            Action ListDirectories = delegate()
             {
-                Console.WriteLine(dir);
-            }
+                string[] dir2 = Directory.GetDirectories(@"C:\Users\olivarez77802\Documents");
+                
+                foreach (string dir in dir2)
+                {
+                    Console.WriteLine(dir);
+                }
+            };
+            ListDirectories();
             Console.WriteLine(" End List of Directories  ");
             Console.ReadKey();
+            /*
+             * End of C# 2.0 Anonymous Method using delegate keyword
+             */
 
-            Console.WriteLine(" Begin Directories C: Users olivarez My Documents DemoWeb Visual C#");
-            string[] dir3 = Directory.GetDirectories(@"C:\Users\olivarez\My Documents\DemoWeb\Visual C#");
+
+            Console.WriteLine(" Begin Directories C: Users olivarez My Documents Adobe");
+            string[] dir3 = Directory.GetDirectories(@"C:\Users\olivarez77802\Documents\Adobe");
 
             foreach (string dir in dir3)
             {

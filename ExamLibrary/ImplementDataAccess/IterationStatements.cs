@@ -11,9 +11,18 @@ using System.IO;
 namespace Exam70483
 {
     /* 
-     * Manage Program Flow / Implement Program Flow 
+     * Manage Program Flow / Implement Program Flow
+     *  
+     * Iterators
+     * https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/iterators
+     * 
+     * An iterator can be used to step through collections such as lists and arrays.
+       An iterator method or get accessor performs a custom iteration over a collection. An iterator method uses
+       the yield return statement to return each element one at a time. When a yield return statement is reached, 
+       the current location in code is remembered. Execution is restarted from that location the next time the
+       iterator function is called.
     */
-   public class IterationStatements
+    public class IterationStatements
     {
         public static void Menu()
         {
@@ -404,12 +413,14 @@ namespace Exam70483
                            resumed where the yield statement takes place, it still maintains its state.
                         5.Yield helps exercise deferred execution.   Deferred execution in some cases
                           makes your code more efficient.
+             https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/iterators
              */
             var total = 0;
             foreach (var number in numbers)
             {
                 total += number;
-                yield return total;
+                yield return total;    //* paused here
+                                       //* resumes here
             }
 
         }

@@ -10,50 +10,83 @@ namespace Exam70483
     {
 
         /*
-         * Benefits of using Generics
-         *    Compile-time checking
-         *    Reduces boxing of values
-         *    
-         * T - Type   
-         * Use T as the type parameter for classes with one parameter.
-         * 
-         * Prefix descriptive type parameter names with T
-         * Ex.  public class OpResult<TResult, TMessage>   
-         * 
-         * Genric Constraints - limits the types on parameters.
-         * Where T : struct                -- Value Type
-         * Where T : class                 -- Reference Type
-         * Where T : new()                 -- Type with parameterless constructor
-         * Where T : vendor                -- Be or derive from a vendor class
-         * where T : IVendor               -- Be or implement the IVendor interface
-         * 
-         * ------------------------------------------------------
-         * Generic Contraint Syntax - Class signature
-         * struct - limits the arguments to value types
-         * where T - defines the parameter name
-         * public class OperationResult<T> where T : struct
-         * 
-         * Example - Calling generic
-         * var operationResult = new OperationResult<decimal>();
-         * var operationResult = new OperationResult<bool>();
-         * 
-         *  
-         * ------------------------------------------------------
-         * public <T> Populate<T>(string sql) where T: class, new()
-         * {
-         *   T instance = new T();
-         *   // Code to populate an object
-         *   return instance;
-         * } 
-         * 
-         * Generic Constraint syntax - Method Signature
-         * public T RetrieveValue<T, V>(string sql, V parameter) where T : struct
-         *                                                       where V : struct
-         *                                                       
-         * Populate<T>  could be interpreted as everthing in the class or struct is defined as type T.
-         * https://www.tutorialsteacher.com/csharp/csharp-generics
-         *                                                       
-         */
+         * Generics overview
+
+    Use generic types to maximize code reuse, type safety, and performance.
+    The most common use of generics is to create collection classes.
+    The .NET class library contains several generic collection classes in the System.Collections.Generic namespace.
+    These should be used whenever possible instead of classes such as ArrayList in the System.Collections namespace.
+    You can create your own generic interfaces, classes, methods, events, and delegates.
+    Generic classes may be constrained to enable access to methods on particular data types.
+    Information on the types that are used in a generic data type may be obtained at run-time by using reflection.
+
+    Advantages and DisAdventages of using Generics
+    https://docs.microsoft.com/en-us/dotnet/standard/generics/
+
+    System.Collections.Generic NameSpace
+      Many of the generic collection types are direct analogs of nongeneric types. Dictionary<TKey,TValue>
+      is a generic version of Hashtable; it uses the generic structure KeyValuePair<TKey,TValue> for enumeration
+      instead of DictionaryEntry.
+      List<T> is a generic version of ArrayList. There are generic Queue<T> and Stack<T> classes that correspond 
+      to the nongeneric versions.
+      There are generic and nongeneric versions of SortedList<TKey,TValue>. Both versions are hybrids of a dictionary
+      and a list. The SortedDictionary<TKey,TValue> generic class is a pure dictionary and has no nongeneric counterpart.
+      The LinkedList<T> generic class is a true linked list. It has no nongeneric counterpart.
+   
+   Generic Collections
+   https://www.youtube.com/watch?v=sXdAsfbiTjc
+
+   List Generic Collection
+   List<T> is a generic version of ArrayList.
+   https://www.youtube.com/watch?v=gXyoJA579QI
+
+
+
+ * 
+ * Benefits of using Generics
+ *    Compile-time checking
+ *    Reduces boxing of values
+ *    
+ * T - Type   
+ * Use T as the type parameter for classes with one parameter.
+ * 
+ * Prefix descriptive type parameter names with T
+ * Ex.  public class OpResult<TResult, TMessage>   
+ * 
+ * Genric Constraints - limits the types on parameters.
+ * Where T : struct                -- Value Type
+ * Where T : class                 -- Reference Type
+ * Where T : new()                 -- Type with parameterless constructor
+ * Where T : vendor                -- Be or derive from a vendor class
+ * where T : IVendor               -- Be or implement the IVendor interface
+ * 
+ * ------------------------------------------------------
+ * Generic Contraint Syntax - Class signature
+ * struct - limits the arguments to value types
+ *  where T - defines the parameter name
+ * public class OperationResult<T> where T : struct
+ * 
+ * Example - Calling generic
+ * var operationResult = new OperationResult<decimal>();
+ * var operationResult = new OperationResult<bool>();
+ * 
+ *  
+ * ------------------------------------------------------
+ * public <T> Populate<T>(string sql) where T: class, new()
+ * {
+ *   T instance = new T();
+ *   // Code to populate an object
+ *   return instance;
+ * } 
+ * 
+ * Generic Constraint syntax - Method Signature
+ * public T RetrieveValue<T, V>(string sql, V parameter) where T : struct
+ *                                                       where V : struct
+ *                                                       
+ * Populate<T>  could be interpreted as everthing in the class or struct is defined as type T.
+ * https://www.tutorialsteacher.com/csharp/csharp-generics
+ *                                                       
+ */
         #region GA_Main()
         public static void GA_Main()
         {

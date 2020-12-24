@@ -67,6 +67,7 @@ namespace Exam70483
                       an index and the array resizes itself automatically.  Allows dynamic memory
                       allocation, adding, searching and sorting items in the list.
                       https://www.tutorialspoint.com/csharp/csharp_arraylist.htm
+                      List<T> is a generic version of ArrayList See GenericExamples.cs
                 
                 Multi-Diminesional Arrays.
                     1.  Can have more than one index.
