@@ -101,21 +101,23 @@ namespace Exam70483
 
         static void ListDir()
         {
-            Console.WriteLine(" Begin Directories C:Users olivarez ");
-            string[] dirs = Directory.GetDirectories(@"C:\Users\olivarez77802");
-            foreach (string dir in dirs)
+            Action ListDirectoriesRoot = () =>
             {
-                Console.WriteLine(dir);
-            }
-            Console.WriteLine(" End List of Directories  ");
-            Console.ReadKey();
+                Console.WriteLine(" Begin Directories C:Users olivarez ");
+                string[] dirs = Directory.GetDirectories(@"C:\Users\olivarez77802");
+                foreach (string dir in dirs)
+                {
+                    Console.WriteLine(dir);
+                }
+            };
+            
             /*
              * Utilize C# 2.0 Anonymous Method using delegate key word
              */
-
-            Console.WriteLine(" Begin Directories C: Users olivarez My Documents DemoWeb ");
+           
             Action ListDirectories = delegate()
             {
+                Console.WriteLine(" Begin Directories C: Users olivarez77802 Documents");
                 string[] dir2 = Directory.GetDirectories(@"C:\Users\olivarez77802\Documents");
                 
                 foreach (string dir in dir2)
@@ -123,24 +125,39 @@ namespace Exam70483
                     Console.WriteLine(dir);
                 }
             };
-            ListDirectories();
-            Console.WriteLine(" End List of Directories  ");
-            Console.ReadKey();
+            
             /*
              * End of C# 2.0 Anonymous Method using delegate keyword
+             * 
+             * Begin C# 3.0 Anonymous Method using Lambda Expression
              */
 
-
-            Console.WriteLine(" Begin Directories C: Users olivarez My Documents Adobe");
-            string[] dir3 = Directory.GetDirectories(@"C:\Users\olivarez77802\Documents\Adobe");
-
-            foreach (string dir in dir3)
+            Action ListDirectories2 = () =>
             {
-                Console.WriteLine(dir);
-            }
-            Console.WriteLine(" End List of Directories  ");
+                Console.WriteLine(" Begin Directories C: Users olivarez My Documents Adobe");
+                string[] dir3 = Directory.GetDirectories(@"C:\Users\olivarez77802\Documents\Adobe");
+
+                foreach (string dir in dir3)
+                {
+                    Console.WriteLine(dir);
+                }
+               
+            };
+
+            ListDirectoriesRoot();
+            Console.WriteLine(" End List of Directories Root Anonymous Method using Lambda Expression ");
             Console.ReadKey();
-            // Console.Out.WriteLine("contents = " + contents);
+
+            ListDirectories();
+            Console.WriteLine(" End List of Directories Anonymous Method using Delegate  ");
+            Console.ReadKey();
+
+            ListDirectories2();
+            Console.WriteLine(" End List of Directories Anonymous Method using Lambda Expression ");
+            Console.ReadKey();
+            /* 
+             * End of Lambda Expression
+             */ 
         }
 
         static void ListContent()
