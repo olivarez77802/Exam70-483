@@ -7,8 +7,13 @@ using System.Threading.Tasks;
 
 namespace Exam70483
 {
-    class ConsumeData
+   
+    static class ConsumeData
     {
+     /*
+     * I can't move this object to Folder ImplementDataAccess until ExamLibrary has a reference to Newton.JSON
+     * see JSONExamples.cs
+     */
         public static void Menu()
         {
             int x = 0;
