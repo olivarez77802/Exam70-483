@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace Exam70483
 {
    
-    static class ConsumeData
+    class ConsumeData
     {
      /*
      * I can't move this object to Folder ImplementDataAccess until ExamLibrary has a reference to Newton.JSON

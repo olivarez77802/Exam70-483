@@ -81,7 +81,6 @@
     <Compile Include="ImplementDataAccess\Collections.cs" />
     <Compile Include="ImplementDataAccess\Common.cs" />
     <Compile Include="ImplementDataAccess\CommonCollections.cs" />
-    <Compile Include="ImplementDataAccess\ConsumeData.cs" />
     <Compile Include="ImplementDataAccess\IterationStatements.cs" />
     <Compile Include="ImplementDataAccess\PerformIOoperations.cs" />
     <Compile Include="ImplementDataAccess\SortingExamples.cs" />
