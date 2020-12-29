@@ -102,7 +102,9 @@ namespace Exam70483
                         break;
                     case 3: Collections.Menu();
                         break;
-                    case 4: ManageProgramFlow_3_2.Menu();
+                    case 4:
+                        CreateEventsAndCallbacks_2.Menu();
+                        //ManageProgramFlow_3_2.Menu();
                         //Delegate.Menu();
                         break;
                     case 5: InterfacesMenu.Menu();

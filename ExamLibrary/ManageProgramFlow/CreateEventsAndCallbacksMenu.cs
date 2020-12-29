@@ -17,6 +17,10 @@ namespace Exam70483
             {
                 Console.Clear();
                 Console.WriteLine(" Create and Implement Events and CallBacks \n");
+                Console.WriteLine("   Create Event Handlers; subscribe to and unsubscribe from events;");
+                Console.WriteLine("   use built-in delegate types to create events;");
+                Console.WriteLine("   create delegates; lambda expressions; anonymous methods");
+                Console.WriteLine(" ");
                 Console.WriteLine(" 0.  Create Event Handlers \n ");
                 Console.WriteLine(" 1.  Subscribe and Unsubscribe from Events  \n ");
                 Console.WriteLine(" 2.  Delegates  \n ");

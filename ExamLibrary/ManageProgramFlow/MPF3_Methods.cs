@@ -10,20 +10,23 @@ namespace Exam70483
     {
         public void MenuOpt0()
         {
-            ManageProgramFlow_3_0.Menu();
+            CreateEventsAndCallbacks_0.Menu();
+           // ManageProgramFlow_3_0.Menu();
           //  EventHandlerExamples.Menu();
         }
 
         public void MenuOpt1()
         {
-            ManageProgramFlow_3_1.Menu();
+            CreateEventsAndCallbacks_1.Menu();
+           // ManageProgramFlow_3_1.Menu();
             //EventExamples.Menu();
             
         }
 
         public void MenuOpt2()
         {
-            ManageProgramFlow_3_2.Menu();
+            CreateEventsAndCallbacks_2.Menu();
+           // ManageProgramFlow_3_2.Menu();
          //   Delegate.Menu();
             
         }
