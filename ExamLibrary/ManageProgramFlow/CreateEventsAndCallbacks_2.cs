@@ -36,7 +36,18 @@ namespace Exam70483
  * - Covariance permits a method to have return type that is more derived than defined in the 
  *   delegate.
  * - Contravariance permits a method that has a parameter types that are less derived than
- *   those in the delegate type.
+ *   those in the delegate type.'
+ *   
+ *   Covariance and contravariance support for method groups allows for matching method signatures with delegate types.
+ *   This enables you to assign to delegates not only methods that have matching signatures, but also methods that return more 
+ *   derived types (covariance) or that accept parameters that have less derived types (contravariance) than that specified 
+ *   by the delegate type.
+ *   https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/covariance-contravariance/
+ *   
+ *   Variance in generic interfaces is supported for reference types only. Value types do not support variance. 
+ *   For example, IEnumerable<int> cannot be implicitly converted to IEnumerable<object>, because integers are 
+ *   represented by a value type.
+ *   https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/covariance-contravariance/variance-in-generic-interfaces
  *      
  * 
  * Covariance Example.
