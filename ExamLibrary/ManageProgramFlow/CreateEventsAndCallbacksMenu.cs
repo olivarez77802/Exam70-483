@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Exam70483
 {
     // public class EventsandCallBacksMenu
-    class ManageProgramFlow_3 
+    class CreateEventsAndCallbacks 
     {
         public static void Menu()
         {

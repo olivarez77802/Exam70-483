@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace Exam70483
 {
-    // class ManageMultithreading
-    class ManageProgramFlow_1
+    class ManageMultithreadingMenu
+    // class ManageProgramFlow_1
     {
         public static void Menu()
         {

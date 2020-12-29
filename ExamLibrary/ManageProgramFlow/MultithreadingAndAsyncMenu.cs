@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 
 namespace Exam70483
 {
-  //  class MultithreadingAndAsync
-     class ManageProgramFlow_0
+    class MultithreadingAndAsyncMenu
+   //  class ManageProgramFlow_0
     {
         #region Menu
         public static void Menu()
         {
-            IMenu MPF0 = new MPF0_Methods();
+            IMenu MPF0 = new MultiThreadingAndAsync_Methods();
 
             int x = 0;
             do

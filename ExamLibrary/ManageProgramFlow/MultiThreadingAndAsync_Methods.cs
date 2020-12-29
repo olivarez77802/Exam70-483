@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Exam70483
 {
-    class MPF0_Methods : IMenu
+    class MultiThreadingAndAsync_Methods : IMenu
     {
         public void MenuOpt0()
         {

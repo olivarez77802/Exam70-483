@@ -10,13 +10,14 @@ namespace Exam70483
     {
         public void MenuOpt0()
         {
-          ManageProgramFlow_0.Menu();
+            MultithreadingAndAsyncMenu.Menu();
+          //ManageProgramFlow_0.Menu();
         }
          
         public void MenuOpt1()
         {
-            // ManageMultithreading.Menu();
-            ManageProgramFlow_1.Menu();
+            ManageMultithreadingMenu.Menu();
+            // ManageProgramFlow_1.Menu();
 
         }
 
@@ -27,7 +28,8 @@ namespace Exam70483
 
         public void MenuOpt3()
         {
-            ManageProgramFlow_3.Menu();
+            CreateEventsAndCallbacks.Menu();
+            //ManageProgramFlow_3.Menu();
             //EventsandCallBacksMenu.Menu();
         }
 
