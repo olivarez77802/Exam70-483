@@ -21,7 +21,7 @@ namespace Exam70483
 
         public void MenuOpt2()
         {
-            throw new NotImplementedException();
+            ExamLibrary.CreateAndUseTypes.EnforceEncapsulation.Menu();
             
        }
 

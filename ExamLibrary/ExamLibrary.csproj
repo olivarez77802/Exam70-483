@@ -52,6 +52,7 @@
     <Compile Include="CreateAndUseTypes\Class1.cs" />
     <Compile Include="CreateAndUseTypes\ClassHierarchy.cs" />
     <Compile Include="CreateAndUseTypes\ConsumeTypes.cs" />
+    <Compile Include="CreateAndUseTypes\EnforceEncapsulation.cs" />
     <Compile Include="CreateAndUseTypes\ManipulateStringsMenu.cs" />
     <Compile Include="CreateAndUseTypes\CreateTypes.cs" />
     <Compile Include="CreateAndUseTypes\ManipulateStrings.cs" />
@@ -117,6 +118,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MathService1\MathService1.csproj">
+      <Project>{68c0a4ee-8123-475b-a910-46056173845d}</Project>
+      <Name>MathService1</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
