@@ -91,7 +91,7 @@ namespace Exam70483
       Class is reference type whereas struct is value type  
       Class has a default constructor, Struct Do Not have a default constructor  
       Struct cannot declare a default constructor or destructor. However, it can have parameterized constructors.
-      Struct can be instasntiated without the new operator. However, you won't be able to use any of its methods, 
+      Struct can be instantiated without the new operator. However, you won't be able to use any of its methods, 
       events or properties if you do so.
       Struct cannot be used as a base or cannot derive another struct or class. 
       Structs cannot inherit from another struct or class.  They can implement and interface. 

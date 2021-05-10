@@ -179,7 +179,9 @@ namespace Exam70483
                            **  you.  The yield return statements simply tell the compiler what the sequence of enumeration values
                            **  to return is.  
                            *
-                           **  Use 'yield return' when you want to return elements from a collection one at a time. 
+                           **  Use 'yield return' when you want to return elements from a collection one at a time. Once 
+                           *   execution goes back it will pick up execution at the statement immediately following
+                           *   the 'yield' return.
                           
                        
                         See also IterationStatements.cs for examples of Yield Return.

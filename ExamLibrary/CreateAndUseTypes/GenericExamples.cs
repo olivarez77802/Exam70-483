@@ -281,7 +281,9 @@ namespace Exam70483
                 Console.WriteLine("Lambda..Name found...");
 
            /*
-             Differences between Function / Action / Predicate
+             Differences between Function / Action / Predicate.  Func and Predicate can only return
+             one value, the type is to the far right.  Predicate the return type is always boolean but
+             is optional.
             
              Func:  A delegate for a function that may or may not take 
               parameters and return a value.

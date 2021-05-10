@@ -12,11 +12,40 @@ namespace Exam70483
 
 
     /*
+     * The System.Linq namespace is in the System.Core assembly (in System.Core.dll).
+     * The Enumerable class contains LINQ standard query operators that operate on objects that 
+     * implement IEnumerable<T>. The Queryable class contains LINQ standard query operators that
+     * operate on objects that implement IQueryable<T>.
+     * 
+     * LINQ - Early in the C# Language programmers had to access an API according to the data source
+     * they were tring to access.  There was an API for Object Data (Arrays,Lists), 
+     * Relational Data (ADO.Net,SQL), and XML Data (XML Document,XPath).  LINQ Solves this problem of
+     * accessing different API's by allowing you to access in memory Object Data, Relation Data, and
+     * XML Data.   This is accomplished by using the IEnumerable interface and by the use of generics.
+     * The underlying LINQ is controlled by the IEnumerable Interface, generics(FUNC,ACTION,Predicate. Linq mostly
+     * uses Func it rarely uses Action or Predicate), method syntax,Lambda Expressions 
+     * (or the former Anonymous methods), yied return (deferred execution,immediate execution).  Many methods 
+     * used in the Linq syntax will take an IEnumerable as input and return an IEnumerable allowing you to
+     * chain using method syntax.  The method syntax is accomplished by creating Extension methods.  Three rules
+     * to create an extension method (1) class must be static (2) method must be static (3) first parameter must 
+     * use 'this' keyword.
+     * The 'var' key word is also useful for complex return types such as Linq since you do not have to figure out
+     * what is being returned.  Especially when you don't really care about what is being returned you just want to 
+     * iterate through the result.  So use the 'var' keyword wherever it makes sense and does not detract from 
+     * readablity. 'var' is only used for local variables.  The 'var' keyword uses implicit typing so you must
+     * initialize.
+     * 
+     * 
      * See also EnumerableMethods.cs, QueryLINQ.cs for more information about LINQ.
      * 
-     * LINQ: Query Syntax versus Method Syntax
+     * LINQ: Query Syntax versus Method Syntax.  Method Syntax has more methods available to it than
+     * Query Syntax.  Example: Count(),Take(),Skip() is available in Method Syntax but not in Query Syntax.
+     * Query Syntax is translated under the covers to use extension methods.
      * 
-     * Query Syntax always start with 'from'.  Query ends with 'select' or 'group'
+     * Query Syntax always start with 'from' and ends with 'select' or 'group'.
+     * Behind the scenes C# will convert the query syntax to use the extension
+     * methods.
+     * 
      * Query Syntax Examples:
      * var qNames = from name in listOfNames where name.Length <= 8 select name;
      * 
@@ -28,7 +57,7 @@ namespace Exam70483
      * Extension methods can extend any type this includes interfaces, class, sealed class (like string),
      * object type (in this case extension method would be available everywhere).  You can extend an 
      * instance method on an object, e.g. cannot replace an object method named .ToString() since every
-     * object already has this method.  The namespace is important with extension methods since he can
+     * object already has this method.  The namespace is important with extension methods since you can
      * either add or take away the methods that are available.
      * 
      * https://csharp.net-tutorials.com/linq/linq-query-syntax-vs-method-syntax/
@@ -39,10 +68,21 @@ namespace Exam70483
      * 
      LINQ Operators categories based on execution behavior, divided into 2 groups.
     
-     1. Deferred or Lazy Operators - These query's use deferred execution.
+     1. Deferred or Lazy Operators - These query's use deferred execution.  Deferred 
+        are implmented using an IEnumerable using the yield return.
         Examples - select, where, Take, Orderby, Skip, etc.
      2. Immediate or Greedy Operators - These query operators use immediate execution.
+        These operators do no implement IEnumerable.  Count returns a concret List<T> and
+        not IEnumerable.
         Examples - count, average, min, max, ToList, etc.
+
+     There are actually 4 manners of execution
+     1. Immediate - data source is read and the operation is performed at the point in the code where the query
+                    is declared. 
+     2. Deferred -  operation is not performed at the point in the code where the query is declared.
+     3. Streaming - do not have to read all the source data before they yield elements.
+     4. Non Streaming - must read all the source data before they can yield a result element.
+     https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/classification-of-standard-query-operators-by-manner-of-execution
 
      Classification of Standard Query Operators by Manner of Execution
      https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/classification-of-standard-query-operators-by-manner-of-execution
@@ -67,6 +107,14 @@ namespace Exam70483
 
     See also how Deferred Execution is done with the Yield Statement (See IterationStatements.cs)
     https://www.kenneth-truyers.net/2016/05/12/yield-return-in-c/
+
+    How LINQ implements most extension methods. In Linq most extension methods are of IEnumeralbe<T> and 
+    return IEnumerable<T>, there is usually a Func parameter:
+    public static IEnumerable<T> Filter<T>(this IEnumerable<T> source, Func<T,bool> Predicate)
+    {
+    }
+
+
     */
 
     public class LINQExamples

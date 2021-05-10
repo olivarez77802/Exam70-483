@@ -78,13 +78,14 @@ namespace Exam70483
         static void ListFiles()
         {
 
-            string contents = System.IO.File.ReadAllText(@"C:\Users\olivarez\My Documents\DemoWeb\Visual C#\Collections.txt");
+            // string contents = System.IO.File.ReadAllText(@"C:\Users\olivarez\My Documents\DemoWeb\Visual C#\Collections.txt");
             /* File.ReadAllLines may be used instead of ReadAllText
             
               Console.Out.WriteLine(System.IO.Directory.GetFiles(@"C:\Users\olivarez"));
               string[] filePaths = Directory.GetFiles(@"C:\Users\olivarez\");
             */
-            string[] filePaths = Directory.GetFiles(@"C: \Users\olivarez\My Documents\DemoWeb\Visual C#");
+            /* Below works 
+            string[] filePaths = Directory.GetFiles(@"C:\Users\olivarez77802\Documents\GirlScouts");
             Console.WriteLine("List all of the files (NOT Folders) in Directory");
             for (int i = 0; i < filePaths.Length; ++i)
             {
@@ -93,7 +94,38 @@ namespace Exam70483
                 Console.WriteLine(System.IO.Path.GetFileName(path));
                 // Console.WriteLine("End Director");
             }
-            Console.WriteLine(" End List of Files ");
+            */
+            //  Alternative method
+            string path = (@"C:\Users\olivarez77802\Documents\GirlScouts");
+            DirectoryInfo directory = new DirectoryInfo(path);
+            FileInfo[] files = directory.GetFiles();
+            for (int i = 0; i < 5; i++)
+            {
+                FileInfo file = files[i];
+                Console.WriteLine($"{file.Name}"); 
+            }
+
+
+            Console.WriteLine(" End List of Files without Linq   ");
+            Console.WriteLine(" *********************************");
+            
+            Console.WriteLine(" Start of List of Files using Linq Query Syntax");
+            var query = from file in new DirectoryInfo(path).GetFiles()
+                        orderby file.Length descending
+                        select file;
+            foreach (var file in query.Take(5))
+            {
+                Console.WriteLine($"{file.Name}");
+            }
+
+            Console.WriteLine("***************************************");
+            Console.WriteLine(" Start of List of Files using Linq Method Syntax");
+            var queryM = new DirectoryInfo(path).GetFiles().OrderByDescending(f => f.Length).Take(5);
+                        
+            foreach (var file in queryM)
+            {
+                Console.WriteLine($"{file.Name}");
+            }
 
             Console.ReadKey();
 

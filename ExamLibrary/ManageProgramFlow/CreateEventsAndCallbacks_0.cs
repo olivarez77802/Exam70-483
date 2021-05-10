@@ -10,7 +10,8 @@ namespace Exam70483
      * 1. Accessiblity (public or private)
      * 2. event - keyword
      * 3. delegate: A delegate type that defines the kind of method that can act as an event
-     *              handler for the event.
+     *              handler for the event.  A delegate is a type safe function pointer that serves
+     *              as a pipleline for the EventArgs.
      * 4. EventName: The name that the class is giving the event.
      * 
      * Example:
@@ -38,7 +39,12 @@ namespace Exam70483
     class CreateEventsAndCallbacks_0
     {
         /* 
-         * Event Handlers will usually be coupled with an Event Listener.
+         * Event Handlers will usually be coupled with an Event Listener. Event Handler
+         * is responsible for receiving and processing data from a delegate.  Event
+         * Handlers, normally receive two parameters:
+         * - Sender
+         * - EventArgs
+         * EventArgs are responsible for encapsulating Event Data.
         */
         // Same as defining public delegatate void Action1(); 
         public delegate void EventHandler();

@@ -1,4 +1,6 @@
-﻿using System;
+﻿
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,7 +15,8 @@ namespace Exam70483
     
      LINQ Operators categories based on execution behavior, divided into 2 groups.
     
-     1. Deferred or Lazy Operators - These query's use deferred executuion.
+     1. Deferred or Lazy Operators - These query's use deferred executuion.  Deferred Operators
+        are implmented using IEnumerable using a yield return.
         Examples - select, where, Take, Skip, etc.
      2. Immediate or Greedy Operators - These query operators use immediate execution.
         Examples - count, average, min, max, ToList, etc.

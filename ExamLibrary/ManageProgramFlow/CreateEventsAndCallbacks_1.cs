@@ -29,6 +29,12 @@ namespace Exam70483
      * is the contract the event must have with anyone who communicates with it. It's like "string MyString" - 
      * the string is declaring the type. event MyEventHandler TheEvent is declaring that anyone who interacts 
      * with this event must conform to the MyEventHandler contract. 
+     * Event Handlers will usually be coupled with an Event Listener. Event Handler
+     * is responsible for receiving and processing data from a delegate.  Event
+     * Handlers, normally receive two parameters:
+     * - Sender
+     * - EventArgs
+     * EventArgs are responsible for encapsulating Event Data.
      * 
      * Using EventHandler<T>
      * .Net includes a generic EventHandler<T> Class that can be used instead of a custom delegate
@@ -57,7 +63,7 @@ namespace Exam70483
      *  }
      *  
      */
-     
+
     // class EventExamples
     //class ManageProgramFlow_3_1
     class CreateEventsAndCallbacks_1

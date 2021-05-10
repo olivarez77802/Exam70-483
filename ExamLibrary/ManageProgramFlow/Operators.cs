@@ -158,7 +158,27 @@ namespace Exam70483
             i = 6;
             j = i < 5 ? square(++i) : square(--i);
             Console.WriteLine("Prefix Square is {0}", j);
-
+            /*
+             * Using a named method is outdated, they were replaced with Anonnymous methods.
+             * Anonymous methods were then replaced with Lambda Expressions.  Below is example
+             * of using Lambda expressions
+             */
+            Func<int, int> LambdaSquare = x => x * x;
+            Func<int, int, int> add = (x,y) => x + y;
+            /*
+             * Note! if you use curly braces in Lambda you have to use return statement!
+             */
+            Func<int, int, int> addWithCurlyBraces = (x, y) =>
+            {
+                return (x + y);
+            };
+            /*
+             * You can optionally define the type of the input parameter.
+             */
+            Func<int, int, int> addOptionalLongVersion = (int x, int y) => x + y;
+            Console.WriteLine(" Lambda Square {0}", LambdaSquare(5));
+            Console.WriteLine(" Lambda Add {0}", add(5,10));
+ 
         }
         static int square (int i)
         {

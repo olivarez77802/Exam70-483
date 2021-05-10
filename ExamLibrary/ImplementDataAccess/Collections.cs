@@ -411,6 +411,7 @@ namespace Exam70483
             IEnumerable<int> topThreeGrades =
             // grades.OrderByDescending(gradeornamemeanything => gradeornamemeanything).Take(3);
             grades.OrderByDescending(x => x).Take(3);
+           
             
             Console.WriteLine("All Grades are:");
             foreach (int grade in grades)
