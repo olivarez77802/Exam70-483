@@ -47,6 +47,10 @@ namespace Exam70483
                                         ((?!00)\d{2})
                                         (?:[ -]?)
                                         ((?![0]{4})\d{4})$
+         [ValidatePattern('^([A-Z#@$][A-Z0-9#@$\-]*\.)*[A-Z#@$][A-Z0-9#@$\-]*$')]
+         The argument "k713fa\hcm\fbpr049.y1jan" does 
+         not match the "^([A-Z#@$][A-Z0-9#@$\-]*\.)*[A-Z#@$][A-Z0-9#@$\-]*$" pattern.   Turned out the '\' 
+         were invalid (I had to replace with periods).                                
        
          http://regexr.com
            
