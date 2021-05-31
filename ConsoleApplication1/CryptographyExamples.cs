@@ -69,6 +69,10 @@ namespace Exam70483
                          *   - For digital signatures, use RSA or ECDiffieHellman
                          *   - For random number generation, use RNGCryptoServiceProvider.
                          *   - For generating a key from a password, use Rfc2898DeriveBytes
+                         *   
+                         *   You can send out your public key, others can use the key to encrypt data they want to 
+                         *   send to you.  You are the only one who can decrypt the data sent to you since you are
+                         *   the only one with the private key. 
                         */
                         RSA_Sample();
                         Console.ReadKey();

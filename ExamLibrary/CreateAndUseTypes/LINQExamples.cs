@@ -153,14 +153,14 @@ namespace Exam70483
                {
                    new Employee {ID = 1, Name = "Mark", DepartmentID = 1},
                    new Employee {ID = 2, Name = "Steve", DepartmentID = 2},
-                    new Employee {ID = 3, Name = "Steve", DepartmentID = 1},
-                    new Employee {ID = 4, Name = "Philip", DepartmentID = 1},
+                   new Employee {ID = 3, Name = "Steve", DepartmentID = 1},
+                   new Employee {ID = 4, Name = "Philip", DepartmentID = 1},
                    new Employee {ID = 5, Name = "Mary", DepartmentID = 2},
-                    new Employee {ID = 6, Name = "Valarie", DepartmentID = 2},
-                    new Employee {ID = 7, Name = "John", DepartmentID = 1},
-                    new Employee {ID = 8, Name = "Pam", DepartmentID = 1},
+                   new Employee {ID = 6, Name = "Valarie", DepartmentID = 2},
+                   new Employee {ID = 7, Name = "John", DepartmentID = 1},
+                   new Employee {ID = 8, Name = "Pam", DepartmentID = 1},
                    new Employee {ID = 9, Name = "Staley", DepartmentID = 2},
-                    new Employee {ID = 10, Name = "Andy"}
+                   new Employee {ID = 10, Name = "Andy"}
                };
 
             }

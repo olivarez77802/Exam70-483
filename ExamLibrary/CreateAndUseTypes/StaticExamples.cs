@@ -37,7 +37,14 @@ namespace Exam70483
      *  
      *  Static constructors are called only once, no matter how many instances you create.  By default a static constructor cannot have an access
      *  modifier, it is by default private.  You don't have to call a static constructor.  A static constructor are called before instance fields 
-     *  are called. We use a static constructor to initialize static fields.
+     *  are called. We use a static constructor to initialize static fields.  If you were to put the access modifier
+     *  of public someone could call the static constructor and we should not be allowing this to be done.
+     *  
+     *  If something is not going to change on a per object basis, it is wise to make it static.  Note! once you make
+     *  it static you can refer to it using the 'this' keyword since it is no longer an instance field.  Instead of
+     *  using 'this' you can prefix the field with the name of the class.  Note! static members are invoked using
+     *  the name of the class( This differs from instance members, it wouldn't make sense to invoke static member the
+     *  same as instance members).
      *  
      *  Static constructors are called before instance constructors.
      *               
