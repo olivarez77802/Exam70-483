@@ -75,7 +75,7 @@ namespace Exam70483
      However, the abstract class can be inherited and
      the class that inherited the abstract class can be instantiated.  
      
-     Struct versus Classes - 
+     Struct versus Classes -  See also Methods.cs
        1. Same as saying Value versus Reference Types.  See ValueTypes.cs and Methods.cs for info on Classes versus Structs.
      Note!! - Both Struct and Class will use the 'new' keyword.   See also Static versus Dynamic in Dynamic Examples.cs.  Cannot
      use the 'new' keyword with Static types.   
