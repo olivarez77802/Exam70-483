@@ -78,11 +78,11 @@ namespace Exam70483
                so you cannot access member outside class.   
                https://stackoverflow.com/questions/2521459/what-are-the-default-access-modifiers-in-c/3175697
 
-            3. Constructors - Classes and structes have a default constructor, structs cannot have a paramterless 
+            3. Constructors - Classes and structes have a default constructor, structs cannot have a parameterless 
                contructor defined explicitly, the reason being is that structs are value types. Classes can have a parameteless constructor.
                When you use the new keyword objects are initialized to their default values (i.e. an int is set to zero, a string set to null).
                If you declare a variable of struct type without using the new keyword, it does not call any constructor, so all the
-               members remain unassigned and will generate a comile error.  Remember that with classes if you do not define a constructor, 
+               members remain unassigned and will generate a compile error.  Remember that with classes if you do not define a constructor, 
                C# generates generates one that initializes all members to their default values.   Static constructors cannot have access modifiers 
                they are by default private (See Static Examples.cs).  Static constructors are called before instance constructors by default.
 
