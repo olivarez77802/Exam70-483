@@ -168,7 +168,7 @@ namespace Exam70483
                          *   May be restarted
                          *   Timer
                          **********************************************************************************************
-                         *  Unmanged Resources
+                         *  Unmanaged Resources
                          *   - Text File Reading, File Opening, XML Reading
                          *   - Microsoft came up with the 'Using' statement to properly dispose of these unmanaged resources
                          *   

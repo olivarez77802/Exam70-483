@@ -19,7 +19,7 @@ namespace Exam70483
            
            Windows RunTime
            https://www.youtube.com/watch?v=24Uaf3Y4qW8
-
+           To Do:  1. Try building Camera Demo 2. Try building WinMd Hybrid App
 
            Refelection
            * Reflection inspects type metadata at runtime

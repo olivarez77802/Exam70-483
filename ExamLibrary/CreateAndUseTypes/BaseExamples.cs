@@ -32,13 +32,21 @@ namespace Exam70483
      3. Static class members are accessed by the class name followed by the member name.
      https://www.c-sharpcorner.com/UploadFile/74ce7b/static-class-in-C-Sharp/#:~:text=There%20are%20two%20types%20of,%2C%20static%20and%20non%2Dstatic.&text=This%20is%20the%20default%20type,%22Non%2Dstatic%20member%22.
 
-     base class types to override - abstract and virtual
-     abstract - Incomplete class; must be completed in a derived class.  Also
-                cannot be instantiated.   Will usually hold methods that are defined as either virtual
-                or abstract.  Abstract classes are useful because of Polymorphism.  Abstract class can
-                provide some implementation details.  This is a difference between them and Interfaces.
-                Interfaces cannot provide implementation details.   Abstract Classes should be compared
-                with Interfaces.   See InterfacesMenu.cs
+     base class types to override - abstract and virtual.  Please note there are abstract 
+     classes and abstract methods.
+
+     abstract class - Incomplete class; must be completed in a derived class.  Also
+                cannot be instantiated. Abstract class can provide some implementation
+                details.  This is the difference between them and Interfaces. Interfaces
+                cannot provide implementation details.  Abstract classes should be compared
+                with Interfaces.  See InterfacesMenu.cs. Abstract classes are usefull 
+                because of polymorphism. 
+                
+     abstract method -  A class can have methods that are defined as either virtual
+                or abstract.  If a class has one abstract method, the class must be defined
+                as abstract as well.  abstract methods must be overridden.  Compare abstract methods
+                with virtual methods.  The 'override' keyword will be used on the derived class.
+                 
      inherit  - You can inherit from many interfaces.  You are restricted from inheriting from only one class
                 whether it is abstract or concrete.
      virtual - first implementation.   When you use the virtual keyword you enable Polymorphism
