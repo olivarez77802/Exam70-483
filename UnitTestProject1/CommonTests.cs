@@ -14,7 +14,7 @@ namespace ImplementDataAccess.Tests
         [TestMethod()]
         public void readStringTest()
         {
-            Assert.Fail();
+            Assert.Inconclusive();
         }
         
     }

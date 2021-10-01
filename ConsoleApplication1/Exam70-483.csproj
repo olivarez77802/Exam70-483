@@ -55,8 +55,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AttributeExamples.cs" />
-    <Compile Include="BaseExamples.cs" />
-    <Compile Include="Box.cs" />
     <Compile Include="ConcurrentCollections.cs" />
     <Compile Include="ConsumeData.cs" />
     <Compile Include="CreateAndUseTypes.cs" />
@@ -71,7 +69,6 @@
     <Compile Include="ImplementDiagnostics.cs" />
     <Compile Include="ISpecialDefence.cs" />
     <Compile Include="ManageObjectCycle.cs" />
-    <Compile Include="JSONExamples.cs" />
     <Compile Include="ManageAssemblies.cs" />
     <Compile Include="ObjectExamples.cs" />
     <Compile Include="Program.cs" />
@@ -86,9 +83,6 @@
     </Compile>
     <Compile Include="ThreadStartDelegate.cs" />
     <Compile Include="WCFWebServiceExamples.cs" />
-    <Compile Include="XMLDocumentExamples.cs" />
-    <Compile Include="XMLExamples.cs" />
-    <Compile Include="SerializeAndDeSerialize.cs" />
     <Compile Include="ThreadingExamples.cs" />
     <Compile Include="ValidateAppInput.cs" />
   </ItemGroup>

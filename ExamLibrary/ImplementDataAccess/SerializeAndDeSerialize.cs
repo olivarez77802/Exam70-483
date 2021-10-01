@@ -8,7 +8,8 @@ using System.IO;
 
 namespace Exam70483
 {
-    class SerializeAndDeSerialize
+    //* Had to change assessor from internal to puplic so that ImplementDataAccess.cs call can be made
+    public class SerializeAndDeSerialize
     {
         public static void Menu()
         {
