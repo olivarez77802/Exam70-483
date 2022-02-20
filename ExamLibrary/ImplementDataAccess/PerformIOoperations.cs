@@ -29,7 +29,7 @@ namespace Exam70483
                 Console.WriteLine(" 1.  List Directories  \n ");
                 Console.WriteLine(" 2.  List Contents of a File \n");
                 Console.WriteLine(" 3.  Open URL \n");
-                Console.WriteLine(" 4.  .... \n");
+                Console.WriteLine(" 4.  Create Directory \n");
                 Console.WriteLine(" 5.  Parse Examples \n");
                 Console.WriteLine(" 6.  StreamReader \n");
                 Console.WriteLine(" 7.  StringReader \n");
@@ -49,7 +49,8 @@ namespace Exam70483
                         break;
                     case 3: openUrl();
                         break;
-                    case 4:
+                    case 4: CreateDirectory();
+                        Console.ReadKey();
                         break;
                     case 5:
                         ParseExamples.Main_Mod();
@@ -210,6 +211,20 @@ namespace Exam70483
             Process.Start("http://www.google.com");
         }
        
+        static void CreateDirectory()
+        {
+            // See https://www.c-sharpcorner.com/UploadFile/mahesh/create-a-directory-in-C-Sharp/
+            string root = @"C:\Temp";
+            if (!Directory.Exists(root))
+            {
+                Directory.CreateDirectory(root);
+                Console.WriteLine("Directory created");
+            }
+            else
+            {
+                Console.WriteLine(@"C:\Temp arleady exists! Cannot create");               
+            }
 
+        }
     }
 }

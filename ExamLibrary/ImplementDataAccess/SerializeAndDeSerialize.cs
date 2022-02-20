@@ -8,7 +8,8 @@ using System.IO;
 
 namespace Exam70483
 {
-    class SerializeAndDeSerialize
+    //* Had to change assessor from internal to puplic so that ImplementDataAccess.cs call can be madeTndx21no#
+    public class SerializeAndDeSerialize
     {
         public static void Menu()
         {
@@ -87,7 +88,8 @@ namespace Exam70483
         {
             /* Very cool Anonymous Type!
              */
-            var cars = ProcessFile(@"C:\Users\olivarez77802\OneDrive\Documents\Jesse\Test.csv");
+           // var cars = ProcessFile(@"C:\Users\olivarez77802\OneDrive\Documents\Jesse\Test.csv");
+            var cars = ProcessFile(@"C:\Users\Jesse-Olivarez\OneDrive - TAMUS\Documents\DOC2022\TESTING\TestData.txt");
             var query = cars.OrderByDescending(c => c.LastName)
                             .ThenBy(c => c.FirstName);
                             

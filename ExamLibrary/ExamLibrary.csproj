@@ -36,6 +36,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -83,9 +84,13 @@
     <Compile Include="ImplementDataAccess\Common.cs" />
     <Compile Include="ImplementDataAccess\CommonCollections.cs" />
     <Compile Include="ImplementDataAccess\IterationStatements.cs" />
+    <Compile Include="ImplementDataAccess\JSONExamples.cs" />
     <Compile Include="ImplementDataAccess\PerformIOoperations.cs" />
+    <Compile Include="ImplementDataAccess\SerializeAndDeSerialize.cs" />
     <Compile Include="ImplementDataAccess\SortingExamples.cs" />
     <Compile Include="ImplementDataAccess\StreamExamples.cs" />
+    <Compile Include="ImplementDataAccess\XMLDocumentExamples.cs" />
+    <Compile Include="ImplementDataAccess\XMLExamples.cs" />
     <Compile Include="ManageProgramFlow\Anonymous.cs" />
     <Compile Include="ManageProgramFlow\AsyncAwaitExamples.cs" />
     <Compile Include="ManageProgramFlow\DelegateExamples.cs" />

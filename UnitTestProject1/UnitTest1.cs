@@ -20,6 +20,7 @@ namespace UnitTestProject1
 
             ////-- Assert
             //Assert.AreEqual(expected, actual);
+            Assert.Inconclusive();
         }
     }
 }
