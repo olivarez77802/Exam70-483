@@ -77,8 +77,8 @@ namespace Exam70483
                     inherit from one abstract class, but a class may inherit from multiple interfaces.  See 
                     info on Abstract Methods in BaseExamples.cs
 
-                    Note_2: Interfaces can't have static methods.  A class that implements an iterface needs to implement
-                    them all as instance methods.
+                    Note_2: Interfaces can't have static methods.  A class that implements an interface needs 
+                    to implement them all as instance methods.
                  
                     As a guideline:
                     Use classes and subclasses for types that naturally share an implementation
