@@ -61,19 +61,23 @@ namespace Exam70483
        }
     
        public abstract void Open()    <-- Nested abstract means the class deriving from class Window must provide 
-                                          an implmentation for the Open method.   
+                                          an implmentation for the Open method.  You make a class abstract because
+                                          you know the class deriving it will have their own implementation.  They will 
+                                          have an override method.   An Abstract class will have an abstract method. 
      }
      
      override - further implementation.  Keyword used in concrete classes to provide further implementations for methods
                                          that were defined as either virtual or abstract.
      Difference between virtual and abstract methods.  Abstract methods must be overriden. Overriding virtual methods is optional.
      sealed - Final implementation - cannot be derived (or inherited).
-            -  Examples of Sealed Classes are String Builder
+            -  Examples of Sealed Classes are string and String Builder.   The 'string' class is 'read Only' to make strings
+               faster.  There are lots of optimizations behind the scenes so Microsoft Engineers made it sealed.
             - If you want to make sure no one overrides or extends the functionality of a class then mark it as sealed.
      making this class abstract means that I do not ever want this class 
      to be instantiated. (Abstract class should be compared to an Interface).
      However, the abstract class can be inherited and
-     the class that inherited the abstract class can be instantiated.  
+     the class that inherited the abstract class can be instantiated.  Don't confuse this with an abstract class by itself, 
+     an abstract class cannot be instantiated by the derived class.
      
      Struct versus Classes -  See also Methods.cs
        1. Same as saying Value versus Reference Types.  See ValueTypes.cs and Methods.cs for info on Classes versus Structs.

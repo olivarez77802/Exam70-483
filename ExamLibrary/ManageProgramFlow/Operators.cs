@@ -92,9 +92,9 @@ namespace Exam70483
         {
             /*
              * ++x - is a prefix increment operation.  The result of the operation is the value of the operand after it has been
-             *       incremented.  
+             *       incremented.  ++x  Increment first then use it.
              * x--   is a postfix increment operation.  The result of the operation is the value of the operand before it has been
-             *       incremented.
+             *       incremented.  xx-- Use it first then decrement.
             */
             Console.WriteLine("Prefix and Postfix increment operation");
             double x;

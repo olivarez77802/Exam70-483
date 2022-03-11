@@ -128,8 +128,14 @@ namespace Exam70483
              * How to structure a .net project - Good Video!  Watch again
              * Folders are created under references.
              * When you create a Class Library and add a new Folder it will put it under
-             * the References folder.
+             * the References folder.  Method let's you plan out your namespaces.  
              * https://www.youtube.com/watch?v=KM5o9M4cuQA
+             * Steps:
+             * 1.  Create a BlankSolution   (Acme.Product.Catalog)
+             * 2.  Create your Console Project Folder.  (Acme.ProductCatalog.Front.End.
+             * 3.  Create Library (Acme.ProductCatalog).
+             * 4.  Your Console Project will then reference the Library.
+             * 5.  Any Future Projects will also reference same Library.
              * 
              * 
              * 

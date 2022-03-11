@@ -188,6 +188,15 @@ namespace Exam70483
                          *   Events can hold references to objects
                          *   Solution! Unsubscribe from events proactively!  Use -= on Event.
                          * - Weak references can be used to avoid some memory leak scenarios.
+                         * - Memory leaks - A programmer allocates a block of memory from the
+                         *   operating system, intending to free it later, but forgets and leaves
+                         *   it hanging.  The block of memor is said to be 'leaked' away as it 
+                         *   can't be recovered for later use.  If your app runs long enough,
+                         *   these leaks accumulate and the app runs out of memory.  This is not a big
+                         *   deal in programs like Notepad that a user runs a few minutes and then
+                         *   shuts down, but it is fatal in apps like web servers that are supposed
+                         *   to run continuously.  You think we could remember to free all of our memory
+                         *   allocations, but they often get lost in complex program logic.
                          * 
                          * Weak References
                          * - Weak references create a reference that the Garbage Collector ignores

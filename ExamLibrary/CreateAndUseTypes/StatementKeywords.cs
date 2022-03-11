@@ -6,7 +6,7 @@ using System.Diagnostics;
 
 namespace Exam70483
 {
-   abstract class StatementKeywords
+   class StatementKeywords
     {
         public static void Menu()
         {

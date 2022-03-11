@@ -6,22 +6,58 @@ using System.Diagnostics;
 
 namespace Exam70483
 {
-    abstract public class GenericExamples
+    public class GenericExamples
     {
 
         /*
-         * Generics overview
+         *  Generics overview
 
     Use generic types to maximize code reuse, type safety, and performance.
     The most common use of generics is to create collection classes.
     The .NET class library contains several generic collection classes in the System.Collections.Generic namespace.
     These should be used whenever possible instead of classes such as ArrayList in the System.Collections namespace.
+    See more information on ArrayList in Collections.cs
     You can create your own generic interfaces, classes, methods, events, and delegates.
     Generic classes may be constrained to enable access to methods on particular data types.
     Information on the types that are used in a generic data type may be obtained at run-time by using reflection.
 
     Advantages and DisAdventages of using Generics
     https://docs.microsoft.com/en-us/dotnet/standard/generics/
+    Advantages and disadvantages of generics
+    There are many advantages to using generic collections and delegates:
+    Type safety. Generics shift the burden of type safety from you to the compiler. There is no need to write code to test 
+    for the correct data type because it is enforced at compile time. The need for type casting and the possibility of run-time 
+    errors are reduced.   Less code and code is more easily reused. There is no need to inherit from a base type and override members. 
+    For example, the LinkedList<T> is ready for immediate use. For example, you can create a linked list of strings with the 
+    following variable declaration:
+     C#
+     LinkedList<string> llist = new LinkedList<string>();
+
+     Better performance. Generic collection types generally perform better for storing and manipulating value types because there
+     is no need to box the value types.  Generic delegates enable type-safe callbacks without the need to create multiple delegate
+     classes. For example, the Predicate<T> generic delegate allows you to create a method that implements your own search criteria
+     for a particular type and to use your method with methods of the Array type such as Find, FindLast, and FindAll.
+     Generics streamline dynamically generated code. When you use generics with dynamically generated code you do not need to 
+     generate the type. This increases the number of scenarios in which you can use lightweight dynamic methods instead of generating 
+     entire assemblies. For more information, see How to: Define and Execute Dynamic Methods and DynamicMethod.
+
+The following are some limitations of generics:
+
+    Generic types can be derived from most base classes, such as MarshalByRefObject (and constraints can be used to require that 
+    generic type parameters derive from base classes like MarshalByRefObject). However, .NET does not support context-bound generic 
+    types. A generic type can be derived from ContextBoundObject, but trying to create an instance of that type causes a 
+    TypeLoadException.
+
+    Enumerations cannot have generic type parameters. An enumeration can be generic only incidentally (for example, because it is
+    nested in a generic type that is defined using Visual Basic, C#, or C++). For more information, see "Enumerations" in Common 
+    Type System.
+
+    Lightweight dynamic methods cannot be generic.
+
+   In Visual Basic, C#, and C++, a nested type that is enclosed in a generic type cannot be instantiated unless types have been 
+   assigned to the type parameters of all enclosing types. Another way of saying this is that in reflection, a nested type that 
+   is defined using these languages includes the type parameters of all its enclosing types. This allows the type parameters of 
+   enclosing types to be used in the member definitions of a nested type. For more information, see "Nested Types" in MakeGenericType.
 
     System.Collections.Generic NameSpace
       Many of the generic collection types are direct analogs of nongeneric types. Dictionary<TKey,TValue>

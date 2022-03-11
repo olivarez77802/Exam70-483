@@ -91,6 +91,10 @@ namespace Exam70483
      *  finally blocks.)  sequences inside a 'try' section to catch errors without leaving the original
      *  try section.
      *  
+     *  Note: You should only catch exceptions you know about.   The reason being is that some other routine
+     *  may catch the exception.   Your program should only have one 'catch all' exception and it should be at the
+     *  top of your program.   Exceptions are handled in a LIFO (Last In First Out) manner.
+     *  
      *  Note: only the code in the 'try' section of a try-catch-finally block is protected by the block.
      *  If an exception occurs inside a 'catch' or 'finally' section, the exception is not caught
      *  by the block.

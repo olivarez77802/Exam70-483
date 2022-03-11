@@ -167,7 +167,13 @@ namespace Exam70483
              * https://www.youtube.com/watch?v=hF-6eudOD0M
              * 
              * String was designed to be immutable (not able to be changed).  It was designed this way primarily
-             * for thread saftey.  New allocations are created rather than reusing the old one.  
+             * for thread saftey.  New allocations are created rather than reusing the old one.  The content of 
+             * a string cannot be changed after the object is created.   The compiler actually creates a new string
+             * object to hold the new sequence of characters, and that new ojbect is assigned to b.   The memory that had
+             * been allocated for b (when it contained the string 'h') is then eligible for garbage colllection.
+             * Example: 
+             * string b = 'h'
+             * b += 'ello'
              * 
              * String Builder will not create new space allocations.  The StringBuilder class creates a string buffer
              * that provides better performance in the below situation.

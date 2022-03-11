@@ -7,7 +7,7 @@ using System.Collections;
 
 namespace Exam70483
 {
-    abstract class InterfacesMenu
+    class InterfacesMenu
     {
         public static void Menu()
         {

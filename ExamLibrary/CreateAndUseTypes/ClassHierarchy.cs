@@ -138,11 +138,52 @@ namespace Exam70483
              * Inheritance - 'Is a'
              * 
              * Four pillars of OOP
-             * 1. Abstraction
-             * 2. Encapsulation  - Using a class with a private property
-             * 3. Inheritance  - Using a base class  
+             * 1. Abstraction - Data abstraction is the process of hiding certain details and showing only essential information
+             *    to the user.  Abstraction can be achieved with either abstract classes or interfaces  
+             *    Abstract methods which have to be overridden (Compare to virtual which are optionally overridden).
+             *    The abstract keyword is used for classes and methods.
+             *    -- Abstract Class is a restricted class that cannot be used to create objects (to access it, it must be inherited
+             *       from another class).  An abstract class can have both abstract and regular methods.
+             *    -- Abstract Method can only be used in an abstract class, and it does not have a body.  The body is provided by
+             *       the derived class.
+             *    https://www.w3schools.com/cs/cs_abstract.php
+             * 2. Encapsulation  - Using a class with a private property.  See also EnforceEncapsulation.cs.  You 
+             *    always need to think about how your change will affect client when using Encapsualtion.    Encapsulation,
+             *    prevents access to implementation details.  Encapsulation is implemented by using access modifers (see above).  An 
+             *    access modifier defines the scope and visibility of a class member. 
+             *    The meaning of Encapsulation, is to make sure that 'sensetive' data is hidden from users. To achieve this, you must:
+             *    -- Declare fields/variables as private
+             *    -- Provide public get and set methods, through properties, to access and update the value of a private field.
+             *    class Person
+             *    {
+             *      private string name;   // field
+             *      public string Name;    // Property
+             *      {
+             *        get { return name; }  // get method
+             *        set { name = value; } // set method
+             *       }
+             *     }
+             *     Main()
+             *      {
+             *        Person myObj = new Person();
+             *        myObj.Name = 'Jess';
+             *      } 
+             *    https://www.w3schools.com/cs/cs_properties.php
+             * 3. Inheritance  - Using a base class (Is a).  The derived class will become (is a) the base classes.
+             *    See also ExamLibrary/CreateandUseTypes/BaseExamples.  Static classes are sealed and cannot inherit.
+             *    Every object inherits from System.Object and the methods associated with System.Object  (Equals, ToString,..).
+             *    Notice these methods are defined as virtual and so can be overridden (see BaseExamples.cs).  This is why if you 
+             *    sent a boolean and used .ToString it will return True or False since Microsoft engineers overrode .ToString.  You
+             *    may need to override .ToString in classes that you overwrite.  
+             *    https://www.w3schools.com/cs/cs_inheritance.php              
              * 4. Polymorphism - Many shapes.  Abstract Classses that get overridden.
+             *    Polymorphism means "many forms", and it occurs when we have many classes that are related
+             *    to each other by inheritance.  Inheritance lets us inherit fields and methods from another class. 
+             *    Polymorphism uses those methods to perform different tasks. This allows us to perform a single
+             *    action in different ways
+             *    https://www.w3schools.com/cs/cs_polymorphism.php
              */
+            object ref11;
             Process.Start("http://msdn.microsoft.com/en-us/library/ms173152.aspx");
             Process.Start("http://www.csharp-station.com/Tutorial/CSharp/Lesson09");
             Console.WriteLine(" Example of Polymorphism ");

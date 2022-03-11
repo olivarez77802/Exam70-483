@@ -15,6 +15,14 @@ namespace Exam70483
         static void Main(string[] args)
         {
             /*
+             * Intellisense Icons
+             * Cube - Defines Method
+             * Wrench - Property
+             * Wrench (Star) - Freguently Used Methods.
+             * Lignting Bolt - Event
+             * 
+             * dll - Dynamic Link Library
+             * 
              * C# Version History
              * C# 4.0 --- Visual Studio 2010
              * C# 5.0 --- Visual Studio 2012, 2013
