@@ -102,6 +102,10 @@ namespace Exam70483
                     case 0:
                         /* Garbage Collection
                          * 
+                         * Finalizer versus Dispose.
+                         * Finalizer - Performs clean up when garbage collection runs.
+                         * Dispose - Performs clean up when it is called.
+                         * 
                          * Garbage collection is automatic memory management
                          * De-referenced objects (orphans) are not collected immediately but
                          * periodically.  

@@ -159,13 +159,13 @@ namespace Exam70483
                     Console.WriteLine(dir);
                 }
             };
-            
+
             /*
              * End of C# 2.0 Anonymous Method using delegate keyword
              * 
              * Begin C# 3.0 Anonymous Method using Lambda Expression
              */
-
+            
             Action ListDirectories2 = () =>
             {
                 Console.WriteLine(" Begin Directories C: Users olivarez My Documents Adobe");

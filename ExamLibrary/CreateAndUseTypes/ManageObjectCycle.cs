@@ -67,6 +67,10 @@ namespace Exam70483
          *    you are consuming a lot of resources and you want to proactively free
          *    expensive resources.   The solution to this is you can Implement IDisposable.
          *    
+         *    Note! - If Intellisense exposes the 'Dispose' method this means that 
+         *    that the garbage collector will not be done, and you must manually 
+         *    dispose of the object.
+         *    
          *    Dispose versus Close versus Stop
          *    Close
          *    - May be functionally the same as Dispose

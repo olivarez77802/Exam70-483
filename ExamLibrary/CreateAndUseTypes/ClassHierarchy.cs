@@ -151,7 +151,7 @@ namespace Exam70483
              *    always need to think about how your change will affect client when using Encapsualtion.    Encapsulation,
              *    prevents access to implementation details.  Encapsulation is implemented by using access modifers (see above).  An 
              *    access modifier defines the scope and visibility of a class member. 
-             *    The meaning of Encapsulation, is to make sure that 'sensetive' data is hidden from users. To achieve this, you must:
+             *    The meaning of Encapsulation, is to make sure that 'sensitive' data is hidden from users. To achieve this, you must:
              *    -- Declare fields/variables as private
              *    -- Provide public get and set methods, through properties, to access and update the value of a private field.
              *    class Person

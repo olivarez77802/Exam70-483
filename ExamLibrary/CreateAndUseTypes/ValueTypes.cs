@@ -54,8 +54,10 @@ namespace Exam70483
          * Physical Memory is divided into a Stack and Heap
          * 
          * Stack - Values types are stored here.  Object Reference Variables are also stored here.
+         * Static Memory Allocation.
          * 
          * Heap - The place in memory where Object Reference Variables will point to.
+         * Dynamic Memory Allocation.
          * }
         
         /*

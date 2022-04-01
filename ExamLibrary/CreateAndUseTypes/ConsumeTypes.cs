@@ -11,11 +11,11 @@ namespace Exam70483
      *    Box or unbox to convert value types; cast types; convert types; handle dynamic types; 
      *    ensure interoperability with code that access COM API's.
      */
-   public class ConsumeTypes
+    public class ConsumeTypes
     {
         public static void Menu()
         {
-            
+
             int x = 0;
             do
             {
@@ -28,6 +28,7 @@ namespace Exam70483
                 Console.WriteLine(" 4.  COM API \n");
                 Console.WriteLine(" 5.  Parse Examples");
                 Console.WriteLine(" 6.  TryParse Example");
+                Console.WriteLine(" 7.  TryParse Date Examples");
                 Console.WriteLine(" 9.  Quit            \n\n ");
                 Console.Write(" Enter Number to execute Routine ");
 
@@ -36,10 +37,11 @@ namespace Exam70483
                 selection = Common.readInt("Enter Number to Execute Routine : ", 0, 9);
                 switch (selection)
                 {
-                    case 0: Boxing();
+                    case 0:
+                        Boxing();
                         Console.ReadKey();
                         break;
-                            
+
                     case 1:
                         CastExamples();
                         break;
@@ -52,15 +54,20 @@ namespace Exam70483
                         Console.ReadKey();
                         break;
                     case 4:
-                       
+
                         break;
                     case 5:
                         ParseExamples.Main_Mod();
                         Console.ReadKey();
                         break;
 
-                    case 6: TryParseExamples();
+                    case 6:
+                        TryParseExamples();
                         break;
+                    case 7:
+                        TryParseDateExamples();
+                        break;
+
                     case 9:
                         x = 9;
                         break;
@@ -229,7 +236,7 @@ namespace Exam70483
                 int iNumber = System.Convert.ToInt32(dNumber);
                 Console.WriteLine(" Converted double {0} to integer {1}", dNumber, iNumber);
             }
-            catch(System.OverflowException)
+            catch (System.OverflowException)
             {
                 Console.WriteLine("Overflow in double to int conversion");
             }
@@ -249,9 +256,9 @@ namespace Exam70483
             string s = "10";
             string n = "a";
             int result;
-            if (int.TryParse(s,out result))
+            if (int.TryParse(s, out result))
             {
-               Console.WriteLine("Try Parse returns true - successfull converted string to integer {0}", result);
+                Console.WriteLine("Try Parse returns true - successfull converted string to integer {0}", result);
             }
             else
             {
@@ -266,5 +273,41 @@ namespace Exam70483
                 Console.WriteLine("Try Parse returns false - {0}", result);
             }
         }
+        static void TryParseDateExamples()
+        {
+            DateTime dateValue;  // to store the results
+
+            // Example 1
+
+            string dateString1 = "05/01/2020 14:57:32.8";
+
+            if (DateTime.TryParse(dateString1, out dateValue))
+                Console.WriteLine("Converted '{0}' to {1}.", dateString1, dateValue);
+            else
+                Console.WriteLine("Unable to parse '{0}'.", dateString1);
+
+            // Example 2 
+
+            string dateString2 = "1 May 2020 2:57:32.8 PM";
+
+            if (DateTime.TryParse(dateString2, out dateValue))
+                Console.WriteLine("Converted '{0}' to {1}.", dateString2, dateValue);
+            else
+                Console.WriteLine("Unable to parse '{0}'.", dateString2);
+
+            // Example 3
+
+            string dateString3 = "not a date";
+
+            if (DateTime.TryParse(dateString3, out dateValue))
+                Console.WriteLine("Converted '{0}' to {1}.", dateString3, dateValue);
+            else
+                Console.WriteLine("Unable to parse '{0}'.", dateString3);
+        }
+
+        // The examples above display the following:
+        //      Converted '05/01/2020 14:57:32.8' to 5/1/2020 2:57:32 PM.
+        //      Converted '1 May 2020 2:57:32.8 PM' to 5/1/2020 2:57:32 PM .
+        //      Unable to parse 'not a date'.
     }
 }

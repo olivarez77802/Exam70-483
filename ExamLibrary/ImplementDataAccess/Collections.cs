@@ -68,6 +68,12 @@ namespace Exam70483
                       allocation, adding, searching and sorting items in the list.
                       https://www.tutorialspoint.com/csharp/csharp_arraylist.htm
                       List<T> is a generic version of ArrayList See GenericExamples.cs
+
+                      C# is not like c++ where objects are destroyed when they go out of scope. 
+                      Instead, the Garbage Collector looks for objects which are completely unreferenced at 
+                      the current point of execution. Because the second function has a reference to the 
+                      arraylist, the arraylist and all its contents can't be garbage collected
+                      while the second function is executing.
                 
                 Multi-Diminesional Arrays.
                     1.  Can have more than one index.

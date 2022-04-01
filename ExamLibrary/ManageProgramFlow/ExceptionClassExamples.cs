@@ -17,9 +17,13 @@ namespace Exam70483
      *    exceptions.
      * 2. Do not use exceptions for normal program flow logic.  e.g. Input Validation. You expect input to be invalid
      *    sometimes.  Invalid input is not an exceptional situation, it is considered normal flow.  Should write IsValid(xxx)
-     *    methods instead.
-     * 3. Design code to avoid exceptions. e.g. Use TryPase instead of Parse.
-     * 4. Use finally blocks for cleanup.
+     *    methods instead.   Class Properties can be used for Input Validation.  Use 'Case' statement for Input Validation.
+     *    
+     * 3. Design code to avoid exceptions. e.g. Use TryParse instead of Parse. See ConsumeTypes.cs
+     * 
+     * 4. Use finally blocks for cleanup.   Always call 'dispose' method if Intellisense
+     *    says there is one.  Intellisense will let you know that the garbage collector
+     *    will not automatically handle.
      * 
      * Exception Handling
      * An exception is a class that derives from the System.Exception class.   The System.Exception class 

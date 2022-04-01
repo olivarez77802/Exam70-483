@@ -17,9 +17,12 @@ namespace Exam70483
             /*
              * Intellisense Icons
              * Cube - Defines Method
+             * Cube (Down Arrow) - Means that it has more than 1 overload
              * Wrench - Property
              * Wrench (Star) - Freguently Used Methods.
              * Lignting Bolt - Event
+             * If a dispose method is exposed then then the garbage  collector will
+             * not handle and you need to handle (see ExceptionClassExamples.cs)
              * 
              * dll - Dynamic Link Library
              * 

@@ -214,8 +214,34 @@ namespace Exam70483
                DateTimeOffset - Does contain Timezone information. DateTimeOffset should be preferred over DateTime.  Timezone is based on UTC.
                
                Always store Date and Times in UTC.  So you should use DateTime.NowUTC and DateTimeOffset.NowUTC
+
+            DateTime to UTC in DotNet and SQL Server
+            https://www.youtube.com/watch?v=69wPMmO0fuo
+
+            Coordinated Universal Time or UTC is the primary time standard by which the world regulates clocks and time.
+            It is within about 1 second of mean solar time at 0° longitude (at the IERS Reference Meridian as the currently 
+            used prime meridian) such as UT1 and is not adjusted for daylight saving time. It is effectively a successor to
+            Greenwich Mean Time (GMT).
+
+            Time Zones and Coordinated Universal Time
+            https://www.youtube.com/watch?v=TmHHqo4op8E
+
+            Unix time (also known as Epoch time, Posix time,[1] seconds since the
+            Epoch,[2] or UNIX Epoch time[3]) is a system for describing a point in time. 
+            It is the number of seconds that have elapsed since the Unix epoch, excluding 
+            leap seconds. The Unix epoch is 00:00:00 UTC on 1 January 1970 (an arbitrary date).
+            Unix time is nonlinear with a leap second having the same Unix time as the second 
+            before it (or after it, implementation dependent), so that every day is treated 
+            as if it contains exactly 86400 seconds,[2] with no seconds added to or subtracted 
+            from the day as a result of positive or negative leap seconds. Due to this treatment 
+            of leap seconds, Unix time is not a true representation of UTC.
+
+            Unix time is widely used in operating systems and file formats. In Unix-like operating systems, 
+            date is a command which will print or set the current time; by default, it prints or sets the time
+            in the system time zone, but with the -u flag, it prints or sets the time in UTC and, with the TZ
+            environment variable set to refer to a particular time zone, prints or sets the time in that time zone.[4]
+            
              */
-            DateTime dt;
             var today = DateTime.Today;
             var now = DateTime.Now;
             var now2 = DateTimeOffset.Now;
@@ -228,6 +254,13 @@ namespace Exam70483
             Console.WriteLine("DateTime.UtcNow {0} and DateTimeOffset.UtcNow {1} ", nowUTC, now2UTC);
             Console.WriteLine("DateTimeOffset plus 2 days {0}", DateTimeOffset.UtcNow.AddDays(2));
             Console.WriteLine("Now Date plus 3 {0}", nowDate.AddDays(3));
+
+            var dateTime = new DateTime(1970,1,1,0,0,0);   /* DateTime (int year, int month, int day, int hour, int minute, int second 
+                                                              Represents the Unix epoch, number of seconds since midnight (UTC) on
+                                                              January 1st, 1970
+                                                            */
+            Console.WriteLine("DateTime {0} ", dateTime);   /* Displays 1/1/1970 12:00:00 AM */
+           
         }
     }
 }
