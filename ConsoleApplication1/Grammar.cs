@@ -45,7 +45,7 @@ namespace Exam70483
                         break;
                     case 5: StatementKeywords.Menu();
                         break;
-                    case 6: AccessKeywords.Menu();
+                    case 6: ExamLibrary.CreateAndUseTypes.AccessKeywords.Menu();
                         break;
                     case 7:
                          break;

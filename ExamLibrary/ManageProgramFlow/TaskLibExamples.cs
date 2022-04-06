@@ -70,7 +70,7 @@ namespace Exam70483
 
     */
     // Called by Delegate.cs
-    class TaskLibExamples
+    public class TaskLibExamples
     {
         public static void Menu()
         {

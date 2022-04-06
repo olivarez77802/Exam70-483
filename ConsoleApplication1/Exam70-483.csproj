@@ -54,26 +54,52 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccessKeywords.cs" />
     <Compile Include="AttributeExamples.cs" />
+    <Compile Include="ClassHierarchy.cs" />
     <Compile Include="ConcurrentCollections.cs" />
     <Compile Include="ConsumeData.cs" />
     <Compile Include="CreateAndUseTypes.cs" />
+    <Compile Include="CreateEventsAndCallbacksMenu.cs" />
+    <Compile Include="CreateEventsAndCallbacks_0.cs" />
+    <Compile Include="CreateEventsAndCallbacks_0_Methods.cs" />
+    <Compile Include="CreateEventsAndCallbacks_1.cs" />
+    <Compile Include="CreateEventsAndCallbacks_1_Methods.cs" />
+    <Compile Include="CreateEventsAndCallbacks_2.cs" />
+    <Compile Include="CreateTypes.cs" />
     <Compile Include="CryptographyExamples.cs" />
     <Compile Include="CUT_Methods.cs" />
     <Compile Include="DebugAppImplementSecurity.cs" />
     <Compile Include="DebugApplication.cs" />
     <Compile Include="DelegateExamples.cs" />
+    <Compile Include="EnumerableImmmediateMethods.cs" />
+    <Compile Include="EnumerableMethods.cs" />
     <Compile Include="FTPCalls.cs" />
+    <Compile Include="Grammar.cs" />
+    <Compile Include="IEnumerableIEnumeratorInterface.cs" />
     <Compile Include="IMenu.cs" />
     <Compile Include="ImplementDataAccess.cs" />
     <Compile Include="ImplementDiagnostics.cs" />
+    <Compile Include="Indexer.cs" />
+    <Compile Include="InterfacesMenu.cs" />
     <Compile Include="ISpecialDefence.cs" />
+    <Compile Include="ManageMultithreadingMenu.cs" />
     <Compile Include="ManageObjectCycle.cs" />
     <Compile Include="ManageAssemblies.cs" />
+    <Compile Include="ManageProgramFlow.cs" />
+    <Compile Include="Methods.cs" />
+    <Compile Include="MPF3_1_Methods.cs" />
+    <Compile Include="MPF3_3_Methods.cs" />
+    <Compile Include="MPF3_Methods.cs" />
+    <Compile Include="MPF_Methods.cs" />
+    <Compile Include="MultithreadingAndAsyncMenu.cs" />
+    <Compile Include="MultiThreadingAndAsync_Methods.cs" />
+    <Compile Include="Nulls.cs" />
     <Compile Include="ObjectExamples.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QueryLINQ.cs" />
+    <Compile Include="ReferenceTypes.cs" />
     <Compile Include="RegularExpressionExamples.cs" />
     <Compile Include="RunTimeTypes.cs" />
     <Compile Include="Service References\MathService1\Reference.cs">
@@ -81,7 +107,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="StatementKeywords.cs" />
+    <Compile Include="StaticExamples.cs" />
     <Compile Include="ThreadStartDelegate.cs" />
+    <Compile Include="ValueTypes.cs" />
     <Compile Include="WCFWebServiceExamples.cs" />
     <Compile Include="ThreadingExamples.cs" />
     <Compile Include="ValidateAppInput.cs" />

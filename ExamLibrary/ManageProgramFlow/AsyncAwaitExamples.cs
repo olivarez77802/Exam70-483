@@ -15,7 +15,7 @@ namespace Exam70483
     public class AsyncAwaitExamples
     {
        
-        internal static void AsyncEx1Main()
+        public static void AsyncEx1Main()
         {
             /* Display Order:
              * New Thread
@@ -42,7 +42,7 @@ namespace Exam70483
             Console.WriteLine("End Long Task");
         }
 
-        internal static void AsyncEx2Main()
+        public static void AsyncEx2Main()
         {
             /*
              * Display Order:

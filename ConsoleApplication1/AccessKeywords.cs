@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Diagnostics;
 
-namespace Exam70483
+namespace ExamLibrary.CreateAndUseTypes
 {
-    static class AccessKeywords  
+    public static class AccessKeywords  
     {
 
         public static void Menu()
@@ -23,7 +23,7 @@ namespace Exam70483
 
 
                 int selection;
-                selection = Common.readInt("Enter Number to Execute Routine : ", 0, 9);
+                selection = Exam70483.Common.readInt("Enter Number to Execute Routine : ", 0, 9);
                 switch (selection)
                 {
                     case 0: baseKeyWord();
@@ -44,7 +44,7 @@ namespace Exam70483
         {
             Process.Start("https://msdn.microsoft.com/en-us/library/hfw7t1ce.aspx");
             Process.Start("http://www.csharp-station.com/Tutorial/CSharp/lesson08");
-            BaseExamples.TMain();
+            ExamLibrary.CreateAndUseTypes.BaseExamples.TMain();
             Console.ReadKey();
             BaseExamples.D_Main();
             Console.ReadKey();

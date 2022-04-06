@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Exam70483
 {
-    class MPF3_Methods : IMenu
+    public class MPF3_Methods : IMenu
     {
         public void MenuOpt0()
         {

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Exam70483 
 {
-    class Car : Interface1
+    public class Car : Interface1
     {
         #region Implement Interface1 
         

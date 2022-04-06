@@ -7,7 +7,7 @@ using System.Diagnostics;
 
 namespace Exam70483
 {
-    class ThreadingExamples
+    public class ThreadingExamples
     {
         /*
             Process.Start("");

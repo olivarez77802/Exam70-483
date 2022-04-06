@@ -67,7 +67,7 @@ namespace Exam70483
      * 
      * 
      */
-    class ThreadPoolExample
+    public class ThreadPoolExample
     {
         public static void Method()
         {

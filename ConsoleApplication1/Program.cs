@@ -65,7 +65,7 @@ namespace Exam70483
                  manage data by using concurrent collections.
 
               Things I remember struggling with:
-               * --e  versus e--
+               * --e  versus e--  (Prefix versus Post fix decrement)
                * Delay signing the assembly
                * Read a raw XML File what are the different elements, nodes called
                * Different file permissions when reading a file

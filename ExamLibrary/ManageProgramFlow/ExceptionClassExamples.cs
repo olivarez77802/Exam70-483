@@ -168,7 +168,7 @@ namespace Exam70483
      * 
      * See Global Exception Handler in Program.cs
      */
-    class ExceptionClassExamples
+    public class ExceptionClassExamples
     {
         public static void Menu()
         {

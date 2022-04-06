@@ -131,11 +131,21 @@ namespace Exam70483
              * the References folder.  Method let's you plan out your namespaces.  
              * https://www.youtube.com/watch?v=KM5o9M4cuQA
              * Steps:
-             * 1.  Create a BlankSolution   (Acme.Product.Catalog)
-             * 2.  Create your Console Project Folder.  (Acme.ProductCatalog.Front.End.
+             * 1.  Create a BlankSolution   (Acme.ProductCatalog)
+             * 2.  Create your Console Project Folder.  (Acme.ProductCatalog.FrontEnd.
              * 3.  Create Library (Acme.ProductCatalog).
-             * 4.  Your Console Project will then reference the Library.
-             * 5.  Any Future Projects will also reference same Library.
+             * 4.  Create subfolders for the Library
+             * 5.  Your Console Project will then reference the Library.
+             * 6.  Any Future Projects will also reference same Library.
+             * 
+             * My Example Exam70-483 project.
+             * 1.  Exam-70-483
+             * 2.  Exam-70-483.FrontEnd
+             * 3.  Exam-70-483
+             *     Folders 
+             *     CreateAndUseTypes; DebugApplications; 
+             *     ImplementDataAccess;ManageProgramFlow
+             *     
              * 
              * 
              * 

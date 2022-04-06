@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Exam70483
 {
-    class MPF3_0_Methods : IMenu
+    public class MPF3_0_Methods : IMenu
     {
         public delegate void EventHandler();
         public static event EventHandler Option1;

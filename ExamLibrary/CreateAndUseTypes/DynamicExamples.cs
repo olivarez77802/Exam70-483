@@ -73,7 +73,7 @@ namespace Exam70483
     */
 
     /* Since no access modifier is declared class is Internal by default */
-    static class DynamicExamples
+    public static class DynamicExamples
     {
         /* We are declaring an access modifier; otherwise it would be private by default */
         public static void DMain()

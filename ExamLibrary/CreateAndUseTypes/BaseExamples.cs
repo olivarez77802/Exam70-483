@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Exam70483
+namespace ExamLibrary.CreateAndUseTypes
 {
     /*
      Static Class - cannot ever be instantiated.  A static field is not recreated with each instance object.
@@ -90,7 +90,7 @@ namespace Exam70483
      See ConsumeTypes.cs - Information on casting
     
     */
-    static class BaseExamples   
+    public static class BaseExamples   
     {
         #region TMain
         abstract class Person
@@ -126,7 +126,7 @@ namespace Exam70483
             }
         }
         
-        internal static void TMain()
+        public static void TMain()
         {
             Employee E = new Employee();
             E.GetInfo();
@@ -187,7 +187,7 @@ namespace Exam70483
            
         }
 
-        internal static void D_Main()
+        public static void D_Main()
         {
             DerivedClass md = new DerivedClass();
             DerivedClass md1 = new DerivedClass(1);

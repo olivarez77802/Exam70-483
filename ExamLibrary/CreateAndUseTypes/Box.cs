@@ -7,26 +7,26 @@ namespace Exam70483
 {
     // Instantiated in Methods.cs 
     
-    class Box
+    public class Box
     {
         /* Variables, Members are private by default */
         internal double length;      // Length of a box
         internal double breadth;     // Breadth of a box
         internal double height;      // Height of a box
 
-        internal double GetVolume()
+        public double GetVolume()
         {
             return length * breadth * height;
         }
-        internal void setLength(double len)
+        public void setLength(double len)
         {
             length = len;
         }
-        internal void setBreadth(double bre)
+        public void setBreadth(double bre)
         {
             breadth = bre;
         }
-        internal void setHeight(double hei)
+        public void setHeight(double hei)
         {
             height = hei;
         }

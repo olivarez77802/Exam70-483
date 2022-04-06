@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Exam70483
 {
-    class Lambda 
+    public class Lambda 
     {
         /*  Anonymous Methods were developed in C# 2.0.   Anonymous syntax is a bit
          *  harder to write and manage.  In C# 3.0 Lambda expressions are introduced, it provides a simple,
