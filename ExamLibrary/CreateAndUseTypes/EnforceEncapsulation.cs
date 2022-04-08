@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Exam70483;
 
-namespace ExamLibrary.CreateAndUseTypes
+namespace Exam70483.ExamLibrary.CreateAndUseTypes
 {
     public class EnforceEncapsulation
     {

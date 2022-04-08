@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Exam70483
+namespace Exam70483.ExamLibrary.ManageProgramFlow
 {
-    class DelegateExamples
+    public class DelegateExamples
     {
         delegate void CustomDel(string s);
         delegate int Countit(int x);

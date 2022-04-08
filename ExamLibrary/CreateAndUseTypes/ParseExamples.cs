@@ -6,7 +6,7 @@ using System.Globalization;
 
 namespace Exam70483
 {
-    class ParseExamples
+    public class ParseExamples
     {
 
         public static void Main_Mod()

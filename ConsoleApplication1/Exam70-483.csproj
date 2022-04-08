@@ -54,66 +54,66 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AccessKeywords.cs" />
-    <Compile Include="AttributeExamples.cs" />
-    <Compile Include="ClassHierarchy.cs" />
-    <Compile Include="ConcurrentCollections.cs" />
-    <Compile Include="ConsumeData.cs" />
-    <Compile Include="CreateAndUseTypes.cs" />
-    <Compile Include="CreateEventsAndCallbacksMenu.cs" />
-    <Compile Include="CreateEventsAndCallbacks_0.cs" />
-    <Compile Include="CreateEventsAndCallbacks_0_Methods.cs" />
-    <Compile Include="CreateEventsAndCallbacks_1.cs" />
-    <Compile Include="CreateEventsAndCallbacks_1_Methods.cs" />
-    <Compile Include="CreateEventsAndCallbacks_2.cs" />
-    <Compile Include="CreateTypes.cs" />
-    <Compile Include="CryptographyExamples.cs" />
-    <Compile Include="CUT_Methods.cs" />
-    <Compile Include="DebugAppImplementSecurity.cs" />
-    <Compile Include="DebugApplication.cs" />
-    <Compile Include="DelegateExamples.cs" />
-    <Compile Include="EnumerableImmmediateMethods.cs" />
-    <Compile Include="EnumerableMethods.cs" />
-    <Compile Include="FTPCalls.cs" />
-    <Compile Include="Grammar.cs" />
-    <Compile Include="IEnumerableIEnumeratorInterface.cs" />
     <Compile Include="IMenu.cs" />
-    <Compile Include="ImplementDataAccess.cs" />
-    <Compile Include="ImplementDiagnostics.cs" />
-    <Compile Include="Indexer.cs" />
-    <Compile Include="InterfacesMenu.cs" />
+    <Compile Include="MenuCreateAndUseTypes\AccessKeywords.cs" />
+    <Compile Include="MenuCreateAndUseTypes\AttributeExamples.cs" />
+    <Compile Include="MenuCreateAndUseTypes\ClassHierarchy.cs" />
+    <Compile Include="MenuCreateAndUseTypes\ManipulateStrings.cs" />
+    <Compile Include="MenuCreateAndUseTypes\ManipulateStringsMenu.cs" />
+    <Compile Include="MenuCreateAndUseTypes\Methods.cs" />
+    <Compile Include="MenuImplementDataAccess\PerformIOoperations.cs" />
+    <Compile Include="MenuManageProgramFlow\ConcurrentCollections.cs" />
+    <Compile Include="MenuImplementDataAccess\ConsumeData.cs" />
+    <Compile Include="MenuCreateAndUseTypes\CreateAndUseTypes.cs" />
+    <Compile Include="MenuManageProgramFlow\CreateEventsAndCallbacksMenu.cs" />
+    <Compile Include="MenuManageProgramFlow\CreateEventsAndCallbacks_0.cs" />
+    <Compile Include="MenuManageProgramFlow\CreateEventsAndCallbacks_0_Methods.cs" />
+    <Compile Include="MenuManageProgramFlow\CreateEventsAndCallbacks_1.cs" />
+    <Compile Include="MenuManageProgramFlow\CreateEventsAndCallbacks_1_Methods.cs" />
+    <Compile Include="MenuManageProgramFlow\CreateEventsAndCallbacks_2.cs" />
+    <Compile Include="MenuCreateAndUseTypes\CreateTypes.cs" />
+    <Compile Include="MenuDebugImplementSecurity\CryptographyExamples.cs" />
+    <Compile Include="MenuCreateAndUseTypes\CUT_Methods.cs" />
+    <Compile Include="MenuDebugImplementSecurity\DebugAppImplementSecurity.cs" />
+    <Compile Include="MenuDebugImplementSecurity\DebugApplication.cs" />
+    <Compile Include="MenuCreateAndUseTypes\EnumerableImmmediateMethods.cs" />
+    <Compile Include="MenuCreateAndUseTypes\EnumerableMethods.cs" />
+    <Compile Include="FTPCalls.cs" />
+    <Compile Include="MenuCreateAndUseTypes\Grammar.cs" />
+    <Compile Include="MenuCreateAndUseTypes\IEnumerableIEnumeratorInterface.cs" />
+    <Compile Include="MenuImplementDataAccess\ImplementDataAccess.cs" />
+    <Compile Include="MenuDebugImplementSecurity\ImplementDiagnostics.cs" />
+    <Compile Include="MenuCreateAndUseTypes\InterfacesMenu.cs" />
     <Compile Include="ISpecialDefence.cs" />
-    <Compile Include="ManageMultithreadingMenu.cs" />
-    <Compile Include="ManageObjectCycle.cs" />
-    <Compile Include="ManageAssemblies.cs" />
-    <Compile Include="ManageProgramFlow.cs" />
-    <Compile Include="Methods.cs" />
-    <Compile Include="MPF3_1_Methods.cs" />
-    <Compile Include="MPF3_3_Methods.cs" />
-    <Compile Include="MPF3_Methods.cs" />
-    <Compile Include="MPF_Methods.cs" />
-    <Compile Include="MultithreadingAndAsyncMenu.cs" />
-    <Compile Include="MultiThreadingAndAsync_Methods.cs" />
-    <Compile Include="Nulls.cs" />
-    <Compile Include="ObjectExamples.cs" />
+    <Compile Include="MenuManageProgramFlow\ManageMultithreadingMenu.cs" />
+    <Compile Include="MenuCreateAndUseTypes\ManageObjectCycle.cs" />
+    <Compile Include="MenuDebugImplementSecurity\ManageAssemblies.cs" />
+    <Compile Include="MenuManageProgramFlow\ManageProgramFlow.cs" />
+    <Compile Include="MenuManageProgramFlow\MPF3_1_Methods.cs" />
+    <Compile Include="MenuManageProgramFlow\MPF3_3_Methods.cs" />
+    <Compile Include="MenuManageProgramFlow\MPF3_Methods.cs" />
+    <Compile Include="MenuManageProgramFlow\MPF_Methods.cs" />
+    <Compile Include="MenuManageProgramFlow\MultithreadingAndAsyncMenu.cs" />
+    <Compile Include="MenuManageProgramFlow\MultiThreadingAndAsync_Methods.cs" />
+    <Compile Include="MenuCreateAndUseTypes\Nulls.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QueryLINQ.cs" />
-    <Compile Include="ReferenceTypes.cs" />
-    <Compile Include="RegularExpressionExamples.cs" />
-    <Compile Include="RunTimeTypes.cs" />
+    <Compile Include="MenuImplementDataAccess\QueryLINQ.cs" />
+    <Compile Include="MenuCreateAndUseTypes\ReferenceTypes.cs" />
+    <Compile Include="MenuDebugImplementSecurity\RegularExpressionExamples.cs" />
+    <Compile Include="MenuCreateAndUseTypes\RunTimeTypes.cs" />
     <Compile Include="Service References\MathService1\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="StatementKeywords.cs" />
-    <Compile Include="StaticExamples.cs" />
-    <Compile Include="ThreadStartDelegate.cs" />
-    <Compile Include="ValueTypes.cs" />
-    <Compile Include="WCFWebServiceExamples.cs" />
-    <Compile Include="ThreadingExamples.cs" />
-    <Compile Include="ValidateAppInput.cs" />
+    <Compile Include="MenuManageProgramFlow\StatementKeywords.cs" />
+    <Compile Include="MenuCreateAndUseTypes\StaticExamples.cs" />
+    <Compile Include="MenuManageProgramFlow\ThreadStartDelegate.cs" />
+    <Compile Include="MenuCreateAndUseTypes\ValueTypes.cs" />
+    <Compile Include="MenuImplementDataAccess\WCFWebServiceExamples.cs" />
+    <Compile Include="MenuManageProgramFlow\ThreadingExamples.cs" />
+    <Compile Include="MenuDebugImplementSecurity\ValidateAppInput.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -153,6 +153,7 @@
       <Name>ExamLibrary</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

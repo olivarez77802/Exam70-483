@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Exam70483 
 {
-    interface IMenu
+    public interface IMenu
     {
         void MenuOpt0();
         void MenuOpt1();

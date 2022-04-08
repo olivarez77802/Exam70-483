@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace ExamLibrary.CreateAndUseTypes
+namespace Exam70483.ExamLibrary.CreateAndUseTypes
 {
     /*
      Static Class - cannot ever be instantiated.  A static field is not recreated with each instance object.

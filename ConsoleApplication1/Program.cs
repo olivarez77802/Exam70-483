@@ -130,15 +130,18 @@ namespace Exam70483
                 switch (selection)
                 {
                     
-                    case 0: ManageProgramFlow.Menu();
+                    case 0:
+                        MenuManageProgramFlow.ManageProgramFlow.Menu();
                         break;
-                    case 1: CreateAndUseTypes.Menu();
+                    case 1:
+                        MenuCreateAndUseTypes.CreateAndUseTypes.Menu();
                         break;
                     case 2:
-                        DebugAppImplementSecurity.Menu();
+                        MenuDebugImplementSecurity.DebugAppImplementSecurity.Menu();
                         break;
                    
-                    case 3: ImplementDataAccess.Menu();
+                    case 3:
+                        MenuImplementDataAccess.ImplementDataAccess.Menu();
                         break;
                     case 4:
                         Process.Start("https://www.microsoft.com/en-us/learning/exam-70-483.aspx");
